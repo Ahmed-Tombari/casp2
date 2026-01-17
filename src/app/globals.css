@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --shadow-mentor-shadow: 0px 4px 20px rgba(110, 127, 185, 0.1);
+
+  --inset-54\%: 54%;
+
+  /* CASP Education Color Palette - Thom's Lettering Guide */
+  --color-primary: #0487D9; /* Thom-3 (Bright Blue) */
+  --color-secondary: #049DD9; /* Thom-4 (Vibrant Blue) */
+  --color-accent: #0378A6; /* Thom-5 (Deep Blue/Teal) */
+  --color-thom-dark: #2E3140; /* Thom-2 (Deep Navy/Slate) */
+  --color-thom-light: #F2F2F2; /* Thom-1 (Off-white) */
+  --color-destructive: #D95829; /* Red-orange for errors */
+  
+  --color-cream: #fcf5ef;
+  --color-success: #6b9f36;
+  --color-orange: #f9cd92;
+
+  --background-image-banner-image: url('/images/banner/background.png');
+  --background-image-newsletter: url('/images/newsletter/hands.svg');
+  
+  /* CSS Variables for theme - Tailwind v4 syntax */
+  --color-background: #F2F2F2;
+  --color-foreground: #2E3140;
+  
+  /* Make background and foreground available as utilities */
+  --color-background-rgb: 242 242 242;
+  --color-foreground-rgb: 46 49 64;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  section {
+    @apply py-14
+  }
+
+  h1 {
+    @apply text-thom-dark md:text-7xl sm:text-6xl text-5xl font-bold
+  }
+
+  h2 {
+    @apply text-thom-dark sm:text-5xl text-4xl font-semibold
+  }
+  
+  body {
+    background-color: var(--color-thom-light);
+    color: var(--color-thom-dark);
+    font-family: var(--font-cairo), sans-serif;
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+  
+  [dir="ltr"] {
+    direction: ltr;
+  }
+  
+  /* Focus states for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto w-full px-4;
+  }
+  
+  /* RTL-aware utilities */
+  .rtl\:text-right {
+    [dir="rtl"] & {
+      text-align: right;
+    }
+  }
+  
+  .ltr\:text-left {
+    [dir="ltr"] & {
+      text-align: left;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,59 @@
+import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'legal' });
+
+  return {
+    title: t('privacyTitle'),
+    alternates: {
+      canonical: `/${locale}/privacy`,
+      languages: {
+        'ar': '/ar/privacy',
+        'fr': '/fr/privacy',
+        'en': '/en/privacy',
+      },
+    },
+  };
+}
+
+export default async function PrivacyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'legal' });
+
+  return (
+    <main className="min-h-screen">
+      <section className="bg-thom-dark pt-32 pb-20 text-center">
+        <div className="container mx-auto max-w-7xl px-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            {t('privacyTitle')}
+          </h1>
+          <p className="text-white/60">
+            {t('lastUpdated')}
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="prose prose-lg max-w-none text-thom-dark/80 bg-cream/30 p-10 md:p-16 rounded-[2.5rem] border border-thom-light">
+             <p className="text-xl leading-relaxed">
+              {t('privacyContent')}
+            </p>
+            {/* Additional policy points could be added here */}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
