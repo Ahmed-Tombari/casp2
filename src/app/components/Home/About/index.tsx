@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Icon } from '@iconify/react/dist/iconify.js'
+import { motion } from 'framer-motion'
 
 const About = () => {
   const t = useTranslations('home')
@@ -12,54 +13,100 @@ const About = () => {
     { key: 'aboutPoint3', icon: 'solar:user-speak-bold-duotone' },
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.5 }
+    }
+  }
+
   return (
-    <section id='about-section' className='py-20 bg-white overflow-hidden'>
-      <div className='container mx-auto max-w-7xl px-4'>
-        <div className='flex flex-col lg:flex-row items-center gap-16'>
+    <section id='about-section' className='py-24 bg-white dark:bg-transparent overflow-hidden transition-colors duration-300 relative'>
+      {/* Background decoration for Dark Mode */}
+      <div className="absolute top-0 end-0 w-[500px] h-[500px] bg-brand-gold/5 blur-[120px] rounded-full mix-blend-screen opacity-0 dark:opacity-20 pointer-events-none" />
+      
+      <div className='container mx-auto max-w-7xl px-4 relative z-10'>
+        <div className='flex flex-col lg:flex-row items-center gap-16 lg:gap-24'>
           {/* Image Column */}
-          <div className='flex-1 relative animate-fade-in-right'>
-            <div className='relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/20 bg-cream'>
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, type: "spring" }}
+            className='flex-1 relative'
+          >
+            <div className='relative z-10 rounded-4xl overflow-hidden shadow-soft-lg bg-white dark:bg-white/5 border border-white/10 group'>
               <Image
                 src='/images/home/about-casp.png'
                 alt='About CASP Education'
                 width={600}
                 height={600}
-                className='w-full h-auto object-cover hover:scale-105 transition duration-700'
+                className='w-full h-auto object-cover group-hover:scale-105 transition duration-700'
               />
+              <div className='absolute inset-0 bg-brand-orange/5 dark:bg-brand-navy/20 group-hover:opacity-0 transition-opacity duration-500' />
             </div>
             {/* Decorative blobs */}
-            <div className='absolute -top-10 -start-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl' />
-            <div className='absolute -bottom-10 -end-10 w-40 h-40 bg-orange/10 rounded-full blur-3xl' />
-          </div>
+            <div className='absolute -top-10 -start-10 w-40 h-40 bg-brand-orange/10 dark:bg-brand-orange/20 rounded-full blur-3xl animate-pulse' />
+            <div className='absolute -bottom-10 -end-10 w-40 h-40 bg-brand-gold/10 dark:bg-brand-gold/10 rounded-full blur-3xl animate-pulse delay-700' />
+          </motion.div>
 
           {/* Content Column */}
-          <div className='flex-1 animate-fade-in-left'>
-            <div className='max-w-xl'>
-              <p className='text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4'>
+          <div className='flex-1'>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, type: "spring" }}
+              className='max-w-xl'
+            >
+              <p className='text-brand-orange dark:text-brand-gold font-bold text-sm uppercase tracking-[0.25em] mb-4'>
                 {t('aboutTitle')}
               </p>
-              <h2 className='text-3xl md:text-5xl font-extrabold text-thom-dark mb-8 leading-tight'>
+              <h2 className='text-3xl md:text-5xl font-extrabold text-brand-navy dark:text-white mb-8 leading-tight'>
                 {t('aboutTitle')}
               </h2>
-              <p className='text-lg text-thom-dark/70 leading-relaxed mb-10'>
+              <p className='text-lg text-brand-navy/70 dark:text-white/70 leading-relaxed mb-10'>
                 {t('aboutDescription')}
               </p>
 
-              <div className='space-y-6'>
+              <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className='space-y-6'
+              >
                 {points.map((point, index) => (
-                  <div key={index} className='flex gap-4 items-start group'>
-                    <div className='w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300'>
-                      <Icon icon={point.icon} className='text-2xl text-primary group-hover:text-white transition-colors duration-300' />
+                  <motion.div 
+                    key={index} 
+                    variants={itemVariants}
+                    className='flex gap-5 items-start group p-4 rounded-2xl hover:bg-brand-sky/5 dark:hover:bg-white/5 border border-transparent hover:border-brand-orange/10 dark:hover:border-white/10 transition-all duration-300'
+                  >
+                    <div className='w-14 h-14 rounded-2xl bg-brand-orange/10 dark:bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-all duration-500 transform group-hover:rotate-6 shadow-sm'>
+                      <Icon icon={point.icon} className='text-3xl text-brand-orange dark:text-white group-hover:text-white transition-colors duration-300' />
                     </div>
                     <div>
-                      <p className='text-lg font-bold text-thom-dark mb-1 transition-colors duration-300'>
+                      <p className='text-lg font-bold text-brand-navy dark:text-white mb-1'>
                         {t(point.key)}
                       </p>
+                      <div className='h-0.5 w-0 group-hover:w-12 bg-brand-orange/30 dark:bg-brand-gold/50 transition-all duration-500' />
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>

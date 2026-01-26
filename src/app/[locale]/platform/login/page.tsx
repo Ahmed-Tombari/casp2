@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Signin from '@/app/components/Auth/SignIn';
+import AuthWrapper from '@/app/components/Auth/AuthWrapper';
 
 export async function generateMetadata({
   params,
@@ -21,15 +22,16 @@ export default async function LoginPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  const tAuth = await getTranslations({ locale, namespace: 'auth' });
+
   return (
-    <main className="min-h-screen pt-24">
-      <section className="container py-12">
-        <div className="max-w-md mx-auto">
-          <h1 className="text-center mb-8">Login</h1>
-          <Signin />
-        </div>
-      </section>
-    </main>
+    <AuthWrapper 
+      title={tAuth('signInTitle')} 
+      subtitle={tAuth('signInSubtitle')}
+    >
+      <Signin />
+    </AuthWrapper>
   );
 }
 

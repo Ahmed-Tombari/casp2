@@ -32,32 +32,31 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'contact' });
-
-  const contactInfo = [
+const contactInfo = [
     {
       title: t('phoneTitle'),
       value: '+216 22 123 456',
       icon: 'solar:phone-calling-bold-duotone',
-      color: 'bg-green-50 text-green-600',
+      color: 'bg-brand-sky/10 text-brand-navy',
     },
     {
       title: t('emailTitle'),
       value: 'info@caspeducation.com',
       icon: 'solar:letter-bold-duotone',
-      color: 'bg-blue-50 text-blue-600',
+      color: 'bg-brand-orange/10 text-brand-orange',
     },
     {
       title: t('officeTitle'),
       value: t('officeAddress'),
       icon: 'solar:map-point-bold-duotone',
-      color: 'bg-orange-50 text-orange-600',
+      color: 'bg-brand-gold/10 text-brand-navy',
     },
   ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-primary pt-32 pb-20 relative overflow-hidden text-center">
+      <section className="bg-brand-navy pt-32 pb-20 relative overflow-hidden text-center">
         <div className="absolute top-0 start-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="container mx-auto max-w-7xl px-4 relative z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
@@ -67,18 +66,18 @@ export default async function ContactPage({
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-cream/30">
+      <section className="py-20 bg-brand-sky/5">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {contactInfo.map((info, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-[2.5rem] shadow-soft border border-thom-light text-center group hover:-translate-y-2 transition-all duration-500">
+              <div key={idx} className="bg-white p-8 rounded-[2.5rem] shadow-soft border border-brand-sky/20 text-center group hover:-translate-y-2 transition-all duration-500">
                 <div className={`w-16 h-16 rounded-2xl ${info.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
                   <Icon icon={info.icon} className="text-3xl" />
                 </div>
-                <h3 className="text-lg font-bold text-thom-dark/40 uppercase tracking-widest mb-2">
+                <h3 className="text-lg font-bold text-brand-navy/40 uppercase tracking-widest mb-2">
                   {info.title}
                 </h3>
-                <p className="text-xl font-bold text-thom-dark">
+                <p className="text-xl font-bold text-brand-navy">
                   {info.value}
                 </p>
               </div>

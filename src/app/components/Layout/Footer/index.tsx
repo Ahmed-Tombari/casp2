@@ -3,138 +3,195 @@ import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
 
 const Footer = () => {
   const t = useTranslations('footer')
   const navT = useTranslations('nav')
+  const contactT = useTranslations('contact')
+
+  // Shared Link Component to ensure "same everything"
+  const FooterLink = ({ href, label }: { href: string; label: string }) => (
+    <li role="listitem">
+      <Link
+        href={href}
+        className='text-white/70 hover:text-brand-gold-light transition-all duration-300 text-sm md:text-base flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded-lg'
+      >
+        <Icon
+          icon='solar:alt-arrow-right-linear'
+          className='rtl:rotate-180 rotate-0 text-brand-gold-light opacity-0 group-hover:opacity-100 transition-all text-lg'
+          aria-hidden="true"
+        />
+        {label}
+      </Link>
+    </li>
+  )
 
   return (
-    <footer className='bg-thom-dark text-white overflow-hidden' id='footer'>
-      <div className='container mx-auto max-w-7xl px-4 pt-48 pb-12'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12'>
+    <footer
+      className='bg-brand-navy-dark text-white overflow-hidden relative'
+      id='footer'
+      role="contentinfo"
+    >
+      {/* Top Accent Line */}
+      <div className='absolute top-0 start-0 w-full h-1 bg-linear-to-r from-transparent via-brand-sky/60 to-transparent' aria-hidden="true" />
+
+      <div className='container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-12'>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, staggerChildren: 0.1 }}
+          className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12'
+        >
           {/* Brand Column */}
-          <div className='flex flex-col gap-6'>
-            <Link href="/" className='inline-block w-fit'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className='flex flex-col gap-4 md:gap-6'
+          >
+            <Link
+              href="/"
+              className='inline-block w-fit group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded-lg'
+              aria-label="CASP Education Home"
+            >
               <Image
                 src='/images/logo/logo-casp.png'
                 alt='CASP Education Logo'
                 width={80}
                 height={80}
-                className='brightness-0 invert h-20 w-auto'
+                className='brightness-0 invert h-16 md:h-30 w-auto group-hover:scale-105 transition-transform duration-300 hover:drop-shadow-[0_0_10px_rgb(244,121,32)]'
+                priority
               />
             </Link>
-            <p className='text-white/70 text-lg leading-relaxed'>
+            <p className='text-white/70 text-base md:text-lg leading-relaxed max-w-sm'>
               {t('description')}
             </p>
-            <div className='flex gap-4'>
+            <div className='flex gap-3' role="list" aria-label="Social media links">
               {[
-                { icon: 'ri:facebook-fill', href: '#' },
-                { icon: 'ri:twitter-x-fill', href: '#' },
-                { icon: 'ri:instagram-line', href: '#' },
-                { icon: 'ri:youtube-fill', href: '#' },
+                { icon: 'ri:facebook-fill', href: '#', label: 'Facebook' },
+                { icon: 'ri:twitter-x-fill', href: '#', label: 'Twitter' },
+                { icon: 'ri:instagram-line', href: '#', label: 'Instagram' },
+                { icon: 'ri:youtube-fill', href: '#', label: 'YouTube' },
               ].map((social, idx) => (
-                <Link
+                <motion.div
                   key={idx}
-                  href={social.href}
-                  className='w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 border border-white/10'>
-                  <Icon icon={social.icon} className='text-xl' />
-                </Link>
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  role="listitem"
+                >
+                  <Link
+                    href={social.href}
+                    aria-label={social.label}
+                    className='w-10 h-10 md:w-11 md:h-11 rounded-xl bg-white/5 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-all duration-300 border border-white/10 hover:border-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark'
+                  >
+                    <Icon icon={social.icon} className='text-lg md:text-xl' aria-hidden="true" />
+                  </Link>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className='text-xl font-bold mb-8 relative inline-block after:content-[""] after:absolute after:bottom-[-8px] after:start-0 after:w-1/2 after:h-1 after:bg-primary after:rounded-full'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h4 className='text-lg md:text-xl font-bold text-brand-gold mb-6 md:mb-8 relative inline-block after:content-[""] after:absolute after:bottom-[-10px] after:start-0 after:w-12 after:h-1 after:bg-brand-gold after:rounded-full'>
               {t('links')}
             </h4>
-            <ul className='space-y-4'>
-              {[
-                { label: navT('home'), href: '/' },
-                { label: navT('store'), href: '/store' },
-                { label: navT('teacherGuide'), href: '/teacher-guide' },
-                { label: navT('placementTest'), href: '/placement-test' },
-                { label: navT('contact'), href: '/contact' },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={link.href}
-                    className='text-white/60 hover:text-white hover:ps-2 transition-all duration-300 text-base flex items-center gap-2'>
-                    <Icon icon='solar:alt-arrow-left-linear' className='rtl:rotate-0 rotate-180 text-primary opacity-0 group-hover:opacity-100' />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className='space-y-3 md:space-y-4 space-x-0 md:space-x-0' role="list">
+              <FooterLink href="/" label={navT('home')} />
+              <FooterLink href="/store" label={navT('store')} />
+              <FooterLink href="/teacher-guide" label={navT('teacherGuide')} />
+              <FooterLink href="/placement-test" label={navT('placementTest')} />
+              <FooterLink href="/contact" label={navT('contact')} />
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Legal / More */}
-          <div>
-            <h4 className='text-xl font-bold mb-8 relative inline-block after:content-[""] after:absolute after:bottom-[-8px] after:start-0 after:w-1/2 after:h-1 after:bg-primary after:rounded-full'>
+          {/* About Us */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h4 className='text-lg md:text-xl text-brand-gold font-bold mb-6 md:mb-8 relative inline-block after:content-[""] after:absolute after:bottom-[-10px] after:start-0 after:w-12 after:h-1 after:bg-brand-gold after:rounded-full'>
               {t('about')}
             </h4>
-            <ul className='space-y-4'>
-              {[
-                { label: t('privacy'), href: '/privacy' },
-                { label: t('terms'), href: '/terms' },
-                { label: navT('educationalPlatform'), href: '#' },
-                { label: navT('educationalChannel'), href: '#' },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={link.href}
-                    className='text-white/60 hover:text-white hover:ps-2 transition-all duration-300 text-base'>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className='space-y-3 md:space-y-4' role="list">
+              <FooterLink href="/platform" label={navT('educationalPlatform')} />
+              <FooterLink href="/channel" label={navT('educationalChannel')} />
+              <FooterLink href="/privacy" label={t('privacy')} />
+              <FooterLink href="/terms" label={t('terms')} />
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className='text-xl font-bold mb-8 relative inline-block after:content-[""] after:absolute after:bottom-[-8px] after:start-0 after:w-1/2 after:h-1 after:bg-primary after:rounded-full'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h4 className='text-lg md:text-xl text-brand-gold font-bold mb-6 md:mb-8 relative inline-block after:content-[""] after:absolute after:bottom-[-10px] after:start-0 after:w-12 after:h-1 after:bg-brand-gold after:rounded-full'>
               {t('contact')}
             </h4>
-            <ul className='space-y-6'>
-              <li className='flex items-start gap-4'>
-                <div className='w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10'>
-                  <Icon icon='solar:map-point-wave-linear' className='text-2xl text-primary' />
+            <ul className='space-y-4 md:space-y-6' role="list">
+              <li className='flex items-start gap-3 md:gap-4' role="listitem"> 
+                <div className='w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 hover:bg-brand-gold-light'>
+                  <Icon icon='solar:map-point-wave-linear' className='text-xl md:text-2xl text-brand-sky hover:text-white' aria-hidden="true" />
                 </div>
-                <p className='text-white/60 text-sm leading-relaxed'>
-                  الرياض، المملكة العربية السعودية<br />
-                  شارع المنهل، حي الياسمين
+                <p className='text-white font-bold tracking-wider cursor-pointer hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded'>
+                  {contactT('officeAddress')}
                 </p>
               </li>
-              <li className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10'>
-                  <Icon icon='solar:phone-calling-linear' className='text-2xl text-primary' />
+              <li className='flex items-start gap-3 md:gap-4' role="listitem">
+                <div className='w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 hover:bg-brand-gold-light'>
+                  <Icon icon='solar:phone-calling-linear' className='text-xl md:text-2xl text-brand-sky hover:text-white' aria-hidden="true" />
                 </div>
                 <div>
-                  <p className='text-white/40 text-xs mb-1 uppercase tracking-wider'>Call Us</p>
-                  <p className='text-white font-bold tracking-wider'>+966 11 000 0000</p>
+                  <p className='text-white/50 text-xs mb-1 uppercase tracking-wider'>{contactT('phoneTitle')}</p>
+                  <a
+                    href="tel:+966110000000"
+                    className='text-white font-bold tracking-wider hover:text-brand-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded'
+                  >
+                    +966 11 000 0000
+                  </a>
                 </div>
               </li>
-              <li className='flex items-center gap-4'>
-                <div className='w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10'>
-                  <Icon icon='solar:letter-linear' className='text-2xl text-primary' />
+              <li className='flex items-start gap-3 md:gap-4' role="listitem">
+                <div className='w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 hover:bg-brand-gold-light'>
+                  <Icon icon='solar:letter-linear' className='text-xl md:text-2xl text-brand-sky hover:text-white' aria-hidden="true" />
                 </div>
                 <div>
-                  <p className='text-white/40 text-xs mb-1 uppercase tracking-wider'>Email Us</p>
-                  <p className='text-white font-bold'>info@caspeducation.com</p>
+                  <p className='text-white/50 text-xs mb-1 uppercase tracking-wider'>{contactT('emailTitle')}</p>
+                  <a
+                    href="mailto:info@caspeducation.com"
+                    className='text-white font-bold hover:text-brand-gold transition-colors break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded'
+                  >
+                    info@caspeducation.com
+                  </a>
                 </div>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom Bar */}
-        <div className='mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4'>
-          <p className='text-white/40 text-sm'>
+        <div className='mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-start'>
+          <p className='text-white/50 text-xs md:text-sm'>
             © {new Date().getFullYear()} CASP Education. {t('rights')}
           </p>
-          <div className='flex items-center gap-8'>
-             <Image src="/images/footer/payment.webp" alt="Payment Methods" width={250} height={30} className='opacity-50 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer' />
+          <div className='flex items-center justify-center'>
+             <Image
+               src="/images/logo/logo-casp.png"
+               alt="Accepted payment methods"
+               width={50}
+               height={30}
+               className='opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500'
+               priority
+             />
           </div>
         </div>
       </div>

@@ -32,10 +32,12 @@ const HourData: Hourtype[] = [
 ]
 
 const Companiesdata: { imgSrc: string }[] = [
-  { imgSrc: '/images/slickCompany/airbnb.svg' },
-  { imgSrc: '/images/slickCompany/hubspot.svg' },
-  { imgSrc: '/images/slickCompany/microsoft.svg' },
-  { imgSrc: '/images/slickCompany/google.svg' },
+  { imgSrc: '/images/ourCompany/Sarl Maktabatouna.png' },
+  { imgSrc: '/images/ourCompany/Sindbadglobal.png' },
+  { imgSrc: '/images/ourCompany/Dar Manabe Alnour.png' },
+  { imgSrc: '/images/ourCompany/AVERROES Bookshop.png' },
+  { imgSrc: '/images/ourCompany/Dar Al-Kutub.png' },
+  { imgSrc: '/images/ourCompany/Ta3liem Distribution.png' },
 ]
 
 const CourseDetailData: CourseDetailType[] = [
@@ -162,4 +164,6 @@ export const GET = () => {
     TestimonialData,
     FooterLinkData,
   })
+
+  
 }

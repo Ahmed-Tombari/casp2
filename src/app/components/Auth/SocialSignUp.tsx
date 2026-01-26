@@ -4,14 +4,13 @@ import { signIn } from 'next-auth/react'
 const SocialSignUp = () => {
   return (
     <>
-      <div className='flex gap-4'>
+      <div className='flex flex-col sm:flex-row gap-4'>
         <button
           onClick={() => signIn('google')}
-          className='flex w-full items-center justify-center gap-2.5 rounded-lg p-3.5 border border-gray-200 text-black hover:bg-neutral-100 hover:cursor-pointer'>
-          Sign Up
+          className='flex w-full items-center justify-center gap-3 rounded-2xl py-4 px-6 border border-brand-sky/20 dark:border-white/10 text-brand-navy dark:text-white hover:bg-brand-sky/5 dark:hover:bg-white/5 hover:cursor-pointer transition-all duration-300 font-bold text-sm shadow-sm hover:shadow-md'>
           <svg
-            width='23'
-            height='22'
+            width='20'
+            height='20'
             viewBox='0 0 23 22'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'>
@@ -44,15 +43,15 @@ const SocialSignUp = () => {
               </clipPath>
             </defs>
           </svg>
+          Google
         </button>
 
         <button
           onClick={() => signIn('github')}
-          className='flex w-full items-center justify-center gap-2.5 rounded-lg p-3.5 border border-gray-200 text-black hover:bg-neutral-100 hover:cursor-pointer'>
-          Sign Up
+          className='flex w-full items-center justify-center gap-3 rounded-2xl py-4 px-6 border border-brand-sky/20 dark:border-white/10 text-brand-navy dark:text-white hover:bg-brand-sky/5 dark:hover:bg-white/5 hover:cursor-pointer transition-all duration-300 font-bold text-sm shadow-sm hover:shadow-md'>
           <svg
-            width='22'
-            height='22'
+            width='20'
+            height='20'
             viewBox='0 0 22 22'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'>
@@ -61,6 +60,7 @@ const SocialSignUp = () => {
               fill='currentColor'
             />
           </svg>
+          GitHub
         </button>
       </div>
     </>

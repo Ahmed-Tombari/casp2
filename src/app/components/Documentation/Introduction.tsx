@@ -49,7 +49,7 @@ export const Introduction = () => {
       <div id='version' className='md:scroll-m-[180px] scroll-m-28'>
         {docNavbarOpen && (
           <div
-            className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40'
+            className='fixed top-0 start-0 w-full h-full bg-black bg-opacity-50 z-40'
             onClick={() => setDocNavbarOpen(false)}
           />
         )}
@@ -103,8 +103,8 @@ export const Introduction = () => {
       </div>
 
       <div
-        className={`lg:hidden block fixed top-0 right-0 h-full w-full bg-white dark:bg-dark shadow-lg transform transition-transform duration-300 max-w-xs ${
-          docNavbarOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`lg:hidden block fixed top-0 end-0 h-full w-full bg-white dark:bg-dark shadow-lg transform transition-transform duration-300 max-w-xs ${
+          docNavbarOpen ? 'translate-x-0' : 'ltr:translate-x-full rtl:-translate-x-full'
         } z-50`}>
         <div className='flex items-center justify-between p-4'>
           <h2 className='text-lg font-bold text-midnight_text dark:text-black'>

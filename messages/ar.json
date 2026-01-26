@@ -1,33 +1,23 @@
 {
   "nav": {
     "home": "الرئيسية",
-    "store": "المتجر",
-    "printedBooks": "الكتب المطبوعة",
-    "ebooks": "الكتب الإلكترونية",
+    "curricula": "المناهج",
     "quizzes": "الاختبارات",
-    "lessonsTests": "الدروس والاختبارات",
+    "channel": "القناة",
+    "platforms": "المنصات",
+    "services": "الخدمات",
+    "store": "المتجر",
     "teacherGuide": "دليل المعلم",
-    "gardenOfArabic": "حديقة العربية",
-    "educationalSeries": "السلسلة التعليمية",
-    "alWafi": "الوافي",
-    "alMufid": "المفيد",
-    "educationalCDs": "الأقراص التعليمية",
-    "gardenOfArabicCDs": "حديقة العربية - أقراص",
-    "adultEducation": "برامج تعليم الكبار",
-    "teachingTools": "أدوات التدريس",
-    "handwritingExercises": "تمارين الخط",
-    "letterColoring": "تلوين الحروف",
     "placementTest": "اختبار تحديد المستوى",
-    "educationalChannel": "القناة التعليمية",
+    "contact": "اتصل بنا",
     "educationalPlatform": "المنصة التعليمية",
+    "educationalChannel": "القناة التعليمية",
     "login": "تسجيل الدخول",
     "register": "التسجيل",
-    "account": "حسابي",
-    "dashboard": "لوحة التحكم",
-    "progress": "تتبع التقدم",
-    "contact": "اتصل بنا",
-    "privacy": "سياسة الخصوصية",
-    "terms": "الشروط والأحكام"
+    "printedBooks": "الكتب المطبوعة",
+    "ebooks": "الكتب الإلكترونية",
+    "educationalCDs": "الأقراص التعليمية",
+    "teachingTools": "الوسائل التعليمية"
   },
   "common": {
     "signIn": "تسجيل الدخول",
@@ -40,12 +30,18 @@
     "buyNow": "اشتري الآن",
     "search": "بحث",
     "language": "اللغة",
-    "exploreNow": "استكشف الآن"
+    "exploreNow": "استكشف الآن",
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNotFoundDescription": "الصفحة التي تبحث عنها غير موجودة.",
+    "goHome": "العودة إلى الرئيسية",
+    "currency": "ر.س"
   },
   "home": {
+    "littleTitle": "منصة كاسب التعليمية الرائدة",
     "title": "مرحباً بك في CASP التعليمية",
     "subtitle": "نقدم أفضل الموارد التعليمية للغة العربية",
-    "heroTitle": "مَرْحَبًا بِكَ فِي الْمَرْكَزِ الْعَرَبِيِّ لِلْخِدْمَاتِ التَّرْبَوِيَّةِ بِكَنَدَا",
+    "heroTitle2": "مرحبًا بكم",
+    "heroTitle": "الْمَرْكَزِ الْعَرَبِيِّ لِلْخِدْمَاتِ التَّرْبَوِيَّةِ بِكَنَدَا",
     "heroDescription": "اكتشف مجموعة واسعة من الكتب والدروس والموارد التعليمية المصممة خصيصاً لتعلم اللغة العربية",
     "trustedBy": "موثوق به من قبل أكثر من 25,000 طالب ومعلم",
     "popularResources": "الموارد التعليمية الشائعة",
@@ -57,7 +53,77 @@
     "aboutPoint1": "مناهج تعليمية معتمدة ومتكاملة",
     "aboutPoint2": "أدوات تفاعلية وتقنيات تعلم حديثة",
     "aboutPoint3": "خبراء تربويون متخصصون في اللغة العربية",
-    "trustedByFull": "موثوق بنا من قبل المؤسسات التعليمية الرائدة"
+    "trustedByFull": "موثوق بنا من قبل المؤسسات التعليمية الرائدة",
+    "noProducts": "لم يتم العثور على منتجات في هذه الفئة.",
+    "partnersTitle": "شركاؤنا وموزعونا حول العالم",
+    "partnersSubtitle": "نفخر بشراكاتنا مع مؤسسات تعليمية رائدة في مختلف أنحاء العالم",
+    "featuredPartner": "شريكنا المميز",
+    "visitWebsite": "زيارة الموقع",
+    "publications": "إصداراتنا",
+    "publicationsLabel": "إصداراتنا التعليمية",
+    "partners": "شركاؤنا",
+    "publicationsSubtitle": "نقدم لكم مجموعات تعليمية متميزة مصممة بعناية لتلبية احتياجات المتعلمين في مختلف المراحل",
+    "premiumButton1" : "تسوق الآن",
+    "premiumButton2" : "دليل المعلم",
+    "premiumIcon1" : "مناهج معتمدة",
+    "premiumIcon2" : "مجتمع تعليمي"
+
+  },
+  "publications": {
+    "happyMuslim": "سلسلة The Happy Muslim",
+    "illuminatingPath": "سلسلة الطريق المنير",
+    "arabicShamel": "سلسلة الشامل لتعلم اللغة العربية",
+    "arabicGarden": "سلسلة في حديقة اللغة العربية"
+  },
+  "partners": {
+    "maktabatouna": {
+      "name": "Sarl Maktabatouna",
+      "address": "2 Impasse Charles Vildrac, 94000 Creteil",
+      "website": "www.maktabatouna.com",
+      "email": "Contact@maktabatouna.com",
+      "phone": "00 33 651 62 55 00",
+      "phone2": ""
+    },
+    "sindbad": {
+      "name": "Sindbadglobal.com",
+      "address": "427 Chieftan Cir, Mississauga ON L4Z 3A8",
+      "website": "www.sindbadglobal.com",
+      "email": "info@sindbadglobal.com",
+      "phone": "+1 514 443 8585",
+      "phone2": "+1 416 558 0436"
+    },
+    "darManabe": {
+      "name": "Dar Manabe Alnour",
+      "address": "Fevzipaşa Cad. Fatih PTT Merkezi No:11 Kat: 9/3, 34080 Fatih – Istanbul",
+      "website": "www.darmanabiunnur.com",
+      "email": "manabealnour@gmail.com",
+      "phone": "+90 546 590 74 07",
+      "phone2": "+90 552 213 61 35"
+    },
+    "averroes": {
+      "name": "AVERROES Bookshop",
+      "address": "Hohe Strasse 27, 47051 Duisburg, Germany",
+      "website": "kitab.eu",
+      "email": "info@kitab.eu",
+      "phone": "+49 1577 286 7866",
+      "phone2": ""
+    },
+    "darAlKutub": {
+      "name": "Dar Al-Kutub",
+      "address": "Kreuzgasse 8, 3294 Büren an der Aare, Switzerland",
+      "website": "www.maktaba.ch",
+      "email": "hello@maktaba.ch",
+      "phone": "0041 79 883 3761",
+      "phone2": ""
+    },
+    "ta3liem": {
+      "name": "Ta3liem Distribution",
+      "address": "Netherlands",
+      "website": "",
+      "email": "ta3liemdistribution@outlook.com",
+      "phone": "0031 649 902 090",
+      "phone2": ""
+    }
   },
   "store": {
     "title": "متجر CASP التعليمي",
@@ -138,7 +204,38 @@
     "title": "اختبار تحديد المستوى التفاعلي",
     "description": "ابدأ رحلتك التعليمية بالاختبار الصحيح. سنساعدك في تحديد المستوى الأنسب لمهاراتك في اللغة العربية من خلال مجموعة من الأسئلة التفاعلية.",
     "startAction": "ابدأ الاختبار الآن",
-    "duration": "المدة المتوقعة: 15 دقيقة",
-    "questions": "عدد الأسئلة: 20 سؤال"
+    "duration": "المدة المقدرة: 15 دقيقة",
+    "questions": "عدد الأسئلة: 20"
+  },
+  "auth": {
+    "signInTitle": "مرحباً بعودتك",
+    "signInSubtitle": "سجل الدخول للوصول إلى لوحة التحكم التعليمية والدورات الخاصة بك",
+    "signUpTitle": "إنشاء حساب",
+    "signUpSubtitle": "انضم إلى منصتنا وابدأ رحلتك في تعلم اللغة العربية اليوم",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "nameLabel": "الاسم الكامل",
+    "namePlaceholder": "أدخل اسمك الكامل",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "signInButton": "تسجيل الدخول",
+    "signUpButton": "إنشاء الحساب",
+    "or": "أو",
+    "noAccount": "ليس لديك حساب؟",
+    "alreadyAccount": "لديك حساب بالفعل؟",
+    "agreeTerms": "بإنشاء حساب فإنك توافق على",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "registerSuccess": "تم التسجيل بنجاح",
+    "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordLength": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "passwordRegEx": "يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة وأرقام",
+    "nameRequired": "الاسم مطلوب",
+    "nameLength": "يجب أن يكون الاسم حرفين على الأقل"
   }
 }

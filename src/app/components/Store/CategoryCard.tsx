@@ -16,19 +16,19 @@ const CategoryCard = ({ title, description, icon, href, color }: CategoryCardPro
 
   return (
     <Link href={href} className='group relative block h-full'>
-      <div className={`relative h-full overflow-hidden rounded-[2.5rem] bg-white border border-thom-light p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 group-hover:-translate-y-2`}>
+      <div className={`relative h-full overflow-hidden rounded-[2.5rem] bg-white border border-brand-sky/20 p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-sky/10 group-hover:-translate-y-2`}>
         <div className={`w-16 h-16 rounded-2xl ${color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
           <Icon icon={icon} className='text-3xl' />
         </div>
         
-        <h3 className='text-2xl font-bold text-thom-dark mb-3 group-hover:text-primary transition-colors'>
+        <h3 className='text-2xl font-bold text-brand-navy mb-3 group-hover:text-brand-orange transition-colors'>
           {title}
         </h3>
-        <p className='text-thom-dark/60 leading-relaxed mb-8'>
+        <p className='text-brand-navy/60 leading-relaxed mb-8'>
           {description}
         </p>
 
-        <div className='flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all'>
+        <div className='flex items-center gap-2 text-brand-orange font-bold group-hover:gap-4 transition-all'>
           <span>{t('exploreNow')}</span>
           <Icon icon='solar:alt-arrow-right-linear' className='text-xl rtl:rotate-180' />
         </div>

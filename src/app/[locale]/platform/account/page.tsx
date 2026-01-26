@@ -21,9 +21,9 @@ export default async function AccountPage({
   params: Promise<{ locale: string }>;
 }) {
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen pt-24 bg-brand-sky/5">
       <section className="container py-12">
-        <h1>My Account</h1>
+        <h1 className="text-3xl font-bold text-brand-navy">My Account</h1>
         {/* Content will be added */}
       </section>
     </main>

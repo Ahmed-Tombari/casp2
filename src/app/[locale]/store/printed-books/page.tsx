@@ -1,32 +1,19 @@
-import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { fetchData } from '@/lib/api'
+import Bookshelf from '@/app/components/Bookshelf/Bookshelf'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'nav' });
+export default async function PrintedBooksPage() {
+  const data = await fetchData()
 
-  return {
-    title: t('printedBooks'),
-    description: `Browse our collection of ${t('printedBooks')}`,
-  };
-}
+  const books = data.CourseDetailData.filter(
+    (item: any) => item.category === 'printed-books'
+  )
 
-export default async function PrintedBooksPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
   return (
-    <main className="min-h-screen pt-24">
-      <section className="container py-12">
-        <h1>Printed Books</h1>
-        {/* Content will be added */}
-      </section>
+    <main className="min-h-screen pt-24 container">
+      <h1 className="text-3xl font-bold mb-8">
+        📚 Printed Books
+      </h1>
+      <Bookshelf books={books} />
     </main>
-  );
+  )
 }
-

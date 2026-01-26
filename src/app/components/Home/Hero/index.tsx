@@ -1,81 +1,158 @@
 'use client'
+
 import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { motion, Variants } from 'framer-motion'
+import { Icon } from '@iconify/react'
+import PremiumButton from '@/app/components/UI/PremiumButton'
+import GlassCard from '@/app/components/UI/GlassCard'
 
 const Banner = () => {
   const t = useTranslations('home')
-  const commonT = useTranslations('common')
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        damping: 20,
+        stiffness: 120
+      }
+    }
+  }
 
   return (
-    <section id='Home' className='bg-banner-image pt-32 pb-20 overflow-hidden'>
-      <div className='relative px-6 lg:px-8'>
-        <div className='container'>
-          <div className='flex flex-col gap-6 text-center animate-fade-in'>
-            <h1 className='leading-tight font-extrabold tracking-tight max-w-5xl mx-auto text-thom-dark drop-shadow-sm'>
-              {t('heroTitle')}
-            </h1>
-            <p className='text-lg md:text-xl leading-8 text-thom-dark/80 max-w-3xl mx-auto'>
+    <section
+      id="Home"
+      aria-label="Hero section"
+      className="relative overflow-hidden pt-40 pb-20 bg-transparent"
+    >
+      {/* ================= FIXED BACKGROUND (NO ZOOM, NO SHIFT) ================= */}
+      <div
+        className="absolute inset-0 -z-10"
+        dir="ltr"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/logo/realbg2.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="
+            object-cover
+            object-center
+            opacity-95
+            transform-none
+            scale-100
+          "
+          style={{
+            objectPosition: 'center top'
+          }}
+        />
+      </div>
+
+      {/* ================= CONTENT ================= */}
+      <div className="relative z-10 container mx-auto max-w-7xl px-4">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center"
+        >
+          {/* ================= TEXT COLUMN ================= */}
+          <div className="lg:col-span-6 flex flex-col gap-8 text-center lg:text-start">
+            <motion.div
+              variants={itemVariants}
+              className="mx-auto lg:mx-0 flex items-center gap-2 w-fit rounded-full border border-brand-gold/30 bg-brand-sky/10 backdrop-blur-md px-4 py-2"
+            >
+              <Icon icon="solar:star-bold" className="text-brand-gold text-lg" />
+              <span className="text-brand-gold text-sm font-semibold">
+                {t('littleTitle')}
+              </span>
+            </motion.div>
+
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight text-brand-navy mb-2"
+            >
+              <span className="block mb-4 opacity-90">
+                {t('heroTitle2')}
+              </span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-navy via-brand-navy-light to-brand-sky">
+                {t('heroTitle')}
+              </span>
+            </motion.h1>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-lg md:text-2xl text-brand-navy/80 max-w-xl leading-relaxed mx-auto lg:mx-0"
+            >
               {t('heroDescription')}
-            </p>
-            <div className='flex flex-wrap items-center justify-center gap-4 mt-4'>
-              <Link
-                href='/store'
-                className='bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-secondary transition-all shadow-lg hover:shadow-primary/30 transform hover:-translate-y-1 block'>
-                {commonT('viewAll')}
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-4 justify-center lg:justify-start"
+            >
+              <Link href="/store">
+                <PremiumButton variant="primary" size="lg" glow>
+                  {t('premiumButton1')}
+                </PremiumButton>
               </Link>
-              <Link
-                href='/contact'
-                className='bg-white text-primary border-2 border-primary px-10 py-4 rounded-full font-bold hover:bg-primary/5 transition-all block'>
-                {commonT('learnMore')}
+
+              <Link href="/teacher-guide">
+                <PremiumButton variant="secondary" size="lg">
+                  {t('premiumButton2')}
+                </PremiumButton>
               </Link>
-            </div>
+            </motion.div>
           </div>
 
-          <div className='relative mt-16 max-w-5xl mx-auto'>
-             <div className='absolute -top-10 -start-10 w-24 h-24 bg-orange/20 rounded-full blur-3xl' />
-             <div className='absolute -bottom-10 -end-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl' />
-             
-             {/* Rating and Social Proof */}
-             <div className='backdrop-blur-md bg-white/40 border border-white/40 rounded-2xl shadow-xl p-8 max-w-2xl mx-auto relative z-10'>
-              <div className='flex flex-col sm:flex-row items-center justify-center gap-8'>
-                <div className='flex -space-x-3 rtl:space-x-reverse overflow-hidden'>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Image
-                      key={i}
-                      className='inline-block h-14 w-14 rounded-full ring-4 ring-white object-cover bg-cream'
-                      src={`https://i.pravatar.cc/150?u=casp${i}`}
-                      alt={`user-${i}`}
-                      width={56}
-                      height={56}
-                    />
-                  ))}
-                </div>
-                <div className='text-center sm:text-start'>
-                  <div className='flex items-center justify-center sm:justify-start gap-1'>
-                    <span className='text-3xl font-bold text-thom-dark'>4.9</span>
-                    <div className='flex'>
-                       {[1, 2, 3, 4, 5].map((s) => (
-                          <Image
-                            key={s}
-                            src={'/images/banner/Stars.svg'}
-                            alt=''
-                            aria-hidden='true'
-                            width={20}
-                            height={20}
-                            className='w-5 h-5'
-                          />
-                       ))}
-                    </div>
-                  </div>
-                  <p className='text-thom-dark/70 font-medium'>
-                    {t('trustedBy')}
-                  </p>
-                </div>
+          {/* ================= IMAGE COLUMN ================= */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end relative">
+            <Image
+              src="/images/logo/logo.png"
+              alt="CASP Education"
+              width={600}
+              height={600}
+              priority
+              className="relative z-10 drop-shadow-2xl"
+            />
+
+            <GlassCard
+              className="absolute bottom-10 -end-6 hidden md:flex items-center gap-3 px-4 py-3 min-w-[230px] rounded-full"
+              hoverEffect
+            >
+              <div className="flex size-12 items-center justify-center rounded-full bg-linear-to-br from-brand-gold to-amber-600 text-white shadow-md">
+                <Icon icon="solar:cup-star-bold" width="22" height="22" />
               </div>
-            </div>
+
+              <div className="flex flex-col text-end leading-tight">
+                <span className="text-[11px] font-semibold text-white/70">
+                  أكثر من
+                </span>
+                <span className="text-lg font-bold text-white">
+                  10,000 طالب
+                </span>
+              </div>
+            </GlassCard>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

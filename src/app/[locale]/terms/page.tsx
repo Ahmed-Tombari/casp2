@@ -32,7 +32,7 @@ export default async function TermsPage({
 
   return (
     <main className="min-h-screen">
-      <section className="bg-thom-dark pt-32 pb-20 text-center">
+      <section className="bg-brand-navy pt-32 pb-20 text-center">
         <div className="container mx-auto max-w-7xl px-4">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             {t('termsTitle')}
@@ -45,7 +45,7 @@ export default async function TermsPage({
 
       <section className="py-20 bg-white">
         <div className="container mx-auto max-w-4xl px-4">
-          <div className="prose prose-lg max-w-none text-thom-dark/80 bg-cream/30 p-10 md:p-16 rounded-[2.5rem] border border-thom-light">
+          <div className="prose prose-lg max-w-none text-brand-navy/80 bg-brand-sky/5 p-10 md:p-16 rounded-[2.5rem] border border-brand-sky/20">
              <p className="text-xl leading-relaxed">
               {t('termsContent')}
             </p>

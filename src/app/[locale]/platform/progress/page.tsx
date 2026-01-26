@@ -21,9 +21,9 @@ export default async function ProgressPage({
   params: Promise<{ locale: string }>;
 }) {
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen pt-24 bg-brand-sky/5">
       <section className="container py-12">
-        <h1>Progress Tracking</h1>
+        <h1 className="text-3xl font-bold text-brand-navy">Progress Tracking</h1>
         {/* Content will be added */}
       </section>
     </main>

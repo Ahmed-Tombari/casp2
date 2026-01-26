@@ -88,7 +88,7 @@ const ForgotPassword = () => {
                 <div className="">
                   <button
                     type="submit"
-                    className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:bg-blue-dark"
+                    className="flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-brand-orange px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:bg-brand-orange-dark shadow-brand-orange hover:shadow-lg"
                   >
                     Send Email {loader && <Loader />}
                   </button>
@@ -96,7 +96,7 @@ const ForgotPassword = () => {
               </form>
 
               <div>
-                <span className="absolute right-1 top-1">
+                <span className="absolute end-1 top-1">
                   <svg
                     width="40"
                     height="40"
@@ -218,7 +218,7 @@ const ForgotPassword = () => {
                     />
                   </svg>
                 </span>
-                <span className="absolute bottom-1 left-1">
+                <span className="absolute bottom-1 start-1">
                   <svg
                     width="29"
                     height="40"

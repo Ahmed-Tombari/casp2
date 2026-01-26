@@ -15,11 +15,11 @@ export async function generateMetadata({
     description: t('description'),
     alternates: {
       canonical: `/${locale}/store`,
-      languages: {
-        'ar': '/ar/store',
-        'fr': '/fr/store',
-        'en': '/en/store',
-      },
+      // languages: {
+      //   'ar': '/store',
+      //   'fr': '/store',
+      //   'en': '/store',
+      // },
     },
   };
 }
@@ -39,7 +39,7 @@ export default async function StorePage({
       description: t('printedDesc'),
       icon: 'solar:book-2-bold-duotone',
       href: '/store/printed-books',
-      color: 'bg-blue-50 text-blue-600',
+      color: 'bg-brand-sky/10 text-brand-navy',
     },
     {
       title: navT('ebooks'),
@@ -67,9 +67,9 @@ export default async function StorePage({
   return (
     <main className="min-h-screen">
       {/* Store Hero */}
-      <section className="bg-primary pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+      <section className="bg-brand-navy pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute top-0 end-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 rtl:-translate-x-1/2 blur-3xl" />
+        <div className="absolute bottom-0 start-0 w-96 h-96 bg-brand-orange/10 rounded-full translate-y-1/2 -translate-x-1/2 rtl:translate-x-1/2 blur-3xl" />
         
         <div className="container mx-auto max-w-7xl px-4 relative z-10 text-center">
            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
@@ -82,7 +82,7 @@ export default async function StorePage({
       </section>
 
       {/* Categories Grid */}
-      <section className="py-20 bg-cream/30">
+      <section className="py-20 bg-brand-sky/5">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
             {categories.map((cat, idx) => (

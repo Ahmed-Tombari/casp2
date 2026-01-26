@@ -73,18 +73,18 @@ const ContactForm = () => {
   }
 
   return (
-    <section id='contact' className='py-20 bg-cream/30'>
+    <section id='contact' className='py-20 bg-brand-sky/5'>
       <div className='container mx-auto max-w-7xl px-4'>
-        <div className='relative bg-white rounded-[3rem] p-8 md:p-16 shadow-mentor-shadow border border-thom-light'>
+        <div className='relative bg-white rounded-[3rem] p-8 md:p-16 shadow-soft border border-brand-sky/20'>
           <div className='max-w-3xl mb-12'>
-            <h2 className='text-3xl md:text-5xl font-extrabold text-thom-dark mb-4 tracking-tight'>
+            <h2 className='text-3xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-tight'>
               {t('title')}
             </h2>
           </div>
           
           <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div className='space-y-2'>
-              <label htmlFor='fname' className='text-sm font-bold text-thom-dark/60 ms-2 uppercase tracking-wider'>
+              <label htmlFor='fname' className='text-sm font-bold text-brand-navy/60 ms-2 uppercase tracking-wider'>
                 {t('firstName')}
               </label>
               <input
@@ -94,13 +94,13 @@ const ContactForm = () => {
                 value={formData.firstname}
                 onChange={handleChange}
                 placeholder={t('placeholderFirstName')}
-                className='w-full text-lg px-6 rounded-2xl py-4 bg-cream border-2 border-transparent transition-all duration-300 focus:border-primary focus:bg-white outline-none'
+                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white outline-none'
                 required
               />
             </div>
 
             <div className='space-y-2'>
-              <label htmlFor='lname' className='text-sm font-bold text-thom-dark/60 ms-2 uppercase tracking-wider'>
+              <label htmlFor='lname' className='text-sm font-bold text-brand-navy/60 ms-2 uppercase tracking-wider'>
                 {t('lastName')}
               </label>
               <input
@@ -110,13 +110,13 @@ const ContactForm = () => {
                 value={formData.lastname}
                 onChange={handleChange}
                 placeholder={t('placeholderLastName')}
-                className='w-full text-lg px-6 rounded-2xl py-4 bg-cream border-2 border-transparent transition-all duration-300 focus:border-primary focus:bg-white outline-none'
+                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white outline-none'
                 required
               />
             </div>
 
             <div className='space-y-2'>
-              <label htmlFor='email' className='text-sm font-bold text-thom-dark/60 ms-2 uppercase tracking-wider'>
+              <label htmlFor='email' className='text-sm font-bold text-brand-navy/60 ms-2 uppercase tracking-wider'>
                 {t('email')}
               </label>
               <input
@@ -126,13 +126,13 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder={t('placeholderEmail')}
-                className='w-full text-lg px-6 rounded-2xl py-4 bg-cream border-2 border-transparent transition-all duration-300 focus:border-primary focus:bg-white outline-none'
+                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white outline-none'
                 required
               />
             </div>
 
             <div className='space-y-2'>
-              <label htmlFor='phnumber' className='text-sm font-bold text-thom-dark/60 ms-2 uppercase tracking-wider'>
+              <label htmlFor='phnumber' className='text-sm font-bold text-brand-navy/60 ms-2 uppercase tracking-wider'>
                 {t('phone')}
               </label>
               <input
@@ -142,13 +142,13 @@ const ContactForm = () => {
                 value={formData.phnumber}
                 onChange={handleChange}
                 placeholder={t('placeholderPhone')}
-                className='w-full text-lg px-6 rounded-2xl py-4 bg-cream border-2 border-transparent transition-all duration-300 focus:border-primary focus:bg-white outline-none'
+                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white outline-none'
                 required
               />
             </div>
 
             <div className='md:col-span-2 space-y-2'>
-              <label htmlFor='message' className='text-sm font-bold text-thom-dark/60 ms-2 uppercase tracking-wider'>
+              <label htmlFor='message' className='text-sm font-bold text-brand-navy/60 ms-2 uppercase tracking-wider'>
                 {t('message')}
               </label>
               <textarea
@@ -158,7 +158,7 @@ const ContactForm = () => {
                 value={formData.Message}
                 onChange={handleChange}
                 placeholder={t('placeholderMessage')}
-                className='w-full text-lg px-6 rounded-2xl py-4 bg-cream border-2 border-transparent transition-all duration-300 focus:border-primary focus:bg-white outline-none resize-none'
+                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white outline-none resize-none'
                 required
               ></textarea>
             </div>
@@ -170,8 +170,8 @@ const ContactForm = () => {
                 className={`group flex items-center justify-center gap-3 px-12 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-xl 
                   ${
                     !isFormValid || loader
-                      ? 'bg-thom-light text-thom-dark/30 cursor-not-allowed shadow-none'
-                      : 'bg-primary text-white hover:bg-secondary hover:shadow-primary/30 active:scale-95'
+                      ? 'bg-brand-sky/20 text-brand-navy/30 cursor-not-allowed shadow-none'
+                      : 'bg-brand-orange text-white hover:bg-brand-orange-dark hover:shadow-brand-orange/30 active:scale-95'
                   }`}>
                 {loader ? (
                   <Icon icon='line-md:loading-twotone-loop' className='text-2xl' />
@@ -186,8 +186,8 @@ const ContactForm = () => {
           </form>
 
           {showThanks && (
-            <div className='absolute bottom-8 left-1/2 -translate-x-1/2 w-[90%] md:w-auto bg-primary text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-fade-in-up border-2 border-white/20 backdrop-blur-sm'>
-              <Icon icon='solar:check-circle-bold' className='text-3xl text-white' />
+            <div className='absolute bottom-8 left-1/2 -translate-x-1/2 w-[90%] md:w-auto bg-brand-navy text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-fade-in-up border-2 border-white/20 backdrop-blur-sm'>
+              <Icon icon='solar:check-circle-bold' className='text-3xl text-brand-orange' />
               <p className='font-bold text-lg'>{t('thanks')}</p>
             </div>
           )}
