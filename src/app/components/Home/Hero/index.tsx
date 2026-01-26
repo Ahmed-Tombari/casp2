@@ -66,7 +66,7 @@ const Banner = () => {
         />
       </div>
 
-      {/* ================= CONTENT ================= */}
+      {/* ================= CONTENT 1 ================= */}
       <div className="relative z-10 container mx-auto max-w-7xl px-4">
         <motion.div
           variants={containerVariants}
