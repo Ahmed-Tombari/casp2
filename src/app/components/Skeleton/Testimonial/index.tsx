@@ -4,7 +4,7 @@ const TestimonialSkeleton = () => {
       <div className="m-4">
         <div
           role='status'
-          className='max-w-md animate-pulse overflow-hidden rounded-lg bg-white p-8'>
+          className='max-w-md animate-pulse overflow-hidden rounded-lg bg-white dark:bg-white/5 p-8'>
           <svg
             className='w-20 h-20 mx-auto text-brand-sky/20 my-5'
             aria-hidden='true'

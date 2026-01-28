@@ -22,7 +22,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       <Link
         href={item.href}
         onClick={handleToggle}
-        className={`flex items-center justify-between w-full py-3 px-4 rounded-xl text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange ${
+        className={`flex items-center justify-between w-full py-3 px-4 rounded-xl text-lg font-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange ${
           path === item.href
             ? 'text-brand-orange bg-brand-orange/10'
             : 'text-brand-navy dark:text-white hover:bg-brand-sky/10 dark:hover:bg-white/10'
@@ -54,7 +54,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
                 <Link
                   key={index}
                   href={subItem.href}
-                  className={`block py-2.5 px-4 rounded-lg text-sm font-medium transition-colors ${
+                  className={`block py-2.5 px-4 rounded-lg text-base font-medium transition-colors ${
                     path === subItem.href
                       ? 'text-brand-orange bg-brand-orange/10 font-semibold'
                       : 'text-brand-navy/70 dark:text-white/70 hover:bg-brand-sky/10 dark:hover:bg-white/10 hover:text-brand-navy dark:hover:text-white'

@@ -111,7 +111,7 @@ const Testimonial = () => {
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
                       whileHover={{ y: -8 }}
-                      className='group card card-hover p-6 md:p-8 lg:p-10 rounded-3xl relative h-full flex flex-col min-h-[380px] md:min-h-[420px] bg-white dark:bg-white/5 border border-brand-sky/20 dark:border-white/10'
+                      className='group card card-hover p-6 md:p-8 lg:p-10 rounded-3xl relative h-full flex flex-col min-h-[380px] md:min-h-[420px] bg-white dark:bg-brand-navy-dark border border-brand-sky/20 dark:border-white/10'
                     >
                       {/* Quote Icon */}
                       <div className='absolute -top-4 start-6 md:start-8 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12 z-10'>

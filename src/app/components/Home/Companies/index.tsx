@@ -100,7 +100,7 @@ const Companies = () => {
                 {companies.map((item, i) => (
                   <div key={i} className="px-6 lg:px-8 py-4">
                     <div className="relative group/item flex items-center justify-center">
-                      <div className="relative w-32 h-16 md:w-40 md:h-20 bg-white dark:bg-white/10 rounded-2xl p-4 shadow-sm border border-brand-navy/5 dark:border-white/10 group-hover/item:shadow-xl group-hover/item:shadow-brand-orange/10 group-hover/item:border-brand-orange/30 transition-all duration-500 backdrop-blur-sm">
+                      <div className="relative w-32 h-16 md:w-40 md:h-20 bg-white dark:bg-brand-navy-dark rounded-2xl p-4 shadow-sm border border-brand-navy/5 dark:border-white/10 group-hover/item:shadow-xl group-hover/item:shadow-brand-orange/10 group-hover/item:border-brand-orange/30 transition-all duration-500 backdrop-blur-sm">
                         <Image
                           src={item.imgSrc}
                           alt={item.alt || 'Partner Logo'}

@@ -31,10 +31,10 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     >
       <Link
         href={item.href}
-        className={`text-sm flex items-center gap-1.5 font-semibold hover:text-brand-orange transition-colors whitespace-nowrap rounded-lg px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 ${
+        className={`text-lg flex items-center gap-0.5 font-semibold hover:text-brand-orange transition-colors whitespace-nowrap rounded-lg px-3 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 ${
           path === item.href 
             ? 'text-brand-orange bg-brand-orange/10 dark:bg-white/10' 
-            : 'text-brand-navy/80 dark:text-white/90 hover:text-brand-orange hover:bg-brand-sky/10 dark:hover:bg-white/5'
+            : 'text-brand-navy dark:text-white/90 hover:text-brand-orange hover:bg-brand-sky/10 dark:hover:bg-white/5'
         }`}
         aria-current={path === item.href ? 'page' : undefined}
         aria-expanded={item.submenu ? submenuOpen : undefined}
@@ -76,7 +76,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
                 key={index}
                 href={subItem.href}
                 role="menuitem"
-                className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                className={`block px-4 py-2.5 text-base font-medium transition-colors ${
                   path === subItem.href
                     ? 'bg-brand-sky/10 text-brand-orange font-semibold'
                     : 'text-brand-navy/80 dark:text-white/80 hover:bg-brand-sky/5 hover:text-brand-orange'

@@ -4,7 +4,7 @@ return (
       <div>
         <div
           role='status'
-          className='max-w-md animate-pulse overflow-hidden rounded-lg bg-white p-8'>
+          className='max-w-md animate-pulse overflow-hidden rounded-lg bg-white dark:bg-white/5 p-8'>
           <svg
             className='w-full h-30 text-brand-sky/20 my-10'
             aria-hidden='true'

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Shadow System - Brand aligned */
   --shadow-soft-sm: 0 2px 12px -2px rgba(43, 90, 150, 0.1);

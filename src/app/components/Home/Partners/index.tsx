@@ -93,7 +93,7 @@ const Partners = () => {
             return (
               <motion.div key={partner.id} variants={cardVariants} className="group relative h-full">
                 {/* Card */}
-                <div className="relative h-full flex flex-col p-8 rounded-[2.5rem] border border-brand-sky/20 dark:border-white/10 bg-white/80 dark:bg-white/5 shadow-soft backdrop-blur-md text-center items-center transition-all duration-500 hover:border-brand-orange hover:shadow-2xl hover:shadow-brand-orange/20 hover:-translate-y-2 hover:scale-[1.02]">
+                <div className="relative h-full flex flex-col p-8 rounded-[2.5rem] border border-brand-sky/20 dark:border-white/10 bg-white/80 dark:bg-brand-navy-dark shadow-soft backdrop-blur-md text-center items-center transition-all duration-500 hover:border-brand-orange hover:shadow-2xl hover:shadow-brand-orange/20 hover:-translate-y-2 hover:scale-[1.02]">
                   {/* Logo + Featured Badge */}
                   <div className="relative mb-8 w-full flex justify-center">
                     <div className="relative w-28 h-28 rounded-3xl flex items-center justify-center p-3 transition-all duration-500 shadow-lg bg-white dark:bg-white/10 border border-brand-sky/20 group-hover:border-2 group-hover:border-brand-orange group-hover:scale-110 group-hover:shadow-brand-orange/30">

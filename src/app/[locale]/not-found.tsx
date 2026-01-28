@@ -11,13 +11,13 @@ export default async function NotFound({
   const t = await getTranslations({ locale, namespace: 'common' });
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-brand-sky/5 text-center">
-      <div className="text-center p-8 bg-white rounded-3xl shadow-soft border border-brand-sky/20">
+    <div className="min-h-screen flex items-center justify-center bg-brand-sky/5 dark:bg-brand-navy-dark text-center transition-colors duration-300">
+      <div className="text-center p-8 bg-white dark:bg-white/5 rounded-3xl shadow-soft dark:shadow-none border border-brand-sky/20 dark:border-white/10 backdrop-blur-sm">
         <h1 className="text-6xl font-bold text-brand-orange mb-4">404</h1>
-        <h2 className="text-2xl font-semibold text-brand-navy mb-4">
+        <h2 className="text-2xl font-semibold text-brand-navy dark:text-white mb-4">
           {t('pageNotFound')}
         </h2>
-        <p className="text-brand-navy/70 mb-8 max-w-md mx-auto">
+        <p className="text-brand-navy/70 dark:text-white/70 mb-8 max-w-md mx-auto">
           {t('pageNotFoundDescription')}
         </p>
         <Link

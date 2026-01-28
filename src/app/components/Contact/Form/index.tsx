@@ -73,18 +73,18 @@ const ContactForm = () => {
   }
 
   return (
-    <section id='contact' className='py-20 bg-brand-sky/5'>
+    <section id='contact' className='py-20 bg-brand-sky/5 dark:bg-brand-navy-dark transition-colors duration-300'>
       <div className='container mx-auto max-w-7xl px-4'>
-        <div className='relative bg-white rounded-[3rem] p-8 md:p-16 shadow-soft border border-brand-sky/20'>
+        <div className='relative bg-white dark:bg-brand-navy/50 rounded-[3rem] p-8 md:p-16 shadow-soft dark:shadow-none border border-brand-sky/20 dark:border-white/10 backdrop-blur-sm transition-all duration-300'>
           <div className='max-w-3xl mb-12'>
-            <h2 className='text-3xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-tight'>
+            <h2 className='text-3xl md:text-5xl font-extrabold text-brand-navy dark:text-white mb-4 tracking-tight'>
               {t('title')}
             </h2>
           </div>
           
           <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div className='space-y-2'>
-              <label htmlFor='fname' className='text-sm font-bold text-brand-navy/60 ms-2 uppercase tracking-wider'>
+              <label htmlFor='fname' className='text-sm font-bold text-brand-navy/60 dark:text-white/60 ms-2 uppercase tracking-wider'>
                 {t('firstName')}
               </label>
               <input
@@ -94,7 +94,7 @@ const ContactForm = () => {
                 value={formData.firstname}
                 onChange={handleChange}
                 placeholder={t('placeholderFirstName')}
-                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white outline-none'
+                className='w-full text-lg px-6 rounded-2xl py-4 bg-brand-sky/5 dark:bg-white/5 border-2 border-transparent transition-all duration-300 focus:border-brand-orange focus:bg-white dark:focus:bg-white/10 text-brand-navy dark:text-white outline-none'
                 required
               />
             </div>

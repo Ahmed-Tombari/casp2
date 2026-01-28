@@ -55,30 +55,30 @@ export default async function TeacherGuidePage({
       </section>
 
       {/* Resources List */}
-      <section className="py-20 bg-brand-sky/5">
+      <section className="py-20 bg-brand-sky/5 dark:bg-brand-navy-dark transition-colors duration-300">
         <div className="container mx-auto max-w-5xl px-4">
-          <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-brand-sky/20 space-y-8">
+          <div className="bg-white dark:bg-white/5 rounded-[3rem] p-8 md:p-12 shadow-soft dark:shadow-none border border-brand-sky/20 dark:border-white/10 space-y-8">
             {guides.map((guide, idx) => (
               <div 
                 key={idx} 
-                className="flex flex-col md:flex-row items-center justify-between p-6 rounded-3xl bg-brand-sky/5 hover:bg-white border-2 border-transparent hover:border-brand-orange transition-all duration-300 group"
+                className="flex flex-col md:flex-row items-center justify-between p-6 rounded-3xl bg-brand-sky/5 dark:bg-white/5 hover:bg-white dark:hover:bg-brand-navy/50 border-2 border-transparent hover:border-brand-orange transition-all duration-300 group"
               >
                 <div className="flex items-center gap-6 mb-6 md:mb-0">
-                  <div className="w-16 h-16 rounded-2xl bg-brand-sky/10 flex items-center justify-center group-hover:bg-brand-navy group-hover:text-white transition-all">
-                    <Icon icon={guide.icon} className="text-4xl text-brand-navy group-hover:text-white" />
+                  <div className="w-16 h-16 rounded-2xl bg-brand-sky/10 dark:bg-white/10 flex items-center justify-center group-hover:bg-brand-navy group-hover:text-white transition-all">
+                    <Icon icon={guide.icon} className="text-4xl text-brand-navy dark:text-white group-hover:text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-brand-navy mb-1">
+                    <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-1">
                       {guide.title}
                     </h3>
-                    <p className="text-brand-navy/40 font-medium">
+                    <p className="text-brand-navy/40 dark:text-white/40 font-medium">
                       PDF • {guide.size}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                   <button className="px-6 py-3 rounded-xl bg-brand-navy/5 text-brand-navy font-bold hover:bg-brand-navy hover:text-white transition-all flex items-center gap-2">
+                   <button className="px-6 py-3 rounded-xl bg-brand-navy/5 dark:bg-white/10 text-brand-navy dark:text-white font-bold hover:bg-brand-navy hover:text-white transition-all flex items-center gap-2">
                     <Icon icon="solar:eye-bold-duotone" className="text-xl" />
                     {t('preview')}
                   </button>

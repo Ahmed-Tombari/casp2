@@ -66,18 +66,18 @@ const contactInfo = [
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-brand-sky/5">
+      <section className="py-20 bg-brand-sky/5 dark:bg-brand-navy-dark transition-colors duration-300">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {contactInfo.map((info, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-[2.5rem] shadow-soft border border-brand-sky/20 text-center group hover:-translate-y-2 transition-all duration-500">
-                <div className={`w-16 h-16 rounded-2xl ${info.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+              <div key={idx} className="bg-white dark:bg-white/5 p-8 rounded-[2.5rem] shadow-soft dark:shadow-none border border-brand-sky/20 dark:border-white/10 text-center group hover:-translate-y-2 transition-all duration-500">
+                <div className={`w-16 h-16 rounded-2xl ${info.color.replace('bg-', 'bg-').replace('text-', 'text-')} dark:bg-white/10 dark:text-white flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
                   <Icon icon={info.icon} className="text-3xl" />
                 </div>
-                <h3 className="text-lg font-bold text-brand-navy/40 uppercase tracking-widest mb-2">
+                <h3 className="text-lg font-bold text-brand-navy/40 dark:text-white/40 uppercase tracking-widest mb-2">
                   {info.title}
                 </h3>
-                <p className="text-xl font-bold text-brand-navy">
+                <p className="text-xl font-bold text-brand-navy dark:text-white">
                   {info.value}
                 </p>
               </div>

@@ -43,9 +43,9 @@ export default async function PrivacyPage({
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-brand-navy-dark transition-colors duration-300">
         <div className="container mx-auto max-w-4xl px-4">
-          <div className="prose prose-lg max-w-none text-brand-navy/80 bg-brand-sky/5 p-10 md:p-16 rounded-[2.5rem] border border-brand-sky/20">
+          <div className="prose prose-lg max-w-none text-brand-navy/80 dark:text-white/80 bg-brand-sky/5 dark:bg-white/5 p-10 md:p-16 rounded-[2.5rem] border border-brand-sky/20 dark:border-white/10">
              <p className="text-xl leading-relaxed">
               {t('privacyContent')}
             </p>

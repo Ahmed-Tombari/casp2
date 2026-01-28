@@ -39,28 +39,28 @@ export default async function StorePage({
       description: t('printedDesc'),
       icon: 'solar:book-2-bold-duotone',
       href: '/store/printed-books',
-      color: 'bg-brand-sky/10 text-brand-navy',
+      color: 'bg-brand-sky/10 dark:bg-white/10 text-brand-navy dark:text-white',
     },
     {
       title: navT('ebooks'),
       description: t('ebooksDesc'),
       icon: 'solar:tablet-bold-duotone',
       href: '/store/ebooks',
-      color: 'bg-orange-50 text-orange-600',
+      color: 'bg-orange-50 dark:bg-white/10 text-orange-600 dark:text-white',
     },
     {
       title: navT('educationalCDs'),
       description: t('cdsDesc'),
       icon: 'solar:disk-bold-duotone',
       href: '/store/educational-cds',
-      color: 'bg-green-50 text-green-600',
+      color: 'bg-green-50 dark:bg-white/10 text-green-600 dark:text-white',
     },
     {
       title: navT('teachingTools'),
       description: t('toolsDesc'),
       icon: 'solar:pen-new-square-bold-duotone',
       href: '/store/teaching-tools',
-      color: 'bg-purple-50 text-purple-600',
+      color: 'bg-purple-50 dark:bg-white/10 text-purple-600 dark:text-white',
     },
   ];
 
@@ -82,7 +82,7 @@ export default async function StorePage({
       </section>
 
       {/* Categories Grid */}
-      <section className="py-20 bg-brand-sky/5">
+      <section className="py-20 bg-brand-sky/5 dark:bg-brand-navy-dark transition-colors duration-300">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
             {categories.map((cat, idx) => (

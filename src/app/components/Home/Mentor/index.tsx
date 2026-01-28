@@ -68,7 +68,7 @@ const Mentor = () => {
                   transition={{ delay: index * 0.1 }}
                   className='group relative flex flex-col items-center'
                 >
-                  <div className='relative w-full aspect-square overflow-hidden rounded-[48px] bg-white group-hover:shadow-soft-hover transition-all duration-700 ease-out'>
+                  <div className='relative w-full aspect-square overflow-hidden rounded-[48px] bg-white dark:bg-white/5 group-hover:shadow-soft-hover transition-all duration-700 ease-out'>
                     <Image
                       src={item.imageSrc}
                       alt={item.imageAlt}

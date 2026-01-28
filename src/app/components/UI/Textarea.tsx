@@ -26,7 +26,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`
     const hasError = !!error
     
-    const baseStyles = 'w-full px-4 py-3 text-base text-brand-navy bg-white border-2 rounded-xl transition-all duration-300 placeholder:text-brand-navy/40 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-brand-sky/5 resize-none'
+    const baseStyles = 'w-full px-4 py-3 text-base text-brand-navy bg-white dark:bg-brand-navy-dark dark:text-white border-2 rounded-xl transition-all duration-300 placeholder:text-brand-navy/40 dark:placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-brand-sky/5 resize-none'
     
     const stateStyles = hasError
       ? 'border-destructive focus:border-destructive focus:ring-destructive/20'
@@ -41,7 +41,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={textareaId}
-            className="block text-sm font-semibold text-brand-navy mb-2"
+            className="block text-sm font-semibold text-brand-navy dark:text-white mb-2"
           >
             {label}
             {props.required && <span className="text-destructive ms-1">*</span>}

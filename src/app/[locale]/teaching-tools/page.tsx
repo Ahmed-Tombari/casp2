@@ -31,15 +31,15 @@ export default async function TeachingToolsPage({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
             href={`/${locale}/teaching-tools/handwriting-exercises`}
-            className="p-6 bg-white rounded-lg shadow-soft hover:shadow-soft-hover transition-shadow"
+            className="p-6 bg-white dark:bg-white/5 rounded-lg shadow-soft dark:shadow-none hover:shadow-soft-hover transition-shadow text-brand-navy dark:text-white"
           >
-            <h2>{t('handwritingExercises')}</h2>
+            <h2 className="font-bold text-xl">{t('handwritingExercises')}</h2>
           </Link>
           <Link
             href={`/${locale}/teaching-tools/letter-coloring`}
-            className="p-6 bg-white rounded-lg shadow-soft hover:shadow-soft-hover transition-shadow"
+            className="p-6 bg-white dark:bg-white/5 rounded-lg shadow-soft dark:shadow-none hover:shadow-soft-hover transition-shadow text-brand-navy dark:text-white"
           >
-            <h2>{t('letterColoring')}</h2>
+            <h2 className="font-bold text-xl">{t('letterColoring')}</h2>
           </Link>
         </div>
       </section>

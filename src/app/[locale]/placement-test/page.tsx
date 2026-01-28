@@ -48,21 +48,21 @@ export default async function PlacementTestPage({
       </section>
 
       {/* Test Info Section */}
-      <section className="py-20 bg-brand-sky/5">
+      <section className="py-20 bg-brand-sky/5 dark:bg-brand-navy-dark transition-colors duration-300">
         <div className="container mx-auto max-w-4xl px-4">
-          <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-soft border border-brand-sky/20 text-center">
+          <div className="bg-white dark:bg-white/5 rounded-[3rem] p-10 md:p-16 shadow-soft dark:shadow-none border border-brand-sky/20 dark:border-white/10 text-center">
              <div className="flex flex-wrap justify-center gap-10 mb-12">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange">
                   <Icon icon="solar:clock-circle-bold-duotone" className="text-2xl" />
                 </div>
-                <span className="text-lg font-bold text-brand-navy">{t('duration')}</span>
+                <span className="text-lg font-bold text-brand-navy dark:text-white">{t('duration')}</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-brand-sky/10 flex items-center justify-center text-brand-navy">
+                <div className="w-12 h-12 rounded-xl bg-brand-sky/10 dark:bg-white/10 flex items-center justify-center text-brand-navy dark:text-white">
                   <Icon icon="solar:list-check-bold-duotone" className="text-2xl" />
                 </div>
-                <span className="text-lg font-bold text-brand-navy">{t('questions')}</span>
+                <span className="text-lg font-bold text-brand-navy dark:text-white">{t('questions')}</span>
               </div>
             </div>
 
@@ -70,7 +70,7 @@ export default async function PlacementTestPage({
               {t('startAction')}
               <Icon icon="solar:play-bold-duotone" className="text-2xl" />
             </button>
-            <p className="mt-8 text-brand-navy/60 font-medium italic">
+            <p className="mt-8 text-brand-navy/60 dark:text-white/60 font-medium italic">
                Ready to discover your Arabic level? 
             </p>
           </div>

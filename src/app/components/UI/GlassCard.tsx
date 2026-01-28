@@ -15,8 +15,8 @@ const GlassCard: React.FC<GlassCardProps> = ({
     <div 
       className={`
         relative overflow-hidden
-        bg-brand-navy/30 backdrop-blur-2xl
-        border border-white/10
+        bg-brand-navy/30 dark:bg-white/10 backdrop-blur-2xl
+        border border-white/10 dark:border-white/5
         shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]
         rounded-3xl
         ${hoverEffect ? 'transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-white/20' : ''}
