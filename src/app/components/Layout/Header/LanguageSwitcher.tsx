@@ -1,7 +1,7 @@
-﻿'use client';
+'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { usePathname, useRouter } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
 import { type Locale } from '@/i18n/config';
@@ -15,8 +15,8 @@ interface LanguageOption {
 
 const languages: LanguageOption[] = [
   { code: 'en', label: 'EN', flag: 'circle-flags:us', name: 'English' },
-  { code: 'fr', label: 'FR', flag: 'circle-flags:fr', name: 'FranÃ§ais' },
-  { code: 'ar', label: 'AR', flag: 'circle-flags:sa', name: 'Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©' },
+  { code: 'fr', label: 'FR', flag: 'circle-flags:fr', name: 'Français' },
+  { code: 'ar', label: 'AR', flag: 'circle-flags:sa', name: 'العربية' },
 ];
 
 export default function LanguageSwitcher() {

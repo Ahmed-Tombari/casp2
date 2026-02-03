@@ -1,5 +1,5 @@
-﻿'use client'
-import { Link } from '@/i18n/navigation'
+'use client'
+import { Link } from '@/i18n/routing'
 import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useTranslations } from 'next-intl'
@@ -70,11 +70,10 @@ const Footer = () => {
             </p>
             <div className='flex gap-3' role="list" aria-label="Social media links">
               {[
+                { icon: 'ri:facebook-fill', href: '#', label: 'Facebook' },
                 { icon: 'ri:twitter-x-fill', href: '#', label: 'Twitter' },
                 { icon: 'ri:instagram-line', href: '#', label: 'Instagram' },
-                { icon: 'ri:facebook-fill', href: 'https://www.facebook.com/caspeducation?rdid=gMP9FoFjFiCWfr4W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HDVhzFqx4%2F#', label: 'Facebook' },
-                { icon: 'ri:youtube-fill', href: 'https://www.youtube.com/@%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D9%84%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D8%A7%D9%84%D8%AA%D8%B1%D8%A8%D9%88%D9%8A%D8%A9-%D9%83%D9%86', label: 'YouTube' },
-              
+                { icon: 'ri:youtube-fill', href: '#', label: 'YouTube' },
               ].map((social, idx) => (
                 <motion.div
                   key={idx}
@@ -182,7 +181,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className='mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-start'>
           <p className='text-white/50 text-xs md:text-sm'>
-            Â© {new Date().getFullYear()} CASP Education. {t('rights')}
+            © {new Date().getFullYear()} CASP Education. {t('rights')}
           </p>
           <div className='flex items-center justify-center'>
              <Image

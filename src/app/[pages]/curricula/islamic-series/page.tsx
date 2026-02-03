@@ -1,6 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 
 export async function generateMetadata({

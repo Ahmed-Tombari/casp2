@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Link, usePathname } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import { HeaderItem } from '../../../../types/menu'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Icon } from '@iconify/react'

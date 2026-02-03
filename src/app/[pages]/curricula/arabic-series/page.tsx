@@ -1,6 +1,6 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 
 export async function generateMetadata({
@@ -85,8 +85,8 @@ export default async function ArabicSeriesPage({
         {/* Background Patterns */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
              {/* Abstract Arabic Letter Shapes (Simulated) */}
-             <div className="absolute top-10 left-10 text-[10rem] font-serif opacity-20 text-white rotate-12">Ø¹</div>
-             <div className="absolute bottom-20 right-20 text-[10rem] font-serif opacity-20 text-brand-sky -rotate-12">Ø¶</div>
+             <div className="absolute top-10 left-10 text-[10rem] font-serif opacity-20 text-white rotate-12">ع</div>
+             <div className="absolute bottom-20 right-20 text-[10rem] font-serif opacity-20 text-brand-sky -rotate-12">ض</div>
              <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-brand-navy-light rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 mix-blend-screen opacity-30"></div>
         </div>
 

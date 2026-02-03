@@ -1,6 +1,6 @@
-﻿'use client'
+'use client'
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
+import { Link } from '@/i18n/routing'
 import { useEffect, useState } from 'react'
 import { MentorType } from '@/app/types/mentor'
 import MentorSkeleton from '../../Skeleton/Mentor'

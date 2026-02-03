@@ -1,5 +1,5 @@
-﻿'use client'
-import { Link } from '@/i18n/navigation'
+'use client'
+import { Link } from '@/i18n/routing'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useTranslations } from 'next-intl'
 

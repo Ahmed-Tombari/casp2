@@ -1,5 +1,5 @@
-﻿import { getTranslations, getLocale } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { getTranslations, getLocale } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 
 export default async function NotFound() {
   const page = await getLocale();
