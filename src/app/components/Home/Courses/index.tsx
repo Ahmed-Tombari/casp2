@@ -1,10 +1,10 @@
-'use client'
+﻿'use client'
 import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import Image from 'next/image'
 import { CourseDetailType } from '@/app/types/coursedetail'
 import CourseDetailSkeleton from '../../Skeleton/CourseDetail'
-import { Link } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 

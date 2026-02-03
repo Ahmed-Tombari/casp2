@@ -1,8 +1,8 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 
 interface Book {
   level: string;

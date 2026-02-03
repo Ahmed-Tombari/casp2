@@ -1,8 +1,8 @@
-import { fetchData } from '@/lib/api';
+﻿import { fetchData } from '@/lib/api';
 import Bookshelf from '@/app/components/Bookshelf/Bookshelf';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 import { Icon } from '@iconify/react';
 
 // 1. Define the Book Interface (Adjust fields based on your actual API response)

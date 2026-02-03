@@ -1,5 +1,5 @@
-'use client'
-import { Link } from '@/i18n/routing'
+﻿'use client'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useTranslations } from 'next-intl'
@@ -182,7 +182,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className='mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-start'>
           <p className='text-white/50 text-xs md:text-sm'>
-            © {new Date().getFullYear()} CASP Education. {t('rights')}
+            Â© {new Date().getFullYear()} CASP Education. {t('rights')}
           </p>
           <div className='flex items-center justify-center'>
              <Image
