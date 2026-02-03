@@ -3,14 +3,14 @@ import { routing } from './routing';
 import { Locale } from './config';
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  let locale = (await requestLocale) as Locale | undefined;
+  let page = (await requestLocale) as Locale | undefined;
 
-  if (!locale || !routing.locales.includes(locale)) {
-    locale = routing.defaultLocale;
+  if (!page || !routing.locales.includes(page)) {
+    page = routing.defaultLocale;
   }
 
   return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
+    locale: page,
+    messages: (await import(`../../languages/${page}.json`)).default,
   };
 });

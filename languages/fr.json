@@ -1,0 +1,746 @@
+{
+"nav": {
+  "home": "Accueil",
+  "curricula": "Programmes",
+  "quizzes": "Tests",
+  "channel": "Chaîne",
+  "platforms": "Plateformes",
+  "services": "Services",
+  "store": "Boutique",
+  "teacherGuide": "Guide de l'enseignant",
+  "placementTest": "Test de niveau",
+  "contact": "Contact",
+  "educationalPlatform": "Plateforme éducative",
+  "educationalChannel": "Chaîne éducative",
+  "login": "Connexion",
+  "register": "S'inscrire",
+  "printedBooks": "Livres imprimés",
+  "ebooks": "Livres numériques",
+  "educationalCDs": "CD éducatifs",
+  "teachingTools": "Outils pédagogiques",
+  "gardenOfArabic": "Jardin de l'arabe",
+  "handwritingExercises": "Exercices d’écriture",
+  "letterColoring": "Coloriage des lettres"
+
+},
+  "common": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "welcome": "Bienvenue",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tout",
+    "readMore": "Lire la suite",
+    "addToCart": "Ajouter au panier",
+    "buyNow": "Acheter maintenant",
+    "search": "Rechercher",
+    "language": "Langue",
+    "exploreNow": "Explorer maintenant",
+    "pageNotFound": "Page non trouvée",
+    "pageNotFoundDescription": "La page que vous recherchez n'existe pas.",
+    "goHome": "Retour à l'accueil",
+    "currency": "SAR"
+  },
+  "home": {
+    "littleTitle": "La plateforme éducative CASP de référence",
+    "title": "Bienvenue chez CASP Éducation",
+    "subtitle": "Nous offrons les meilleures ressources éducatives pour l'arabe",
+    "heroTitle": "Centre arabe pour les services éducatifs au Canada",
+    "heroTitle2": "Bienvenue",
+    "heroDescription": "Découvrez une large gamme de livres, leçons et ressources éducatives conçues spécialement pour apprendre l'arabe",
+    "trustedBy": "Approuvé par plus de 25 000 étudiants et enseignants",
+    "popularResources": "Ressources Éducatives Populaires",
+    "expertsTitle": "Nos Experts Pédagogiques",
+    "testimonialsTitle": "Ce que Disent les Parents et les Enseignants",
+    "feedback": "Commentaires",
+    "aboutTitle": "À propos de CASP Éducation",
+    "aboutDescription": "Nous nous engageons à fournir les meilleures ressources pédagogiques pour l'apprentissage de l'arabe, en combinant des méthodes pédagogiques modernes avec un contenu attrayant.",
+    "aboutPoint1": "Programmes éducatifs certifiés et intégrés",
+    "aboutPoint2": "Outils interactifs et technologies d'apprentissage modernes",
+    "aboutPoint3": "Experts pédagogiques spécialisés en langue arabe",
+    "trustedByFull": "Approuvé par les principales institutions éducatives",
+    "noProducts": "Aucun produit trouvé dans cette catégorie.",
+    "partnersTitle": "Nos Partenaires et Distributeurs dans le Monde",
+    "partnersSubtitle": "Nous sommes fiers de nos partenariats avec des institutions éducatives de premier plan à travers le monde",
+    "featuredPartner": "Partenaire Principal",
+    "visitWebsite": "Visiter le Site",
+    "publications": "Nos Publications",
+    "publicationsLabel": "NOS PUBLICATIONS",
+    "partners": "Nos Partenaires",
+    "publicationsSubtitle": "Nous proposons des collections pédagogiques distinguées soigneusement conçues pour répondre aux besoins des apprenants à différents stades.",
+    "premiumButton1": "Achetez maintenant",
+    "premiumButton2": "Guide de l'enseignant",
+    "premiumIcon1": "Programmes certifiés",
+    "premiumIcon2": "Communauté éducative",
+    "videoTitle": "Découvrez l'Univers CASP Éducation",
+    "videoSubtitle": "Un aperçu rapide de notre mission, nos programmes et notre impact sur l'éducation en langue arabe."
+  },
+  "publications": {
+    "happyMuslim": "Série The Happy Muslim",
+    "illuminatingPath": "Série Le Chemin Illuminé",
+    "arabicShamel": "Série Arabe Shamel",
+    "arabicGarden": "Série Jardin de l'Arabe"
+  },
+  "partners": {
+    "maktabatouna": {
+      "name": "Sarl Maktabatouna",
+      "address": "2 Impasse Charles Vildrac, 94000 Creteil",
+      "website": "www.maktabatouna.com",
+      "email": "Contact@maktabatouna.com",
+      "phone": "00 33 651 62 55 00",
+      "phone2": ""
+    },
+    "sindbad": {
+      "name": "Sindbadglobal.com",
+      "address": "427 Chieftan Cir, Mississauga ON L4Z 3A8",
+       "website": "www.sindbadglobal.com",
+      "email": "info@sindbadglobal.com",
+      "phone": "+1 514 443 8585",
+      "phone2": "+1 416 558 0436"
+    },
+    "darManabe": {
+      "name": "Dar Manabe Alnour",
+      "address": "Fevzipaşa Cad. Fatih PTT Merkezi No:11 Kat: 9/3, 34080 Fatih – Istanbul",
+      "website": "www.darmanabiunnur.com",
+      "phone": "+90 546 590 74 07",
+      "phone2": "+90 552 213 61 35",
+      "email": "manabealnour@gmail.com"
+    },
+    "averroes": {
+      "name": "AVERROES Bookshop",
+      "address": "Hohe Strasse 27, 47051 Duisburg, Germany",
+      "website": "kitab.eu",
+      "email": "info@kitab.eu",
+      "phone": "+49 1577 286 7866",
+      "phone2": ""
+    },
+    "darAlKutub": {
+      "name": "Dar Al-Kutub",
+      "address": "Kreuzgasse 8, 3294 Büren an der Aare, Switzerland",
+      "website": "www.maktaba.ch",
+      "email": "hello@maktaba.ch",
+      "phone": "0041 79 883 3761",
+      "phone2": ""
+    },
+    "ta3liem": {
+      "name": "Ta3liem Distribution",
+      "address": "Netherlands",
+      "website": "",
+      "email": "ta3liemdistribution@outlook.com",
+      "phone": "0031 649 902 090",
+      "phone2": ""
+    }
+  },
+  
+  "arabicSeries": {
+     "title": "Séries Cursus Arabe",
+    "description": "Des programmes éducatifs intégrés couvrant tous les besoins, de la fondation à la maîtrise.",
+    "curriculumHub": "Pôle Cursus",
+    
+    "discoverSeries": "Découvrir la Série",
+    "comprehensiveChoice": "Choix Complet",
+    "practicalChoice": "Choix Pratique",
+    "growthChoice": "Choix Fondation",
+
+    "modernPedagogy": "Pédagogie Moderne",
+    "pedagogyDesc": "Basé sur les dernières théories d'apprentissage.",
+    "culturalDepth": "Profondeur Culturelle",
+    "cultureDesc": "Relier la langue à son identité et son histoire.",
+    "digitalSupport": "Support Numérique",
+    "digitalDesc": "Plateformes interactives et ressources audio.",
+    
+    "gardenOfArabicTitle": "Le Jardin de l'Arabe",
+    "gardenOfArabicDesc": "Un voyage amusant pour les enfants.",
+    
+    
+    "alWafiTitle": "Série Al Wafi",
+    "alWafiDesc": "La référence complète pour l'étudiant en arabe. Couverture totale de la grammaire, de la morphologie et de la rhétorique.",
+    
+    "comprehensiveGrammar": "Grammaire Complète",
+    "grammarDesc": "Explication détaillée et simplifiée de toutes les règles.",
+    "audioSupport": "Support Audio",
+    "audioDesc": "Textes d'écoute enregistrés par des professionnels.",
+    "exercises": "Pratique Intensive",
+    "exercisesDesc": "Des milliers de questions pour renforcer les acquis.",
+    
+    "level": "Niveau",
+    "wafiVol1Title": "Bases et Débutants",
+    "wafiVol1Desc": "Introduction aux phrases nominales/verbales et vocabulaire.",
+    "wafiVol2Title": "Grammaire Intermédiaire",
+    "wafiVol2Desc": "Étude approfondie des modificateurs et compléments.",
+    "wafiVol3Title": "Morphologie",
+    "wafiVol3Desc": "Compréhension de la structure et de la dérivation des mots.",
+    "wafiVol4Title": "Rhétorique et Littérature",
+    "wafiVol4Desc": "Étude de l'éloquence et de l'appréciation littéraire.",
+
+
+    "alMufidTitle": "Série Al Mufid",
+    "alMufidDesc": "Votre compagnon pratique pour maîtriser l'arabe. Une série axée sur l'usage fonctionnel de la langue.",
+    
+    "practicalUsage": "Application Pratique",
+    "usageDesc": "Moins de théorie, plus de pratique directe de la langue.",
+    "quickReference": "Référence Rapide",
+    "referenceDesc": "Résumés et tableaux pour trouver l'info en quelques secondes.",
+    "modernVocabulary": "Vocabulaire Moderne",
+    "vocabDesc": "Termes adaptés à l'époque moderne, la technologie et les médias.",
+
+    "mufidVol1Title": "Lecture Utile",
+    "mufidVol1Desc": "Textes choisis pour développer la compréhension rapide.",
+    "mufidVol2Title": "Écriture Utile",
+    "mufidVol2Desc": "Règles d'orthographe, ponctuation et écriture fonctionnelle.",
+    "mufidVol3Title": "Conversation Utile",
+    "mufidVol3Desc": "Dialogues et scénarios pour développer la fluidité verbale."
+  },
+
+  "islamicSeries": {
+    "title": "Séries d'Éducation Islamique",
+    "description": "Un système éducatif intégré alliant les valeurs islamiques authentiques aux méthodes pédagogiques modernes.",
+    "islamicHub": "Pôle Éducation Islamique",
+    "ourCurricula": "Nos Programmes",
+    "discoverSeries": "Découvrir la Série",
+    
+    "badgeLiteracy": "Fondation Lecture",
+    "badgeBilingual": "Approche Bilingue",
+    "badgeCharacter": "Formation du Caractère",
+    "badgeComprehensive": "Études Complètes",
+    
+    "authenticSource": "Sources Authentiques",
+    "sourceDesc": "Contenu fiable tiré du Coran et de la Sunna.",
+    "spiritualGrowth": "Croissance Spirituelle",
+    "spiritualDesc": "Inculquer l'amour de Dieu et de son Prophète.",
+    "modernMethod": "Approche Moderne",
+    "methodDesc": "Supports interactifs et récits captivants.",
+    
+    "alTareeqAlMuneerArabicTitle": "Tareeq Al Muneer (Arabe)",
+    "alTareeqAlMuneerArabicDesc": "Méthodologie progressive pour l'alphabétisation.",
+    "alTareeqAlMuneerFrenchTitle": "Tareeq Al Muneer (Français)",
+    "alTareeqAlMuneerFrenchDesc": "Pont linguistique pour les élèves francophones.",
+    "theHappyMuslimTitle": "Le Musulman Heureux",
+    "theHappyMuslimDesc": "Construire des valeurs positives et la joie.",
+    "hidayahTitle": "Cursus Hidayah",
+    "hidayahDesc": "Études islamiques complètes : Croyance, Fiqh et Sira.",
+
+    "hidayah": {
+    "title": "Cursus Hidayah",
+    "description": "Une série éducative islamique intégrée visant à construire une personnalité équilibrée et à inculquer des valeurs nobles avec une approche moderne.",
+    "islamicStudies": "Études Islamiques",
+    
+    "aqidahTitle": "Croyance (Aqidah)",
+    "aqidahDesc": "Ancrer la foi en Dieu et comprendre les piliers de l'Islam de manière rationnelle.",
+    "fiqhTitle": "Culte (Fiqh)",
+    "fiqhDesc": "Enseignement pratique simplifié de la prière et du culte quotidien.",
+    "akhlaqTitle": "Éthique et Comportement",
+    "akhlaqDesc": "Renforcer les valeurs morales comme l'honnêteté et la bonté envers les parents.",
+    
+    "educationalJourney": "Le Parcours de l'Élève",
+    "journeyDesc": "Le cursus est divisé en étapes progressives adaptées à la croissance de l'élève.",
+    
+    "level1": "Bourgeons Croyants",
+    "level1Desc": "Étape Fondation : Histoires simples, chants et principes de base.",
+    "level2": "Lumière des Cœurs",
+    "level2Desc": "Étape Construction : Comprendre le sens du culte et mémoriser des Sourates.",
+    "level3": "Chemin de l'Intégrité",
+    "level3Desc": "Étape Compréhension : Étude de la vie du Prophète ﷺ et éthique sociale.",
+    "level4": "La Génération Modèle",
+    "level4Desc": "Étape Application : Conscience des enjeux contemporains et leadership.",
+    
+    "viewLevel": "Voir le Niveau"
+  },
+ "tareeqAlMuneerAr": {
+    "title": "Tareeq Al Muneer",
+    "description": "Une méthodologie spécialisée dans l'alphabétisation arabe, guidant les élèves vers la lumière de la fluidité.",
+    "literacyProgram": "Programme d'Alphabétisation",
+    "startJourney": "Commencer",
+    
+    "phoneticMastery": "Maîtrise Phonétique",
+    "phoneticDesc": "Focus précis sur les points d'articulation des lettres.",
+    "visualClarity": "Clarté Visuelle",
+    "visualDesc": "Conçu pour le confort visuel et la distinction des lettres.",
+    "gradualProgress": "Progression Logique",
+    "gradualDesc": "Transition fluide de la lettre au mot puis à la phrase.",
+    
+    "milestones": "Jalons du Parcours",
+    "milestonesDesc": "Quatre stations clés assurant une fondation solide.",
+    
+    "level1": "Station des Lettres",
+    "level1Desc": "Reconnaissance des lettres arabes et de leurs formes.",
+    "level2": "Station des Voyelles",
+    "level2Desc": "Maîtrise des voyelles courtes et longues.",
+    "level3": "Station de Construction",
+    "level3Desc": "Connexion des lettres et construction des mots.",
+    "level4": "Station de Fluidité",
+    "level4Desc": "Lecture de phrases simples et de textes avec vitesse.",
+    
+    "explore": "Explorer"
+  },
+  "tareeqAlMuneerFr": {
+    "title": "Tareeq Al Muneer (Édition Française)",
+    "description": "Un programme conçu spécialement pour les élèves francophones, alliant la précision de la grammaire arabe à la clarté pédagogique française.",
+    "francophoneEdition": "Édition Francophone",
+    "downloadSyllabus": "Télécharger le Programme",
+    
+    "bilingualMethod": "Méthodologie Bilingue",
+    "bilingualDesc": "Grammaire et vocabulaire expliqués en français pour faciliter la compréhension.",
+    "phoneticComparisons": "Comparaisons Phonétiques",
+    "phoneticDesc": "Lier les sons arabes à leurs équivalents français.",
+    "culturalBridge": "Pont Culturel",
+    "culturalDesc": "Des textes adaptés au contexte culturel de l'élève.",
+    
+    "learningPath": "Parcours d'Apprentissage",
+    "pathDesc": "Quatre niveaux pour passer de l'alphabet à la fluidité.",
+    "level": "Niveau",
+    
+    "stage1": "Introduction",
+    "stage1Desc": "Alphabet et sons de base.",
+    "stage2": "Les Bases",
+    "stage2Desc": "Vocabulaire et grammaire simple.",
+    "stage3": "Expression",
+    "stage3Desc": "Structure de phrase et conversation.",
+    "stage4": "Maîtrise",
+    "stage4Desc": "Lecture d'histoires et textes avancés.",
+    
+    "viewDetails": "Voir les Détails"
+  },
+  "theHappyMuslim": {
+    "title": "Le Musulman Heureux",
+    "description": "Une série éducative amusante visant à construire la personnalité de l'enfant musulman en inculquant le bonheur et l'optimisme.",
+    "characterBuilding": "Formation du Caractère",
+    "watchPromo": "Voir la Vidéo",
+    
+    "joyfulLearning": "Apprentissage Joyeux",
+    "joyfulDesc": "Nous utilisons le jeu et les histoires pour rendre l'apprentissage heureux.",
+    "integratedValues": "Valeurs Intégrées",
+    "valuesDesc": "Lier les valeurs islamiques à la vie quotidienne.",
+    "creativeArts": "Arts et Créativité",
+    "creativeDesc": "Activités artistiques et chants pour développer le goût.",
+    
+    "seriesBooks": "Livres de la Série",
+    "seriesDesc": "Cinq niveaux couvrant différents aspects de la vie de l'enfant.",
+    "level": "Niveau",
+    
+    "book1Title": "Ma Belle Religion",
+    "book1Desc": "Présenter à l'enfant son Seigneur et sa religion avec amour.",
+    "book2Title": "Mes Bonnes Manières",
+    "book2Desc": "Enseigner l'étiquette du repas, du sommeil et des relations.",
+    "book3Title": "Mon Grand Prophète",
+    "book3Desc": "Histoires choisies de la vie du Prophète ﷺ montrant sa miséricorde.",
+    "book4Title": "Mon Monde Merveilleux",
+    "book4Desc": "Réfléchir aux créations de Dieu et protéger l'environnement.",
+    "book5Title": "Mon Cœur Pur",
+    "book5Desc": "Actions du cœur comme l'honnêteté, l'amour et la confiance en Dieu.",
+    
+    "exploreBook": "Explorer le Livre"
+  }
+  },
+
+  
+  "adultEducation": {
+    "title": "Formation Continue et Parcours Pro",
+    "description": "Une méthodologie avancée pour les professionnels. Choisissez le parcours adapté à vos objectifs, que ce soit pour les affaires, les médias ou le voyage.",
+    "forProfessionals": "Pour les Professionnels",
+
+    "chooseYourPath": "Choisissez Votre Parcours",
+    "pathDescription": "Au lieu de leçons génériques, nous offrons des pistes spécialisées axées sur le vocabulaire et les compétences dont vous avez réellement besoin.",
+
+    "businessTitle": "Arabe des Affaires",
+    "businessDesc": "Maîtrisez la langue des réunions, de la correspondance formelle et de la négociation.",
+    "mediaTitle": "Médias et Journalisme",
+    "mediaDesc": "Comprenez le langage de l'actualité, l'analyse politique et la terminologie médiatique.",
+    "travelTitle": "Voyage et Culture",
+    "travelDesc": "Gagnez en assurance pour parler dans les aéroports et hôtels, et explorez la culture arabe.",
+
+    "microLearning": "Micro-apprentissage",
+    "microLearningDesc": "Des leçons courtes et ciblées adaptées à votre emploi du temps chargé.",
+    "speakingFocus": "Priorité à l'Oral",
+    "speakingFocusDesc": "Exercices pratiques pour briser la peur de parler.",
+    "nativeContext": "Contexte Authentique",
+    "nativeContextDesc": "Contenu tiré de la vie quotidienne arabe réelle.",
+
+    "startLearning": "Commencer",
+    "corporateTitle": "Formation pour votre équipe ?",
+    "corporateDesc": "Nous offrons des solutions sur mesure pour les entreprises afin d'améliorer la communication.",
+    "contactSales": "Contacter les Ventes"
+},
+
+
+  "gardenOfArabic": {
+    "title": "Le Jardin de l'Arabe",
+    "description": "Une série éducative complète emmenant l'élève dans un voyage de croissance, des graines de l'alphabet aux fruits de l'éloquence.",
+    "comprehensiveSeries": "Série Scolaire Complète",
+    
+    "stagesOfGrowth": "Étapes de Croissance",
+    "stagesDesc": "Une méthodologie progressive assurant une base solide et un développement naturel.",
+    
+    "level1Title": "L'Étape des Graines",
+    "level1Sub": "Lettres et Sons",
+    "level1Desc": "Établir la prononciation correcte et l'écriture des lettres arabes sous leurs différentes formes.",
+    
+    "level2Title": "L'Étape des Racines",
+    "level2Sub": "Vocabulaire",
+    "level2Desc": "Enrichir le vocabulaire avec des mots de l'environnement quotidien illustrés.",
+    
+    "level3Title": "L'Étape du Tronc",
+    "level3Sub": "Structure de la Phrase",
+    "level3Desc": "Passer des mots aux phrases significatives, comprendre la grammaire de base simplement.",
+    
+    "level4Title": "L'Étape des Fruits",
+    "level4Sub": "Histoires et Expression",
+    "level4Desc": "Lecture de textes et d'histoires courtes, développement de l'expression écrite et orale.",
+    
+    "exploreLevel": "Explorer le Niveau",
+    
+    "reading": "Lecture",
+    "writing": "Écriture",
+    "listening": "Écoute",
+    "speaking": "Parler",
+    
+    "interactiveTitle": "Plus qu'un simple manuel",
+    "feature1": "Histoires audio interactives qui captivent l'enfant.",
+    "feature2": "Exercices ludiques renforçant la compréhension.",
+    "feature3": "Guide de l'enseignant et fiches imprimables.",
+    "downloadSample": "Télécharger un Extrait"
+  },
+
+"teacherGuide": {
+    "title": "Espace Enseignant",
+    "description": "Plateforme complète de ressources éducatives. Plans de cours, solutions et directives pédagogiques.",
+    "educatorZone": "Zone Éducateur",
+    "accessGuide": "Accéder au Guide",
+    "levels": "Niveaux",
+    "availableResources": "Ressources Disponibles au Téléchargement",
+    "download": "Télécharger",
+    "preview": "Aperçu",
+
+    "gardenTitle": "Guide Le Jardin",
+    "gardenDesc": "Plans pour enseigner les lettres et compétences de base.",
+    "wafiTitle": "Guide Série Al Wafi",
+    "wafiDesc": "Méthodologie détaillée pour la grammaire et la morphologie.",
+    "mufidTitle": "Guide Série Al Mufid",
+    "mufidDesc": "Directives pratiques pour les leçons fonctionnelles.",
+
+    "gardenGuide": {
+      "title": "Guide Enseignant : Jardin de l'Arabe",
+      "description": "Contient des techniques de motivation, histoires et fiches supplémentaires.",
+      "level1Guide": "Guide Niveau 1 (Graines)",
+      "level2Guide": "Guide Niveau 2 (Racines)",
+      "level3Guide": "Guide Niveau 3 (Tronc)",
+      "level4Guide": "Guide Niveau 4 (Fruits)"
+    },
+    "wafiGuide": {
+      "title": "Guide Enseignant : Al Wafi",
+      "description": "Référence académique incluant les réponses aux exercices.",
+      "vol1Guide": "Guide Vol 1 : Bases",
+      "vol2Guide": "Guide Vol 2 : Grammaire Intermédiaire",
+      "vol3Guide": "Guide Vol 3 : Morphologie",
+      "vol4Guide": "Guide Vol 4 : Rhétorique"
+    },
+    "mufidGuide": {
+      "title": "Guide Enseignant : Al Mufid",
+      "description": "Kit de formation pour des leçons interactives.",
+      "readingGuide": "Guide Lecture Utile",
+      "writingGuide": "Guide Écriture Utile",
+      "speakingGuide": "Guide Conversation Utile"
+    },
+    "happyMuslimGuide": {
+    "title": "Guide Enseignant : Musulman Heureux",
+    "description": "Directives pédagogiques pour inculquer les valeurs et créer des activités ludiques.",
+    "guideBook1": "Guide : Ma Belle Religion",
+    "guideBook2": "Guide : Mes Bonnes Manières",
+    "guideBook3": "Guide : Mon Grand Prophète",
+    "guideBook4": "Guide : Mon Monde Merveilleux",
+    "guideBook5": "Guide : Mon Cœur Pur"
+  }
+  },
+
+  "quizzes": {
+    "lessonsTests": {
+      "title": "Tests et Évaluations",
+      "description": "Une collection de tests pour évaluer les progrès en grammaire, vocabulaire et compréhension.",
+      "availableTests": "Tests Disponibles",
+      "download": "Télécharger",
+      "testGrammar1": "Test de Grammaire - Niveau 1",
+      "testVocab1": "Test de Vocabulaire - Niveau 1",
+      "testReading2": "Test de Lecture - Niveau 2",
+      "testComp3": "Test de Compréhension - Niveau 3"
+    },
+    "handwritingExercises": {
+      "title": "Exercices d'Écriture",
+      "description": "Fiches conçues pour améliorer l'écriture et enseigner le tracé correct des lettres.",
+      "practiceSheets": "Feuilles d'Exercices",
+      "chooseLetter": "Choisissez une lettre",
+      "print": "Imprimer",
+      "sheetAlif": "Lettre Alif",
+      "sheetBa": "Lettre Ba",
+      "sheetJim": "Lettre Jim",
+      "sheetDal": "Lettre Dal",
+      "sheetRa": "Lettre Ra",
+      "sheetSin": "Lettre Sin"
+    },
+    "letterColoring": {
+      "title": "Coloriage des Lettres",
+      "description": "Activités artistiques amusantes combinant apprentissage et couleurs.",
+      "letter": "Lettre",
+      "downloadAll": "Tout Télécharger",
+      "animalLion": "Lion",
+      "animalDuck": "Canard",
+      "animalCrocodile": "Crocodile",
+      "animalFox": "Renard"
+    },
+    "placementTest": {
+      "title": "Test de Placement",
+      "description": "Vous ne savez pas par où commencer ? Ce test intelligent évalue vos compétences et vous place au niveau exact de vos capacités.",
+      "durationLabel": "Durée Estimée",
+      "duration": "15 Min",
+      "questionsLabel": "Questions",
+      "questions": "20 Questions",
+      "readyTitle": "Êtes-vous prêt ?",
+      "readyDesc": "Assurez-vous d'être au calme. Vous recevrez votre résultat et une recommandation de programme immédiatement.",
+      "startAction": "Commencer le Test",
+      
+      "step1": "Répondez Honnêtement",
+      "step1Desc": "N'utilisez pas d'aide extérieure pour un résultat précis.",
+      "step2": "Évaluation Intelligente",
+      "step2Desc": "Les questions s'adaptent à votre niveau.",
+      "step3": "Résultats Instantanés",
+      "step3Desc": "Obtenez un rapport détaillé de vos forces et faiblesses."
+    },
+    "educationalCDs": {
+      "title": "Médias Éducatifs Numériques",
+      "description": "Une collection premium de logiciels interactifs et de fichiers audio fonctionnant hors ligne.",
+      "digitalLibrary": "Bibliothèque Numérique",
+      
+      "offlineAccess": "Fonctionne Hors Ligne",
+      "offlineDesc": "Apprenez n'importe où sans connexion internet.",
+      "interactiveSoftware": "Logiciels Interactifs",
+      "interactiveDesc": "Jeux éducatifs et exercices engageants.",
+      "highQualityAudio": "Audio Haute Qualité",
+      "audioDesc": "Enregistrements studio professionnels.",
+      
+      "categorySoftware": "Logiciel PC",
+      "categoryAudio": "Audio MP3",
+      "categoryGames": "Jeux",
+      
+      "gardenCdTitle": "Jardin Interactif",
+      "gardenCdDesc": "Version numérique interactive avec 50 jeux éducatifs.",
+      "wafiCdTitle": "Audio Al-Wafi",
+      "wafiCdDesc": "Bibliothèque audio complète pour la série Al-Wafi.",
+      "happyCdTitle": "Jeux Musulman Heureux",
+      "happyCdDesc": "Histoires animées et jeux de valeurs pour enfants.",
+      "tareeqCdTitle": "Tuteur Audio Phonétique",
+      "tareeqCdDesc": "Prononciation des lettres et mots par répétition."
+    }
+  },
+
+  "platforms": {
+    "hub": {
+      "title": "Portail des Plateformes",
+      "description": "Un écosystème intégré d'outils éducatifs. Un seul compte ouvre des possibilités illimitées pour apprendre, créer et lire.",
+      "digitalEcosystem": "Écosystème Numérique",
+      "unifiedAccount": "Compte Unifié",
+      "unifiedDesc": "Utilisez les mêmes identifiants pour accéder à Al-Wafi, QalamNet et MyBook.",
+      "manageAccount": "Gérer mon Compte",
+      
+      "courses": "Cours",
+      "articles": "Articles",
+      "books": "Livres",
+
+      "wafiTitle": "Plateforme Al-Wafi",
+      "wafiSubtitle": "Éducation & Progrès",
+      "wafiDesc": "Environnement d'apprentissage virtuel (LMS) complet pour les cours.",
+      "enterCampus": "Entrer au Campus",
+
+      "qalamTitle": "QalamNet",
+      "qalamSubtitle": "Créativité & Communauté",
+      "qalamDesc": "Un espace pour les écrivains et créateurs pour publier et interagir.",
+      "enterStudio": "Entrer au Studio",
+
+      "mybookTitle": "MyBook",
+      "mybookSubtitle": "Bibliothèque Intelligente",
+      "mybookDesc": "Lecteur électronique avancé avec fonctionnalités audio et notes.",
+      "enterLibrary": "Parcourir"
+    },
+    "wafi": {
+      "title": "Plateforme Éducative Wafi",
+      "description": "Votre campus numérique intégré. Gérez les cours, suivez les progrès et connectez-vous avec les enseignants.",
+      "lmsSystem": "Système LMS",
+      "feat1": "Classes Virtuelles en Direct",
+      "feat2": "Quiz Automatisés",
+      "feat3": "Rapports Détaillés",
+      "studentLogin": "Connexion Étudiant",
+      "loginDesc": "Entrez vos identifiants pour accéder.",
+      "loginBtn": "Connexion",
+      "forgotPassword": "Mot de passe oublié ?"
+    },
+    "qalamnet": {
+      "title": "Réseau QalamNet",
+      "description": "Le studio d'écriture interactif. Un espace pour créer, partager et recevoir des conseils.",
+      "writers": "Écrivains Créatifs",
+      "groups": "Groupes Actifs",
+      "joinCommunity": "Rejoindre la Communauté",
+      "communityDesc": "Choisissez votre portail.",
+      "studentPortal": "Portail Étudiant",
+      "teacherPortal": "Portail Enseignant"
+    },
+    "mybook": {
+      "title": "Plateforme MyBook",
+      "description": "Votre bibliothèque intelligente partout. Une expérience de lecture interactive.",
+      "openWebReader": "Ouvrir le Lecteur Web",
+      "downloadApp": "Télécharger l'App",
+      "audioBooks": "Livres Audio",
+      "audioDesc": "Écoutez le texte avec une prononciation correcte.",
+      "smartNotes": "Notes Intelligentes",
+      "notesDesc": "Notez vos idées directement sur les pages.",
+      "multiDevice": "Synchro Multi-appareils",
+      "deviceDesc": "Reprenez exactement là où vous vous êtes arrêté."
+    }
+  },
+
+  "services": {
+    "title": "Nos Services Éducatifs",
+    "description": "Solutions intégrées pour élever l'enseignement de l'arabe.",
+    "curriculumDesign": "Conception de Programmes",
+    "curriculumDesc": "Création de contenu selon les normes modernes.",
+    "teacherTraining": "Formation des Enseignants",
+    "trainingDesc": "Ateliers pour développer les compétences.",
+    "digitalTransformation": "Transformation Numérique",
+    "digitalDesc": "Numérisation du contenu pour les écoles.",
+    "consultancy": "Conseil Éducatif",
+    "consultancyDesc": "Solutions sur mesure.",
+    
+    "dashboard": {
+    "title": "Tableau de Bord",
+    "welcomeBack": "Bon retour",
+    "motivationalQuote": "L'éducation est le passeport pour l'avenir.",
+    "resumeLearning": "Reprendre",
+    "hours": "Heures",
+    "learningTime": "Temps d'apprentissage",
+    "days": "Jours",
+    "streak": "Série",
+    "points": "Points",
+    "inProgress": "En Cours",
+    "courseTitle": "Série Al-Wafi - Niveau 2",
+    "currentLesson": "Leçon Actuelle",
+    "lessonName": "Construction de la Phrase Verbale",
+    "completed": "Terminé"
+  },
+    "account": {
+    "title": "Paramètres du Compte",
+    "fullName": "Nom Complet",
+    "email": "Adresse E-mail",
+    "phone": "Numéro de Téléphone",
+    "language": "Langue Préférée",
+    "saveChanges": "Sauvegarder"
+  },
+    "progress": {
+    "title": "Suivi des Progrès",
+    "subtitle": "Analyse de vos performances et compétences",
+    "totalScore": "Score Total",
+    "greatJob": "Beau travail, Ahmed !",
+    "feedbackText": "Vos performances s'améliorent, surtout en écoute. Concentrez-vous un peu sur l'écriture la semaine prochaine.",
+    "thisMonth": "Ce Mois",
+    "reading": "Lecture",
+    "writing": "Écriture",
+    "listening": "Écoute",
+    "speaking": "Parler"
+  }
+},
+
+  "legal": {
+    "privacyTitle": "Politique de Confidentialité",
+    "termsTitle": "Conditions Générales",
+    "lastUpdated": "Dernière mise à jour : Janvier 2026",
+    "privacyContent": "Chez CASP Éducation, nous accordons la priorité à votre vie privée. Nous ne collectons que les données nécessaires pour fournir nos services éducatifs à la meilleure qualité possible.",
+    "termsContent": "En utilisant notre site Web et notre plateforme, vous acceptez de vous conformer aux termes et conditions suivants qui garantissent une expérience éducative sûre et bénéfique pour tous."
+  },
+  "footer": {
+    "about": "À Propos",
+    "contact": "Contactez-nous",
+    "followUs": "Suivez-nous",
+    "rights": "Tous droits réservés",
+    "description": "Votre partenaire éducatif de confiance pour l'excellence dans l'apprentissage de l'arabe",
+    "links": "Liens Rapides",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions Générales",
+    "newsletterTitle": "Inscrivez-vous à notre Newsletter",
+    "newsletterPlaceholder": "Votre adresse e-mail",
+    "subscribe": "S'abonner"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Adresse e-mail",
+    "phone": "Numéro de téléphone",
+    "message": "Message",
+    "submit": "Envoyer",
+    "thanks": "Merci de nous avoir contactés ! Nous vous répondrons bientôt.",
+    "placeholderFirstName": "Entrez votre prénom",
+    "placeholderLastName": "Entrez votre nom",
+    "placeholderEmail": "Entrez votre e-mail",
+    "placeholderPhone": "Entrez votre numéro de téléphone",
+    "placeholderMessage": "Comment pouvons-nous vous aider ?",
+    "officeTitle": "Notre Bureau",
+    "officeAddress": "Cité Ennasr, Tunis",
+    "emailTitle": "Support E-mail",
+    "phoneTitle": "Ligne Directe"
+  },
+    "auth": {
+    "signInTitle": "Bon retour",
+    "signInSubtitle": "Connectez-vous pour accéder à votre tableau de bord éducatif et à vos cours",
+    "signUpTitle": "Créer un compte",
+    "signUpSubtitle": "Rejoignez notre plateforme et commencez votre voyage d'apprentissage de l'arabe dès aujourd'hui",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Entrez votre nom complet",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signInButton": "Se connecter",
+    "signUpButton": "Créer un compte",
+    "or": "OU",
+    "noAccount": "Pas encore membre ?",
+    "alreadyAccount": "Vous avez déjà un compte ?",
+    "agreeTerms": "En créant un compte, vous acceptez notre",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "loginSuccess": "Connexion réussie",
+    "registerSuccess": "Inscription réussie",
+    "invalidEmail": "Veuillez entrer un e-mail valide",
+    "emailRequired": "L'e-mail est requis",
+    "passwordRequired": "Le mot de passe est requis",
+    "passwordLength": "Le mot de passe doit contenir au moins 6 caractères",
+    "passwordRegEx": "Le mot de passe doit contenir des majuscules, des minuscules et un chiffre",
+    "nameRequired": "Le nom est requis",
+    "nameLength": "Le nom doit contenir au moins 2 caractères"
+  },
+
+  "store": {
+    "title": "Boutique Éducative",
+    "description": "Votre destination pour des ressources éducatives de confiance. Livres, logiciels et outils.",
+    "officialStore": "Boutique Officielle",
+    "shopNow": "Acheter",
+    "printedBooks1": "Livres Imprimés",
+    "printedDesc1": "Séries éducatives et histoires de qualité premium livrées chez vous.",
+    "ebooks1": "Livres Numériques",
+    "ebooksDesc": "Une immense bibliothèque dans votre poche. Téléchargement immédiat.",
+    "educationalCds": "CDs Éducatifs",
+    "cdsDesc": "Logiciels interactifs et audio fonctionnant hors ligne.",
+    "merch": "Accessoires",
+    "merchDesc": "Papeterie, cartes flash et cadeaux pour étudiants.",
+    "bundleOffer": "Offre Rentrée",
+    "bundleDesc": "Obtenez -20% sur la série complète + le cartable.",
+    "viewBundles": "Voir les Offres",
+
+    "ebooks": {
+      "title": "Bibliothèque Numérique",
+      "description": "Parcourez les dernières sorties numériques. Disponible en PDF et ePub.",
+      "filter": "Filtrer"
+    },
+    "printedBooks": {
+      "title": "Galerie de Livres",
+      "description": "Parcourez notre collection de livres papier.",
+      "noBooks": "Aucun livre disponible pour le moment."
+    }
+  }
+}

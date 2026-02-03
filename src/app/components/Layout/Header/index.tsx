@@ -80,7 +80,8 @@ const Header: React.FC = () => {
   }, [isSignInOpen, isSignUpOpen, navbarOpen]);
 
   return (
-    <header
+    <>
+      <header
       className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         sticky 
           ? "bg-white/90 dark:bg-brand-navy-dark/95 backdrop-blur-md py-4 border-b border-brand-sky/20 dark:border-white/10 shadow-soft-sm" 
@@ -99,7 +100,7 @@ const Header: React.FC = () => {
             aria-label="Main navigation"
           >
             {headerData.map((item, index) => (
-              <HeaderLink key={index} item={item} />
+              <HeaderLink key={`${item.href}-${index}`} item={item} />
             ))}
           </nav>
           <div className="flex items-center gap-3 lg:gap-4">
@@ -187,84 +188,85 @@ const Header: React.FC = () => {
             </button>
           </div>
         </div>
-
-        <AnimatePresence>
-          {navbarOpen && (
-            <>
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setNavbarOpen(false)}
-                className="fixed inset-0 bg-brand-navy-dark/80 backdrop-blur-sm z-40" 
-                aria-hidden="true"
-              />
-              <motion.div
-                ref={mobileMenuRef}
-                id="mobile-menu"
-                initial={{ x: locale === 'ar' ? "100%" : "-100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: locale === 'ar' ? "100%" : "-100%" }}
-                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className={`lg:hidden fixed top-0 h-full w-full bg-white dark:bg-brand-navy-dark backdrop-blur-xl border-r border-brand-sky/20 dark:border-white/10 shadow-soft-lg max-w-sm z-50 start-0 flex flex-col`}
-                role="dialog"
-                aria-modal="true"
-                aria-label="Mobile navigation menu"
-              >
-                <div className="flex items-center justify-between p-6 border-b border-brand-sky/20 dark:border-white/10">
-                  <Logo />
-                  <button
-                    onClick={() => setNavbarOpen(false)}
-                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sky/10 text-brand-navy dark:text-white hover:bg-brand-orange hover:text-white transition-colors"
-                  >
-                    <Icon icon="material-symbols:close-rounded" width={24} height={24} />
-                  </button>
-                </div>
-                <nav 
-                  className="flex flex-col items-start p-6 overflow-y-auto grow"
-                  role="navigation"
-                  aria-label="Mobile navigation"
-                >
-                  <div className="w-full space-y-1 mb-8 text-brand-navy dark:text-white">
-                    {headerData.map((item, index) => (
-                      <MobileHeaderLink key={index} item={item} />
-                    ))}
-                  </div>
-                  
-                  <div className="mt-auto w-full space-y-4 pt-6 border-t border-brand-sky/20 dark:border-white/10">
-                    <div className="p-4 bg-brand-sky/5 dark:bg-white/5 rounded-2xl text-brand-navy dark:text-white flex items-center justify-between">
-                       <LanguageSwitcher />
-                       <ThemeSwitcher />
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <PremiumButton
-                        variant="secondary"
-                        onClick={() => {
-                          setIsSignInOpen(true);
-                          setNavbarOpen(false);
-                        }}
-                      >
-                        {t("signIn")}
-                      </PremiumButton>
-                      <PremiumButton
-                        variant="primary"
-                        onClick={() => {
-                          setIsSignUpOpen(true);
-                          setNavbarOpen(false);
-                        }}
-                      >
-                        {t("signUp")}
-                      </PremiumButton>
-                    </div>
-                  </div>
-                </nav>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
       </div>
     </header>
-  );
+
+    <AnimatePresence>
+      {navbarOpen && (
+        <>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setNavbarOpen(false)}
+            className="fixed inset-0 bg-brand-navy-dark/80 backdrop-blur-sm z-50" 
+            aria-hidden="true"
+          />
+          <motion.div
+            ref={mobileMenuRef}
+            id="mobile-menu"
+            initial={{ x: locale === 'ar' ? "-100%" : "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: locale === 'ar' ? "-100%" : "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className={`lg:hidden fixed inset-y-0 h-dvh w-full bg-white dark:bg-brand-navy-dark backdrop-blur-xl border-s border-brand-sky/20 dark:border-white/10 shadow-soft-lg max-w-sm z-60 end-0 flex flex-col`}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation menu"
+          >
+            <div className="flex items-center justify-between p-6 border-b border-brand-sky/20 dark:border-white/10">
+              <button
+                onClick={() => setNavbarOpen(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sky/10 text-brand-navy dark:text-white hover:bg-brand-orange hover:text-white transition-colors"
+              >
+                <Icon icon="material-symbols:close-rounded" width={24} height={24} />
+              </button>
+              <Logo />
+            </div>
+            <nav 
+              className="flex flex-col items-start p-6 overflow-y-auto grow"
+              role="navigation"
+              aria-label="Mobile navigation"
+            >
+              <div className="w-full space-y-1 mb-8 text-brand-navy dark:text-white">
+                {headerData.map((item, index) => (
+                  <MobileHeaderLink key={`${item.href}-${index}`} item={item} />
+                ))}
+              </div>
+              
+              <div className="mt-auto w-full space-y-4 pt-6 border-t border-brand-sky/20 dark:border-white/10">
+                <div className="p-4 bg-brand-sky/5 dark:bg-white/5 rounded-2xl text-brand-navy dark:text-white flex items-center justify-between">
+                   <LanguageSwitcher />
+                   <ThemeSwitcher />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <PremiumButton
+                    variant="secondary"
+                    onClick={() => {
+                      setIsSignInOpen(true);
+                      setNavbarOpen(false);
+                    }}
+                  >
+                    {t("signIn")}
+                  </PremiumButton>
+                  <PremiumButton
+                    variant="primary"
+                    onClick={() => {
+                      setIsSignUpOpen(true);
+                      setNavbarOpen(false);
+                    }}
+                  >
+                    {t("signUp")}
+                  </PremiumButton>
+                </div>
+              </div>
+            </nav>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  </>
+);
 };
 
 export default Header;

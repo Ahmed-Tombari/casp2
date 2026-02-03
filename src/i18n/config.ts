@@ -12,7 +12,7 @@ export const localeNames: Record<Locale, string> = {
 export const rtlLocales: Locale[] = ['ar'];
 export const ltrLocales: Locale[] = ['fr', 'en'];
 
-export function isRTL(locale: Locale): boolean {
-  return rtlLocales.includes(locale);
+export function isRTL(page: Locale): boolean {
+  return rtlLocales.includes(page);
 }
 
