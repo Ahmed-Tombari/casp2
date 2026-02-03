@@ -11,6 +11,7 @@ import Newsletter from '@/app/components/Home/Newsletter';
 import ContactForm from '@/app/components/Contact/Form';
 import About from '@/app/components/Home/About';
 import Publications from '@/app/components/Home/Publications';
+import VideoSection from '@/app/components/Home/VideoSection';
 
 export async function generateMetadata({
   params,
@@ -42,6 +43,7 @@ export default async function HomePage() {
       <Partners />
       <Publications />
       <About />
+      <VideoSection />
       <NamesList />
       <Mentor />
       <Testimonial />

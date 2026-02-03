@@ -70,8 +70,9 @@
     "premiumButton1" : "تسوق الآن",
     "premiumButton2" : "دليل المعلم",
     "premiumIcon1" : "مناهج معتمدة",
-    "premiumIcon2" : "مجتمع تعليمي"
-
+    "premiumIcon2" : "مجتمع تعليمي",
+    "videoTitle": "اكتشف عالم كاسب التعليمي",
+    "videoSubtitle": "نظرة سريعة على رسالتنا وبرامجنا وأثرنا في تعليم اللغة العربية."
   },
   "publications": {
     "happyMuslim": "سلسلة The Happy Muslim",
