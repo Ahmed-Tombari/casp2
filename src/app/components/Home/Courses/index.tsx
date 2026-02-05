@@ -8,7 +8,7 @@ import { Link } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const NamesList = () => {
+const Courses = () => {
   const t = useTranslations('home')
   const commonT = useTranslations('common')
   const navT = useTranslations('nav')
@@ -177,4 +177,4 @@ const NamesList = () => {
   )
 }
 
-export default NamesList
+export default Courses

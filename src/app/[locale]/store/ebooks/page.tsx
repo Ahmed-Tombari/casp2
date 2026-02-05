@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Icon } from '@iconify/react';
@@ -13,11 +14,20 @@ export default async function EBooksPage({ params }: { params: Promise<{ locale:
   const t = await getTranslations({ locale: locale, namespace: 'store.ebooks' });
 
   // Mock Data
+  // Data matches API
   const ebooks = [
-    { title: "Grammar Master", price: "$12.99", color: "bg-emerald-500" },
-    { title: "Arabic Tales", price: "$9.99", color: "bg-brand-orange" },
-    { title: "Daily Duas", price: "$5.99", color: "bg-brand-sky" },
-    { title: "Biz Arabic", price: "$15.99", color: "bg-brand-navy" },
+    { 
+        title: "Simplified Grammar", 
+        price: "25", 
+        color: "bg-emerald-500",
+        image: "/images/books/سلسلة-القواعد-المبسّطة-213x300.png"
+    },
+    { 
+        title: "Garden of Arabic", 
+        price: "30", 
+        color: "bg-brand-orange",
+        image: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png"
+    },
   ];
 
   return (
@@ -44,8 +54,13 @@ export default async function EBooksPage({ params }: { params: Promise<{ locale:
               <div key={i} className="group bg-white dark:bg-[#112240] p-4 rounded-[2rem] shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                  {/* Cover Art */}
                  <div className={`aspect-[3/4] rounded-2xl ${book.color} mb-4 relative overflow-hidden flex items-center justify-center shadow-inner`}>
-                    <Icon icon="solar:tablet-bold" className="text-6xl text-white opacity-80 group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute top-3 right-3 bg-black/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded-lg">
+                    <Image 
+                      src={book.image}
+                      alt={book.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded-lg z-10">
                        EPUB
                     </div>
                  </div>

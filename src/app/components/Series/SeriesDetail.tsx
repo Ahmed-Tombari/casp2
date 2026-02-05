@@ -61,7 +61,7 @@ export default function SeriesDetail({
                 {title}
              </h1>
              
-             <p className="text-xl text-brand-sky-100 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+             <p className="text-xl text-gray-100 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
                 {description}
              </p>
 
@@ -87,7 +87,7 @@ export default function SeriesDetail({
                 {/* Cover Design (Simulated) */}
                 <div className="absolute inset-0 rounded-r-2xl overflow-hidden bg-brand-navy-light flex flex-col items-center justify-center p-6 border-l-4 border-gray-200">
                     <div className="w-full h-full border-2 border-brand-gold/50 rounded-xl p-4 flex flex-col items-center justify-between text-center">
-                       <Icon icon="solar:notebook-minimalistic-bold-duotone" className="text-6xl text-white/80 mt-8" />
+                       <Icon icon="solar:notebook-minimalistic-bold-duotone" className="text-6xl text-gray-100 mt-8" />
                        <div>
                           <h2 className="text-3xl font-bold text-white mb-2">{title}</h2>
                           <p className="text-brand-sky-light text-sm uppercase tracking-widest">Arabic Series</p>

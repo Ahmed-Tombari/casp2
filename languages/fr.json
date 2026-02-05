@@ -149,47 +149,8 @@
     "digitalDesc": "Plateformes interactives et ressources audio.",
     
     "gardenOfArabicTitle": "Le Jardin de l'Arabe",
-    "gardenOfArabicDesc": "Un voyage amusant pour les enfants.",
-    
-    
-    "alWafiTitle": "Série Al Wafi",
-    "alWafiDesc": "La référence complète pour l'étudiant en arabe. Couverture totale de la grammaire, de la morphologie et de la rhétorique.",
-    
-    "comprehensiveGrammar": "Grammaire Complète",
-    "grammarDesc": "Explication détaillée et simplifiée de toutes les règles.",
-    "audioSupport": "Support Audio",
-    "audioDesc": "Textes d'écoute enregistrés par des professionnels.",
-    "exercises": "Pratique Intensive",
-    "exercisesDesc": "Des milliers de questions pour renforcer les acquis.",
-    
-    "level": "Niveau",
-    "wafiVol1Title": "Bases et Débutants",
-    "wafiVol1Desc": "Introduction aux phrases nominales/verbales et vocabulaire.",
-    "wafiVol2Title": "Grammaire Intermédiaire",
-    "wafiVol2Desc": "Étude approfondie des modificateurs et compléments.",
-    "wafiVol3Title": "Morphologie",
-    "wafiVol3Desc": "Compréhension de la structure et de la dérivation des mots.",
-    "wafiVol4Title": "Rhétorique et Littérature",
-    "wafiVol4Desc": "Étude de l'éloquence et de l'appréciation littéraire.",
-
-
-    "alMufidTitle": "Série Al Mufid",
-    "alMufidDesc": "Votre compagnon pratique pour maîtriser l'arabe. Une série axée sur l'usage fonctionnel de la langue.",
-    
-    "practicalUsage": "Application Pratique",
-    "usageDesc": "Moins de théorie, plus de pratique directe de la langue.",
-    "quickReference": "Référence Rapide",
-    "referenceDesc": "Résumés et tableaux pour trouver l'info en quelques secondes.",
-    "modernVocabulary": "Vocabulaire Moderne",
-    "vocabDesc": "Termes adaptés à l'époque moderne, la technologie et les médias.",
-
-    "mufidVol1Title": "Lecture Utile",
-    "mufidVol1Desc": "Textes choisis pour développer la compréhension rapide.",
-    "mufidVol2Title": "Écriture Utile",
-    "mufidVol2Desc": "Règles d'orthographe, ponctuation et écriture fonctionnelle.",
-    "mufidVol3Title": "Conversation Utile",
-    "mufidVol3Desc": "Dialogues et scénarios pour développer la fluidité verbale."
-  },
+    "gardenOfArabicDesc": "Un voyage amusant pour les enfants."
+},
 
   "islamicSeries": {
     "title": "Séries d'Éducation Islamique",
@@ -217,119 +178,7 @@
     "theHappyMuslimTitle": "Le Musulman Heureux",
     "theHappyMuslimDesc": "Construire des valeurs positives et la joie.",
     "hidayahTitle": "Cursus Hidayah",
-    "hidayahDesc": "Études islamiques complètes : Croyance, Fiqh et Sira.",
-
-    "hidayah": {
-    "title": "Cursus Hidayah",
-    "description": "Une série éducative islamique intégrée visant à construire une personnalité équilibrée et à inculquer des valeurs nobles avec une approche moderne.",
-    "islamicStudies": "Études Islamiques",
-    
-    "aqidahTitle": "Croyance (Aqidah)",
-    "aqidahDesc": "Ancrer la foi en Dieu et comprendre les piliers de l'Islam de manière rationnelle.",
-    "fiqhTitle": "Culte (Fiqh)",
-    "fiqhDesc": "Enseignement pratique simplifié de la prière et du culte quotidien.",
-    "akhlaqTitle": "Éthique et Comportement",
-    "akhlaqDesc": "Renforcer les valeurs morales comme l'honnêteté et la bonté envers les parents.",
-    
-    "educationalJourney": "Le Parcours de l'Élève",
-    "journeyDesc": "Le cursus est divisé en étapes progressives adaptées à la croissance de l'élève.",
-    
-    "level1": "Bourgeons Croyants",
-    "level1Desc": "Étape Fondation : Histoires simples, chants et principes de base.",
-    "level2": "Lumière des Cœurs",
-    "level2Desc": "Étape Construction : Comprendre le sens du culte et mémoriser des Sourates.",
-    "level3": "Chemin de l'Intégrité",
-    "level3Desc": "Étape Compréhension : Étude de la vie du Prophète ﷺ et éthique sociale.",
-    "level4": "La Génération Modèle",
-    "level4Desc": "Étape Application : Conscience des enjeux contemporains et leadership.",
-    
-    "viewLevel": "Voir le Niveau"
-  },
- "tareeqAlMuneerAr": {
-    "title": "Tareeq Al Muneer",
-    "description": "Une méthodologie spécialisée dans l'alphabétisation arabe, guidant les élèves vers la lumière de la fluidité.",
-    "literacyProgram": "Programme d'Alphabétisation",
-    "startJourney": "Commencer",
-    
-    "phoneticMastery": "Maîtrise Phonétique",
-    "phoneticDesc": "Focus précis sur les points d'articulation des lettres.",
-    "visualClarity": "Clarté Visuelle",
-    "visualDesc": "Conçu pour le confort visuel et la distinction des lettres.",
-    "gradualProgress": "Progression Logique",
-    "gradualDesc": "Transition fluide de la lettre au mot puis à la phrase.",
-    
-    "milestones": "Jalons du Parcours",
-    "milestonesDesc": "Quatre stations clés assurant une fondation solide.",
-    
-    "level1": "Station des Lettres",
-    "level1Desc": "Reconnaissance des lettres arabes et de leurs formes.",
-    "level2": "Station des Voyelles",
-    "level2Desc": "Maîtrise des voyelles courtes et longues.",
-    "level3": "Station de Construction",
-    "level3Desc": "Connexion des lettres et construction des mots.",
-    "level4": "Station de Fluidité",
-    "level4Desc": "Lecture de phrases simples et de textes avec vitesse.",
-    
-    "explore": "Explorer"
-  },
-  "tareeqAlMuneerFr": {
-    "title": "Tareeq Al Muneer (Édition Française)",
-    "description": "Un programme conçu spécialement pour les élèves francophones, alliant la précision de la grammaire arabe à la clarté pédagogique française.",
-    "francophoneEdition": "Édition Francophone",
-    "downloadSyllabus": "Télécharger le Programme",
-    
-    "bilingualMethod": "Méthodologie Bilingue",
-    "bilingualDesc": "Grammaire et vocabulaire expliqués en français pour faciliter la compréhension.",
-    "phoneticComparisons": "Comparaisons Phonétiques",
-    "phoneticDesc": "Lier les sons arabes à leurs équivalents français.",
-    "culturalBridge": "Pont Culturel",
-    "culturalDesc": "Des textes adaptés au contexte culturel de l'élève.",
-    
-    "learningPath": "Parcours d'Apprentissage",
-    "pathDesc": "Quatre niveaux pour passer de l'alphabet à la fluidité.",
-    "level": "Niveau",
-    
-    "stage1": "Introduction",
-    "stage1Desc": "Alphabet et sons de base.",
-    "stage2": "Les Bases",
-    "stage2Desc": "Vocabulaire et grammaire simple.",
-    "stage3": "Expression",
-    "stage3Desc": "Structure de phrase et conversation.",
-    "stage4": "Maîtrise",
-    "stage4Desc": "Lecture d'histoires et textes avancés.",
-    
-    "viewDetails": "Voir les Détails"
-  },
-  "theHappyMuslim": {
-    "title": "Le Musulman Heureux",
-    "description": "Une série éducative amusante visant à construire la personnalité de l'enfant musulman en inculquant le bonheur et l'optimisme.",
-    "characterBuilding": "Formation du Caractère",
-    "watchPromo": "Voir la Vidéo",
-    
-    "joyfulLearning": "Apprentissage Joyeux",
-    "joyfulDesc": "Nous utilisons le jeu et les histoires pour rendre l'apprentissage heureux.",
-    "integratedValues": "Valeurs Intégrées",
-    "valuesDesc": "Lier les valeurs islamiques à la vie quotidienne.",
-    "creativeArts": "Arts et Créativité",
-    "creativeDesc": "Activités artistiques et chants pour développer le goût.",
-    
-    "seriesBooks": "Livres de la Série",
-    "seriesDesc": "Cinq niveaux couvrant différents aspects de la vie de l'enfant.",
-    "level": "Niveau",
-    
-    "book1Title": "Ma Belle Religion",
-    "book1Desc": "Présenter à l'enfant son Seigneur et sa religion avec amour.",
-    "book2Title": "Mes Bonnes Manières",
-    "book2Desc": "Enseigner l'étiquette du repas, du sommeil et des relations.",
-    "book3Title": "Mon Grand Prophète",
-    "book3Desc": "Histoires choisies de la vie du Prophète ﷺ montrant sa miséricorde.",
-    "book4Title": "Mon Monde Merveilleux",
-    "book4Desc": "Réfléchir aux créations de Dieu et protéger l'environnement.",
-    "book5Title": "Mon Cœur Pur",
-    "book5Desc": "Actions du cœur comme l'honnêteté, l'amour et la confiance en Dieu.",
-    
-    "exploreBook": "Explorer le Livre"
-  }
+    "hidayahDesc": "Études islamiques complètes : Croyance, Fiqh et Sira."
   },
 
   
@@ -361,95 +210,89 @@
     "contactSales": "Contacter les Ventes"
 },
 
-
-  "gardenOfArabic": {
-    "title": "Le Jardin de l'Arabe",
-    "description": "Une série éducative complète emmenant l'élève dans un voyage de croissance, des graines de l'alphabet aux fruits de l'éloquence.",
-    "comprehensiveSeries": "Série Scolaire Complète",
-    
-    "stagesOfGrowth": "Étapes de Croissance",
-    "stagesDesc": "Une méthodologie progressive assurant une base solide et un développement naturel.",
-    
-    "level1Title": "L'Étape des Graines",
-    "level1Sub": "Lettres et Sons",
-    "level1Desc": "Établir la prononciation correcte et l'écriture des lettres arabes sous leurs différentes formes.",
-    
-    "level2Title": "L'Étape des Racines",
-    "level2Sub": "Vocabulaire",
-    "level2Desc": "Enrichir le vocabulaire avec des mots de l'environnement quotidien illustrés.",
-    
-    "level3Title": "L'Étape du Tronc",
-    "level3Sub": "Structure de la Phrase",
-    "level3Desc": "Passer des mots aux phrases significatives, comprendre la grammaire de base simplement.",
-    
-    "level4Title": "L'Étape des Fruits",
-    "level4Sub": "Histoires et Expression",
-    "level4Desc": "Lecture de textes et d'histoires courtes, développement de l'expression écrite et orale.",
-    
-    "exploreLevel": "Explorer le Niveau",
-    
-    "reading": "Lecture",
-    "writing": "Écriture",
-    "listening": "Écoute",
-    "speaking": "Parler",
-    
-    "interactiveTitle": "Plus qu'un simple manuel",
-    "feature1": "Histoires audio interactives qui captivent l'enfant.",
-    "feature2": "Exercices ludiques renforçant la compréhension.",
-    "feature3": "Guide de l'enseignant et fiches imprimables.",
-    "downloadSample": "Télécharger un Extrait"
+  "teacherGuide": {
+    "title": "Guide de l'enseignant",
+    "description": "Ressources et guides complets pour les enseignants d'arabe",
+    "educatorZone": "Espace Éducateur",
+    "comprehensiveSeries": "Série Complète",
+    "stagesOfGrowth": "Livres du Guide",
+    "stagesDesc": "Parcourez et téléchargez les guides de l'enseignant pour tous les niveaux",
+    "readBtn": "Lire le livre",
+    "downloadBtn": "Télécharger le PDF",
+    "close": "Fermer",
+    "explore": "Explorer la série",
+    "garden": {
+      "title": "Jardin de la langue arabe",
+      "desc": "Un programme complet de la maternelle à la 10e année",
+      "books": {
+        "kg": "Guide de l'enseignant - Maternelle",
+        "prep": "Guide de l'enseignant - Préparatoire",
+        "1": "Guide de l'enseignant - 1ère année",
+        "2": "Guide de l'enseignant - 2ème année",
+        "3": "Guide de l'enseignant - 3ème année",
+        "4": "Guide de l'enseignant - 4ème année",
+        "5": "Guide de l'enseignant - 5ème année",
+        "6": "Guide de l'enseignant - 6ème année",
+        "7": "Guide de l'enseignant - 7ème année",
+        "8": "Guide de l'enseignant - 8ème année",
+        "9": "Guide de l'enseignant - 9ème année",
+        "10": "Guide de l'enseignant - 10ème année",
+        "comp1": "Guide de l'enseignant - Global 1",
+        "comp3": "Guide de l'enseignant - Global 3",
+        "comp4": "Guide de l'enseignant - Global 4"
+      }
+    },
+    "wafi": {
+      "title": "Al-Wafi",
+      "desc": "Série Al-Wafi pour l'enseignement de la langue arabe",
+      "books": {
+        "kg": "Al-Wafi Maternelle",
+        "intro": "Al-Wafi Préliminaire",
+        "1": "Al-Wafi 1",
+        "2": "Al-Wafi 2",
+        "3": "Al-Wafi 3",
+        "4": "Al-Wafi 4",
+        "5": "Al-Wafi 5",
+        "6": "Al-Wafi 6",
+        "7": "Al-Wafi 7",
+        "8": "Al-Wafi 8"
+      }
+    },
+    "mufid": {
+      "title": "Al-Mufid",
+      "desc": "Série Al-Mufid pour les non-arabophones",
+      "books": {
+        "kg": "Al-Mufid Maternelle",
+        "prep": "Al-Mufid Préparatoire",
+        "1": "Al-Mufid 1",
+        "2": "Al-Mufid 2",
+        "3": "Al-Mufid 3",
+        "4": "Al-Mufid 4",
+        "5": "Al-Mufid 5",
+        "6": "Al-Mufid 6"
+      }
+    },
+    "happy": {
+      "title": "Le Musulman Heureux",
+      "desc": "Programme éducatif pour les valeurs et l'éthique islamiques",
+      "books": {
+        "1": "Guide de l'enseignant - Niveau 1",
+        "2": "Guide de l'enseignant - Niveau 2",
+        "3": "Guide de l'enseignant - Niveau 3",
+        "4": "Guide de l'enseignant - Niveau 4",
+        "5": "Guide de l'enseignant - Niveau 5"
+      }
+    }
   },
-
-"teacherGuide": {
-    "title": "Espace Enseignant",
-    "description": "Plateforme complète de ressources éducatives. Plans de cours, solutions et directives pédagogiques.",
-    "educatorZone": "Zone Éducateur",
-    "accessGuide": "Accéder au Guide",
-    "levels": "Niveaux",
-    "availableResources": "Ressources Disponibles au Téléchargement",
-    "download": "Télécharger",
-    "preview": "Aperçu",
-
-    "gardenTitle": "Guide Le Jardin",
-    "gardenDesc": "Plans pour enseigner les lettres et compétences de base.",
-    "wafiTitle": "Guide Série Al Wafi",
-    "wafiDesc": "Méthodologie détaillée pour la grammaire et la morphologie.",
-    "mufidTitle": "Guide Série Al Mufid",
-    "mufidDesc": "Directives pratiques pour les leçons fonctionnelles.",
-
-    "gardenGuide": {
-      "title": "Guide Enseignant : Jardin de l'Arabe",
-      "description": "Contient des techniques de motivation, histoires et fiches supplémentaires.",
-      "level1Guide": "Guide Niveau 1 (Graines)",
-      "level2Guide": "Guide Niveau 2 (Racines)",
-      "level3Guide": "Guide Niveau 3 (Tronc)",
-      "level4Guide": "Guide Niveau 4 (Fruits)"
-    },
-    "wafiGuide": {
-      "title": "Guide Enseignant : Al Wafi",
-      "description": "Référence académique incluant les réponses aux exercices.",
-      "vol1Guide": "Guide Vol 1 : Bases",
-      "vol2Guide": "Guide Vol 2 : Grammaire Intermédiaire",
-      "vol3Guide": "Guide Vol 3 : Morphologie",
-      "vol4Guide": "Guide Vol 4 : Rhétorique"
-    },
-    "mufidGuide": {
-      "title": "Guide Enseignant : Al Mufid",
-      "description": "Kit de formation pour des leçons interactives.",
-      "readingGuide": "Guide Lecture Utile",
-      "writingGuide": "Guide Écriture Utile",
-      "speakingGuide": "Guide Conversation Utile"
-    },
-    "happyMuslimGuide": {
-    "title": "Guide Enseignant : Musulman Heureux",
-    "description": "Directives pédagogiques pour inculquer les valeurs et créer des activités ludiques.",
-    "guideBook1": "Guide : Ma Belle Religion",
-    "guideBook2": "Guide : Mes Bonnes Manières",
-    "guideBook3": "Guide : Mon Grand Prophète",
-    "guideBook4": "Guide : Mon Monde Merveilleux",
-    "guideBook5": "Guide : Mon Cœur Pur"
-  }
-  },
+"happyMuslimGuide": {
+  "title": "Guide de l'Enseignant : Le Musulman Heureux",
+  "description": "Orientations pédagogiques pour inculquer des valeurs et créer des activités de classe amusantes pour les enfants.",
+  "guideBook1": "Guide du livre : Ma Belle Religion",
+  "guideBook2": "Guide du livre : Mes Bonnes Morales",
+  "guideBook3": "Guide du livre : Mon Grand Prophète",
+  "guideBook4": "Guide du livre : Mon Monde Merveilleux",
+  "guideBook5": "Guide du livre : Mon Cœur Pur"
+},
 
   "quizzes": {
     "lessonsTests": {
@@ -715,32 +558,281 @@
     "nameLength": "Le nom doit contenir au moins 2 caractères"
   },
 
-  "store": {
-    "title": "Boutique Éducative",
-    "description": "Votre destination pour des ressources éducatives de confiance. Livres, logiciels et outils.",
-    "officialStore": "Boutique Officielle",
-    "shopNow": "Acheter",
-    "printedBooks1": "Livres Imprimés",
-    "printedDesc1": "Séries éducatives et histoires de qualité premium livrées chez vous.",
-    "ebooks1": "Livres Numériques",
-    "ebooksDesc": "Une immense bibliothèque dans votre poche. Téléchargement immédiat.",
-    "educationalCds": "CDs Éducatifs",
-    "cdsDesc": "Logiciels interactifs et audio fonctionnant hors ligne.",
-    "merch": "Accessoires",
-    "merchDesc": "Papeterie, cartes flash et cadeaux pour étudiants.",
-    "bundleOffer": "Offre Rentrée",
-    "bundleDesc": "Obtenez -20% sur la série complète + le cartable.",
-    "viewBundles": "Voir les Offres",
+"store": {
+  "title": "Boutique Éducative",
+  "description": "Votre première destination pour des ressources éducatives fiables. Livres, logiciels et outils pour un voyage d'apprentissage agréable.",
+  "officialStore": "Boutique Officielle",
+  "shopNow": "Acheter maintenant",
+  "printedBooks1": "Livres Imprimés",
+  "printedDesc1": "Séries éducatives et contes avec une qualité d'impression premium livrés à domicile.",
+  "ebooks1": "Livres Numériques",
+  "ebooksDesc": "Une bibliothèque géante dans votre poche. Téléchargez et lisez instantanément sur n'importe quel appareil.",
+  "educationalCds": "CD Éducatifs",
+  "cdsDesc": "Programmes interactifs et audios fonctionnant hors ligne.",
+  "merch": "Outils et Cadeaux",
+  "merchDesc": "Papeterie, cartes éducatives et cadeaux de motivation pour les étudiants.",
+  "bundleOffer": "Pack Rentrée Scolaire",
+  "bundleDesc": "Obtenez 20% de réduction à l'achat de la série complète + le cartable.",
+  "viewBundles": "Voir les offres",
+  "discoverSeries": "Découvrir la Série",
+  "comprehensiveChoice": "Choix Complet",
+  "practicalChoice": "Choix Pratique",
+  "growthChoice": "Choix Fondation",
+  "faithChoice": "Choix Foi",
 
-    "ebooks": {
-      "title": "Bibliothèque Numérique",
-      "description": "Parcourez les dernières sorties numériques. Disponible en PDF et ePub.",
-      "filter": "Filtrer"
-    },
-    "printedBooks": {
-      "title": "Galerie de Livres",
-      "description": "Parcourez notre collection de livres papier.",
-      "noBooks": "Aucun livre disponible pour le moment."
-    }
+  "alMufid": {
+    "title": "Série Al-Mufid",
+    "description": "Votre compagnon pratique pour maîtriser l'arabe. Une série axée sur l'usage fonctionnel de la langue au quotidien et dans les études.",
+    "practicalUsage": "Application Pratique",
+    "usageDesc": "Nous nous éloignons de la théorie pour nous concentrer sur l'utilisation directe de la langue.",
+    "quickReference": "Référence Rapide",
+    "referenceDesc": "Résumés et tableaux facilitant l'accès à l'information en quelques secondes.",
+    "modernVocabulary": "Vocabulaire Moderne",
+    "vocabDesc": "Des termes en phase avec l'époque, la technologie et les médias.",
+    "level":"Niveau",
+    "mufidVol1Title": "Al-Mufid en Lecture",
+    "mufidVol1Desc": "Textes choisis pour développer les compétences de compréhension rapide.",
+    "mufidVol2Title": "Al-Mufid en Écriture",
+    "mufidVol2Desc": "Règles d'orthographe, de ponctuation et arts de l'expression fonctionnelle.",
+    "mufidVol3Title": "Al-Mufid en Conversation",
+    "mufidVol3Desc": "Dialogues et scénarios pour développer la fluidité verbale."
+  },
+  "alShamil": {
+    "title": "Série Al-Shamil",
+    "description": "Un programme académique rigoureux pour l'enseignement de l'arabe aux non-arabophones, conçu pour les universités et les centres spécialisés.",
+    "forUniversities": "Pour Universités et Académiques",
+    "downloadBrochure": "Télécharger la brochure",
+    "watchOverview": "Aperçu général",
+    "academicRigor": "Rigueur Académique",
+    "academicDesc": "Contenu préparé par une élite de professeurs d'université selon les normes internationales.",
+    "modernTopics": "Sujets Contemporains",
+    "modernDesc": "Textes et dialogues simulant la réalité moderne et les enjeux mondiaux.",
+    "skillIntegration": "Intégration des Compétences",
+    "skillDesc": "Intégration équilibrée de la lecture, l'écriture, l'écoute et l'expression orale.",
+    "academicPath": "Parcours Académique",
+    "level": "Niveau",
+    "books": "Livres",
+    "audio": "Audio",
+    "viewDetails": "Détails du niveau",
+    "level1Title": "Étape Élémentaire",
+    "level1Sub": "Fondation et Lancement",
+    "topicGreeting": "Faire connaissance",
+    "topicFamily": "La famille",
+    "topicDaily": "La vie quotidienne",
+    "level2Title": "Étape Intermédiaire",
+    "level2Sub": "Communication et Interaction",
+    "topicTravel": "Voyage et Tourisme",
+    "topicHealth": "Santé",
+    "topicShopping": "Shopping",
+    "level3Title": "Étape Avancée",
+    "level3Sub": "Maîtrise et Approfondissement",
+    "topicMedia": "Médias",
+    "topicCulture": "Culture",
+    "topicLiterature": "Littérature"
+  },
+  "alWafi": {
+    "title": "Série Al-Wafi",
+    "description": "La référence complète pour l'étudiant arabe. Couverture totale de la grammaire, de la morphologie et de la rhétorique avec un style moderne.",
+    "comprehensiveGrammar": "Grammaire Complète",
+    "grammarDesc": "Explication détaillée et simplifiée de toutes les règles de grammaire et de morphologie.",
+    "audioSupport": "Support Audio",
+    "audioDesc": "Textes d'écoute enregistrés par une élite de présentateurs.",
+    "exercises": "Exercices Intensifs",
+    "exercisesDesc": "Des milliers de questions et d'exercices pour consolider les informations.",
+    "level": "Niveau",
+    "wafiVol1Title": "Bases et Sujet",
+    "wafiVol1Desc": "Introduction à la phrase nominale et verbale et vocabulaire de base.",
+    "wafiVol2Title": "Grammaire Intermédiaire",
+    "wafiVol2Desc": "Étude approfondie des annulateurs, des compléments et des appositions.",
+    "wafiVol3Title": "Morphologie et Dérivation",
+    "wafiVol3Desc": "Comprendre la structure du mot arabe, la balance morphologique et les dérivés.",
+    "wafiVol4Title": "Rhétorique et Appréciation Littéraire",
+    "wafiVol4Desc": "Étude des arts de l'éloquence, de l'embellissement et des sens dans les textes littéraires."
+  },
+  "ebooks": {
+    "title": "Bibliothèque Numérique",
+    "description": "Parcourez les dernières publications numériques. Disponible en formats PDF et ePub.",
+    "filter": "Filtrer les résultats"
+  },
+  "gardenOfArabic": {
+    "title": "Le Jardin de la Langue Arabe",
+    "description": "Une série éducative complète qui emmène l'élève dans un voyage de croissance, de la graine des lettres à la récolte de l'éloquence.",
+    "comprehensiveSeries": "Série complète pour les écoles",
+    "stagesOfGrowth": "Étapes de Croissance Linguistique",
+    "stagesDesc": "Une méthodologie progressive garantissant une base solide et un développement naturel des compétences.",
+    "level1Title": "Étape des Graines",
+    "level1Sub": "Lettres et Sons",
+    "level1Desc": "Établir une prononciation correcte des lettres arabes et leur écriture sous différentes formes.",
+    "level2Title": "Étape des Racines",
+    "level2Sub": "Construction du Vocabulaire",
+    "level2Desc": "Enrichir le lexique avec des mots de l'environnement quotidien avec illustrations.",
+    "level3Title": "Étape de la Tige",
+    "level3Sub": "Structures de Phrases",
+    "level3Desc": "Passer du mot à la phrase utile, et comprendre les règles grammaticales de base simplement.",
+    "level4Title": "Étape des Fruits",
+    "level4Sub": "Conte et Expression",
+    "level4Desc": "Lire des textes et des histoires courtes et développer les compétences d'expression écrite et orale.",
+    "exploreLevel": "Explorer le niveau",
+    "reading": "Lecture",
+    "writing": "Écriture",
+    "listening": "Écoute",
+    "speaking": "Parler",
+    "interactiveTitle": "Plus qu'un simple manuel",
+    "feature1": "Histoires interactives parlantes qui captivent l'attention de l'enfant.",
+    "feature2": "Exercices amusants qui renforcent la compréhension.",
+    "feature3": "Guide de l'enseignant et fiches de travail imprimables.",
+    "downloadSample": "Télécharger un échantillon gratuit"
+  },
+  "hidayah": {
+    "title": "Programme Al-Hidayah",
+    "description": "Une série éducative islamique intégrée, visant à construire une personnalité équilibrée et à inculquer des valeurs nobles.",
+    "islamicStudies": "Études Islamiques",
+    "aqidahTitle": "Aqidah (Dogme)",
+    "aqidahDesc": "Inculquer la foi en Allah et connaître les piliers de l'Islam avec un style qui parle à l'esprit et au cœur.",
+    "fiqhTitle": "Fiqh et Adoration",
+    "fiqhDesc": "Enseignement pratique simplifié de la prière et des adorations quotidiennes et leur lien avec la vie.",
+    "akhlaqTitle": "Éthique et Comportement",
+    "akhlaqDesc": "Promouvoir les valeurs morales comme l'honnêteté, la loyauté et la piété filiale.",
+    "educationalJourney": "Le voyage de l'élève dans Al-Hidayah",
+    "journeyDesc": "Le programme est divisé en étapes progressives adaptées à la croissance mentale et spirituelle.",
+    "level1": "Bourgeons Croyants",
+    "level1Desc": "Étape de fondation : histoires simplifiées, chants et principes de base.",
+    "level2": "Lumière des Cœurs",
+    "level2Desc": "Étape de construction : comprendre le sens des adorations et mémoriser les petites sourates.",
+    "level3": "Chemin de la Droiture",
+    "level3Desc": "Étape de compréhension : étude de la vie du Prophète ﷺ et application de l'éthique en société.",
+    "level4": "Génération Modèle",
+    "level4Desc": "Étape d'application : sensibilisation aux enjeux contemporains et construction d'une personnalité de leader.",
+    "viewLevel": "Voir le niveau"
+  },
+  "hidayahFr": {
+    "title": "Programme Al-Hidayah (Français)",
+    "description": "Un programme islamique intégré pour les francophones, reliant les valeurs islamiques authentiques à la réalité européenne de l'enfant.",
+    "francophoneEdition": "Édition spéciale pour francophones",
+    "downloadSyllabus": "Télécharger le programme",
+    "bilingualValues": "Des valeurs dans la langue d'aujourd'hui",
+    "bilingualDesc": "Explication des concepts islamiques en français avec un style raffiné.",
+    "westernContext": "Prise en compte de la réalité",
+    "contextDesc": "Traiter les questions d'identité et d'intégration auxquelles l'enfant est confronté en Occident.",
+    "authenticSources": "Sources Fiables",
+    "sourceDesc": "Modération et juste milieu tirés du Coran et de la Sunna.",
+    "learningJourney": "Voyage d'Apprentissage",
+    "journeyDesc": "Quatre étapes pour construire une personnalité musulmane équilibrée et positive.",
+    "viewLevel": "Voir le niveau",
+    "level1Title": "Étape des Bourgeons",
+    "level1Desc": "Inculquer l'amour d'Allah et du Prophète à travers des histoires illustrées.",
+    "level2Title": "Étape de la Lumière",
+    "level2Desc": "Comprendre les piliers de l'Islam et de la Foi de manière simplifiée.",
+    "level3Title": "Étape du Chemin",
+    "level3Desc": "Appliquer l'éthique islamique à l'école et dans la société.",
+    "level4Title": "Étape du Modèle",
+    "level4Desc": "Fierté de l'identité islamique avec une ouverture positive."
+  },
+  "printedBooks": {
+    "title": "Galerie des Livres Imprimés",
+    "description": "Parcourez notre collection de livres papier de prestige.",
+    "noBooks": "Aucun livre disponible actuellement."
+  },
+  "qawaedMobasta": {
+    "title": "Grammaire Simplifiée",
+    "description": "Adieu les complexités de la grammaire. Nous présentons les règles de l'arabe avec un style visuel intelligent et des cartes mentales.",
+    "visualMethod": "Apprentissage Visuel",
+    "visualDesc": "Transformer des textes rigides en diagrammes clairs.",
+    "colorCoded": "Code Couleur",
+    "colorDesc": "Utilisation des couleurs pour distinguer les fonctions des mots dans la phrase.",
+    "mindMaps": "Cartes Mentales",
+    "mapsDesc": "Relier les règles entre elles dans un tableau complet unique.",
+    "coreTopics": "Sujets Fondamentaux",
+    "coreDesc": "Tout ce dont vous avez besoin pour construire une phrase correcte.",
+    "downloadSummary": "Résumé PDF",
+    "learnMore": "Commencer la leçon",
+    "sentenceStructure": "Structure de la Phrase",
+    "sentenceDesc": "Comment organiser les mots pour former une phrase nominale ou verbale correcte.",
+    "verbTenses": "Temps et Verbes",
+    "tensesDesc": "Passé, présent et impératif, et comment les conjuguer facilement.",
+    "pronouns": "Les Pronoms",
+    "pronounsDesc": "Une carte complète des pronoms attachés et détachés.",
+    "particles": "Particules de Sens",
+    "particlesDesc": "Le rôle des particules (prépositions, conjonctions) dans le changement de sens.",
+    "tryIt": "L'Équation Magique",
+    "tryDesc": "Nous transformons les règles complexes en équations simples que vous pouvez mémoriser et appliquer immédiatement.",
+    "verb": "Verbe",
+    "subject": "Sujet",
+    "object": "Complément",
+    "sentence": "Phrase utile"
+  },
+  "tareeqAlMuneerAr": {
+    "title": "Tareeq Al-Muneer",
+    "description": "Une méthodologie spécialisée dans l'enseignement de la lecture et de l'écriture arabes, guidant l'élève de l'analphabétisme à la fluidité.",
+    "literacyProgram": "Programme d'Alphabétisation et de Fondation",
+    "startJourney": "Commencer le voyage",
+    "phoneticMastery": "Maîtrise Phonétique",
+    "phoneticDesc": "Focus précis sur les points de sortie et les caractéristiques des lettres.",
+    "visualClarity": "Clarté Visuelle",
+    "visualDesc": "Design respectant le confort visuel et la différenciation des formes de lettres.",
+    "gradualProgress": "Progression Logique",
+    "gradualDesc": "Transition fluide de la lettre au mot, puis à la phrase.",
+    "milestones": "Étapes du Chemin",
+    "milestonesDesc": "Quatre étapes essentielles garantissant une fondation solide.",
+    "level1": "Étape des Lettres",
+    "level1Desc": "Reconnaître les lettres arabes dans leurs formes et noms.",
+    "level2": "Étape de la Vocalisation",
+    "level2Desc": "Maîtriser les voyelles courtes et longues (Mad).",
+    "level3": "Étape de Composition",
+    "level3Desc": "Compétences de liaison des lettres et construction de mots.",
+    "level4": "Étape de Fluidité",
+    "level4Desc": "Lire des phrases et des textes simples avec rapidité et compréhension.",
+    "explore": "Explorer l'étape"
+  },
+  "tareeqAlMuneerFr": {
+    "title": "Tareeq Al-Muneer (Version Française)",
+    "description": "Un programme conçu spécifiquement pour les élèves francophones, alliant la précision de l'arabe à la clarté explicative française.",
+    "francophoneEdition": "Édition spéciale francophone",
+    "downloadSyllabus": "Télécharger l'index",
+    "bilingualMethod": "Méthodologie Bilingue",
+    "bilingualDesc": "Explication des règles et du vocabulaire en français pour faciliter la compréhension.",
+    "phoneticComparisons": "Comparaisons Phonétiques",
+    "phoneticDesc": "Relier les sons arabes à leurs équivalents ou opposés en français.",
+    "culturalBridge": "Pont Culturel",
+    "culturalDesc": "Textes respectant le bagage culturel de l'élève occidental.",
+    "learningPath": "Parcours d'Apprentissage",
+    "pathDesc": "Quatre niveaux menant l'élève de l'alphabet à la fluidité.",
+    "level": "Niveau",
+    "stage1": "Introduction",
+    "stage1Desc": "Alphabet et sons de base.",
+    "stage2": "Les Bases",
+    "stage2Desc": "Construction du vocabulaire et règles simples.",
+    "stage3": "Expression",
+    "stage3Desc": "Structure des phrases et conversation quotidienne.",
+    "stage4": "Maîtrise",
+    "stage4Desc": "Lecture de contes et de textes avancés.",
+    "viewDetails": "Détails du niveau"
+  },
+  "theHappyMuslim": {
+    "title": "Le Musulman Heureux",
+    "description": "Une série éducative amusante visant à construire la personnalité de l'enfant musulman en inculquant le bonheur et l'optimisme.",
+    "characterBuilding": "Construction de la Personnalité",
+    "watchPromo": "Voir l'introduction",
+    "joyfulLearning": "Apprendre avec Joie",
+    "joyfulDesc": "Nous utilisons le jeu et les histoires pour faire de l'apprentissage une expérience heureuse.",
+    "integratedValues": "Valeurs Intégrées",
+    "valuesDesc": "Relier les valeurs islamiques à la vie quotidienne et au comportement pratique.",
+    "creativeArts": "Créativité et Arts",
+    "creativeDesc": "Activités artistiques et chants développant le goût et le sens esthétique.",
+    "seriesBooks": "Livres de la Série",
+    "seriesDesc": "Cinq niveaux couvrant différents aspects de la vie de l'enfant musulman.",
+    "level": "Niveau",
+    "book1Title": "Ma Belle Religion",
+    "book1Desc": "Présenter son Seigneur et sa religion à l'enfant de manière aimable.",
+    "book2Title": "Mes Bonnes Morales",
+    "book2Desc": "Apprendre les bonnes manières (repas, sommeil, relations).",
+    "book3Title": "Mon Grand Prophète",
+    "book3Desc": "Histoires choisies de la vie du Prophète ﷺ soulignant sa miséricorde.",
+    "book4Title": "Mon Monde Merveilleux",
+    "book4Desc": "Méditer sur les créations d'Allah et protéger l'environnement.",
+    "book5Title": "Mon Cœur Pur",
+    "book5Desc": "Les actions du cœur comme la sincérité, l'amour et la confiance en Allah.",
+    "exploreBook": "Explorer le livre"
   }
+ }
 }

@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import Hero from '@/app/components/Home/Hero';
 import Companies from '@/app/components/Home/Companies';
 import Partners from '@/app/components/Home/Partners';
-import NamesList from '@/app/components/Home/Courses';
+import Courses from '@/app/components/Home/Courses';
 import Mentor from '@/app/components/Home/Mentor';
 import Testimonial from '@/app/components/Home/Testimonial';
 import Newsletter from '@/app/components/Home/Newsletter';
@@ -44,7 +44,7 @@ export default async function HomePage() {
       <Publications />
       <About />
       <VideoSection />
-      <NamesList />
+      <Courses />
       <Mentor />
       <Testimonial />
       <ContactForm />

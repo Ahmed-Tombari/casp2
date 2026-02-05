@@ -16,36 +16,104 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
 
   const categories = [
     {
-      title: t('printedBooks1'),
-      desc: t('printedDesc1'),
-      href: '/store/printed-books',
-      icon: 'solar:book-bookmark-bold-duotone',
+      title: t('alShamil.title'),
+      desc: t('alShamil.description'),
+      href: '/store/al-shamil',
+      icon: 'solar:book-2-bold-duotone',
+      color: 'bg-brand-gold',
+      textColor: 'text-brand-gold',
+    },
+    {
+      id: 'al-mufid',
+      title: t('alMufid.title'),
+      desc: t('alMufid.description'),
+      href: '/store/al-mufid',
+      icon: 'solar:notebook-bold-duotone',
+      color: 'bg-brand-orange',
+      textColor: 'text-brand-orange',
+    },
+    {
+      id: 'al-wafi',
+      title: t('alWafi.title'),
+      desc: t('alWafi.description'),
+      href: '/store/al-wafi',
+      icon: 'solar:library-bold-duotone',
       color: 'bg-brand-navy',
       textColor: 'text-brand-navy',
     },
     {
-      title: t('ebooks1'),
-      desc: t('ebooksDesc'),
+      title: t('ebooks.title'),
+      desc: t('ebooks.description'),
       href: '/store/ebooks',
       icon: 'solar:tablet-bold-duotone',
       color: 'bg-brand-orange',
       textColor: 'text-brand-orange',
     },
     {
-      title: t('educationalCds'),
-      desc: t('cdsDesc'),
-      href: '/educational-cds',
-      icon: 'solar:diskette-bold-duotone',
-      color: 'bg-brand-sky',
-      textColor: 'text-brand-sky',
+      id: 'garden',
+      title: t('gardenOfArabic.title'),
+      desc: t('gardenOfArabic.description'),
+      href: '/store/garden-of-arabic',
+      icon: 'solar:leaf-bold-duotone',
+      color: 'bg-emerald-500',
+      textColor: 'text-emerald-600',
     },
     {
-      title: t('merch'),
-      desc: t('merchDesc'),
-      href: '/store/merch',
-      icon: 'solar:bag-heart-bold-duotone',
+      title: t('hidayah.title'),
+      desc: t('hidayah.description'),
+      href: '/store/hidayah',
+      icon: 'solar:book-2-bold-duotone',
       color: 'bg-brand-gold',
       textColor: 'text-brand-gold',
+    },
+    {
+      title: t('hidayahFr.title'),
+      desc: t('hidayahFr.description'),
+      href: '/store/hidayah-fr',
+      icon: 'solar:book-2-bold-duotone',
+      color: 'bg-brand-gold',
+      textColor: 'text-brand-gold',
+    },
+    {
+      title: t('printedBooks.title'),
+      desc: t('printedBooks.description'),
+      href: '/store/printed-books',
+      icon: 'solar:book-bookmark-bold-duotone',
+      color: 'bg-brand-navy',
+      textColor: 'text-brand-navy',
+    },
+    {
+      title: t('qawaedMobasta.title'),
+      desc: t('qawaedMobasta.description'),
+      href: '/store/qawaed-mobasta',
+      icon: 'solar:book-2-bold-duotone',
+      color: 'bg-brand-gold',
+      textColor: 'text-brand-gold',
+    },
+    {
+      title: t('tareeqAlMuneerAr.title'),
+      desc: t('tareeqAlMuneerAr.description'),
+      href: '/store/tareeq-al-muneer',
+      icon: 'solar:cup-star-bold',
+      color: 'bg-brand-navy',
+      textColor: 'text-brand-navy',
+    },
+    {
+      title: t('tareeqAlMuneerFr.title'),
+      desc: t('tareeqAlMuneerFr.description'),
+      href: '/store/tareeq-al-muneer-fr',
+      icon: 'solar:hand-stars-bold',
+      color: 'bg-brand-orange',
+      textColor: 'text-brand-orange',
+    },
+    {
+      id: 'happy-muslim',
+      title: t('theHappyMuslim.title'),
+      desc: t('theHappyMuslim.description'),
+      href: '/store/the-happy-muslim',
+      icon: 'solar:heart-bold-duotone',
+      color: 'bg-pink-500',
+      textColor: 'text-pink-600',
     },
   ];
 
@@ -55,18 +123,29 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
       {/* Hero Section */}
       <section className="bg-brand-navy pt-32 pb-24 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        
+          {/* Abstract Background */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
+          <Icon
+            icon="solar:shop-bold"
+            className="absolute top-10 left-10 text-9xl text-emerald-400 animate-pulse-slow"
+          />
+          <Icon
+            icon="solar:shop-bold"
+            className="absolute bottom-20 right-10 text-8xl text-brand-sky animate-pulse-slow"
+            style={{ animationDelay: "2s" }}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/20 blur-[100px] rounded-full"></div>
+        </div>
+
         <div className="container mx-auto max-w-7xl px-4 relative z-10">
           <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/10 border border-white/20 text-brand-gold text-sm font-bold mb-8 backdrop-blur-md">
              <Icon icon="solar:shop-bold" />
              <span>{t('officialStore')}</span>
           </div>
-
           <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
             {t('title')}
           </h1>
-          
-          <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed font-light">
             {t('description')}
           </p>
         </div>
@@ -83,8 +162,19 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
                 locale={locale}
                 className="group relative flex items-center p-8 bg-white dark:bg-[#112240] rounded-[2.5rem] shadow-soft hover:-translate-y-2 hover:shadow-soft-lg transition-all duration-300 overflow-hidden border border-transparent hover:border-brand-sky/20"
               >
-                {/* Decorative Background Blob */}
-                <div className={`absolute -right-10 -bottom-10 w-40 h-40 rounded-full opacity-10 ${cat.color} group-hover:scale-150 transition-transform duration-500`}></div>
+                {/* 
+                   DECORATIVE BLOB LOGIC:
+                   - isRTL (Arabic): Icon is Right -> Blob is '-right-10'
+                   - !isRTL (English/French): Icon is Left -> Blob is '-left-10'
+                */}
+                <div 
+                  className={`
+                    absolute w-40 h-40 rounded-full opacity-10 ${cat.color} 
+                    group-hover:scale-150 transition-transform duration-500
+                    -bottom-10 
+                    ${isRTL ? '-right-10' : '-left-10'}
+                  `}
+                ></div>
 
                 <div className={`w-20 h-20 rounded-[1.5rem] ${cat.color} flex items-center justify-center shrink-0 shadow-lg relative z-10`}>
                    <Icon icon={cat.icon} className="text-4xl text-white" />
@@ -125,5 +215,3 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
     </main>
   );
 }
-
-

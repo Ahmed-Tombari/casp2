@@ -52,8 +52,8 @@ export default async function PrintedBooksPage({ params }: { params: Promise<{ l
                <div className="w-20 h-20 bg-white/10 rounded-2xl mx-auto flex items-center justify-center mb-6 backdrop-blur-md">
                   <Icon icon="solar:book-bookmark-bold" className="text-4xl text-brand-gold" />
                </div>
-               <h1 className="text-4xl  text-white/80 md:text-6xl font-extrabold mb-4">{t('title')}</h1>
-               <p className="text-xl text-white/80 max-w-2xl mx-auto">{t('description')}</p>
+               <h1 className="text-4xl  text-gray-100 md:text-6xl font-extrabold mb-4">{t('title')}</h1>
+               <p className="text-xl text-gray-100 max-w-2xl mx-auto">{t('description')}</p>
             </div>
          </div>
       </div>

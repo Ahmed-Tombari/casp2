@@ -24,10 +24,32 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'CASP Education',
-  description: 'Educational Platform for learning Arabic',
-}
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | CASP Education',
+    default: 'CASP Education - Premium Arabic Learning Resources',
+  },
+  description: 'Discover the best resources for learning Arabic: books, e-books, and interactive tools for schools and individuals.',
+  keywords: ['Arabic', 'Education', 'Learning', 'Books', 'E-books', 'Curriculum', 'CASP'],
+  metadataBase: new URL('https://casp-edu.com'),
+  openGraph: {
+    title: 'CASP Education',
+    description: 'Educational Platform for learning Arabic',
+    url: 'https://casp-edu.com',
+    siteName: 'CASP Education',
+    images: [
+      {
+        url: '/images/logo.png', // Assuming logo exists, valid fallback
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 export default async function PagesLayout({
   children,
@@ -55,7 +77,7 @@ export default async function PagesLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${cairo.variable} font-sans min-h-screen relative overflow-x-hidden bg-brand-sky/5 text-brand-navy dark:bg-brand-navy dark:text-white selection:bg-brand-gold selection:text-brand-navy transition-colors duration-300`}
+        className={`${cairo.variable} font-sans min-h-screen relative overflow-x-hidden bg-brand-sky/5 text-brand-navy dark:bg-brand-navy-black dark:text-white selection:bg-brand-gold selection:text-brand-navy transition-colors duration-300`}
       >
         {/* Global Background Layers - Dark Mode */}
         <div className="fixed inset-0 z-0 pointer-events-none user-select-none opacity-0 dark:opacity-100 transition-opacity duration-500">

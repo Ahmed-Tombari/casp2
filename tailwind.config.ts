@@ -20,6 +20,7 @@ const config: Config = {
           DEFAULT: "#2B5A96", // Primary brand color (structure, trust, hierarchy)
           light: "#3B6CA8", // Lighter shade for hover/gradients
           dark: "#1A3A61", // Deep shade for dark mode backgrounds
+          black: "#09121E", // Deepest navy for backgrounds
           50: "#E6F0FA",
           100: "#CCE0F5",
           200: "#99C2EB",
