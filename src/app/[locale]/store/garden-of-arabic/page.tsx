@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
+import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
 export async function generateMetadata({
   params,
@@ -32,41 +33,114 @@ export default async function GardenOfArabicPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.gardenOfArabic' });
+  const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
   const isRTL = locale === 'ar';
 
   // --- Concept: The Growth Stages (Levels) ---
   const levels = [
     {
-      id: 1,
-      title: t('level1Title'), // The Seeds
-      sub: t('level1Sub'), // "Letters & Sounds"
+      id: 'kg',
+      title: tLevels('kg'),
+      sub: t('level1Sub'), 
       desc: t('level1Desc'),
       icon: 'solar:leaf-bold-duotone',
       color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
       border: 'border-emerald-200 dark:border-emerald-800',
     },
     {
-      id: 2,
-      title: t('level2Title'), // The Roots
-      sub: t('level2Sub'), // "Vocabulary Building"
-      desc: t('level2Desc'),
-      icon: 'mdi-sprout', // Icon representing growth
+      id: 'prep',
+      title: tLevels('prep'),
+      sub: t('level1Sub'),
+      desc: t('level1Desc'),
+      icon: 'mdi-sprout',
       color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
       border: 'border-teal-200 dark:border-teal-800',
     },
     {
-      id: 3,
-      title: t('level3Title'), // The Trunk
-      sub: t('level3Sub'), // "Sentence Structure"
-      desc: t('level3Desc'),
+      id: '1',
+      title: tLevels('1'),
+      sub: t('level1Sub'),
+      desc: t('level1Desc'),
       icon: 'mdi:tree',
       color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
       border: 'border-green-200 dark:border-green-800',
     },
     {
-      id: 4,
-      title: t('level4Title'), // The Fruit
-      sub: t('level4Sub'), // "Fluency & Stories"
+      id: '2',
+      title: tLevels('2'),
+      sub: t('level2Sub'),
+      desc: t('level2Desc'),
+      icon: 'mdi:apple',
+      color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
+      border: 'border-lime-200 dark:border-lime-800',
+    },
+    {
+      id: '3',
+      title: tLevels('3'),
+      sub: t('level3Sub'),
+      desc: t('level3Desc'),
+      icon: 'solar:leaf-bold-duotone',
+      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+      border: 'border-emerald-200 dark:border-emerald-800',
+    },
+    {
+      id: '4',
+      title: tLevels('4'),
+      sub: t('level4Sub'),
+      desc: t('level4Desc'),
+      icon: 'mdi-sprout',
+      color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
+      border: 'border-teal-200 dark:border-teal-800',
+    },
+    {
+      id: '5',
+      title: tLevels('5'),
+      sub: t('stagesDesc'),
+      desc: t('level4Desc'),
+      icon: 'mdi:tree',
+      color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+      border: 'border-green-200 dark:border-green-800',
+    },
+    {
+      id: '6',
+      title: tLevels('6'),
+      sub: t('stagesDesc'),
+      desc: t('level4Desc'),
+      icon: 'mdi:apple',
+      color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
+      border: 'border-lime-200 dark:border-lime-800',
+    },
+    {
+      id: '7',
+      title: tLevels('7'),
+      sub: t('stagesDesc'),
+      desc: t('level4Desc'),
+      icon: 'solar:leaf-bold-duotone',
+      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+      border: 'border-emerald-200 dark:border-emerald-800',
+    },
+    {
+      id: '8',
+      title: tLevels('8'),
+      sub: t('stagesDesc'),
+      desc: t('level4Desc'),
+      icon: 'mdi-sprout',
+      color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
+      border: 'border-teal-200 dark:border-teal-800',
+    },
+    {
+      id: '9',
+      title: tLevels('9'),
+      sub: t('stagesDesc'),
+      desc: t('level4Desc'),
+      icon: 'mdi:tree',
+      color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+      border: 'border-green-200 dark:border-green-800',
+    },
+    {
+      id: '10',
+      title: tLevels('10'),
+      sub: t('stagesDesc'),
       desc: t('level4Desc'),
       icon: 'mdi:apple',
       color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
@@ -122,58 +196,20 @@ export default async function GardenOfArabicPage({
       </section>
 
       {/* ================= THE GARDEN PATH (Levels) ================= */}
-      <section className="py-24 -mt-10 relative z-20">
-        <div className="container mx-auto max-w-6xl px-4">
-          
-          <div className="text-center mb-16">
+          <div className="text-center px-4 py-10">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
                {t('stagesOfGrowth')}
             </h2>
             <p className="text-gray-500 dark:text-gray-400">{t('stagesDesc')}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {levels.map((level, idx) => (
-              <div 
-                key={level.id}
-                className={`group relative bg-white dark:bg-brand-navy-dark p-8 md:p-10 rounded-[3rem] shadow-soft border-2 ${level.border} hover:-translate-y-2 hover:shadow-soft-hover transition-all duration-300`}
-              >
-                {/* Level Number Badge */}
-                <div className="absolute top-8 left-8 rtl:right-auto rtl:left-8 ltr:left-auto ltr:right-8">
-                   <span className="text-6xl font-black opacity-5 font-sans">{level.id}</span>
-                </div>
 
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
-                   {/* Icon Box */}
-                   <div className={`w-24 h-24 rounded-[2rem] flex items-center justify-center text-5xl shadow-inner-soft ${level.color}`}>
-                      <Icon icon={level.icon} />
-                   </div>
+      <PdfBookGrid 
+        levels={levels} 
+        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png"
+      />
 
-                   <div className="text-center sm:rtl:text-right sm:ltr:text-left">
-                      <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-1 group-hover:text-emerald-600 transition-colors">
-                        {level.title}
-                      </h3>
-                      <div className="text-sm font-bold text-emerald-600/80 dark:text-emerald-400 mb-4 uppercase tracking-wider">
-                        {level.sub}
-                      </div>
-                      <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
-                        {level.desc}
-                      </p>
-                      
-                      <Link href={`/store/garden-of-arabic/level-${level.id}`} className="inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-3 transition-all">
-                         <span>{t('exploreLevel')}</span>
-                         <Icon icon="solar:arrow-right-linear" className={`text-xl ${isRTL ? 'rotate-180' : ''}`} />
-                      </Link>
-                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= INTERACTIVE PREVIEW (The "Look Inside") ================= */}
+    {/* ================= INTERACTIVE PREVIEW (The "Look Inside") ================= */}
       <section className="py-20 bg-emerald-50/50 dark:bg-[#061410] relative overflow-hidden">
          <div className="container mx-auto max-w-7xl px-4 relative z-10">
             <div className="bg-white dark:bg-brand-navy-dark rounded-[3rem] shadow-soft-lg border border-emerald-100 dark:border-emerald-900/30 overflow-hidden flex flex-col md:flex-row">
@@ -215,7 +251,6 @@ export default async function GardenOfArabicPage({
             </div>
          </div>
       </section>
-
     </main>
   );
 }

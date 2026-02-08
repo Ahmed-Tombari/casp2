@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Icon } from '@iconify/react';
-import BookViewer from '@/app/components/TeacherGuide/BookViewer';
+import BookViewer from '@/app/components/TeacherGuide/DynamicBookViewer';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

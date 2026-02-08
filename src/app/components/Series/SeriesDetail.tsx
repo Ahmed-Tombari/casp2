@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { Link } from '@/i18n/routing';
 
 interface Book {
   level: string;
@@ -24,6 +23,7 @@ interface SeriesDetailProps {
   features?: Feature[];
   books?: Book[];
   locale?: string;
+  children?: React.ReactNode;
 }
 
 export default function SeriesDetail({ 
@@ -31,7 +31,8 @@ export default function SeriesDetail({
   description, 
   features = [], 
   books = [],
-  locale = 'en'
+  locale = 'en',
+  children
 }: SeriesDetailProps) {
   
   const isRTL = locale === 'ar';
@@ -120,34 +121,8 @@ export default function SeriesDetail({
             </div>
          </div>
       </section>
-
       {/* ================= VOLUMES / LEVELS ================= */}
-      {books.length > 0 && (
-        <section className="py-20 bg-gray-50 dark:bg-[#080f18]">
-          <div className="container mx-auto max-w-7xl px-4">
-             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">Whats Inside?</h2>
-                <p className="text-gray-500 max-w-2xl mx-auto">Explore the contents of each volume in the series.</p>
-             </div>
-
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {books.map((book, idx) => (
-                   <div key={idx} className="group flex bg-white dark:bg-brand-navy-dark rounded-3xl p-6 shadow-soft hover:shadow-soft-hover transition-all duration-300 border border-gray-100 dark:border-gray-800">
-                      <div className={`w-24 shrink-0 rounded-2xl ${book.color} flex items-center justify-center text-4xl text-white shadow-inner-soft`}>
-                         <span className="font-bold">{idx + 1}</span>
-                      </div>
-                      <div className="px-6 flex flex-col justify-center">
-                         <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">{book.level}</div>
-                         <h3 className="text-xl font-bold text-brand-navy dark:text-white mb-2">{book.title}</h3>
-                         <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{book.desc}</p>
-                      </div>
-                   </div>
-                ))}
-             </div>
-          </div>
-        </section>
-      )}
-
+      {children}
     </main>
   );
 }

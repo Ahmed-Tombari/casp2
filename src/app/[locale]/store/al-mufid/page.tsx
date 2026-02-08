@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import SeriesDetail from '@/app/components/Series/SeriesDetail';
+import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
 export async function generateMetadata({
   params,
@@ -23,6 +24,7 @@ export default async function AlMufidPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.alMufid' });
+  const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
 
   // --- Al Mufid Specific Data: "Practical & Fast" ---
   const features = [
@@ -44,24 +46,18 @@ export default async function AlMufidPage({
   ];
 
   const books = [
-    {
-      level: t('level') + ' 1',
-      title: t('mufidVol1Title'),
-      desc: t('mufidVol1Desc'),
-      color: 'bg-brand-orange', // Distinctive Orange Theme
-    },
-    {
-      level: t('level') + ' 2',
-      title: t('mufidVol2Title'),
-      desc: t('mufidVol2Desc'),
-      color: 'bg-brand-orange-light',
-    },
-    {
-      level: t('level') + ' 3',
-      title: t('mufidVol3Title'),
-      desc: t('mufidVol3Desc'),
-      color: 'bg-brand-gold',
-    },
+    { level: tLevels('kg'), title: t('mufidVol1Title'), desc: t('mufidVol1Desc'), color: 'bg-brand-orange' },
+    { level: tLevels('prep'), title: t('mufidVol1Title'), desc: t('mufidVol1Desc'), color: 'bg-brand-orange' },
+    { level: tLevels('1'), title: t('mufidVol1Title'), desc: t('mufidVol1Desc'), color: 'bg-brand-orange' },
+    { level: tLevels('2'), title: t('mufidVol2Title'), desc: t('mufidVol2Desc'), color: 'bg-brand-orange-light' },
+    { level: tLevels('3'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('4'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('5'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('6'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('7'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('8'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('9'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+    { level: tLevels('10'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
   ];
 
   return (
@@ -71,7 +67,12 @@ export default async function AlMufidPage({
       features={features}
       books={books}
       locale={locale}
-    />
+    >
+      <PdfBookGrid 
+        levels={books.map(b => ({ id: b.level, title: b.level }))} 
+        bookCover="/images/books/سلسلة-المفيد-213x300.png" 
+      />
+    </SeriesDetail>
   );
 }
 

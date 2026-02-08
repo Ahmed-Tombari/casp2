@@ -14,6 +14,7 @@
     "educationalChannel": "Educational Channel",
     "login": "Login",
     "register": "Register",
+    "readBook": "Read Book",
     "printedBooks": "Printed Books",
     "ebooks": "E-Books",
     "educationalCDs": "Educational CDs",
@@ -139,7 +140,6 @@
     "practicalChoice": "Practical Choice",
     "growthChoice": "Foundation Choice",
     "faithChoice": "Faith Choice",
-
     "modernPedagogy": "Modern Pedagogy",
     "pedagogyDesc": "Curricula based on the latest active learning theories.",
     "culturalDepth": "Cultural Depth",
@@ -580,7 +580,25 @@
   "practicalChoice": "Practical Choice",
   "growthChoice": "Foundation Choice",
   "faithChoice": "Faith Choice",
-
+  "readBtn": "Read Book",
+  "downloadBtn": "Download PDF",
+  "close": "Close",
+  "explore": "Explore Series",
+  "levels": {
+    "kg": "Kindergarten",
+    "prep": "Preparatory",
+    "1": "Grade 1",
+    "2": "Grade 2",
+    "3": "Grade 3",
+    "4": "Grade 4",
+    "5": "Grade 5",
+    "6": "Grade 6",
+    "7": "Grade 7",
+    "8": "Grade 8",
+    "9": "Grade 9",
+    "10": "Grade 10"
+  },
+  
   "alMufid": {
     "title": "Al-Mufid Series",
     "description": "Your practical companion for mastering Arabic. A series focusing on the functional use of language in daily life and study.",
@@ -729,11 +747,29 @@
     "level4Title": "Role Model Stage",
     "level4Desc": "Pride in Islamic identity with positive openness."
   },
-  "printedBooks": {
-    "title": "Printed Books Gallery",
-    "description": "Browse our collection of premium physical books.",
-    "noBooks": "No books available currently."
-  },
+  "hidayahEn": {
+      "title": "Hidayah Curriculum (English)",
+      "description": "An integrated Islamic curriculum for English speakers. Connecting authentic values with daily life in the West.",
+      "englishEdition": "English Edition",
+      "downloadSyllabus": "Download Syllabus",
+      "westernContext": "Western Context",
+      "westernDesc": "Addressing identity challenges in the West.",
+      "authenticContent": "Authentic Content",
+      "authenticDesc": "Moderation derived from Quran & Sunnah.",
+      "engagingDesign": "Engaging Design",
+      "designDesc": "High-quality illustrations.",
+      "learningJourney": "Learning Journey",
+      "journeyDesc": "Graduated stages for character building.",
+      "viewLevel": "View Level",
+      "level1Title": "Buds Stage",
+      "level1Desc": "Instilling love for God.",
+      "level2Title": "Light Stage",
+      "level2Desc": "Understanding Pillars.",
+      "level3Title": "Path Stage",
+      "level3Desc": "Applying Ethics.",
+      "level4Title": "Role Model Stage",
+      "level4Desc": "Identity Pride."
+    },
   "qawaedMobasta": {
     "title": "Simplified Grammar",
     "description": "Goodbye to grammar complexities. We present Arabic grammar in a smart visual style and mind maps that make understanding intuitive.",
@@ -809,6 +845,26 @@
     "stage4Desc": "Reading stories and advanced texts.",
     "viewDetails": "Level Details"
   },
+  "tareeqAlMuneerEn": {
+      "title": "Tareeq Al Muneer (English)",
+      "description": "The comprehensive guide to learning Arabic for English speakers.",
+      "englishEdition": "English Edition",
+      "downloadSyllabus": "Download Syllabus",
+      "englishInstructions": "English Instructions",
+      "englishDesc": "Rules explained in simple English.",
+      "phoneticBridge": "Phonetic Bridge",
+      "phoneticDesc": "Phonetic symbols for pronunciation.",
+      "selfStudy": "Self-Study",
+      "selfStudyDesc": "Designed for independent learning.",
+      "packageContent": "Package Contents",
+      "viewDetails": "View Details",
+      "vol1": "Volume 1",
+      "vol1Sub": "Letters & Sounds",
+      "vol2": "Volume 2",
+      "vol2Sub": "Words & Sentences",
+      "audioPack": "Audio Pack",
+      "audioSub": "High-Quality MP3s"
+    },
   "theHappyMuslim": {
     "title": "The Happy Muslim",
     "description": "A fun educational series aiming to build the Muslim child's character by planting values of happiness, optimism, and love of good.",

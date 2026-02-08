@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
+import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
 // --- Type Definitions ---
 interface Feature {
@@ -10,8 +10,8 @@ interface Feature {
   icon: string;
 }
 
-interface Level {
-  id: number;
+interface LevelDefinition {
+  id: string;
   title: string;
   subtitle: string;
   topics: string[];
@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function AlShamilPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.alShamil' });
+  const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
   const isRTL = locale === 'ar';
 
   // --- Features: Why Al-Shamil? ---
@@ -37,28 +38,91 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
   ];
 
   // --- The Levels (Modules) ---
-  const levels: Level[] = [
+  const levels = [
     {
-      id: 1,
-      title: t('level1Title'), // Novice / Foundation
+      id: 'kg',
+      title: tLevels('kg'),
       subtitle: t('level1Sub'),
       topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
       color: 'bg-emerald-500'
     },
     {
-      id: 2,
-      title: t('level2Title'), // Intermediate
+      id: 'prep',
+      title: tLevels('prep'),
+      subtitle: t('level1Sub'),
+      topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
+      color: 'bg-emerald-500'
+    },
+    {
+      id: '1',
+      title: tLevels('1'),
+      subtitle: t('level1Sub'),
+      topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
+      color: 'bg-emerald-500'
+    },
+    {
+      id: '2',
+      title: tLevels('2'),
       subtitle: t('level2Sub'),
       topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
       color: 'bg-brand-sky'
     },
     {
-      id: 3,
-      title: t('level3Title'), // Advanced
+      id: '3',
+      title: tLevels('3'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
       color: 'bg-brand-navy'
     },
+    {
+      id: '4',
+      title: tLevels('4'),
+      subtitle: t('level2Sub'),
+      topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
+      color: 'bg-brand-sky'
+    },
+    {
+      id: '5',
+      title: tLevels('5'),
+      subtitle: t('level2Sub'),
+      topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
+      color: 'bg-brand-sky'
+    },
+    {
+      id: '6',
+      title: tLevels('6'),
+      subtitle: t('level3Sub'),
+      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
+      color: 'bg-brand-navy'
+    },
+    {
+      id: '7',
+      title: tLevels('7'),
+      subtitle: t('level3Sub'),
+      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
+      color: 'bg-brand-navy'
+    },
+    {
+      id: '8',
+      title: tLevels('8'),
+      subtitle: t('level3Sub'),
+      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
+      color: 'bg-brand-navy'
+    },
+    {
+      id: '9',
+      title: tLevels('9'),
+      subtitle: t('level3Sub'),
+      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
+      color: 'bg-brand-navy'
+    },
+    {
+      id: '10',
+      title: tLevels('10'),
+      subtitle: t('level3Sub'),
+      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
+      color: 'bg-brand-navy'
+    }
   ];
 
   return (
@@ -116,10 +180,6 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
          </div>
       </section>
 
-      {/* ================= ACADEMIC LEVELS ================= */}
-      <section className="py-12 pb-32">
-        <div className="container mx-auto max-w-5xl px-4">
-          
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
                {t('academicPath')}
@@ -127,56 +187,10 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
             <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
           </div>
 
-          <div className="space-y-8">
-            {levels.map((level) => (
-              <div 
-                key={level.id}
-                className="group bg-white dark:bg-brand-navy-dark rounded-[2.5rem] p-2 shadow-soft hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex flex-col md:flex-row items-stretch">
-                   
-                   {/* Level Indicator (Left/Right Side) */}
-                   <div className={`md:w-32 rounded-[2rem] ${level.color} flex flex-col items-center justify-center py-8 text-white`}>
-                      <span className="text-xs font-bold uppercase tracking-widest opacity-80">{t('level')}</span>
-                      <span className="text-5xl font-black">{level.id}</span>
-                   </div>
-
-                   {/* Content */}
-                   <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                         <div>
-                            <h3 className="text-2xl font-bold text-brand-navy dark:text-white">{level.title}</h3>
-                            <p className="text-brand-orange font-medium">{level.subtitle}</p>
-                         </div>
-                         <div className="flex gap-2">
-                            {/* Topics Tags */}
-                            {level.topics.map((topic, i) => (
-                               <span key={i} className="px-3 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-300 text-xs font-bold rounded-lg">
-                                  {topic}
-                               </span>
-                            ))}
-                         </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-white/5">
-                         <div className="flex items-center gap-4 text-sm text-gray-500">
-                            <span className="flex items-center gap-1"><Icon icon="solar:book-2-bold" /> 2 {t('books')}</span>
-                            <span className="flex items-center gap-1"><Icon icon="solar:headphones-round-sound-bold" /> {t('audio')}</span>
-                         </div>
-                         <button className="flex items-center gap-2 text-brand-navy dark:text-white font-bold hover:text-brand-orange transition-colors">
-                            {t('viewDetails')}
-                            <Icon icon="solar:arrow-right-linear" className={isRTL ? "rotate-180" : ""} />
-                         </button>
-                      </div>
-                   </div>
-
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      <PdfBookGrid 
+        levels={levels} 
+        bookCover="/images/books/سلسلة-الشّامل-للكبار-213x300.png"
+      />
 
     </main>
   );

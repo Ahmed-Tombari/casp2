@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
+import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
 export async function generateMetadata({
   params,
@@ -32,6 +33,7 @@ export default async function HidayahPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.hidayah' });
+  const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
   const isRTL = locale === 'ar';
 
   // --- Pillars (The Overlapping Feature Grid) ---
@@ -62,37 +64,101 @@ export default async function HidayahPage({
   // --- Journey Levels (The Main Content Cards) ---
   const levels = [
     {
-      id: 1,
-      title: t('level1'), // Believing Buds
+      id: 'kg',
+      title: tLevels('kg'),
       desc: t('level1Desc'),
       icon: 'solar:leaf-bold-duotone',
       color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
       border: 'border-emerald-200 dark:border-emerald-800',
     },
     {
-      id: 2,
-      title: t('level2'), // Light of Hearts
+      id: 'prep',
+      title: tLevels('prep'),
+      desc: t('level1Desc'),
+      icon: 'solar:leaf-bold-duotone',
+      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+      border: 'border-emerald-200 dark:border-emerald-800',
+    },
+    {
+      id: '1',
+      title: tLevels('1'),
+      desc: t('level1Desc'),
+      icon: 'solar:leaf-bold-duotone',
+      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+      border: 'border-emerald-200 dark:border-emerald-800',
+    },
+    {
+      id: '2',
+      title: tLevels('2'),
       desc: t('level2Desc'),
       icon: 'solar:heart-shine-bold-duotone',
       color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
       border: 'border-brand-gold/30',
     },
     {
-      id: 3,
-      title: t('level3'), // Path of Integrity
+      id: '3',
+      title: tLevels('3'),
       desc: t('level3Desc'),
       icon: 'mdi:road',
       color: 'bg-brand-sky-light/20 text-brand-sky-dark dark:bg-brand-sky/10 dark:text-brand-sky',
       border: 'border-brand-sky/30',
     },
     {
-      id: 4,
-      title: t('level4'), // Model Generation
+      id: '4',
+      title: tLevels('4'),
       desc: t('level4Desc'),
       icon: 'solar:users-group-rounded-bold-duotone',
       color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
       border: 'border-brand-navy/20',
     },
+    {
+      id: '5',
+      title: tLevels('5'),
+      desc: t('level4Desc'),
+      icon: 'solar:users-group-rounded-bold-duotone',
+      color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
+      border: 'border-brand-navy/20',
+    },
+    {
+      id: '6',
+      title: tLevels('6'),
+      desc: t('level4Desc'),
+      icon: 'solar:users-group-rounded-bold-duotone',
+      color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
+      border: 'border-brand-navy/20',
+    },
+    {
+      id: '7',
+      title: tLevels('7'),
+      desc: t('level4Desc'),
+      icon: 'solar:users-group-rounded-bold-duotone',
+      color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
+      border: 'border-brand-navy/20',
+    },
+    {
+      id: '8',
+      title: tLevels('8'),
+      desc: t('level4Desc'),
+      icon: 'solar:users-group-rounded-bold-duotone',
+      color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
+      border: 'border-brand-navy/20',
+    },
+    {
+      id: '9',
+      title: tLevels('9'),
+      desc: t('level4Desc'),
+      icon: 'solar:users-group-rounded-bold-duotone',
+      color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
+      border: 'border-brand-navy/20',
+    },
+    {
+      id: '10',
+      title: tLevels('10'),
+      desc: t('level4Desc'),
+      icon: 'solar:users-group-rounded-bold-duotone',
+      color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-white',
+      border: 'border-brand-navy/20',
+    }
   ];
 
   return (
@@ -147,47 +213,17 @@ export default async function HidayahPage({
 
       {/* ================= THE JOURNEY (Level Cards) ================= */}
       {/* Matches the Grid Card style of Garden/Streams */}
-      <section className="py-12 pb-32">
-        <div className="container mx-auto max-w-7xl px-4">
-          
-          <div className="text-center mb-16">
+      <div className="text-center py-10">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
                {t('educationalJourney')}
             </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">{t('journeyDesc')}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {levels.map((level) => (
-              <div 
-                key={level.id}
-                className={`group relative flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-white dark:bg-brand-navy-dark p-8 md:p-10 rounded-[3rem] shadow-soft border-2 ${level.border} hover:-translate-y-2 hover:shadow-soft-hover transition-all duration-300`}
-              >
-                {/* Icon Box */}
-                <div className={`w-24 h-24 shrink-0 rounded-[2rem] flex items-center justify-center text-5xl shadow-inner-soft ${level.color}`}>
-                   <Icon icon={level.icon} />
-                </div>
-
-                {/* Content */}
-                <div className="text-center sm:rtl:text-right sm:ltr:text-left">
-                   <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-2 group-hover:text-brand-orange transition-colors">
-                     {level.title}
-                   </h3>
-                   <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
-                     {level.desc}
-                   </p>
-                   
-                   <Link href={`/store/hidayah/level-${level.id}`} className="inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-3 transition-all text-sm uppercase tracking-wider">
-                      <span>{t('viewLevel')}</span>
-                      <Icon icon="solar:arrow-right-linear" className={`text-xl ${isRTL ? 'rotate-180' : ''}`} />
-                   </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      <PdfBookGrid 
+        levels={levels} 
+        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png" 
+      />
 
     </main>
   );

@@ -1,14 +1,8 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Icon } from '@iconify/react';
+import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
-interface Topic {
-  id: string;
-  title: string;
-  desc: string;
-  icon: string;
-  color: string;
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -19,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function QawaedMobastaPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.qawaedMobasta' });
+  const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
   const isRTL = locale === 'ar';
 
   // --- Why Simplified? ---
@@ -28,36 +23,20 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
     { title: t('mindMaps'), desc: t('mapsDesc'), icon: 'solar:branching-paths-down-bold-duotone', color: 'text-brand-gold' },
   ];
 
-  // --- The Topics (The Toolkit) ---
-  const topics: Topic[] = [
-    { 
-      id: 'sentence', 
-      title: t('sentenceStructure'), 
-      desc: t('sentenceDesc'), 
-      icon: 'solar:ruler-pen-bold-duotone', 
-      color: 'bg-brand-navy' 
-    },
-    { 
-      id: 'tenses', 
-      title: t('verbTenses'), 
-      desc: t('tensesDesc'), 
-      icon: 'solar:history-bold-duotone', 
-      color: 'bg-brand-orange' 
-    },
-    { 
-      id: 'pronouns', 
-      title: t('pronouns'), 
-      desc: t('pronounsDesc'), 
-      icon: 'solar:users-group-two-rounded-bold-duotone', 
-      color: 'bg-teal-600' 
-    },
-    { 
-      id: 'particles', 
-      title: t('particles'), 
-      desc: t('particlesDesc'), 
-      icon: 'solar:link-circle-bold-duotone', 
-      color: 'bg-rose-500' 
-    },
+  // --- The Levels (The Toolkit) ---
+  const levels = [
+    { id: 'kg', title: tLevels('kg'), desc: t('sentenceDesc'), icon: 'solar:ruler-pen-bold-duotone', color: 'bg-brand-navy' },
+    { id: 'prep', title: tLevels('prep'), desc: t('sentenceDesc'), icon: 'solar:ruler-pen-bold-duotone', color: 'bg-brand-navy' },
+    { id: '1', title: tLevels('1'), desc: t('sentenceDesc'), icon: 'solar:ruler-pen-bold-duotone', color: 'bg-brand-navy' },
+    { id: '2', title: tLevels('2'), desc: t('tensesDesc'), icon: 'solar:history-bold-duotone', color: 'bg-brand-orange' },
+    { id: '3', title: tLevels('3'), desc: t('pronounsDesc'), icon: 'solar:users-group-two-rounded-bold-duotone', color: 'bg-teal-600' },
+    { id: '4', title: tLevels('4'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
+    { id: '5', title: tLevels('5'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
+    { id: '6', title: tLevels('6'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
+    { id: '7', title: tLevels('7'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
+    { id: '8', title: tLevels('8'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
+    { id: '9', title: tLevels('9'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
+    { id: '10', title: tLevels('10'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
   ];
 
   return (
@@ -102,46 +81,19 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
       </section>
 
       {/* ================= TOPICS GRID (The "Smart Cards") ================= */}
-      <section className="py-12 pb-32 px-4">
-        <div className="container mx-auto max-w-6xl">
-          
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-             <div>
-                <h2 className="text-3xl font-extrabold text-brand-navy dark:text-white mb-2">{t('coreTopics')}</h2>
-                <p className="text-gray-500 dark:text-gray-400">{t('coreDesc')}</p>
-             </div>
-             <button className="px-6 py-3 rounded-xl border-2 border-brand-navy text-brand-navy dark:text-white dark:border-white/20 font-bold hover:bg-brand-navy hover:text-white transition-all flex items-center gap-2">
-                <Icon icon="solar:file-download-bold" />
-                {t('downloadSummary')}
-             </button>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {topics.map((topic) => (
-              <div 
-                key={topic.id}
-                className="group bg-white dark:bg-brand-navy-dark rounded-[2.5rem] p-3 shadow-soft hover:shadow-lg transition-all duration-300 flex items-stretch border border-transparent hover:border-brand-sky/20"
-              >
-                {/* Visual Icon Box */}
-                <div className={`w-28 rounded-[2rem] ${topic.color} flex items-center justify-center text-white shrink-0`}>
-                   <Icon icon={topic.icon} className="text-5xl drop-shadow-md group-hover:scale-110 transition-transform" />
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 p-6 flex flex-col justify-center">
-                   <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-2">{topic.title}</h3>
-                   <p className="text-gray-500 dark:text-gray-400 mb-6 line-clamp-2">{topic.desc}</p>
-                   
-                   <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-orange cursor-pointer hover:underline">
-                      <span>{t('learnMore')}</span>
-                      <Icon icon="solar:arrow-right-linear" className={isRTL ? "rotate-180" : ""} />
-                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Interactive Preview (The "Magic" Box) */}
+      {/* Levels Grid */}
+       <div className="text-center py-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">{t('coreTopics')}</h2>
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">{t('coreDesc')}</p>
+        </div>
+  
+      <PdfBookGrid 
+        levels={levels} 
+        bookCover="/images/books/سلسلة-القواعد-المبسّطة-213x300.png"
+      />
+      <section className="py-12 pb-10 px-4">
+    {/* Interactive Preview (The "Magic" Box) */}
           <div className="mt-20 bg-brand-sky/10 dark:bg-white/5 rounded-[3rem] p-10 md:p-16 text-center border-2 border-dashed border-brand-sky/30 dark:border-white/10">
              <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-6">{t('tryIt')}</h3>
              
@@ -158,10 +110,7 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
              
              <p className="text-gray-500 max-w-lg mx-auto">{t('tryDesc')}</p>
           </div>
-
-        </div>
       </section>
-
     </main>
   );
 }
