@@ -10,15 +10,15 @@ const BookViewer = dynamic(() => import('@/app/components/TeacherGuide/BookViewe
 interface Level {
   id: string | number;
   title: string;
+  bookCover: string;
+  pdfUrl: string;
 }
 
 interface PdfBookGridProps {
   levels: Level[];
-  bookCover: string;
-  pdfUrl?: string; // Optional, defaults to teacherskg1.pdf if not provided
 }
 
-export default function PdfBookGrid({ levels, bookCover, pdfUrl = '/pdfbooks/teacherskg1.pdf' }: PdfBookGridProps) {
+export default function PdfBookGrid({ levels }: PdfBookGridProps) {
   const tNav = useTranslations('nav');
   const tGuide = useTranslations('store');
   const locale = useLocale();
@@ -32,7 +32,7 @@ export default function PdfBookGrid({ levels, bookCover, pdfUrl = '/pdfbooks/tea
             <BookViewer
               key={idx}
               title={`${level.title}`}
-              pdfUrl={pdfUrl}
+              pdfUrl={level.pdfUrl}
               readLabel={tNav('readBook')}
               downloadLabel={tGuide('downloadBtn')}
               closeLabel={tGuide('close')}
@@ -40,7 +40,7 @@ export default function PdfBookGrid({ levels, bookCover, pdfUrl = '/pdfbooks/tea
               borderColor="border-emerald-200 dark:border-emerald-800"
               icon="solar:book-bookmark-bold-duotone"
               isRTL={isRTL}
-              coverImage={bookCover}
+              coverImage={level.bookCover}
             />
           ))}
         </div>

@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -34,7 +33,6 @@ export default async function HidayahPage({
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.hidayah' });
   const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Pillars (The Overlapping Feature Grid) ---
   const pillars = [
@@ -221,8 +219,11 @@ export default async function HidayahPage({
           </div>
 
       <PdfBookGrid 
-        levels={levels} 
-        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png" 
+        levels={levels.map(l => ({
+          ...l,
+          bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png",
+          pdfUrl: "#"
+        }))} 
       />
 
     </main>

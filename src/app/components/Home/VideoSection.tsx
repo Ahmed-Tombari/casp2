@@ -45,7 +45,7 @@ const VideoSection = () => {
           <GlassCard className="p-2 sm:p-4 rounded-4xl overflow-hidden border-white/20 dark:border-white/10 shadow-2xl">
             <div className="relative aspect-video rounded-3xl overflow-hidden bg-black group">
               <video
-                src="/video/Vidéo d'Informations événementielles Start up avec Illustrations en Bleu foncé et Vert.mp4"
+                src="https://3nvnebfanoina0ww.public.blob.vercel-storage.com/video/caspvideo.mp4"
                 controls
                 autoPlay
                 muted

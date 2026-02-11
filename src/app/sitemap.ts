@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://casp-edu.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://caspeducation.com';
   
   // Core routes
   const routes = [

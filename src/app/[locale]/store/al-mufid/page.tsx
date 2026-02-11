@@ -1,78 +1,137 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import SeriesDetail from '@/app/components/Series/SeriesDetail';
+import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale: locale, namespace: 'store.alMufid' });
-
-  return {
-    title: t('title'),
-    description: t('description'),
-  };
+// --- Type Definitions ---
+interface Feature {
+  title: string;
+  desc: string;
+  icon: string;
 }
 
-export default async function AlMufidPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale: locale, namespace: 'store.alMufid' });
-  const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
+  const t = await getTranslations({ locale, namespace: 'store.alMufid' });
+  return { title: t('title'), description: t('description') };
+}
 
-  // --- Al Mufid Specific Data: "Practical & Fast" ---
-  const features = [
-    {
-      title: t('practicalUsage'), // "Practical Usage"
-      desc: t('usageDesc'),
-      icon: 'solar:hand-stars-bold-duotone',
-    },
-    {
-      title: t('quickReference'), // "Quick Reference"
-      desc: t('referenceDesc'),
-      icon: 'solar:bookmark-opened-bold-duotone',
-    },
-    {
-      title: t('modernVocabulary'), // "Modern Vocabulary"
-      desc: t('vocabDesc'),
-      icon: 'solar:chat-square-like-bold-duotone',
-    },
+export default async function AlMufidPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'store.alMufid' });
+  const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
+
+  // --- Features: Practical & Fast ---
+  const features: Feature[] = [
+    { title: t('practicalUsage'), desc: t('usageDesc'), icon: 'solar:hand-stars-bold-duotone' },
+    { title: t('quickReference'), desc: t('referenceDesc'), icon: 'solar:bookmark-opened-bold-duotone' },
+    { title: t('modernVocabulary'), desc: t('vocabDesc'), icon: 'solar:chat-square-like-bold-duotone' },
   ];
 
-  const books = [
-    { level: tLevels('kg'), title: t('mufidVol1Title'), desc: t('mufidVol1Desc'), color: 'bg-brand-orange' },
-    { level: tLevels('prep'), title: t('mufidVol1Title'), desc: t('mufidVol1Desc'), color: 'bg-brand-orange' },
-    { level: tLevels('1'), title: t('mufidVol1Title'), desc: t('mufidVol1Desc'), color: 'bg-brand-orange' },
-    { level: tLevels('2'), title: t('mufidVol2Title'), desc: t('mufidVol2Desc'), color: 'bg-brand-orange-light' },
-    { level: tLevels('3'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('4'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('5'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('6'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('7'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('8'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('9'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
-    { level: tLevels('10'), title: t('mufidVol3Title'), desc: t('mufidVol3Desc'), color: 'bg-brand-gold' },
+  // --- Al Mufid Levels ---
+  const levels = [
+    {
+      id: '1',
+      title: tLevels('1'),
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-1/cover/1-1.png',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-1/1-1.pdf'
+    },
+    {
+      id: '2',
+      title: tLevels('2'),
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-2/cover/2-1.png',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-2/2-1.pdf'
+    },
+    {
+      id: '3',
+      title: tLevels('3'),
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-3/cover/3-1.png',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-3/3-1.pdf'
+    },
+    {
+      id: '4',
+      title: tLevels('4'),
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-4/cover/4-1.png',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-4/4-1.pdf'
+    },
+    {
+      id: '5',
+      title: tLevels('5'),
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-5/cover/5-1.png',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-5/5-1.pdf'
+    },
+    {
+      id: '6',
+      title: tLevels('6'),
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-6/cover/6-1.png',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-6/6-1.pdf'
+    }
   ];
 
   return (
-    <SeriesDetail 
-      title={t('title')} 
-      description={t('description')}
-      features={features}
-      books={books}
-      locale={locale}
-    >
-      <PdfBookGrid 
-        levels={books.map(b => ({ id: b.level, title: b.level }))} 
-        bookCover="/images/books/سلسلة-المفيد-213x300.png" 
-      />
-    </SeriesDetail>
+    <main className="min-h-screen bg-background text-foreground">
+      
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative overflow-hidden bg-brand-orange pt-32 pb-28 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+        
+        {/* Background Patterns */}
+        <div className="absolute inset-0 opacity-10" 
+             style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
+        </div>
+
+        <div className="container mx-auto max-w-7xl px-4 relative z-10">
+          <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/10 border border-white/20 text-white text-sm font-bold mb-8 backdrop-blur-md">
+            <Icon icon="solar:star-fall-bold" className="text-brand-gold" />
+            <span>{t('practicalChoice')}</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+            {t('title')}
+          </h1>
+          
+          <p className="text-xl text-orange-50 max-w-3xl mx-auto leading-relaxed mb-10 font-light">
+            {t('description')}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <button className="px-8 py-4 bg-white text-brand-orange rounded-xl font-bold shadow-soft hover:shadow-soft-lg transition-all flex items-center justify-center gap-2">
+                <Icon icon="solar:play-circle-bold" className="text-xl" />
+                {t('watchOverview') || 'Watch Overview'}
+             </button>
+             <button className="px-8 py-4 bg-white/10 text-white rounded-xl font-bold border border-white/10 hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                <Icon icon="solar:file-download-bold" className="text-xl" />
+                {t('downloadSample') || 'Download Sample'}
+             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= METHODOLOGY ================= */}
+      <section className="py-20 -mt-16 relative z-20 px-4">
+         <div className="container mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               {features.map((feature, i) => (
+                  <div key={i} className="bg-white dark:bg-brand-navy-dark p-8 rounded-4xl shadow-soft hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-orange flex flex-col items-center text-center">
+                     <div className="w-16 h-16 rounded-full bg-orange-50 dark:bg-orange-950/20 text-brand-orange flex items-center justify-center mb-6 text-3xl">
+                        <Icon icon={feature.icon} />
+                     </div>
+                     <h3 className="text-xl font-bold text-brand-navy dark:text-white mb-3">{feature.title}</h3>
+                     <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{feature.desc}</p>
+                  </div>
+               ))}
+            </div>
+         </div>
+      </section>
+
+      {/* ================= LEVELS GRID ================= */}
+      <div className="text-center mb-16 px-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
+           {t('stagesOfGrowth')}
+        </h2>
+        <div className="h-1 w-24 bg-brand-orange mx-auto rounded-full"></div>
+      </div>
+
+      <PdfBookGrid levels={levels} />
+    </main>
   );
 }
-

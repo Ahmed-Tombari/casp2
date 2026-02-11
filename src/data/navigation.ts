@@ -12,8 +12,8 @@ const navKeys = {
       gardenGuide: 'دليل في حديقة اللغة العربية',
       wafiGuide: 'دليل الوافي',
       mufidGuide: 'دليل المفيد',
-      happyMuslimGuide: 'دليل the happy muslim',
-      hidayahGuide: 'دليل hidayah',
+      happyMuslimGuide: 'دليل المسلم السعيد',
+      hidayahGuide: 'دليل هداية',
 
     // quizzes
     quizzes: 'الاختبارات',
@@ -36,14 +36,7 @@ const navKeys = {
 
     // services
     services: 'الخدمات',
-    account: 'حساب المستخدم',
-    dashboard: 'لوحة التحكم',
     contact: 'اتصل بنا',
-    privacy: 'سياسة الخصوصية',
-    terms: 'شروط الاستخدام',
-    register: 'إنشاء حساب',
-    progress: 'تتبع التقدم',
-    login: 'تسجيل الدخول',
     
     // store
     store: 'المتجر',
@@ -52,14 +45,14 @@ const navKeys = {
     alWafi: 'الوافي',
     ebooks: 'كتب إلكترونية',
     gardenOfArabic: 'في حديقة اللغة العربية',
-    hidayahArabic: 'هداية',
-    hidayahFrench: 'هداية فرنسي',
-    hidayahEnglish: 'هداية إنجليزي', 
+    hidayahArabic: 'هداية (عربي)',
+    hidayahFrench: 'هداية (فرنسي)',
+    hidayahEnglish: 'هداية (إنجليزي)', 
     printedBooks: 'كتب ورقية',
     qawedMobasta: 'قواعد مبسطة',
-    alTareeqAlMuneerArabic: 'الطريق المنير عربي',
-    alTareeqAlMuneerFrench: 'الطريق المنير فرنسي',
-    alTareeqAlMuneerEnglish: 'الطريق المنير الإنجليزي',
+    alTareeqAlMuneerArabic: 'الطريق المنير (عربي)',
+    alTareeqAlMuneerFrench: 'الطريق المنير (فرنسي)',
+    alTareeqAlMuneerEnglish: 'الطريق المنير (إنجليزي)',
     theHappyMuslim: 'المسلم السعيد',
   },
 
@@ -94,14 +87,7 @@ const navKeys = {
 
     // services 
     services: 'Services',
-    account: 'Account',
-    dashboard: 'Dashboard',
     contact: 'Contact',
-    privacy: 'Privacy Policy',
-    terms: 'Terms of Use',
-    register: 'Register',
-    progress: 'Progress',
-    login: 'Login',
 
     // store
     store: 'Store',
@@ -110,14 +96,14 @@ const navKeys = {
     alWafi: 'Al-Wafi',
     ebooks: 'E-Books',
     gardenOfArabic: 'Garden of Arabic',
-    hidayahArabic: 'hidayah',
-    hidayahFrench: 'hidayah French',
-    hidayahEnglish: 'hidayah English',
+    hidayahArabic: 'Hidayah (Arabic)',
+    hidayahFrench: 'Hidayah (French)',
+    hidayahEnglish: 'Hidayah (English)',
     printedBooks: 'Printed Books',
     qawedMobasta: 'Qawaed Mobasta',
-    alTareeqAlMuneerArabic: 'Al-Tareeq Al-Muneer Arabic',
-    alTareeqAlMuneerFrench: 'Al-Tareeq Al-Muneer French',
-    alTareeqAlMuneerEnglish: 'Al-Tareeq Al-Muneer English',
+    alTareeqAlMuneerArabic: 'Al-Tareeq Al-Muneer (Arabic)',
+    alTareeqAlMuneerFrench: 'Al-Tareeq Al-Muneer (French)',
+    alTareeqAlMuneerEnglish: 'Al-Tareeq Al-Muneer (English)',
     theHappyMuslim: 'the happy muslim',
   },
 
@@ -152,14 +138,7 @@ const navKeys = {
 
     // services
     services: 'Services',
-    account: 'Compte',
-    dashboard: 'Tableau de bord',
     contact: 'Contact',
-    privacy: 'Confidentialité',
-    terms: 'Conditions d’utilisation',
-    register: 'Inscription',
-    login: 'Connexion',
-    progress: 'Progression',
 
     // store
     store: 'Boutique',
@@ -168,14 +147,14 @@ const navKeys = {
     alWafi: 'Al-Wafi',
     ebooks: 'Livres électroniques',
     gardenOfArabic: 'Jardin de l’arabe',
-    hidayahArabic: 'Hidayah',
-    hidayahFrench: 'Hidayah Francais',
-    hidayahEnglish: 'Hidayah English',
+    hidayahArabic: 'Hidayah (Arabe)',
+    hidayahFrench: 'Hidayah (Français)',
+    hidayahEnglish: 'Hidayah (Anglais)',
     printedBooks: 'Livres imprimés',
     qawedMobasta: 'Qawaed Mobasta',
-    alTareeqAlMuneerArabic: 'Al-Tareeq Al-Muneer Arab',
-    alTareeqAlMuneerFrench: 'Al-Tareeq Al-Muneer Francais',
-    alTareeqAlMuneerEnglish: 'Al-Tareeq Al-Muneer English',
+    alTareeqAlMuneerArabic: 'Al-Tareeq Al-Muneer (Arabe)',
+    alTareeqAlMuneerFrench: 'Al-Tareeq Al-Muneer (Français)',
+    alTareeqAlMuneerEnglish: 'Al-Tareeq Al-Muneer (Anglais)',
     theHappyMuslim: 'Happy Muslim',
   },
 } as const;
@@ -195,13 +174,13 @@ export function getNavigationData(locale: Locale): HeaderItem[] {
       label: t.store,
       href: '/store',
       submenu: [
+        { label: t.gardenOfArabic, href: '/store/garden-of-arabic' },
         { label: t.alMufid, href: '/store/al-mufid' },
         { label: t.alShamil, href: '/store/al-shamil' },
         { label: t.alWafi, href: '/store/al-wafi' },
-        { label: t.gardenOfArabic, href: '/store/garden-of-arabic' },
         { label: t.hidayahArabic, href: '/store/hidayah' },
         { label: t.hidayahFrench, href: '/store/hidayah-fr' },
-         { label: t.hidayahEnglish, href: '/store/hidayah-en' },
+        { label: t.hidayahEnglish, href: '/store/hidayah-en' },
         { label: t.qawedMobasta, href: '/store/qawaed-mobasta' },
         { label: t.alTareeqAlMuneerArabic, href: '/store/tareeq-al-muneer' },
         { label: t.alTareeqAlMuneerFrench, href: '/store/tareeq-al-muneer-fr' },
@@ -214,14 +193,7 @@ export function getNavigationData(locale: Locale): HeaderItem[] {
       label: t.services,
       href: '/services',
       submenu: [
-        { label: t.account, href: '/services/account' },
-        { label: t.dashboard, href: '/services/dashboard' },
         { label: t.contact, href: '/services/contact' },
-        { label: t.privacy, href: '/services/privacy' },
-        { label: t.terms, href: '/services/terms' },
-        { label: t.register, href: '/services/register' },
-        { label: t.login, href: '/services/login' },
-        { label: t.progress, href: '/services/progress' },
       ],
     },
     {
@@ -263,78 +235,5 @@ export function getNavigationData(locale: Locale): HeaderItem[] {
         { label: t.facebookChannel, href: 'https://www.facebook.com/caspeducation?rdid=gMP9FoFjFiCWfr4W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HDVhzFqx4%2F#' },
       ],
     },
-
-    /**************** old navigation ******************/
-    // {
-    //   label: t.curricula,
-    //   href: '/curricula',
-    //   submenu: [
-    //     {
-    //       label: t.arabicSeries,
-    //       href: '/curricula/arabic-series',
-    //       submenu: [
-    //         {
-    //           label: t.gardenOfArabic,
-    //           href: '/curricula/arabic-series/garden-of-arabic',
-    //         },
-    //         {
-    //           label: t.alWafi,
-    //           href: '/curricula/arabic-series/al-wafi',
-    //         },
-    //         {
-    //           label: t.alMufid,
-    //           href: '/curricula/arabic-series/al-mufid',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       label: t.islamicSeries,
-    //       href: '/curricula/islamic-series',
-    //       submenu: [
-    //         {
-    //           label: t.alTareeqAlMuneerArabic,
-    //           href: '/curricula/islamic-series/tareeq-al-muneer',
-    //         },
-    //         {
-    //           label: t.alTareeqAlMuneerFrench,
-    //           href: '/curricula/islamic-series/tareeq-al-muneer-fr',
-    //         },
-    //         {
-    //           label: t.theHappyMuslim,
-    //           href: '/curricula/islamic-series/the-happy-muslim',
-    //         },
-    //         {
-    //           label: t.hidayah,
-    //           href: '/curricula/islamic-series/hidayah',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       label: t.adultEducation,
-    //       href: '/curricula/adult-education',
-    //     },
-        
-    //   ],
-    // },
-    // {
-    //   label: t.quizzes,
-    //   href: '/quizzes',
-    //   submenu: [
-    //     { label: t.placementTest, href: '/quizzes/placement-test' },
-    //     { label: t.lessonsTests, href: '/quizzes/lessons-tests', 
-    //       submenu: [
-    //         {
-    //           label: t.handwritingExercises,
-    //           href: '/quizzes/lessons-tests/handwriting-exercises',
-    //         },
-    //         {
-    //           label: t.letterColoring,
-    //           href: '/quizzes/lessons-tests/letter-coloring',
-    //         },
-    //       ],
-    //     },
-    //     { label: t.educationalCDs, href: '/quizzes/educational-cds' },
-    //   ],
-    // }, 
   ];
 }

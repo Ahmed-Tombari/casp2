@@ -1,38 +1,20 @@
 'use client'
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { TestimonialType } from '@/app/types/testimonial'
-import TestimonialSkeleton from '../../Skeleton/Testimonial'
 import { useTranslations, useLocale } from 'next-intl' // Added useLocale
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { motion } from 'framer-motion'
+
+import { TestimonialData } from '@/app/data'
 
 const Testimonial = () => {
   const t = useTranslations('home')
   const locale = useLocale()
   const isRtl = locale === 'ar'
 
-  const [testimonial, setTestimonial] = useState<TestimonialType[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setTestimonial(data.TestimonialData)
-      } catch (error) {
-        console.error('Error fetching testimonials:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
+  const testimonial = TestimonialData
 
   const settings = {
     dots: true,
@@ -97,13 +79,7 @@ const Testimonial = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <Slider {...settings} className='testimonial-slider-custom'>
-            {loading
-              ? Array.from({ length: 3 }).map((_, i) => (
-                  <div key={i} className="px-3 md:px-4">
-                    <TestimonialSkeleton />
-                  </div>
-                ))
-              : testimonial.map((items, i) => (
+            {testimonial.map((items, i) => (
                   <div key={i} className='px-3 md:px-4 pb-12 md:pb-16'>
                     <motion.div 
                       initial={{ opacity: 0, y: 20 }}

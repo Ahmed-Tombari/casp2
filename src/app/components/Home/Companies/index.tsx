@@ -1,16 +1,15 @@
 'use client'
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
+import { Companiesdata } from '@/app/data'
 
 const Companies = () => {
   const t = useTranslations('home')
-  const [companies, setCompanies] = useState<{ imgSrc: string; alt?: string }[]>([])
-  const [isLoading, setIsLoading] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
 
   const settings = {
@@ -49,26 +48,8 @@ const Companies = () => {
     ],
   }
 
-  const fetchData = useCallback(async () => {
-    try {
-      setIsLoading(true)
-      const res = await fetch('/api/data')
-      if (!res.ok) throw new Error('Failed to fetch')
-      const data = await res.json()
-      setCompanies(data.Companiesdata || [])
-    } catch (error) {
-      console.error('Error fetching companies:', error)
-    } finally {
-      setIsLoading(false)
-    }
-  }, [])
-
-  useEffect(() => {
-    fetchData()
-  }, [fetchData])
-
-  // Show nothing while loading or empty
-  if (isLoading || !companies.length) return null
+  // Show nothing if empty
+  if (!Companiesdata.length) return null
 
   return (
     <section className="py-16 bg-brand-sky/5 dark:bg-brand-navy-dark/30 border-y border-brand-navy/5 dark:border-white/5 overflow-hidden relative transition-colors duration-300">
@@ -97,7 +78,7 @@ const Companies = () => {
               className={`transition-all duration-500`}
             >
               <Slider {...settings}>
-                {companies.map((item, i) => (
+                {Companiesdata.map((item, i) => (
                   <div key={i} className="px-6 lg:px-8 py-4">
                     <div className="relative group/item flex items-center justify-center">
                       <div className="relative w-32 h-16 md:w-40 md:h-20 bg-white dark:bg-brand-navy-dark rounded-2xl p-4 shadow-sm border border-brand-navy/5 dark:border-white/10 group-hover/item:shadow-xl group-hover/item:shadow-brand-orange/10 group-hover/item:border-brand-orange/30 transition-all duration-500 backdrop-blur-sm">

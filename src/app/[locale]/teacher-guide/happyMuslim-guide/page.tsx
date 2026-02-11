@@ -63,7 +63,7 @@ export default async function HappyMuslimGuidePage({ params }: { params: Promise
               <BookViewer
                 key={idx}
                 title={t(`happy.books.${item.key}`)}
-                pdfUrl={`/pdfbooks/${item.file}`}
+                pdfUrl={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/${item.file}`}
                 readLabel={t('readBtn')}
                 downloadLabel={t('downloadBtn')}
                 closeLabel={t('close')}
@@ -72,7 +72,7 @@ export default async function HappyMuslimGuidePage({ params }: { params: Promise
                 borderColor="border-sky-200 dark:border-sky-800"
                 icon="solar:smile-circle-bold-duotone"
                 isRTL={isRTL}
-                coverImage="/images/ourbooks/The Happy Muslim Series.png"
+                coverImage="https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg"
               />
             ))}
           </div>

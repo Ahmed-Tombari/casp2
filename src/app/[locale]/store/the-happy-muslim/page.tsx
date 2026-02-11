@@ -228,8 +228,11 @@ export default async function TheHappyMuslimPage({
 
       {/* ================= PDF BOOKS SECTION ================= */}
       <PdfBookGrid 
-        levels={books} 
-        bookCover="/images/books/سلسلة-the-happy-muslim-213x300.png"
+        levels={books.map(b => ({
+          ...b,
+          bookCover: "/images/books/سلسلة-the-happy-muslim-213x300.png",
+          pdfUrl: "#"
+        }))} 
       />
 
     </main>

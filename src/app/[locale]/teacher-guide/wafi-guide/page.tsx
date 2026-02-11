@@ -14,16 +14,14 @@ export default async function WafiGuidePage({ params }: { params: Promise<{ loca
   const isRTL = locale === 'ar';
 
   const bookList = [
-    { key: 'kg', file: 'teacherskg1.pdf' },
-    { key: 'intro', file: 'teacherskg1.pdf' },
-    { key: '1', file: 'teacherskg1.pdf' },
-    { key: '2', file: 'teacherskg1.pdf' },
-    { key: '3', file: 'teacherskg1.pdf' },
-    { key: '4', file: 'teacherskg1.pdf' },
-    { key: '5', file: 'teacherskg1.pdf' },
-    { key: '6', file: 'teacherskg1.pdf' },
-    { key: '7', file: 'teacherskg1.pdf' },
-    { key: '8', file: 'teacherskg1.pdf' },
+    { key: '1', file: 'wafiGuide-1.pdf', coverImage: '1.jpg' },
+    { key: '2', file: 'wafiGuide-2.pdf', coverImage: '2.jpg' },
+    { key: '3', file: 'wafiGuide-3.pdf', coverImage: '3.jpg' },
+    { key: '4', file: 'wafiGuide-4.pdf', coverImage: '4.jpg' },
+    { key: '5', file: 'wafiGuide-5.pdf', coverImage: '5.jpg' },
+    { key: '6', file: 'wafiGuide-6.pdf', coverImage: '6.jpg' },
+    { key: '7', file: 'wafiGuide-7.pdf', coverImage: '7.jpg' },
+    { key: '8', file: 'wafiGuide-8.pdf', coverImage: '8.jpg' },
   ];
 
   return (
@@ -55,7 +53,7 @@ export default async function WafiGuidePage({ params }: { params: Promise<{ loca
               <BookViewer
                 key={idx}
                 title={t(`wafi.books.${item.key}`)}
-                pdfUrl={`/pdfbooks/${item.file}`}
+                pdfUrl={`/pdfbooks/dalil-book/wafi-guide/${item.file}`}
                 readLabel={t('readBtn')}
                 downloadLabel={t('downloadBtn')}
                 closeLabel={t('close')}
@@ -63,7 +61,7 @@ export default async function WafiGuidePage({ params }: { params: Promise<{ loca
                 borderColor="border-blue-200 dark:border-blue-800"
                 icon="solar:library-bold-duotone"
                 isRTL={isRTL}
-                coverImage="/images/ourbooks/Illuminating Path Series.png"
+                coverImage={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/wafi-book/wafi-${item.key}/cover/${item.coverImage}`}
               />
             ))}
           </div>

@@ -14,7 +14,6 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.qawaedMobasta' });
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Why Simplified? ---
   const features = [
@@ -89,8 +88,11 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
         </div>
   
       <PdfBookGrid 
-        levels={levels} 
-        bookCover="/images/books/سلسلة-القواعد-المبسّطة-213x300.png"
+        levels={levels.map(l => ({
+          ...l,
+          bookCover: "/images/books/سلسلة-القواعد-المبسّطة-213x300.png",
+          pdfUrl: "#"
+        }))} 
       />
       <section className="py-12 pb-10 px-4">
     {/* Interactive Preview (The "Magic" Box) */}

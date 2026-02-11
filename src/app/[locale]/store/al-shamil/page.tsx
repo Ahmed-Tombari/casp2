@@ -10,14 +10,6 @@ interface Feature {
   icon: string;
 }
 
-interface LevelDefinition {
-  id: string;
-  title: string;
-  subtitle: string;
-  topics: string[];
-  color: string;
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.alShamil' });
@@ -28,7 +20,6 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.alShamil' });
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Features: Why Al-Shamil? ---
   const features: Feature[] = [
@@ -44,84 +35,108 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
       title: tLevels('kg'),
       subtitle: t('level1Sub'),
       topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
-      color: 'bg-emerald-500'
+      color: 'bg-emerald-500',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/1.pdf'
     },
     {
       id: 'prep',
       title: tLevels('prep'),
       subtitle: t('level1Sub'),
       topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
-      color: 'bg-emerald-500'
+      color: 'bg-emerald-500',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/1.pdf'
     },
     {
       id: '1',
       title: tLevels('1'),
       subtitle: t('level1Sub'),
       topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
-      color: 'bg-emerald-500'
+      color: 'bg-emerald-500',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/1.pdf'
     },
     {
       id: '2',
       title: tLevels('2'),
       subtitle: t('level2Sub'),
       topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
-      color: 'bg-brand-sky'
+      color: 'bg-brand-sky',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-2/cover/2.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-2/2.pdf'
     },
     {
       id: '3',
       title: tLevels('3'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy'
+      color: 'bg-brand-navy',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-3/cover/3.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-3/3.pdf'
     },
     {
       id: '4',
       title: tLevels('4'),
       subtitle: t('level2Sub'),
       topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
-      color: 'bg-brand-sky'
+      color: 'bg-brand-sky',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-4/cover/4.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-4/4.pdf'
     },
     {
       id: '5',
       title: tLevels('5'),
       subtitle: t('level2Sub'),
       topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
-      color: 'bg-brand-sky'
+      color: 'bg-brand-sky',
+      bookCover: '',
+      pdfUrl: ''
     },
     {
       id: '6',
       title: tLevels('6'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy'
+      color: 'bg-brand-navy',
+      bookCover: '',
+      pdfUrl: ''
     },
     {
       id: '7',
       title: tLevels('7'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy'
+      color: 'bg-brand-navy',
+      bookCover: '',
+      pdfUrl: ''
     },
     {
       id: '8',
       title: tLevels('8'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy'
+      color: 'bg-brand-navy',
+      bookCover: '',
+      pdfUrl: ''
     },
     {
       id: '9',
       title: tLevels('9'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy'
+      color: 'bg-brand-navy',
+      bookCover: '',
+      pdfUrl: ''
     },
     {
       id: '10',
       title: tLevels('10'),
       subtitle: t('level3Sub'),
       topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy'
+      color: 'bg-brand-navy',
+      bookCover: '',
+      pdfUrl: ''
     }
   ];
 
@@ -168,7 +183,7 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {features.map((feature, i) => (
-                  <div key={i} className="bg-white dark:bg-brand-navy-dark p-8 rounded-[2rem] shadow-soft hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-gold flex flex-col items-center text-center">
+                  <div key={i} className="bg-white dark:bg-brand-navy-dark p-8 rounded-4xl shadow-soft hover:-translate-y-2 transition-transform duration-300 border-t-4 border-brand-gold flex flex-col items-center text-center">
                      <div className="w-16 h-16 rounded-full bg-brand-navy/5 text-brand-navy dark:text-brand-sky flex items-center justify-center mb-6 text-3xl">
                         <Icon icon={feature.icon} />
                      </div>
@@ -189,7 +204,6 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
 
       <PdfBookGrid 
         levels={levels} 
-        bookCover="/images/books/سلسلة-الشّامل-للكبار-213x300.png"
       />
 
     </main>

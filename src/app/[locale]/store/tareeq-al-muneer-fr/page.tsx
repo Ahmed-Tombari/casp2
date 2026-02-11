@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -34,7 +33,6 @@ export default async function TareeqAlMuneerFrPage({
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.tareeqAlMuneerFr' });
   const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Features: Tailored for Francophones ---
   const features = [
@@ -224,11 +222,13 @@ export default async function TareeqAlMuneerFrPage({
         </div>
 
       <PdfBookGrid 
-        levels={levels} 
-        bookCover="/images/books/سلسلة-الطريق-المنير-213x300.png"
+        levels={levels.map(l => ({
+          ...l,
+          bookCover: "/images/books/سلسلة-الطريق-المنير-213x300.png",
+          pdfUrl: "#"
+        }))} 
       />
 
     </main>
   );
 }
-

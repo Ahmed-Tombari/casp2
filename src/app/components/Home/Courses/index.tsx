@@ -1,36 +1,19 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import Image from 'next/image'
-import { CourseDetailType } from '@/app/types/coursedetail'
-import CourseDetailSkeleton from '../../Skeleton/CourseDetail'
 import { Link } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
+
+import { CourseDetailData } from '@/app/data'
 
 const Courses = () => {
   const t = useTranslations('home')
   const commonT = useTranslations('common')
   const navT = useTranslations('nav')
 
-  const [courseDetail, setCourseDetail] = useState<CourseDetailType[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch.')
-        const data = await res.json()
-        setCourseDetail(data.CourseDetailData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
+  const courseDetail = CourseDetailData
 
   const [selectedButton, setSelectedButton] = useState<
     | 'printed-books'
@@ -101,18 +84,7 @@ const Courses = () => {
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 min-h-[400px]'>
           <AnimatePresence mode='popLayout'>
-            {loading ? (
-              Array.from({ length: 4 }).map((_, i) => (
-                <motion.div
-                  key={`skeleton-${i}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <CourseDetailSkeleton />
-                </motion.div>
-              ))
-            ) : filteredCourses.length > 0 ? (
+            {filteredCourses.length > 0 ? (
               filteredCourses.map((name) => (
                 <motion.div
                   key={name.course}

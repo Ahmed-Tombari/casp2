@@ -46,6 +46,8 @@ export default async function GardenOfArabicPage({
       icon: 'solar:leaf-bold-duotone',
       color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
       border: 'border-emerald-200 dark:border-emerald-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-R/assas/cover/R.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-R/assas/gardenAssesR.pdf'
     },
     {
       id: 'prep',
@@ -55,6 +57,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi-sprout',
       color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
       border: 'border-teal-200 dark:border-teal-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-P/assas/cover/P.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-P/assas/gardenAssesP.pdf'
     },
     {
       id: '1',
@@ -64,6 +68,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi:tree',
       color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
       border: 'border-green-200 dark:border-green-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-1/assas/cover/1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-1/assas/gardenAsses1.pdf'
     },
     {
       id: '2',
@@ -73,6 +79,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi:apple',
       color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
       border: 'border-lime-200 dark:border-lime-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-2/assas/cover/2.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-2/assas/gardenAsses2.pdf'
     },
     {
       id: '3',
@@ -81,7 +89,9 @@ export default async function GardenOfArabicPage({
       desc: t('level3Desc'),
       icon: 'solar:leaf-bold-duotone',
       color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800',
+      border: 'border-emerald-200 dark:border-emerald-800', 
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-3/assas/cover/3.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-3/assas/gardenAsses3.pdf'
     },
     {
       id: '4',
@@ -91,6 +101,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi-sprout',
       color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
       border: 'border-teal-200 dark:border-teal-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-4/assas/cover/4.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-4/assas/gardenAsses4.pdf'
     },
     {
       id: '5',
@@ -100,6 +112,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi:tree',
       color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
       border: 'border-green-200 dark:border-green-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-5/assas/cover/5.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-5/assas/gardenAsses5.pdf'
     },
     {
       id: '6',
@@ -109,6 +123,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi:apple',
       color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
       border: 'border-lime-200 dark:border-lime-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-6/assas/cover/6.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-6/assas/gardenAsses6.pdf'
     },
     {
       id: '7',
@@ -118,6 +134,8 @@ export default async function GardenOfArabicPage({
       icon: 'solar:leaf-bold-duotone',
       color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
       border: 'border-emerald-200 dark:border-emerald-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-7/assas/cover/7.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-7/assas/gardenAsses7.pdf'
     },
     {
       id: '8',
@@ -127,6 +145,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi-sprout',
       color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
       border: 'border-teal-200 dark:border-teal-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-8/assas/cover/8.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-8/assas/gardenAsses8.pdf'
     },
     {
       id: '9',
@@ -136,6 +156,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi:tree',
       color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
       border: 'border-green-200 dark:border-green-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-9/assas/cover/9.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-9/assas/gardenAsses9.pdf'
     },
     {
       id: '10',
@@ -145,6 +167,8 @@ export default async function GardenOfArabicPage({
       icon: 'mdi:apple',
       color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
       border: 'border-lime-200 dark:border-lime-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-10/assas/cover/10.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-10/assas/gardenAsses10.pdf'
     }
   ];
 
@@ -206,7 +230,6 @@ export default async function GardenOfArabicPage({
 
       <PdfBookGrid 
         levels={levels} 
-        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png"
       />
 
     {/* ================= INTERACTIVE PREVIEW (The "Look Inside") ================= */}

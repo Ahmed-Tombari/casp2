@@ -1,35 +1,17 @@
 'use client'
 import Image from 'next/image'
 import { Link } from '@/i18n/routing'
-import { useEffect, useState } from 'react'
-import { MentorType } from '@/app/types/mentor'
-import MentorSkeleton from '../../Skeleton/Mentor'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
+
+import { MentorData } from '@/app/data'
 
 const Mentor = () => {
   const t = useTranslations('home')
   const commonT = useTranslations('common')
 
-  const [mentor, setMentor] = useState<MentorType[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setMentor(data.MentorData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-  }, [])
+  const mentor = MentorData
 
   return (
     <section id='mentors-section' className='py-24 bg-brand-sky/10 overflow-hidden'>
@@ -55,11 +37,7 @@ const Mentor = () => {
         </motion.div>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
-          {loading
-            ? Array.from({ length: 3 }).map((_, i) => (
-                <MentorSkeleton key={i} />
-              ))
-            : mentor.map((item, index) => (
+          {mentor.map((item, index) => (
                 <motion.div 
                   key={index} 
                   initial={{ opacity: 0, y: 30 }}

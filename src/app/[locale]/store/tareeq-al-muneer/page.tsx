@@ -70,6 +70,8 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:letter-bold-duotone',
       color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
       border: 'border-amber-200 dark:border-amber-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-R/cover/R-1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-R/R-1.pdf'
     },
     {
       id: 'prep',
@@ -78,14 +80,18 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:letter-bold-duotone',
       color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
       border: 'border-amber-200 dark:border-amber-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-P/cover/p-1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-P/p-1.pdf'
     },
-    {
+{
       id: '1',
       title: tLevels('1'),
       desc: t('level1Desc'),
       icon: 'solar:letter-bold-duotone',
       color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
       border: 'border-amber-200 dark:border-amber-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-1/cover/1-1.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-1/1-1.pdf'
     },
     {
       id: '2',
@@ -94,6 +100,8 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:soundwave-bold-duotone',
       color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
       border: 'border-teal-200 dark:border-teal-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-2/cover/1-2.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-2/1-2.pdf'
     },
     {
       id: '3',
@@ -102,6 +110,8 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:widget-add-bold-duotone',
       color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
       border: 'border-indigo-200 dark:border-indigo-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-3/cover/1-3.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-3/1-3.pdf'
     },
     {
       id: '4',
@@ -110,6 +120,8 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:book-2-bold-duotone',
       color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
       border: 'border-rose-200 dark:border-rose-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-4/cover/1-4.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-4/1-4.pdf'
     },
     {
       id: '5',
@@ -118,6 +130,8 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:book-2-bold-duotone',
       color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
       border: 'border-rose-200 dark:border-rose-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-5/cover/1-5.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-5/1-5.pdf'
     },
     {
       id: '6',
@@ -126,39 +140,9 @@ export default async function TareeqAlMuneerArPage({
       icon: 'solar:book-2-bold-duotone',
       color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
       border: 'border-rose-200 dark:border-rose-800',
+      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-6/cover/1-6.jpg',
+      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-6/1-6.pdf'
     },
-    {
-      id: '7',
-      title: tLevels('7'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-    },
-    {
-      id: '8',
-      title: tLevels('8'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-    },
-    {
-      id: '9',
-      title: tLevels('9'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-    },
-    {
-      id: '10',
-      title: tLevels('10'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-    }
   ];
 
   return (
@@ -228,7 +212,6 @@ export default async function TareeqAlMuneerArPage({
 
       <PdfBookGrid 
         levels={levels} 
-        bookCover="/images/books/سلسلة-الطريق-المنير-213x300.png"
       />
 
     </main>

@@ -14,14 +14,10 @@ export default async function MufidGuidePage({ params }: { params: Promise<{ loc
   const isRTL = locale === 'ar';
 
   const bookList = [
-    { key: 'kg', file: 'teacherskg1.pdf' },
-    { key: 'prep', file: 'teacherskg1.pdf' },
-    { key: '1', file: 'teacherskg1.pdf' },
-    { key: '2', file: 'teacherskg1.pdf' },
-    { key: '3', file: 'teacherskg1.pdf' },
-    { key: '4', file: 'teacherskg1.pdf' },
-    { key: '5', file: 'teacherskg1.pdf' },
-    { key: '6', file: 'teacherskg1.pdf' },
+    { key: '1', file: 'mufidGuide-1.pdf', coverImage: '1.jpg' },
+    { key: '2', file: 'mufidGuide-2.pdf', coverImage: '2.jpg' },
+    { key: '3', file: 'mufidGuide-3.pdf', coverImage: '3.jpg' },
+    { key: '4', file: 'mufidGuide-4.pdf', coverImage: '4.jpg' },
   ];
 
   return (
@@ -53,7 +49,7 @@ export default async function MufidGuidePage({ params }: { params: Promise<{ loc
               <BookViewer
                 key={idx}
                 title={t(`mufid.books.${item.key}`)}
-                pdfUrl={`/pdfbooks/${item.file}`}
+                pdfUrl={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/dalil-book/mufid-guide/${item.file}`}
                 readLabel={t('readBtn')}
                 downloadLabel={t('downloadBtn')}
                 closeLabel={t('close')}
@@ -61,7 +57,7 @@ export default async function MufidGuidePage({ params }: { params: Promise<{ loc
                 borderColor="border-orange-200 dark:border-orange-800"
                 icon="solar:notebook-bold-duotone"
                 isRTL={isRTL}
-                coverImage="/images/ourbooks/Arabic Shamel Series.png"
+                coverImage={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-${item.key}/cover/${item.coverImage}`}
               />
             ))}
           </div>

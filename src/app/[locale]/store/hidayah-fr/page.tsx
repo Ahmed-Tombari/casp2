@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -14,7 +13,6 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.hidayahFr' });
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Pillars: Tailored for Francophones ---
   const pillars = [
@@ -202,8 +200,11 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
           </div>
 
       <PdfBookGrid 
-        levels={levels} 
-        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png"
+        levels={levels.map(l => ({
+          ...l,
+          bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png",
+          pdfUrl: "#"
+        }))} 
       />
 
     </main>

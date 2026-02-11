@@ -69,8 +69,12 @@ export default async function AlWafiPage({
       locale={locale}
     >
       <PdfBookGrid 
-        levels={books.map(b => ({ id: b.level, title: b.level }))} 
-        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png" 
+        levels={books.map(b => ({ 
+          id: b.level, 
+          title: b.level,
+          bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png",
+          pdfUrl: "#" // Placeholder since it wasn't provided before
+        }))} 
       />
     </SeriesDetail>
   );

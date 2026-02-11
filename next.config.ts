@@ -12,7 +12,14 @@ const nextConfig: NextConfig = {
         ignoreDuringBuilds: true,
     },
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '3nvnebfanoina0ww.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
     qualities: [75, 85, 90, 100],
   },
 }

@@ -106,8 +106,11 @@ export default async function HidayahEnglishPage({ params }: { params: Promise<{
           </div>
 
       <PdfBookGrid 
-        levels={levels} 
-        bookCover="/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png"
+        levels={levels.map(l => ({
+          ...l,
+          bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png",
+          pdfUrl: "#"
+        }))} 
       />
 
     </main>
