@@ -13,12 +13,12 @@ export default async function MufidGuidePage({ params }: { params: Promise<{ loc
   const t = await getTranslations({ locale, namespace: 'teacherGuide' });
   const isRTL = locale === 'ar';
 
-  const bookList = [
-    { key: '1', file: 'mufidGuide-1.pdf', coverImage: '1.jpg' },
-    { key: '2', file: 'mufidGuide-2.pdf', coverImage: '2.jpg' },
-    { key: '3', file: 'mufidGuide-3.pdf', coverImage: '3.jpg' },
-    { key: '4', file: 'mufidGuide-4.pdf', coverImage: '4.jpg' },
-  ];
+  // --- Dynamic level generation ---
+  const levelKeys = ['1', '2', '3', '4'];
+  const bookList = levelKeys.map(key => ({
+    key,
+    file: `mufidGuide-${key}.pdf`
+  }));
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617]">
@@ -57,7 +57,6 @@ export default async function MufidGuidePage({ params }: { params: Promise<{ loc
                 borderColor="border-orange-200 dark:border-orange-800"
                 icon="solar:notebook-bold-duotone"
                 isRTL={isRTL}
-                coverImage={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-${item.key}/cover/${item.coverImage}`}
               />
             ))}
           </div>

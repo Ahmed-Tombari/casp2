@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -14,7 +13,6 @@ export default async function TareeqAlMuneerEnPage({ params }: { params: Promise
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.tareeqAlMuneerEn' });
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Features (Self-Study Focus) ---
   const features = [
@@ -24,47 +22,27 @@ export default async function TareeqAlMuneerEnPage({ params }: { params: Promise
   ];
 
   // --- Milestones ---
-  const levels = [
-    { id: 'kg', title: tLevels('kg'), desc: t('vol1Sub'), icon: 'solar:letter-bold-duotone', color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400', border: 'border-blue-200 dark:border-blue-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-R/cover/R-1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-R/R-1.pdf'
-     },
-    { id: 'prep', title: tLevels('prep'), desc: t('vol1Sub'), icon: 'solar:letter-bold-duotone', color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400', border: 'border-blue-200 dark:border-blue-800', 
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-P/cover/p-1.jpg', pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-P/p-1.pdf' },
-    { id: '1', 
-      title: tLevels('1'), 
-      desc: t('vol1Sub'), 
-      icon: 'solar:letter-bold-duotone', 
-      color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400', 
-      border: 'border-blue-200 dark:border-blue-800',  
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-1/cover/1-1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-1/1-1.pdf'
-    },
-    { id: '2', title: tLevels('2'), desc: t('vol2Sub'), icon: 'solar:pen-new-square-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-2/cover/1-2.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-2/1-2.pdf'
-    },
-    { id: '3', title: tLevels('3'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-3/cover/1-3.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-3/1-3.pdf'
-    },
-    { id: '4', title: tLevels('4'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-4/cover/1-4.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-4/1-4.pdf'
-    },
-    { id: '5', title: tLevels('5'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-5/cover/1-5.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-5/1-5.pdf'
-    },
-    { id: '6', title: tLevels('6'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-6/cover/1-6.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-6/1-6.pdf'
-    },
-    { id: '7', title: tLevels('7'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30', bookCover: '', pdfUrl: '' },
-    { id: '8', title: tLevels('8'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30', bookCover: '', pdfUrl: '' },
-    { id: '9', title: tLevels('9'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30', bookCover: '', pdfUrl: '' },
-    { id: '10', title: tLevels('10'), desc: t('audioSub'), icon: 'solar:headphones-round-sound-bold-duotone', color: 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange', border: 'border-brand-orange/30', bookCover: '', pdfUrl: '' },
-  ];
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    const assetKey = key === 'P' ? 'p' : key;
+    const isPlaceholder = ['7', '8', '9', '10'].includes(key);
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      desc: t(['R', 'P', '1'].includes(key) ? 'vol1Sub' : key === '2' ? 'vol2Sub' : 'audioSub'),
+      icon: ['R', 'P', '1'].includes(key) ? 'solar:letter-bold-duotone' : key === '2' ? 'solar:pen-new-square-bold-duotone' : 'solar:headphones-round-sound-bold-duotone',
+      color: ['R', 'P', '1', '2'].includes(key) ? 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' : 'bg-brand-orange-light text-brand-orange-dark dark:bg-brand-orange/10 dark:text-brand-orange',
+      border: ['R', 'P', '1', '2'].includes(key) ? 'border-blue-200 dark:border-blue-800' : 'border-brand-orange/30',
+      bookCover: isPlaceholder ? '' : `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-${key}/cover/1-${assetKey}.jpg`,
+      pdfUrl: isPlaceholder ? '' : `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirEn-book/tarikmunirEn-${key}/1-${assetKey}.pdf`
+    };
+  });
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#09121E] text-foreground transition-colors duration-300">

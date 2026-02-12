@@ -31,8 +31,8 @@ export default async function TareeqAlMuneerFrPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale: locale, namespace: 'store.tareeqAlMuneerFr' });
-  const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
+  const t = await getTranslations({ locale, namespace: 'store.tareeqAlMuneerFr' });
+  const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
 
   // --- Features: Tailored for Francophones ---
   const features = [
@@ -60,104 +60,24 @@ export default async function TareeqAlMuneerFrPage({
   ];
 
   // --- The Learning Stages ---
-  const levels = [
-    {
-      id: 'kg',
-      title: tLevels('kg'),
-      desc: t('stage1Desc'),
-      icon: 'solar:book-bookmark-bold-duotone',
-      color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
-      border: 'border-indigo-200 dark:border-indigo-800',
-    },
-    {
-      id: 'prep',
-      title: tLevels('prep'),
-      desc: t('stage1Desc'),
-      icon: 'solar:book-bookmark-bold-duotone',
-      color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
-      border: 'border-indigo-200 dark:border-indigo-800',
-    },
-    {
-      id: '1',
-      title: tLevels('1'),
-      desc: t('stage1Desc'),
-      icon: 'solar:book-bookmark-bold-duotone',
-      color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
-      border: 'border-indigo-200 dark:border-indigo-800',
-    },
-    {
-      id: '2',
-      title: tLevels('2'),
-      desc: t('stage2Desc'),
-      icon: 'solar:pen-new-square-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-    },
-    {
-      id: '3',
-      title: tLevels('3'),
-      desc: t('stage3Desc'),
-      icon: 'solar:chat-round-line-bold-duotone',
-      color: 'bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400',
-      border: 'border-sky-200 dark:border-sky-800',
-    },
-    {
-      id: '4',
-      title: tLevels('4'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    },
-    {
-      id: '5',
-      title: tLevels('5'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    },
-    {
-      id: '6',
-      title: tLevels('6'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    },
-    {
-      id: '7',
-      title: tLevels('7'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    },
-    {
-      id: '8',
-      title: tLevels('8'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    },
-    {
-      id: '9',
-      title: tLevels('9'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    },
-    {
-      id: '10',
-      title: tLevels('10'),
-      desc: t('stage4Desc'),
-      icon: 'solar:diploma-verified-bold-duotone',
-      color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
-      border: 'border-brand-gold/30',
-    }
-  ];
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      desc: t(['R', 'P', '1'].includes(key) ? 'stage1Desc' : key === '2' ? 'stage2Desc' : key === '3' ? 'stage3Desc' : 'stage4Desc'),
+      icon: ['R', 'P', '1'].includes(key) ? 'solar:book-bookmark-bold-duotone' : key === '2' ? 'solar:pen-new-square-bold-duotone' : key === '3' ? 'solar:chat-round-line-bold-duotone' : 'solar:diploma-verified-bold-duotone',
+      color: ['R', 'P', '1'].includes(key) ? 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400' : key === '2' ? 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400' : key === '3' ? 'bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400' : 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold',
+      border: ['R', 'P', '1'].includes(key) ? 'border-indigo-200 dark:border-indigo-800' : key === '2' ? 'border-rose-200 dark:border-rose-800' : key === '3' ? 'border-sky-200 dark:border-sky-800' : 'border-brand-gold/30',
+      bookCover: "/images/books/سلسلة-الطريق-المنير-213x300.png",
+      pdfUrl: "#"
+    };
+  });
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -222,11 +142,7 @@ export default async function TareeqAlMuneerFrPage({
         </div>
 
       <PdfBookGrid 
-        levels={levels.map(l => ({
-          ...l,
-          bookCover: "/images/books/سلسلة-الطريق-المنير-213x300.png",
-          pdfUrl: "#"
-        }))} 
+        levels={levels} 
       />
 
     </main>

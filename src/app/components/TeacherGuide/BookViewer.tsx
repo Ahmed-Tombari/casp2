@@ -180,19 +180,18 @@ export default function BookViewer({
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0">
-                  {/* Download Button */}
+                  {/* Download Button (Disabled) */}
                   {!hasError && (
-                    <a
-                      href={pdfUrl}
-                      download
-                      className="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-navy text-white hover:bg-blue-900 transition-colors text-sm font-bold"
+                    <button
+                      disabled
+                      className="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-200 dark:bg-white/10 text-gray-400 dark:text-gray-500 cursor-not-allowed text-sm font-bold opacity-60"
                     >
                       <Icon
                         icon="solar:download-square-bold"
                         className="text-lg"
                       />
                       <span>{downloadLabel}</span>
-                    </a>
+                    </button>
                   )}
 
                   {/* Close Button */}

@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -34,143 +33,47 @@ export default async function GardenOfArabicPage({
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.gardenOfArabic' });
   const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
-  // --- Concept: The Growth Stages (Levels) ---
-  const levels = [
-    {
-      id: 'kg',
-      title: tLevels('kg'),
-      sub: t('level1Sub'), 
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-R/assas/cover/R.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-R/assas/gardenAssesR.pdf'
-    },
-    {
-      id: 'prep',
-      title: tLevels('prep'),
-      sub: t('level1Sub'),
-      desc: t('level1Desc'),
-      icon: 'mdi-sprout',
-      color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
-      border: 'border-teal-200 dark:border-teal-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-P/assas/cover/P.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-P/assas/gardenAssesP.pdf'
-    },
-    {
-      id: '1',
-      title: tLevels('1'),
-      sub: t('level1Sub'),
-      desc: t('level1Desc'),
-      icon: 'mdi:tree',
-      color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-      border: 'border-green-200 dark:border-green-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-1/assas/cover/1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-1/assas/gardenAsses1.pdf'
-    },
-    {
-      id: '2',
-      title: tLevels('2'),
-      sub: t('level2Sub'),
-      desc: t('level2Desc'),
-      icon: 'mdi:apple',
-      color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
-      border: 'border-lime-200 dark:border-lime-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-2/assas/cover/2.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-2/assas/gardenAsses2.pdf'
-    },
-    {
-      id: '3',
-      title: tLevels('3'),
-      sub: t('level3Sub'),
-      desc: t('level3Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800', 
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-3/assas/cover/3.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-3/assas/gardenAsses3.pdf'
-    },
-    {
-      id: '4',
-      title: tLevels('4'),
-      sub: t('level4Sub'),
-      desc: t('level4Desc'),
-      icon: 'mdi-sprout',
-      color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
-      border: 'border-teal-200 dark:border-teal-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-4/assas/cover/4.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-4/assas/gardenAsses4.pdf'
-    },
-    {
-      id: '5',
-      title: tLevels('5'),
-      sub: t('stagesDesc'),
-      desc: t('level4Desc'),
-      icon: 'mdi:tree',
-      color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-      border: 'border-green-200 dark:border-green-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-5/assas/cover/5.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-5/assas/gardenAsses5.pdf'
-    },
-    {
-      id: '6',
-      title: tLevels('6'),
-      sub: t('stagesDesc'),
-      desc: t('level4Desc'),
-      icon: 'mdi:apple',
-      color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
-      border: 'border-lime-200 dark:border-lime-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-6/assas/cover/6.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-6/assas/gardenAsses6.pdf'
-    },
-    {
-      id: '7',
-      title: tLevels('7'),
-      sub: t('stagesDesc'),
-      desc: t('level4Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-7/assas/cover/7.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-7/assas/gardenAsses7.pdf'
-    },
-    {
-      id: '8',
-      title: tLevels('8'),
-      sub: t('stagesDesc'),
-      desc: t('level4Desc'),
-      icon: 'mdi-sprout',
-      color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
-      border: 'border-teal-200 dark:border-teal-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-8/assas/cover/8.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-8/assas/gardenAsses8.pdf'
-    },
-    {
-      id: '9',
-      title: tLevels('9'),
-      sub: t('stagesDesc'),
-      desc: t('level4Desc'),
-      icon: 'mdi:tree',
-      color: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-      border: 'border-green-200 dark:border-green-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-9/assas/cover/9.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-9/assas/gardenAsses9.pdf'
-    },
-    {
-      id: '10',
-      title: tLevels('10'),
-      sub: t('stagesDesc'),
-      desc: t('level4Desc'),
-      icon: 'mdi:apple',
-      color: 'bg-lime-100 text-lime-600 dark:bg-lime-900/30 dark:text-lime-400',
-      border: 'border-lime-200 dark:border-lime-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-10/assas/cover/10.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-10/assas/gardenAsses10.pdf'
-    }
-  ];
+  // --- Dynamic Level Generation ---
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  
+  const generateLevels = (isExercises = false) => {
+    return levelKeys.map(key => {
+      let id = key;
+      let titleKey = key;
+      if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+      else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+      const section = isExercises ? 'exercices' : 'assas';
+      const colorMap: Record<string, { icon: string, color: string, border: string }> = {
+        'R': { icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-100 text-emerald-600', border: 'border-emerald-200' },
+        'P': { icon: 'mdi-sprout', color: 'bg-teal-100 text-teal-600', border: 'border-teal-200' },
+        '1': { icon: 'mdi:tree', color: 'bg-green-100 text-green-700', border: 'border-green-200' },
+        '2': { icon: 'mdi:apple', color: 'bg-lime-100 text-lime-600', border: 'border-lime-200' },
+        '3': { icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-100 text-emerald-600', border: 'border-emerald-200' },
+        '4': { icon: 'mdi-sprout', color: 'bg-teal-100 text-teal-600', border: 'border-teal-200' },
+      };
+      
+      const config = colorMap[key] || { icon: 'mdi:tree', color: 'bg-green-100 text-green-700', border: 'border-green-200' };
+
+      return {
+        id,
+        title: tLevels(titleKey),
+        sub: t(['R', 'P', '1'].includes(key) ? 'level1Sub' : key === '2' ? 'level2Sub' : key === '3' ? 'level3Sub' : 'stagesDesc'),
+        desc: t(['R', 'P', '1'].includes(key) ? 'level1Desc' : key === '2' ? 'level2Desc' : key === '3' ? 'level3Desc' : 'level4Desc'),
+        icon: config.icon,
+        color: `${config.color} dark:bg-emerald-900/30 dark:text-emerald-400`,
+        border: `${config.border} dark:border-emerald-800`,
+        bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-${key}/${section}/cover/${key}.jpg`,
+        pdfUrl: isExercises 
+          ? `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-${key}/${section}/${key}.pdf`
+          : `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-${key}/${section}/gardenAsses${key}.pdf`
+      };
+    });
+  };
+
+  const levels = generateLevels(false);
+  const exercisesLevels = generateLevels(true);
 
   // --- Skills to Harvest (Features) ---
   const skills = [
@@ -219,21 +122,30 @@ export default async function GardenOfArabicPage({
         </div>
       </section>
 
-      {/* ================= THE GARDEN PATH (Levels) ================= */}
-          <div className="text-center px-4 py-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-               {t('stagesOfGrowth')}
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400">{t('stagesDesc')}</p>
-          </div>
+      {/* ================= THE GARDEN PATH (Main Levels) ================= */}
+      <div className="text-center px-4 py-10 mt-10">
+        <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
+           {t('stagesOfGrowth')}
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400">{t('stagesDesc')}</p>
+      </div>
 
+      <PdfBookGrid levels={levels} />
 
-      <PdfBookGrid 
-        levels={levels} 
-      />
+      {/* ================= EXERCISES PATH ================= */}
+      <div className="text-center px-4 py-10 mt-20 border-t border-gray-100 dark:border-gray-800/20">
+        <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
+           {t('exercisesTitle')}
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          {t('exercisesDesc')}
+        </p>
+      </div>
 
-    {/* ================= INTERACTIVE PREVIEW (The "Look Inside") ================= */}
-      <section className="py-20 bg-emerald-50/50 dark:bg-[#061410] relative overflow-hidden">
+      <PdfBookGrid levels={exercisesLevels} />
+
+      {/* ================= INTERACTIVE PREVIEW (The "Look Inside") ================= */}
+      <section className="py-20 bg-emerald-50/50 dark:bg-[#061410] relative overflow-hidden mt-20">
          <div className="container mx-auto max-w-7xl px-4 relative z-10">
             <div className="bg-white dark:bg-brand-navy-dark rounded-[3rem] shadow-soft-lg border border-emerald-100 dark:border-emerald-900/30 overflow-hidden flex flex-col md:flex-row">
                
@@ -277,4 +189,3 @@ export default async function GardenOfArabicPage({
     </main>
   );
 }
-

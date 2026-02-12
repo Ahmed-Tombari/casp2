@@ -14,20 +14,12 @@ export default async function GardenGuidePage({ params }: { params: Promise<{ lo
   const t = await getTranslations({ locale, namespace: 'teacherGuide' });
   const isRTL = locale === 'ar';
 
-  const bookList = [
-    { key: 'kg', file: 'gardenGuide-R.pdf', coverImage:'R.jpg' },
-    { key: 'prep', file: 'gardenGuide-P.pdf', coverImage:'P.jpg' },
-    { key: '1', file: 'gardenGuide-1.pdf', coverImage:'1.jpg' },
-    { key: '2', file: 'gardenGuide-2.pdf', coverImage:'2.jpg' },
-    { key: '3', file: 'gardenGuide-3.pdf', coverImage:'3.jpg' },
-    { key: '4', file: 'gardenGuide-4.pdf', coverImage:'4.jpg' },
-    { key: '5', file: 'gardenGuide-5.pdf', coverImage:'5.jpg' },
-    { key: '6', file: 'gardenGuide-6.pdf', coverImage:'6.jpg' },
-    { key: '7', file: 'gardenGuide-7.pdf', coverImage:'7.jpg' },
-    { key: '8', file: 'gardenGuide-8.pdf', coverImage:'8.jpg' },
-    { key: '9', file: 'gardenGuide-9.pdf', coverImage:'9.jpg' },
-    { key: '10', file: 'gardenGuide-10.pdf', coverImage:'10.jpg' },
-  ];
+  // --- Dynamic level generation ---
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const bookList = levelKeys.map(key => ({
+    key: key === 'R' ? 'kg' : key === 'P' ? 'prep' : key,
+    file: `gardenGuide-${key}.pdf`
+  }));
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617]">
@@ -68,7 +60,6 @@ export default async function GardenGuidePage({ params }: { params: Promise<{ lo
                 borderColor="border-emerald-200 dark:border-emerald-800"
                 icon="solar:book-bookmark-bold-duotone"
                 isRTL={isRTL}
-                coverImage={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/garden-book/garden-${item.key}/assas/cover/${item.coverImage}`}
               />
             ))}
           </div>

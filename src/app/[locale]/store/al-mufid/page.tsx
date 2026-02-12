@@ -29,44 +29,13 @@ export default async function AlMufidPage({ params }: { params: Promise<{ locale
   ];
 
   // --- Al Mufid Levels ---
-  const levels = [
-    {
-      id: '1',
-      title: tLevels('1'),
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-1/cover/1-1.png',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-1/1-1.pdf'
-    },
-    {
-      id: '2',
-      title: tLevels('2'),
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-2/cover/2-1.png',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-2/2-1.pdf'
-    },
-    {
-      id: '3',
-      title: tLevels('3'),
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-3/cover/3-1.png',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-3/3-1.pdf'
-    },
-    {
-      id: '4',
-      title: tLevels('4'),
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-4/cover/4-1.png',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-4/4-1.pdf'
-    },
-    {
-      id: '5',
-      title: tLevels('5'),
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-5/cover/5-1.png',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-5/5-1.pdf'
-    },
-    {
-      id: '6',
-      title: tLevels('6'),
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-6/cover/6-1.png',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-6/6-1.pdf'
-    }
-  ];
+  const levelKeys = ['1', '2', '3', '4', '5', '6'];
+  const levels = levelKeys.map(key => ({
+    id: key,
+    title: tLevels(key),
+    bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-${key}/cover/${key}-1.png`,
+    pdfUrl: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/mufid-book/mufid-${key}/${key}-1.pdf`
+  }));
 
   return (
     <main className="min-h-screen bg-background text-foreground">

@@ -40,104 +40,24 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
   ];
 
   // --- The Levels ---
-  const levels = [
-    {
-      id: 'kg',
-      title: tLevels('kg'), 
-      desc: t('level1Desc'),
+  const levelKeys = ['R', 'P', '1', '2', '3', '4'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      desc: t(['R', 'P', '1'].includes(key) ? 'level1Desc' : key === '2' ? 'level1Desc' : key === '3' ? 'level1Desc' : 'level1Desc'), // Following existing pattern
       icon: 'solar:leaf-bold-duotone',
       color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: 'prep',
-      title: tLevels('prep'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '1',
-      title: tLevels('1'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '2',
-      title: tLevels('2'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '3',
-      title: tLevels('3'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '4',
-      title: tLevels('4'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '5',
-      title: tLevels('5'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '6',
-      title: tLevels('6'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '7',
-      title: tLevels('7'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '8',
-      title: tLevels('8'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '9',
-      title: tLevels('9'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    },
-    {
-      id: '10',
-      title: tLevels('10'),
-      desc: t('level1Desc'),
-      icon: 'solar:leaf-bold-duotone',
-      color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-      border: 'border-emerald-200 dark:border-emerald-800'
-    }
-  ];
+      border: 'border-emerald-200 dark:border-emerald-800',
+      bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/hidayaFr-book/hidayaFr-${key}/cover/${key}-1.png`,
+      pdfUrl: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/hidayaFr-book/hidayaFr-${key}/${key}-1.pdf`
+    };
+  });
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -202,8 +122,6 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
       <PdfBookGrid 
         levels={levels.map(l => ({
           ...l,
-          bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png",
-          pdfUrl: "#"
         }))} 
       />
 

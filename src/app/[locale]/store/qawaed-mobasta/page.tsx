@@ -23,20 +23,23 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
   ];
 
   // --- The Levels (The Toolkit) ---
-  const levels = [
-    { id: 'kg', title: tLevels('kg'), desc: t('sentenceDesc'), icon: 'solar:ruler-pen-bold-duotone', color: 'bg-brand-navy' },
-    { id: 'prep', title: tLevels('prep'), desc: t('sentenceDesc'), icon: 'solar:ruler-pen-bold-duotone', color: 'bg-brand-navy' },
-    { id: '1', title: tLevels('1'), desc: t('sentenceDesc'), icon: 'solar:ruler-pen-bold-duotone', color: 'bg-brand-navy' },
-    { id: '2', title: tLevels('2'), desc: t('tensesDesc'), icon: 'solar:history-bold-duotone', color: 'bg-brand-orange' },
-    { id: '3', title: tLevels('3'), desc: t('pronounsDesc'), icon: 'solar:users-group-two-rounded-bold-duotone', color: 'bg-teal-600' },
-    { id: '4', title: tLevels('4'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-    { id: '5', title: tLevels('5'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-    { id: '6', title: tLevels('6'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-    { id: '7', title: tLevels('7'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-    { id: '8', title: tLevels('8'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-    { id: '9', title: tLevels('9'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-    { id: '10', title: tLevels('10'), desc: t('particlesDesc'), icon: 'solar:link-circle-bold-duotone', color: 'bg-rose-500' },
-  ];
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      desc: t(['R', 'P', '1'].includes(key) ? 'sentenceDesc' : key === '2' ? 'tensesDesc' : key === '3' ? 'pronounsDesc' : 'particlesDesc'),
+      icon: ['R', 'P', '1'].includes(key) ? 'solar:ruler-pen-bold-duotone' : key === '2' ? 'solar:history-bold-duotone' : key === '3' ? 'solar:users-group-two-rounded-bold-duotone' : 'solar:link-circle-bold-duotone',
+      color: ['R', 'P', '1'].includes(key) ? 'bg-brand-navy' : key === '2' ? 'bg-brand-orange' : key === '3' ? 'bg-teal-600' : 'bg-rose-500',
+      bookCover: "/images/books/سلسلة-القواعد-المبسّطة-213x300.png",
+      pdfUrl: "#"
+    };
+  });
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-background text-foreground transition-colors duration-300">
@@ -88,11 +91,7 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
         </div>
   
       <PdfBookGrid 
-        levels={levels.map(l => ({
-          ...l,
-          bookCover: "/images/books/سلسلة-القواعد-المبسّطة-213x300.png",
-          pdfUrl: "#"
-        }))} 
+        levels={levels} 
       />
       <section className="py-12 pb-10 px-4">
     {/* Interactive Preview (The "Magic" Box) */}

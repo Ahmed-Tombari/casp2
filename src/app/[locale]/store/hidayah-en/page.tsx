@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -14,7 +13,6 @@ export default async function HidayahEnglishPage({ params }: { params: Promise<{
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'store.hidayahEn' });
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
 
   // --- Pillars (Western Context Focus) ---
   const pillars = [
@@ -42,20 +40,24 @@ export default async function HidayahEnglishPage({ params }: { params: Promise<{
   ];
 
   // --- The Levels ---
-  const levels = [
-    { id: 'kg', title: tLevels('kg'), desc: t('level1Desc'), icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400', border: 'border-emerald-200 dark:border-emerald-800' },
-    { id: 'prep', title: tLevels('prep'), desc: t('level1Desc'), icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400', border: 'border-emerald-200 dark:border-emerald-800' },
-    { id: '1', title: tLevels('1'), desc: t('level1Desc'), icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400', border: 'border-emerald-200 dark:border-emerald-800' },
-    { id: '2', title: tLevels('2'), desc: t('level2Desc'), icon: 'solar:sun-2-bold-duotone', color: 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold', border: 'border-brand-gold/30' },
-    { id: '3', title: tLevels('3'), desc: t('level3Desc'), icon: 'solar:map-point-bold-duotone', color: 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-brand-sky', border: 'border-brand-navy/20' },
-    { id: '4', title: tLevels('4'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-    { id: '5', title: tLevels('5'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-    { id: '6', title: tLevels('6'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-    { id: '7', title: tLevels('7'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-    { id: '8', title: tLevels('8'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-    { id: '9', title: tLevels('9'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-    { id: '10', title: tLevels('10'), desc: t('level4Desc'), icon: 'solar:user-hand-up-bold-duotone', color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400', border: 'border-indigo-200 dark:border-indigo-800' },
-  ];
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      desc: t(['R', 'P', '1'].includes(key) ? 'level1Desc' : key === '2' ? 'level2Desc' : key === '3' ? 'level3Desc' : 'level4Desc'),
+      icon: ['R', 'P', '1'].includes(key) ? 'solar:leaf-bold-duotone' : key === '2' ? 'solar:sun-2-bold-duotone' : key === '3' ? 'solar:map-point-bold-duotone' : 'solar:user-hand-up-bold-duotone',
+      color: ['R', 'P', '1'].includes(key) ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400' : key === '2' ? 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold' : key === '3' ? 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-brand-sky' : 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
+      border: ['R', 'P', '1'].includes(key) ? 'border-emerald-200 dark:border-emerald-800' : key === '2' ? 'border-brand-gold/30' : key === '3' ? 'border-brand-navy/20' : 'border-indigo-200 dark:border-indigo-800',
+      bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png", // Use original placeholder
+      pdfUrl: "#"
+    };
+  });
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#09121E] text-foreground transition-colors duration-300">
@@ -106,11 +108,7 @@ export default async function HidayahEnglishPage({ params }: { params: Promise<{
           </div>
 
       <PdfBookGrid 
-        levels={levels.map(l => ({
-          ...l,
-          bookCover: "/images/books/سلسلة-في-حديقة-اللغة-العربية-213x300.png",
-          pdfUrl: "#"
-        }))} 
+        levels={levels} 
       />
 
     </main>

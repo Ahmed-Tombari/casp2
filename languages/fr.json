@@ -585,6 +585,7 @@
   "close": "Fermer",
   "explore": "Explorer la Série",
   "levels": {
+    "growthTitle": "Découvrez les niveaux",
     "kg": "Maternelle",
     "prep": "Préparatoire",
     "1": "1ère Année",
@@ -682,6 +683,8 @@
     "comprehensiveSeries": "Série complète pour les écoles",
     "stagesOfGrowth": "Étapes de Croissance Linguistique",
     "stagesDesc": "Une méthodologie progressive garantissant une base solide et un développement naturel des compétences.",
+    "exercisesTitle": "Exercices du Jardin d'Arabe",
+    "exercisesDesc": "Une collection d'exercices et d'activités pour renforcer l'apprentissage.",
     "level1Title": "Étape des Graines",
     "level1Sub": "Lettres et Sons",
     "level1Desc": "Établir une prononciation correcte des lettres arabes et leur écriture sous différentes formes.",

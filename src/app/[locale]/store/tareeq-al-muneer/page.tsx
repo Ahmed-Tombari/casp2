@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import PdfBookGrid from '@/app/components/Store/PdfBookGrid';
 
@@ -33,8 +32,7 @@ export default async function TareeqAlMuneerArPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.tareeqAlMuneerAr' });
-  const tLevels = await getTranslations({ locale: locale, namespace: 'store.levels' });
-  const isRTL = locale === 'ar';
+  const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
 
   // --- Core Features (The "Light" Pillars) ---
   const features = [
@@ -62,88 +60,26 @@ export default async function TareeqAlMuneerArPage({
   ];
 
   // --- The Milestones (Levels) ---
-  const levels = [
-    {
-      id: 'kg',
-      title: tLevels('kg'),
-      desc: t('level1Desc'),
-      icon: 'solar:letter-bold-duotone',
-      color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
-      border: 'border-amber-200 dark:border-amber-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-R/cover/R-1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-R/R-1.pdf'
-    },
-    {
-      id: 'prep',
-      title: tLevels('prep'),
-      desc: t('level1Desc'),
-      icon: 'solar:letter-bold-duotone',
-      color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
-      border: 'border-amber-200 dark:border-amber-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-P/cover/p-1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-P/p-1.pdf'
-    },
-{
-      id: '1',
-      title: tLevels('1'),
-      desc: t('level1Desc'),
-      icon: 'solar:letter-bold-duotone',
-      color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
-      border: 'border-amber-200 dark:border-amber-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-1/cover/1-1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-1/1-1.pdf'
-    },
-    {
-      id: '2',
-      title: tLevels('2'),
-      desc: t('level2Desc'),
-      icon: 'solar:soundwave-bold-duotone',
-      color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400',
-      border: 'border-teal-200 dark:border-teal-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-2/cover/1-2.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-2/1-2.pdf'
-    },
-    {
-      id: '3',
-      title: tLevels('3'),
-      desc: t('level3Desc'),
-      icon: 'solar:widget-add-bold-duotone',
-      color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
-      border: 'border-indigo-200 dark:border-indigo-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-3/cover/1-3.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-3/1-3.pdf'
-    },
-    {
-      id: '4',
-      title: tLevels('4'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-4/cover/1-4.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-4/1-4.pdf'
-    },
-    {
-      id: '5',
-      title: tLevels('5'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-5/cover/1-5.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-5/1-5.pdf'
-    },
-    {
-      id: '6',
-      title: tLevels('6'),
-      desc: t('level4Desc'),
-      icon: 'solar:book-2-bold-duotone',
-      color: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
-      border: 'border-rose-200 dark:border-rose-800',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-6/cover/1-6.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-6/1-6.pdf'
-    },
-  ];
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    const assetKey = key === 'P' ? 'p' : key;
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      desc: t(['R', 'P', '1'].includes(key) ? 'level1Desc' : key === '2' ? 'level2Desc' : key === '3' ? 'level3Desc' : 'level4Desc'),
+      icon: key === '2' ? 'solar:soundwave-bold-duotone' : key === '3' ? 'solar:widget-add-bold-duotone' : ['4', '5', '6'].includes(key) ? 'solar:book-2-bold-duotone' : 'solar:letter-bold-duotone',
+      color: ['R', 'P', '1'].includes(key) ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : key === '2' ? 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400' : key === '3' ? 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400' : 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
+      border: ['R', 'P', '1'].includes(key) ? 'border-amber-200 dark:border-amber-800' : key === '2' ? 'border-teal-200 dark:border-teal-800' : key === '3' ? 'border-indigo-200 dark:border-indigo-800' : 'border-rose-200 dark:border-rose-800',
+      bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-${key}/cover/1-${assetKey}.jpg`,
+      pdfUrl: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/tarikmunirAr-book/tarikmunirAr-${key}/1-${assetKey}.pdf`
+    };
+  });
 
   return (
     <main className="min-h-screen bg-background text-foreground">

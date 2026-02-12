@@ -13,14 +13,12 @@ export default async function HappyMuslimGuidePage({ params }: { params: Promise
   const t = await getTranslations({ locale, namespace: 'teacherGuide' });
   const isRTL = locale === 'ar';
 
-  // Placeholder PDF (replace with actual filenames if available)
-  const bookList = [
-    { key: '1', file: 'teacherskg1.pdf' },
-    { key: '2', file: 'teacherskg1.pdf' },
-    { key: '3', file: 'teacherskg1.pdf' },
-    { key: '4', file: 'teacherskg1.pdf' },
-    { key: '5', file: 'teacherskg1.pdf' },
-  ];
+  // --- Dynamic level generation ---
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const bookList = levelKeys.map(key => ({
+    key: key === 'R' ? 'kg' : key === 'P' ? 'prep' : key,
+    file: `happyMuslim-guide-${key}.pdf`
+  }));
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617]">
@@ -63,16 +61,14 @@ export default async function HappyMuslimGuidePage({ params }: { params: Promise
               <BookViewer
                 key={idx}
                 title={t(`happy.books.${item.key}`)}
-                pdfUrl={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/${item.file}`}
+                pdfUrl={`https://3nvnebfanoina0ww.public.blob.vercel-storage.com/dalil-book/happyMuslim-guide/${item.file}`}
                 readLabel={t('readBtn')}
                 downloadLabel={t('downloadBtn')}
                 closeLabel={t('close')}
-                // Styles specific to Happy Muslim (Sky Blue)
                 color="bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400"
                 borderColor="border-sky-200 dark:border-sky-800"
                 icon="solar:smile-circle-bold-duotone"
                 isRTL={isRTL}
-                coverImage="https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg"
               />
             ))}
           </div>

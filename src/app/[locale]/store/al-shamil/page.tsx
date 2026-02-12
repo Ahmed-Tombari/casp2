@@ -29,116 +29,28 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
   ];
 
   // --- The Levels (Modules) ---
-  const levels = [
-    {
-      id: 'kg',
-      title: tLevels('kg'),
-      subtitle: t('level1Sub'),
-      topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
-      color: 'bg-emerald-500',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/1.pdf'
-    },
-    {
-      id: 'prep',
-      title: tLevels('prep'),
-      subtitle: t('level1Sub'),
-      topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
-      color: 'bg-emerald-500',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/1.pdf'
-    },
-    {
-      id: '1',
-      title: tLevels('1'),
-      subtitle: t('level1Sub'),
-      topics: [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
-      color: 'bg-emerald-500',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/cover/1.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-1/1.pdf'
-    },
-    {
-      id: '2',
-      title: tLevels('2'),
-      subtitle: t('level2Sub'),
-      topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
-      color: 'bg-brand-sky',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-2/cover/2.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-2/2.pdf'
-    },
-    {
-      id: '3',
-      title: tLevels('3'),
-      subtitle: t('level3Sub'),
-      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-3/cover/3.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-3/3.pdf'
-    },
-    {
-      id: '4',
-      title: tLevels('4'),
-      subtitle: t('level2Sub'),
-      topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
-      color: 'bg-brand-sky',
-      bookCover: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-4/cover/4.jpg',
-      pdfUrl: 'https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-4/4.pdf'
-    },
-    {
-      id: '5',
-      title: tLevels('5'),
-      subtitle: t('level2Sub'),
-      topics: [t('topicTravel'), t('topicHealth'), t('topicShopping')],
-      color: 'bg-brand-sky',
-      bookCover: '',
-      pdfUrl: ''
-    },
-    {
-      id: '6',
-      title: tLevels('6'),
-      subtitle: t('level3Sub'),
-      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy',
-      bookCover: '',
-      pdfUrl: ''
-    },
-    {
-      id: '7',
-      title: tLevels('7'),
-      subtitle: t('level3Sub'),
-      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy',
-      bookCover: '',
-      pdfUrl: ''
-    },
-    {
-      id: '8',
-      title: tLevels('8'),
-      subtitle: t('level3Sub'),
-      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy',
-      bookCover: '',
-      pdfUrl: ''
-    },
-    {
-      id: '9',
-      title: tLevels('9'),
-      subtitle: t('level3Sub'),
-      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy',
-      bookCover: '',
-      pdfUrl: ''
-    },
-    {
-      id: '10',
-      title: tLevels('10'),
-      subtitle: t('level3Sub'),
-      topics: [t('topicMedia'), t('topicCulture'), t('topicLiterature')],
-      color: 'bg-brand-navy',
-      bookCover: '',
-      pdfUrl: ''
-    }
-  ];
+  const levelKeys = ['1', '2', '3', '4'];
+  const levels = levelKeys.map(key => {
+    let id = key;
+    let titleKey = key;
+    if (key === 'R') { id = 'kg'; titleKey = 'kg'; }
+    else if (key === 'P') { id = 'prep'; titleKey = 'prep'; }
+
+    const isAdvanced = ['3', '6', '7', '8', '9', '10'].includes(key);
+    const isIntermediate = ['2', '4', '5'].includes(key);
+
+    return {
+      id,
+      title: tLevels(titleKey),
+      subtitle: t(isAdvanced ? 'level3Sub' : isIntermediate ? 'level2Sub' : 'level1Sub'),
+      topics: isAdvanced ? [t('topicMedia'), t('topicCulture'), t('topicLiterature')] : 
+              isIntermediate ? [t('topicTravel'), t('topicHealth'), t('topicShopping')] :
+              [t('topicGreeting'), t('topicFamily'), t('topicDaily')],
+      color: isAdvanced ? 'bg-brand-navy' : isIntermediate ? 'bg-brand-sky' : 'bg-emerald-500',
+      bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-${key}/cover/${key}.jpg`,
+      pdfUrl: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/shamil-book/shamil-${key}/${key}.pdf`
+    };
+  });
 
   return (
     <main className="min-h-screen bg-background text-foreground">

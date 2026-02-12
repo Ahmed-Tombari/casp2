@@ -585,6 +585,7 @@
   "close": "Close",
   "explore": "Explore Series",
   "levels": {
+    "growthTitle": "Discover the Levels",
     "kg": "Kindergarten",
     "prep": "Preparatory",
     "1": "Grade 1",
@@ -682,6 +683,8 @@
     "comprehensiveSeries": "Comprehensive Series for Schools",
     "stagesOfGrowth": "Stages of Linguistic Growth",
     "stagesDesc": "A gradual methodology ensuring a solid foundation and natural skill development.",
+    "exercisesTitle": "Garden of Arabic Exercises",
+    "exercisesDesc": "A collection of exercises and activities to reinforce learning.",
     "level1Title": "Seed Stage",
     "level1Sub": "Letters & Sounds",
     "level1Desc": "Establishing proper pronunciation of Arabic letters and writing their different forms.",
