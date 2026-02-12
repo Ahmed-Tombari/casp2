@@ -22,7 +22,7 @@ export default async function WafiGuidePage({ params }: { params: Promise<{ loca
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617]">
-      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-32 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-4 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
            <Icon icon="solar:library-bold" className="absolute top-10 left-10 text-9xl text-white animate-pulse-slow" />
            <Icon icon="solar:library-bold" className="absolute bottom-20 right-10 text-8xl text-white animate-pulse-slow" style={{animationDelay: '2s'}} />
@@ -38,7 +38,7 @@ export default async function WafiGuidePage({ params }: { params: Promise<{ loca
         </div>
       </section>
 
-      <section className="py-24 -mt-20 relative z-20 px-4">
+      <section className="py-24 -mt-12 relative z-20 px-4">
         <div className="container mx-auto max-w-7xl">
            <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-navy dark:text-white mb-2">{t('stagesOfGrowth')}</h2>

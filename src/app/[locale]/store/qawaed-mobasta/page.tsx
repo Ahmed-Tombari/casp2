@@ -45,7 +45,7 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
     <main className="min-h-screen bg-gray-50 dark:bg-background text-foreground transition-colors duration-300">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="bg-brand-navy pt-32 pb-24 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="bg-brand-navy pt-32 pb-1 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Background: Blueprint Grid */}
         <div className="absolute inset-0 opacity-10" 
@@ -68,11 +68,11 @@ export default async function QawaedMobastaPage({ params }: { params: Promise<{ 
       </section>
 
       {/* ================= VISUAL METHODOLOGY ================= */}
-      <section className="py-16 -mt-16 relative z-20 px-4">
+      <section className="py-16 -mt-12 relative z-20 px-4">
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {features.map((feature, i) => (
-                  <div key={i} className="bg-white dark:bg-brand-navy-dark p-8 rounded-[2rem] shadow-soft flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+                  <div key={i} className="bg-white dark:bg-brand-navy-dark p-8 rounded-4xl shadow-soft flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
                      <Icon icon={feature.icon} className={`text-5xl mb-4 ${feature.color}`} />
                      <h3 className="text-lg font-bold text-brand-navy dark:text-white mb-2">{feature.title}</h3>
                      <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{feature.desc}</p>

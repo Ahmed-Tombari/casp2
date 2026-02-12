@@ -75,19 +75,11 @@ export default async function GardenOfArabicPage({
   const levels = generateLevels(false);
   const exercisesLevels = generateLevels(true);
 
-  // --- Skills to Harvest (Features) ---
-  const skills = [
-    { title: t('reading'), icon: 'solar:book-bookmark-bold-duotone' },
-    { title: t('writing'), icon: 'solar:pen-new-square-bold-duotone' },
-    { title: t('listening'), icon: 'solar:headphones-round-sound-bold-duotone' },
-    { title: t('speaking'), icon: 'solar:microphone-large-bold-duotone' },
-  ];
-
   return (
     <main className="min-h-screen bg-background">
       
       {/* ================= HERO SECTION (Nature Themed) ================= */}
-      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-32 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-1 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Abstract Leaves Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
@@ -109,21 +101,11 @@ export default async function GardenOfArabicPage({
           <p className="text-xl text-emerald-50/80 max-w-2xl mx-auto leading-relaxed mb-10">
             {t('description')}
           </p>
-
-          {/* Quick Stats */}
-          <div className="flex justify-center gap-4 md:gap-12 flex-wrap">
-             {skills.map((skill, idx) => (
-               <div key={idx} className="flex items-center gap-2 text-gray-100 bg-white/5 px-4 py-2 rounded-2xl backdrop-blur-sm border border-white/5">
-                 <Icon icon={skill.icon} className="text-emerald-400" />
-                 <span className="font-bold">{skill.title}</span>
-               </div>
-             ))}
-          </div>
         </div>
       </section>
 
       {/* ================= THE GARDEN PATH (Main Levels) ================= */}
-      <div className="text-center px-4 py-10 mt-10">
+      <div className="text-center px-4 py-6 mt-4">
         <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
            {t('stagesOfGrowth')}
         </h2>

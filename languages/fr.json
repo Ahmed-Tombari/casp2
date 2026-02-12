@@ -277,11 +277,18 @@
       "title": "Le Musulman Heureux",
       "desc": "Programme éducatif pour les valeurs et l'éthique islamiques",
       "books": {
+        "kg": "Guide de l'enseignant - Maternelle",
+        "prep": "Guide de l'enseignant - Préparatoire",
         "1": "Guide de l'enseignant - Niveau 1",
         "2": "Guide de l'enseignant - Niveau 2",
         "3": "Guide de l'enseignant - Niveau 3",
         "4": "Guide de l'enseignant - Niveau 4",
-        "5": "Guide de l'enseignant - Niveau 5"
+        "5": "Guide de l'enseignant - Niveau 5",
+        "6": "Guide de l'enseignant - Niveau 6",
+        "7": "Guide de l'enseignant - Niveau 7",
+        "8": "Guide de l'enseignant - Niveau 8",
+        "9": "Guide de l'enseignant - Niveau 9",
+        "10": "Guide de l'enseignant - Niveau 10"
       }
     }
   },
@@ -874,12 +881,21 @@
   "theHappyMuslim": {
     "title": "Le Musulman Heureux",
     "description": "Une série éducative amusante visant à construire la personnalité de l'enfant musulman en inculquant le bonheur et l'optimisme.",
+    "forYounger": "Petits Trésors",
+    "learnMore": "En savoir plus",
+    "identityTitle": "Identité Islamique",
+    "identityDesc": "Bâtir une base solide et une identité fière pour le jeune musulman.",
+    "modernityTitle": "Pédagogie Moderne",
+    "modernityDesc": "Des méthodes interactives et amusantes qui parlent le langage des enfants d'aujourd'hui.",
+    "valuesTitle": "Valeurs Nobles",
+    "valuesDesc": "Inculquer l'éthique et les bonnes manières à travers des histoires engangeantes.",
+    "ourBooks": "La Bibliothèque du Petit Musulman",
+    "booksDesc": "Une série progressive conçue pour chaque étape de la croissance spirituelle de votre enfant.",
     "characterBuilding": "Construction de la Personnalité",
     "watchPromo": "Voir l'introduction",
     "joyfulLearning": "Apprendre avec Joie",
     "joyfulDesc": "Nous utilisons le jeu et les histoires pour faire de l'apprentissage une expérience heureuse.",
     "integratedValues": "Valeurs Intégrées",
-    "valuesDesc": "Relier les valeurs islamiques à la vie quotidienne et au comportement pratique.",
     "creativeArts": "Créativité et Arts",
     "creativeDesc": "Activités artistiques et chants développant le goût et le sens esthétique.",
     "seriesBooks": "Livres de la Série",

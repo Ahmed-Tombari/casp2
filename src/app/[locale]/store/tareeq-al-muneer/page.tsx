@@ -85,7 +85,7 @@ export default async function TareeqAlMuneerArPage({
     <main className="min-h-screen bg-background text-foreground">
       
       {/* ================= HERO SECTION (Illuminated) ================= */}
-      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-32 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-1 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Background Light Effects */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -110,19 +110,11 @@ export default async function TareeqAlMuneerArPage({
             {t('description')}
           </p>
 
-          <button className="group relative px-8 py-4 bg-brand-gold text-brand-navy-dark rounded-2xl font-bold shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:shadow-[0_0_50px_rgba(234,179,8,0.6)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-             <span className="relative z-10 flex items-center gap-2">
-                <Icon icon="solar:play-circle-bold-duotone" className="text-xl" />
-                {t('startJourney')}
-             </span>
-             {/* Shine Effect on Button */}
-             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12"></div>
-          </button>
         </div>
       </section>
 
       {/* ================= FEATURES (Overlapping Grid) ================= */}
-      <section className="py-16 -mt-16 relative z-20 px-4">
+      <section className="py-16 -mt-12 relative z-20 px-4">
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {features.map((feature, i) => (

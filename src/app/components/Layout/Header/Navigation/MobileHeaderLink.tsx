@@ -8,9 +8,10 @@ import { Icon } from '@iconify/react'
 type Props = {
   item: HeaderItem
   depth?: number
+  onClick?: () => void
 }
 
-const MobileHeaderLink = ({ item, depth = 0 }: Props) => {
+const MobileHeaderLink = ({ item, depth = 0, onClick }: Props) => {
   const [open, setOpen] = useState(false)
   const path = usePathname()
   const hasSubmenu = !!item.submenu?.length
@@ -23,6 +24,8 @@ const MobileHeaderLink = ({ item, depth = 0 }: Props) => {
           if (hasSubmenu) {
             e.preventDefault()
             setOpen(!open)
+          } else if (onClick) {
+            onClick()
           }
         }}
         className={`flex items-center justify-between py-3 px-4 rounded-xl font-black ${
@@ -55,6 +58,7 @@ const MobileHeaderLink = ({ item, depth = 0 }: Props) => {
                 key={`${child.href}-${index}`}
                 item={child}
                 depth={depth + 1}
+                onClick={onClick}
               />
             ))}
           </motion.div>

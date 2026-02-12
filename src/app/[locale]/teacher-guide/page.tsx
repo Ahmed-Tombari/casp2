@@ -80,7 +80,7 @@ export default async function TeacherGuidePage({
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-32 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-4 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         {/* Abstract Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
           <Icon
@@ -115,7 +115,7 @@ export default async function TeacherGuidePage({
       </section>
 
       {/* Guides Grid */}
-      <section className="py-24 -mt-20 relative z-20 px-4">
+      <section className="py-24 -mt-12 relative z-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {guides.map((guide) => (
@@ -133,7 +133,7 @@ export default async function TeacherGuidePage({
                     className="object-cover"
                   />
                   {/* Overlay sheen effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 <div

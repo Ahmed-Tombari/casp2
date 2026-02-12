@@ -230,7 +230,11 @@ const Header: React.FC = () => {
             >
               <div className="w-full space-y-1 mb-8 text-brand-navy dark:text-white">
                 {headerData.map((item, index) => (
-                  <MobileHeaderLink key={`${item.href}-${index}`} item={item} />
+                  <MobileHeaderLink 
+                    key={`${item.href}-${index}`} 
+                    item={item} 
+                    onClick={() => setNavbarOpen(false)} 
+                  />
                 ))}
               </div>
               

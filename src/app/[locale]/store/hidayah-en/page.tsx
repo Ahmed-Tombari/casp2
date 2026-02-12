@@ -63,7 +63,7 @@ export default async function HidayahEnglishPage({ params }: { params: Promise<{
     <main className="min-h-screen bg-gray-50 dark:bg-[#09121E] text-foreground transition-colors duration-300">
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-32 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-1 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #EAB308 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
            <Icon icon="solar:moon-stars-bold" className="absolute top-10 right-10 text-9xl text-brand-gold animate-pulse-slow" />
@@ -77,19 +77,15 @@ export default async function HidayahEnglishPage({ params }: { params: Promise<{
           </div>
           <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">{t('title')}</h1>
           <p className="text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed mb-10 font-light">{t('description')}</p>
-          <button className="px-10 py-4 bg-white text-brand-navy font-bold rounded-2xl shadow-3d hover:shadow-3d-pressed hover:translate-y-1 transition-all flex items-center justify-center gap-3 mx-auto">
-             <Icon icon="solar:file-download-bold-duotone" className="text-xl" />
-             <span>{t('downloadSyllabus')}</span>
-          </button>
         </div>
       </section>
 
       {/* Pillars Grid */}
-      <section className="py-16 -mt-16 relative z-20 px-4">
+      <section className="py-16 -mt-12 relative z-20 px-4">
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {pillars.map((pillar, i) => (
-                  <div key={i} className="bg-white dark:bg-[#112240] p-8 rounded-[2rem] shadow-soft flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
+                  <div key={i} className="bg-white dark:bg-[#112240] p-8 rounded-4xl shadow-soft flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
                      <div className={`w-16 h-16 rounded-2xl bg-opacity-20 ${pillar.color} ${pillar.textColor} flex items-center justify-center mb-4 text-3xl`}>
                         <Icon icon={pillar.icon} />
                      </div>

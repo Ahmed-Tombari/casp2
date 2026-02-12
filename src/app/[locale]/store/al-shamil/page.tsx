@@ -56,7 +56,7 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
     <main className="min-h-screen bg-background text-foreground">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-28 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-navy pt-32 pb-1 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Background: Architectural Grid */}
         <div className="absolute inset-0 opacity-10" 
@@ -77,21 +77,11 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
             {t('description')}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <button className="px-8 py-4 bg-brand-gold text-brand-navy-dark rounded-xl font-bold shadow-3d hover:shadow-3d-pressed hover:translate-y-1 transition-all flex items-center justify-center gap-2">
-                <Icon icon="solar:file-download-bold" className="text-xl" />
-                {t('downloadBrochure')}
-             </button>
-             <button className="px-8 py-4 bg-white/10 text-white rounded-xl font-bold border border-white/10 hover:bg-white/20 transition-all flex items-center justify-center gap-2">
-                <Icon icon="solar:videocamera-record-bold" className="text-xl" />
-                {t('watchOverview')}
-             </button>
-          </div>
         </div>
       </section>
 
       {/* ================= METHODOLOGY ================= */}
-      <section className="py-20 -mt-16 relative z-20 px-4">
+      <section className="py-20 -mt-12 relative z-20 px-4">
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {features.map((feature, i) => (

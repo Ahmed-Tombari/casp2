@@ -274,11 +274,18 @@
       "title": "Happy Muslim",
       "desc": "Educational curriculum for Islamic values and ethics",
       "books": {
+        "kg": "Teacher Guide - KG",
+        "prep": "Teacher Guide - Preparatory",
         "1": "Teacher Guide - Level 1",
         "2": "Teacher Guide - Level 2",
         "3": "Teacher Guide - Level 3",
         "4": "Teacher Guide - Level 4",
-        "5": "Teacher Guide - Level 5"
+        "5": "Teacher Guide - Level 5",
+        "6": "Teacher Guide - Level 6",
+        "7": "Teacher Guide - Level 7",
+        "8": "Teacher Guide - Level 8",
+        "9": "Teacher Guide - Level 9",
+        "10": "Teacher Guide - Level 10"
       }
     }
   },
@@ -874,12 +881,21 @@
   "theHappyMuslim": {
     "title": "The Happy Muslim",
     "description": "A fun educational series aiming to build the Muslim child's character by planting values of happiness, optimism, and love of good.",
+    "forYounger": "Little Gems",
+    "learnMore": "Discover More",
+    "identityTitle": "Islamic Identity",
+    "identityDesc": "Building a strong foundation and proud identity for the young Muslim.",
+    "modernityTitle": "Modern Pedagogy",
+    "modernityDesc": "Interactive and fun methods that speak the language of today's children.",
+    "valuesTitle": "Noble Values",
+    "valuesDesc": "Instilling ethics and manners through engaging stories and activities.",
+    "ourBooks": "The Little Muslim Bookshelf",
+    "booksDesc": "A graduated series designed for every stage of your child's spiritual growth.",
     "characterBuilding": "Character Building",
     "watchPromo": "Watch Intro",
     "joyfulLearning": "Joyful Learning",
     "joyfulDesc": "We use play and fun stories to make learning a happy experience.",
     "integratedValues": "Integrated Values",
-    "valuesDesc": "Linking Islamic values to daily life and practical behavior.",
     "creativeArts": "Creativity & Arts",
     "creativeDesc": "Artistic activities and chants that develop taste and aesthetic sense.",
     "seriesBooks": "Series Books",

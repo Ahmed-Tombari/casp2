@@ -44,7 +44,6 @@ export default async function HomePage() {
       <Publications />
       <About />
       <VideoSection />
-      <Courses />
       <Mentor />
       <Testimonial />
       <ContactForm />

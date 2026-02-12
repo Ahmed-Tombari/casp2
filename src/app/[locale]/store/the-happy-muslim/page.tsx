@@ -83,7 +83,7 @@ export default async function TheHappyMuslimPage({
     <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
       
       {/* ================= HERO SECTION (Cloudy & Playful) ================= */}
-      <section className="bg-brand-sky pt-32 pb-32 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="bg-brand-sky pt-32 pb-1 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Playful Floating Elements */}
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
@@ -106,15 +106,11 @@ export default async function TheHappyMuslimPage({
             {t('description')}
           </p>
 
-          <button className="px-10 py-4 bg-white text-brand-sky-dark font-bold rounded-2xl shadow-3d hover:shadow-3d-pressed hover:translate-y-1 transition-all flex items-center justify-center gap-3 mx-auto">
-             <Icon icon="solar:magic-stick-3-bold-duotone" className="text-xl" />
-             <span>{t('learnMore')}</span>
-          </button>
         </div>
       </section>
 
       {/* ================= VALUES GRID (The Pillars) ================= */}
-      <section className="py-16 -mt-16 relative z-20 px-4">
+      <section className="py-16 -mt-12 relative z-20 px-4">
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {pillars.map((pillar, i) => (

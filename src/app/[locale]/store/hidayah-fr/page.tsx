@@ -63,7 +63,7 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
     <main className="min-h-screen bg-background text-foreground">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="bg-brand-navy pt-32 pb-32 text-center relative overflow-hidden rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="bg-brand-navy pt-32 pb-1 text-center relative overflow-hidden rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Background: Abstract Map / Connections */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -87,15 +87,11 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
             {t('description')}
           </p>
 
-          <button className="px-10 py-4 bg-white text-brand-navy font-bold rounded-2xl shadow-3d hover:shadow-3d-pressed hover:translate-y-1 transition-all flex items-center justify-center gap-3 mx-auto">
-             <Icon icon="solar:file-download-bold-duotone" className="text-xl" />
-             <span>{t('downloadSyllabus')}</span>
-          </button>
         </div>
       </section>
 
       {/* ================= PILLARS (The Bridge) ================= */}
-      <section className="py-16 -mt-16 relative z-20 px-4">
+      <section className="py-16 -mt-12 relative z-20 px-4">
          <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                {pillars.map((pillar, i) => (

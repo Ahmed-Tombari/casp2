@@ -121,7 +121,7 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
     <main className="min-h-screen bg-gray-50 dark:bg-[#09121E] text-foreground transition-colors duration-300">
       
       {/* Hero Section */}
-      <section className="bg-brand-navy pt-32 pb-24 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="bg-brand-navy pt-32 pb-1 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
           {/* Abstract Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
@@ -152,7 +152,7 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Categories Grid */}
-      <section className="py-20 -mt-16 relative z-20 px-4">
+      <section className="py-20 -mt-12 relative z-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {categories.map((cat, idx) => (

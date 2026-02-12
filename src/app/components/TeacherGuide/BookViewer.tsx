@@ -145,15 +145,20 @@ export default function BookViewer({
           {title}
         </h3>
 
-        {/* Action Button */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className="mt-auto inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 text-brand-navy dark:text-white font-bold hover:bg-brand-sky hover:text-white dark:hover:bg-brand-sky transition-all duration-300 group-hover:shadow-lg border border-transparent dark:border-white/5"
-        >
-          <span>{readLabel}</span>
-          <Icon icon="solar:eye-bold" className={isRTL ? "rotate-0" : ""} />
-        </button>
+         {/* Action Button 2 */}
+          <button 
+           onClick={() => setIsOpen(true)}
+           className="group relative px-8 py-4 bg-brand-gold text-brand-navy-dark rounded-2xl font-bold shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:shadow-[0_0_50px_rgba(234,179,8,0.6)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+             <span className="relative z-10 flex items-center gap-2">
+              {readLabel}
+                <Icon icon="solar:eye-bold" className={isRTL ? "rotate-0" : ""} />
+             </span>
+             {/* Shine Effect on Button */}
+             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12"></div>
+         </button>
       </div>
+
+    
 
       {/* PDF Modal */}
       {isOpen &&

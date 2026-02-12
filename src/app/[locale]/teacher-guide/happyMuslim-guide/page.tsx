@@ -24,7 +24,7 @@ export default async function HappyMuslimGuidePage({ params }: { params: Promise
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617]">
       
       {/* Hero Section - Sky Blue Theme */}
-      <section className="relative overflow-hidden bg-sky-600 pt-32 pb-32 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-sky-600 pt-32 pb-4 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Abstract Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
@@ -49,7 +49,7 @@ export default async function HappyMuslimGuidePage({ params }: { params: Promise
       </section>
 
       {/* Books Grid */}
-      <section className="py-24 -mt-20 relative z-20 px-4">
+      <section className="py-24 -mt-12 relative z-20 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-navy dark:text-white mb-2">{t('stagesOfGrowth')}</h2>
