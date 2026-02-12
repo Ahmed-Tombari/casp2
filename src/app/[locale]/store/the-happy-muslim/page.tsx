@@ -60,7 +60,7 @@ export default async function TheHappyMuslimPage({
   ];
 
   // --- The Little Muslim Bookshelf ---
-  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6'];
   const levels = levelKeys.map(key => {
     let id = key;
     let titleKey = key;
@@ -74,8 +74,8 @@ export default async function TheHappyMuslimPage({
       icon: ['R', 'P', '1'].includes(key) ? 'solar:sun-2-bold-duotone' : key === '2' ? 'solar:hand-shake-bold-duotone' : key === '3' ? 'solar:book-minimalistic-bold-duotone' : 'solar:globus-bold-duotone',
       color: ['R', 'P', '1'].includes(key) ? 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold' : key === '2' ? 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400' : key === '3' ? 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-brand-sky' : 'bg-brand-sky-light/20 text-brand-sky-dark dark:bg-brand-sky/10 dark:text-brand-sky',
       border: ['R', 'P', '1'].includes(key) ? 'border-brand-gold/30' : key === '2' ? 'border-teal-200 dark:border-teal-800' : key === '3' ? 'border-brand-navy/20' : 'border-brand-sky/30',
-      bookCover: "/images/books/سلسلة-المسلم-السعيد-213x300.png",
-      pdfUrl: "#"
+      bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/happymuslimEn-book/happymuslimEn-${key}/cover/${key}-1.png`,
+      pdfUrl: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/happymuslimEn-book/happymuslimEn-${key}/${key}-1.pdf`
     };
   });
 
