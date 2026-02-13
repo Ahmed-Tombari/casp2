@@ -42,8 +42,8 @@
     "currency": "SAR"
   },
   "home": {
-    "littleTitle": "La plateforme éducative CASP de référence",
-    "title": "Bienvenue chez CASP Éducation",
+    "littleTitle": "La plateforme éducative Casp de référence",
+    "title": "Bienvenue chez Casp Éducation",
     "subtitle": "Nous offrons les meilleures ressources éducatives pour l'arabe",
     "heroTitle": "Centre arabe pour les services éducatifs au Canada",
     "heroTitle2": "Bienvenue",
@@ -53,7 +53,7 @@
     "expertsTitle": "Nos Experts Pédagogiques",
     "testimonialsTitle": "Ce que Disent les Parents et les Enseignants",
     "feedback": "Commentaires",
-    "aboutTitle": "À propos de CASP Éducation",
+    "aboutTitle": "À propos de Casp Éducation",
     "aboutDescription": "Nous nous engageons à fournir les meilleures ressources pédagogiques pour l'apprentissage de l'arabe, en combinant des méthodes pédagogiques modernes avec un contenu attrayant.",
     "aboutPoint1": "Programmes éducatifs certifiés et intégrés",
     "aboutPoint2": "Outils interactifs et technologies d'apprentissage modernes",
@@ -72,7 +72,7 @@
     "premiumButton2": "Guide de l'enseignant",
     "premiumIcon1": "Programmes certifiés",
     "premiumIcon2": "Communauté éducative",
-    "videoTitle": "Découvrez l'Univers CASP Éducation",
+    "videoTitle": "Découvrez l'Univers Casp Éducation",
     "videoSubtitle": "Un aperçu rapide de notre mission, nos programmes et notre impact sur l'éducation en langue arabe."
   },
   "publications": {
@@ -499,7 +499,7 @@
     "privacyTitle": "Politique de Confidentialité",
     "termsTitle": "Conditions Générales",
     "lastUpdated": "Dernière mise à jour : Janvier 2026",
-    "privacyContent": "Chez CASP Éducation, nous accordons la priorité à votre vie privée. Nous ne collectons que les données nécessaires pour fournir nos services éducatifs à la meilleure qualité possible.",
+    "privacyContent": "Chez Casp Éducation, nous accordons la priorité à votre vie privée. Nous ne collectons que les données nécessaires pour fournir nos services éducatifs à la meilleure qualité possible.",
     "termsContent": "En utilisant notre site Web et notre plateforme, vous acceptez de vous conformer aux termes et conditions suivants qui garantissent une expérience éducative sûre et bénéfique pour tous."
   },
   "footer": {

@@ -40,8 +40,8 @@
     "currency": "SAR"
   },
   "home": {
-    "littleTitle": "The Leading CASP Educational Platform",
-    "title": "Welcome to CASP Education",
+    "littleTitle": "The Leading Casp Educational Platform",
+    "title": "Welcome to Casp Education",
     "subtitle": "We offer the best educational resources for Arabic",
     "heroTitle": "The Arab Center for Educational Services in Canada",
     "heroTitle2": "Welcome",
@@ -51,7 +51,7 @@
     "expertsTitle": "Our Educational Experts",
     "testimonialsTitle": "What Parents & Teachers Say",
     "feedback": "Feedback",
-    "aboutTitle": "About CASP Education",
+    "aboutTitle": "About Casp Education",
     "aboutDescription": "We are dedicated to providing the best educational resources for Arabic learning, combining modern pedagogical methods with engaging content.",
     "aboutPoint1": "Certified and integrated educational curricula",
     "aboutPoint2": "Interactive tools and modern learning technologies",
@@ -70,7 +70,7 @@
     "premiumButton2": "Teacher's Guide",
     "premiumIcon1": "Certified Curricula",
     "premiumIcon2": "Educational Community",
-    "videoTitle": "Discover the CASP Education Universe",
+    "videoTitle": "Discover the Casp Education Universe",
     "videoSubtitle": "A quick look at our mission, programs, and our impact on Arabic language education."
   },
   "publications": {

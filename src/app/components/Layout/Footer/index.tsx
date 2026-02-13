@@ -54,11 +54,11 @@ const Footer = () => {
             <Link
               href="/"
               className='inline-block w-fit group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded-lg'
-              aria-label="CASP Education Home"
+              aria-label="Casp Education Home"
             >
               <Image
                 src='/images/logo/logo-casp.png'
-                alt='CASP Education Logo'
+                alt='Casp Education Logo'
                 width={80}
                 height={80}
                 className='brightness-0 invert h-16 md:h-30 w-auto group-hover:scale-105 transition-transform duration-300 hover:drop-shadow-[0_0_10px_rgb(244,121,32)]'
@@ -167,10 +167,10 @@ const Footer = () => {
                 <div>
                   <p className='text-white/50 text-xs mb-1 uppercase tracking-wider'>{contactT('emailTitle')}</p>
                   <a
-                    href="mailto:info@caspeducation.com"
+                    href="mailto:contact@centerarabic.com"
                     className='text-white font-bold hover:text-brand-gold transition-colors break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy-dark rounded'
                   >
-                    info@caspeducation.com
+                    contact@centerarabic.com
                   </a>
                 </div>
               </li>
@@ -181,7 +181,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className='mt-12 md:mt-16 lg:mt-20 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-start'>
           <p className='text-white/50 text-xs md:text-sm'>
-            © {new Date().getFullYear()} CASP Education. {t('rights')}
+            © {new Date().getFullYear()} Casp Education. {t('rights')}
           </p>
           <div className='flex items-center justify-center'>
              <Image

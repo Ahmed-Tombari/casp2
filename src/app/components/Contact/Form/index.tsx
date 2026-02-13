@@ -49,7 +49,7 @@ const ContactForm = () => {
 
     // FormSubmit integration (keeping original logic but improving feedback)
     try {
-      const response = await fetch('https://formsubmit.co/ajax/info@caspeducation.com', {
+      const response = await fetch('https://formsubmit.co/ajax/contact@centerarabic.com', {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({

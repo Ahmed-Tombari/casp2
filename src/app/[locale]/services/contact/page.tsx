@@ -13,7 +13,7 @@ export async function generateMetadata({
 
   return {
     title: t('contact'),
-    description: `Get in touch with CASP Education`,
+    description: `Get in touch with Casp Education`,
     alternates: {
       canonical: `/${locale}/contact`,
       languages: {
@@ -41,7 +41,7 @@ const contactInfo = [
     },
     {
       title: t('emailTitle'),
-      value: 'info@caspeducation.com',
+      value: 'contact@centerarabic.com',
       icon: 'solar:letter-bold-duotone',
       color: 'bg-brand-orange/10 text-brand-orange',
     },

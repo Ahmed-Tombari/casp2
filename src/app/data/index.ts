@@ -115,7 +115,7 @@ export const TestimonialData: TestimonialType[] = [
     imgSrc: '/images/testimonial/user-2.jpg',
     starimg: '/images/testimonial/stars.png',
     detail:
-      "As a teacher, I find the teaching tools and CDs from CASP Education to be indispensable in my classroom.",
+      "As a teacher, I find the teaching tools and CDs from Casp Education to be indispensable in my classroom.",
   },
   {
     profession: 'Educational Consultant',

@@ -50,7 +50,7 @@ const About = () => {
             <div className='relative z-10 rounded-4xl overflow-hidden shadow-soft-lg bg-white dark:bg-white/5 border border-white/10 group'>
               <Image
                 src='/images/home/about-casp.png'
-                alt='About CASP Education'
+                alt='About Casp Education'
                 width={600}
                 height={600}
                 className='w-full h-auto object-cover group-hover:scale-105 transition duration-700'

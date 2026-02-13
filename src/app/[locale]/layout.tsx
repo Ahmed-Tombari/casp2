@@ -28,27 +28,50 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | CASP Education',
-    default: 'CASP Education - Premium Arabic Learning Resources',
+    template: '%s | Casp Education',
+    default: 'Casp Education',
   },
-  description: 'Discover the best resources for learning Arabic: books, e-books, and interactive tools for schools and individuals.',
-  keywords: ['Arabic', 'Education', 'Learning', 'Books', 'E-books', 'Curriculum', 'CASP'],
-  metadataBase: new URL('https://casp-edu.com'),
+  description: 'Casp Education is an online learning platform offering high-quality Arabic education and professional courses.',
+  keywords: ['Arabic', 'Education', 'Learning', 'Books', 'E-books', 'Curriculum', 'Casp Education', 'Online Courses'],
+  metadataBase: new URL('https://centerarabic.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'CASP Education',
-    description: 'Educational Platform for learning Arabic',
-    url: 'https://casp-edu.com',
-    siteName: 'CASP Education',
+    title: 'Casp Education',
+    description: 'Casp Education is an online learning platform offering high-quality Arabic education and professional courses.',
+    url: 'https://centerarabic.com',
+    siteName: 'Casp Education',
     images: [
       {
-        url: '/images/logo.png', // Assuming logo exists, valid fallback
-        width: 800,
-        height: 600,
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Casp Education Logo',
       },
     ],
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Casp Education',
+    description: 'Casp Education is an online learning platform offering high-quality Arabic education and professional courses.',
+    images: ['/logo.png'],
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Casp Education',
+  url: 'https://centerarabic.com',
+  logo: 'https://centerarabic.com/logo.png',
+  sameAs: [
+    // Add social media links if known, otherwise leave empty or add placeholders
+    'https://www.facebook.com/caspeducation', 
+    'https://www.instagram.com/caspeducation',
+  ],
 };
 
 export default async function PagesLayout({
@@ -76,13 +99,19 @@ export default async function PagesLayout({
       key={locale}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${cairo.variable} font-sans min-h-screen relative overflow-x-hidden bg-brand-sky/5 text-brand-navy dark:bg-brand-navy-black dark:text-white selection:bg-brand-gold selection:text-brand-navy transition-colors duration-300`}
       >
         {/* Global Background Layers - Dark Mode */}
         <div className="fixed inset-0 z-0 pointer-events-none user-select-none opacity-0 dark:opacity-100 transition-opacity duration-500">
           {/* 1. Deep navy radial gradient (center-right to edges) */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,_#0A1A2F_0%,_#050E1A_60%,_#02060C_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,#0A1A2F_0%,#050E1A_60%,#02060C_100%)]" />
 
           {/* 2. Arabic Letters Pattern Overlay - symbolizing learning */}
           <div
