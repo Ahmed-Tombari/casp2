@@ -35,29 +35,7 @@ export default async function TheHappyMuslimPage({
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
 
   // --- Core Pillars (Values) ---
-  const pillars = [
-    {
-      title: t('identityTitle'),
-      desc: t('identityDesc'),
-      icon: 'solar:point-on-map-bold-duotone',
-      color: 'bg-indigo-100',
-      textColor: 'text-indigo-600',
-    },
-    {
-      title: t('modernityTitle'),
-      desc: t('modernityDesc'),
-      icon: 'solar:laptop-minimalistic-bold-duotone',
-      color: 'bg-brand-sky',
-      textColor: 'text-brand-sky-dark',
-    },
-    {
-      title: t('valuesTitle'),
-      desc: t('valuesDesc'),
-      icon: 'solar:medal-ribbon-star-bold-duotone',
-      color: 'bg-brand-gold-light',
-      textColor: 'text-brand-gold-dark',
-    },
-  ];
+
 
   // --- The Little Muslim Bookshelf ---
   const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6'];
@@ -74,8 +52,8 @@ export default async function TheHappyMuslimPage({
       icon: ['R', 'P', '1'].includes(key) ? 'solar:sun-2-bold-duotone' : key === '2' ? 'solar:hand-shake-bold-duotone' : key === '3' ? 'solar:book-minimalistic-bold-duotone' : 'solar:globus-bold-duotone',
       color: ['R', 'P', '1'].includes(key) ? 'bg-brand-gold-light/20 text-brand-gold-dark dark:bg-brand-gold/10 dark:text-brand-gold' : key === '2' ? 'bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400' : key === '3' ? 'bg-brand-navy-light/20 text-brand-navy dark:bg-brand-navy/30 dark:text-brand-sky' : 'bg-brand-sky-light/20 text-brand-sky-dark dark:bg-brand-sky/10 dark:text-brand-sky',
       border: ['R', 'P', '1'].includes(key) ? 'border-brand-gold/30' : key === '2' ? 'border-teal-200 dark:border-teal-800' : key === '3' ? 'border-brand-navy/20' : 'border-brand-sky/30',
-      bookCover: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/happymuslimEn-book/happymuslimEn-${key}/cover/${key}-1.png`,
-      pdfUrl: `https://3nvnebfanoina0ww.public.blob.vercel-storage.com/store-book/happymuslimEn-book/happymuslimEn-${key}/${key}-1.pdf`
+      bookCover: `/pdfbooks/store-book/happymuslimEn-book/happymuslimEn-${key}/cover/${key}-1.png`,
+      pdfUrl: `/api/books/store-book/happymuslimEn-book/happymuslimEn-${key}/${key}-1.pdf`
     };
   });
 
@@ -109,22 +87,7 @@ export default async function TheHappyMuslimPage({
         </div>
       </section>
 
-      {/* ================= VALUES GRID (The Pillars) ================= */}
-      <section className="py-16 -mt-12 relative z-20 px-4">
-         <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-               {pillars.map((pillar, i) => (
-                  <div key={i} className="bg-white dark:bg-brand-navy-dark p-10 rounded-[2.5rem] shadow-soft flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
-                     <div className={`w-16 h-16 rounded-2xl bg-opacity-10 ${pillar.color} ${pillar.textColor} flex items-center justify-center mb-4 text-3xl`}>
-                        <Icon icon={pillar.icon} />
-                     </div>
-                     <h3 className="text-xl font-bold text-brand-navy dark:text-white mb-2">{pillar.title}</h3>
-                     <p className="text-sm text-brand-navy/60 dark:text-gray-400 leading-relaxed">{pillar.desc}</p>
-                  </div>
-               ))}
-            </div>
-         </div>
-      </section>
+
 
       {/* ================= BOOKSHELF (The Bookshelves) ================= */}
       <div className="text-center py-10">

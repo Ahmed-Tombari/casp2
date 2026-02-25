@@ -11,6 +11,8 @@ import { routing } from "@/i18n/routing";
 import { isRTL, type Locale } from "@/i18n/config";
 import { ThemeProvider } from "@/app/components/Theme/ThemeProvider";
 import { CartProvider } from "@/app/context/cart.context";
+import { getSession } from "@/lib/auth";
+import { Toaster } from "react-hot-toast";
 
 // Cairo font for Arabic-first design
 const cairo = Cairo({
@@ -65,13 +67,22 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Casp Education',
+  alternateName: 'Casp Arabic Center',
+  description: 'Online learning platform offering high-quality Arabic education and professional courses.',
   url: 'https://centerarabic.com',
   logo: 'https://centerarabic.com/logo.png',
   sameAs: [
-    // Add social media links if known, otherwise leave empty or add placeholders
-    'https://www.facebook.com/caspeducation', 
+    'https://www.facebook.com/caspeducation',
     'https://www.instagram.com/caspeducation',
+    'https://twitter.com/caspeducation',
+    'https://www.linkedin.com/company/caspeducation'
   ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'contact@centerarabic.com',
+    availableLanguage: ['Arabic', 'English', 'French']
+  }
 };
 
 export default async function PagesLayout({
@@ -81,6 +92,7 @@ export default async function PagesLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
+  const session = await getSession();
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
@@ -163,12 +175,13 @@ export default async function PagesLayout({
             <CartProvider>
               <Aoscompo>
                 <div className="relative z-10 flex flex-col min-h-screen">
-                  <Header />
+                  <Header user={session?.user || null} />
                   <main className="grow">{children}</main>
                   <Footer />
                 </div>
               </Aoscompo>
               <ScrollToTop />
+              <Toaster position="top-center" reverseOrder={false} />
             </CartProvider>
           </ThemeProvider>
         </NextIntlClientProvider>

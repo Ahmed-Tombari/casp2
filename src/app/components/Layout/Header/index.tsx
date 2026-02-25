@@ -11,20 +11,32 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { HeaderItem } from "@/app/types/menu";
 import { useLocale } from "next-intl";
 import { getNavigationData } from "@/data/navigation";
-import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import PremiumButton from "@/app/components/UI/PremiumButton";
+import AccessModal from "@/app/components/PrivateBook/AccessModal";
+import { AuthStatus } from "@/app/components/Auth/AuthStatus";
 import { ThemeSwitcher } from "../../Theme/ThemeSwitcher";
+import GlassCard from "@/app/components/UI/GlassCard";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  user?: {
+    id: string;
+    email: string;
+    role: string;
+    name: string;
+    firstName?: string;
+  } | null;
+}
+
+const Header: React.FC<HeaderProps> = ({ user }) => {
   const locale = useLocale();
-  const t = useTranslations("common");
   const [headerData, setHeaderData] = useState<HeaderItem[]>([]);
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
+  const [isBookAccessOpen, setIsBookAccessOpen] = useState(false);
 
   const signInRef = useRef<HTMLDivElement>(null);
   const signUpRef = useRef<HTMLDivElement>(null);
@@ -41,9 +53,14 @@ const Header: React.FC = () => {
   };
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
+    const target = event.target as Element;
+    if (target.closest && target.closest('#auth-modal')) {
+      return;
+    }
+
     if (
       signInRef.current &&
-      !signInRef.current.contains(event.target as Node)
+      !signInRef.current.contains(target as Node)
     ) {
       setIsSignInOpen(false);
     }
@@ -90,7 +107,7 @@ const Header: React.FC = () => {
       role="banner"
     >
       <div>
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
+        <div className="w-full px-2 sm:px-6 lg:px-4 flex items-center justify-between h-18 lg:h-18">
           <Logo />
           <nav 
             className={`hidden lg:flex grow items-center gap-2 justify-center ${
@@ -99,79 +116,126 @@ const Header: React.FC = () => {
             role="navigation"
             aria-label="Main navigation"
           >
-            {headerData.map((item, index) => (
-              <HeaderLink key={`${item.href}-${index}`} item={item} />
-            ))}
+            {headerData.map((item, index) => {
+               // Intercept "Book Access" item in submenu
+               // Since HeaderLink renders submenus, we might need to modify HeaderLink OR modify the data.
+               // However, HeaderLink is a separate component. 
+               // Easiest way: If we can't change HeaderLink easily here, we should pass a prop or use a context.
+               // BUT: HeaderLink likely uses <Link>. 
+               
+               // Better approach for this specific codebase:
+               // Create a handler that checks the href in the Link component.
+               // Since `HeaderLink` is imported, let's see if we can pass an `onClick` or intercept via a custom updated `headerData`.
+               
+               // NOTE: If HeaderLink just renders links, we might need to REPLACE the href with '#' and add an onClick.
+               // But HeaderLink might not accept onClick for sub-items easily if it maps them internally.
+               
+               // LET'S MODIFY THE DATA TO TRIGGER THE MODAL
+               // We can't pass functions in serializable data easily if it's strictly typed as HeaderItem without functions.
+               // Let's modify HeaderLink to accept a special "action" or handle specific hrefs.
+               
+               // Actually, simpler: 
+               // We will modify `HeaderLink.tsx` to accept an `onBookAccessClick` prop, 
+               // OR we verify if `HeaderLink` exposes a way to handle clicks.
+               
+               // Seeing `HeaderLink` usage: <HeaderLink key={...} item={item} />.
+               // I need to modify HeaderLink to support this.
+               // For now, I will modify HeaderLink in the NEXT step.
+               // Here I will pass the handler if I update HeaderLink signature.
+               
+               return (
+                  <HeaderLink 
+                    key={`${item.href}-${index}`} 
+                    item={item} 
+                    onBookAccessClick={() => setIsBookAccessOpen(true)}
+                  />
+               );
+            })}
           </nav>
           <div className="flex items-center gap-3 lg:gap-4">
             <ThemeSwitcher />
             <LanguageSwitcher />
             
             <div className="hidden lg:flex items-center gap-3">
-              <PremiumButton
-                variant="secondary"
-                size="sm"
-                onClick={() => setIsSignInOpen(true)}
-              >
-                {t("signIn")}
-              </PremiumButton>
-
-              <PremiumButton
-                variant="primary"
-                size="sm"
-                onClick={() => setIsSignUpOpen(true)}
-              >
-                {t("signUp")}
-              </PremiumButton>
+              <AuthStatus user={user || null} />
             </div>
 
-            {isSignInOpen && (
-              <div 
-                className="fixed inset-0 bg-brand-navy-dark/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-                onClick={() => setIsSignInOpen(false)}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="signin-title"
-              >
-                <div
-                  ref={signInRef}
-                  className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl px-8 pt-14 pb-8 text-center bg-white dark:bg-brand-navy-dark backdrop-blur-xl border border-white/20 shadow-soft-lg"
-                  onClick={(e) => e.stopPropagation()}
+            <AnimatePresence>
+              {isSignInOpen && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-brand-navy-dark/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+                  onClick={() => setIsSignInOpen(false)}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="signin-title"
                 >
-                  <button
-                    onClick={() => setIsSignInOpen(false)}
-                    className="absolute top-4 end-4 w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sky/10 text-brand-navy dark:text-white hover:bg-brand-orange hover:text-white transition-colors"
+                  <motion.div
+                    initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                    exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                    transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-full max-w-md"
                   >
-                    <Icon icon="material-symbols:close-rounded" width={24} height={24} />
-                  </button>
-                  <Signin />
-                </div>
-              </div>
-            )}
+                    <GlassCard className="px-8 pt-14 pb-8 text-center relative">
+                      <button
+                        onClick={() => setIsSignInOpen(false)}
+                        className="absolute top-4 end-4 w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sky/10 text-brand-navy dark:text-white hover:bg-brand-orange hover:text-white transition-colors z-20"
+                      >
+                        <Icon icon="material-symbols:close-rounded" width={24} height={24} />
+                      </button>
+                      <div ref={signInRef}>
+                        <Signin />
+                      </div>
+                    </GlassCard>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-            {isSignUpOpen && (
-              <div 
-                className="fixed inset-0 bg-brand-navy-dark/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-                onClick={() => setIsSignUpOpen(false)}
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="signup-title"
-              >
-                <div
-                  ref={signUpRef}
-                  className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl px-8 pt-14 pb-8 text-center bg-white dark:bg-brand-navy-dark backdrop-blur-xl border border-white/20 shadow-soft-lg"
-                  onClick={(e) => e.stopPropagation()}
+            <AnimatePresence>
+              {isSignUpOpen && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-brand-navy-dark/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+                  onClick={() => setIsSignUpOpen(false)}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="signup-title"
                 >
-                  <button
-                    onClick={() => setIsSignUpOpen(false)}
-                    className="absolute top-4 end-4 w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sky/10 text-brand-navy dark:text-white hover:bg-brand-orange hover:text-white transition-colors"
+                  <motion.div
+                    initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                    exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                    transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-full max-w-md"
                   >
-                    <Icon icon="material-symbols:close-rounded" width={24} height={24} />
-                  </button>
-                  <SignUp />
-                </div>
-              </div>
-            )}
+                    <GlassCard className="px-8 pt-14 pb-8 text-center relative">
+                      <button
+                        onClick={() => setIsSignUpOpen(false)}
+                        className="absolute top-4 end-4 w-10 h-10 flex items-center justify-center rounded-xl bg-brand-sky/10 text-brand-navy dark:text-white hover:bg-brand-orange hover:text-white transition-colors z-20"
+                      >
+                        <Icon icon="material-symbols:close-rounded" width={24} height={24} />
+                      </button>
+                      <div ref={signUpRef}>
+                        <SignUp />
+                      </div>
+                    </GlassCard>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <AccessModal 
+                isOpen={isBookAccessOpen} 
+                closeModal={() => setIsBookAccessOpen(false)} 
+            />
             
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
@@ -234,6 +298,7 @@ const Header: React.FC = () => {
                     key={`${item.href}-${index}`} 
                     item={item} 
                     onClick={() => setNavbarOpen(false)} 
+                    onBookAccessClick={() => setIsBookAccessOpen(true)}
                   />
                 ))}
               </div>
@@ -243,25 +308,8 @@ const Header: React.FC = () => {
                    <LanguageSwitcher />
                    <ThemeSwitcher />
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <PremiumButton
-                    variant="secondary"
-                    onClick={() => {
-                      setIsSignInOpen(true);
-                      setNavbarOpen(false);
-                    }}
-                  >
-                    {t("signIn")}
-                  </PremiumButton>
-                  <PremiumButton
-                    variant="primary"
-                    onClick={() => {
-                      setIsSignUpOpen(true);
-                      setNavbarOpen(false);
-                    }}
-                  >
-                    {t("signUp")}
-                  </PremiumButton>
+                <div className="pt-4 border-t border-brand-sky/20 dark:border-white/10">
+                   <AuthStatus user={user || null} />
                 </div>
               </div>
             </nav>

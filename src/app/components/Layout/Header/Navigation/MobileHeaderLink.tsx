@@ -9,9 +9,10 @@ type Props = {
   item: HeaderItem
   depth?: number
   onClick?: () => void
+  onBookAccessClick?: () => void
 }
 
-const MobileHeaderLink = ({ item, depth = 0, onClick }: Props) => {
+const MobileHeaderLink = ({ item, depth = 0, onClick, onBookAccessClick }: Props) => {
   const [open, setOpen] = useState(false)
   const path = usePathname()
   const hasSubmenu = !!item.submenu?.length
@@ -24,6 +25,11 @@ const MobileHeaderLink = ({ item, depth = 0, onClick }: Props) => {
           if (hasSubmenu) {
             e.preventDefault()
             setOpen(!open)
+          } else if (item.href === '/services/book-access' && onBookAccessClick) {
+            e.preventDefault()
+            onBookAccessClick()
+            // Close mobile menu
+            if (onClick) onClick()
           } else if (onClick) {
             onClick()
           }
@@ -59,6 +65,7 @@ const MobileHeaderLink = ({ item, depth = 0, onClick }: Props) => {
                 item={child}
                 depth={depth + 1}
                 onClick={onClick}
+                onBookAccessClick={onBookAccessClick}
               />
             ))}
           </motion.div>

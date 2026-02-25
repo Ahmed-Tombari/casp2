@@ -7,12 +7,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 type Props = {
   item: HeaderItem
   depth?: number
+  onBookAccessClick?: () => void
 }
 
-const HeaderLink = ({ item, depth = 0 }: Props) => {
+const HeaderLink = ({ item, depth = 0, onBookAccessClick }: Props) => {
   const [open, setOpen] = useState(false)
   const path = usePathname()
   const hasSubmenu = !!item.submenu?.length
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (item.href === '/services/book-access' && onBookAccessClick) {
+      e.preventDefault()
+      onBookAccessClick()
+      setOpen(false)
+    }
+  }
 
   return (
     <div
@@ -22,6 +31,7 @@ const HeaderLink = ({ item, depth = 0 }: Props) => {
     >
       <Link
         href={item.href}
+        onClick={handleClick}
         className={`text-lg flex items-center gap-0.5 font-semibold rounded-lg px-3 py-2 transition-colors ${
           path === item.href
             ? 'text-brand-orange bg-brand-orange/10'
@@ -65,6 +75,7 @@ const HeaderLink = ({ item, depth = 0 }: Props) => {
                 key={`${child.href}-${index}`}
                 item={child}
                 depth={depth + 1}
+                onBookAccessClick={onBookAccessClick}
               />
             ))}
           </motion.div>
