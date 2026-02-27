@@ -984,6 +984,7 @@
   },
   
    "admin": {
+    "close": "Close",
     "dashboard": "Dashboard",
     "overview": "Overview",
     "welcome": "Welcome back to the admin dashboard.",

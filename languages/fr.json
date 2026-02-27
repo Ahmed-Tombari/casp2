@@ -983,6 +983,7 @@
  },
 
    "admin": {
+    "close": "Fermer",
     "dashboard": "Tableau de Bord",
     "overview": "Aperçu",
     "welcome": "Bienvenue sur le tableau de bord d'administration.",
