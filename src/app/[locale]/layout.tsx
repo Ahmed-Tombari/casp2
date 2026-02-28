@@ -18,7 +18,7 @@ import { Toaster } from "react-hot-toast";
 const cairo = Cairo({
   subsets: ["latin", "arabic"],
   variable: "--font-cairo",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "700", "800"],
   display: "swap",
 });
 
@@ -116,6 +116,8 @@ export default async function PagesLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="preconnect" href="https://pub-2e481fdf58914ed08e036eeb987a1a89.r2.dev" />
+        <link rel="preconnect" href="https://3nvnebfanoina0ww.public.blob.vercel-storage.com" />
       </head>
       <body
         className={`${cairo.variable} font-sans min-h-screen relative overflow-x-hidden bg-brand-sky/5 text-brand-navy dark:bg-brand-navy-black dark:text-white selection:bg-brand-gold selection:text-brand-navy transition-colors duration-300`}

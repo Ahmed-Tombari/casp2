@@ -25,13 +25,13 @@
     "accessibleBy": "Accessible by",
     "assasBooks": "Assas Books",
     "exercicesBooks": "Exercices Books",
-    "wafiBooks": "Al Wafi Books",
-    "gardenBooks": "Garden of Arabic Books",
-    "mufidBooks": "Al Mufid Books",
-    "shamilBooks": "Shamil Books",
-    "tarikmunirArBooks": "Tareeq Al-Muneer Arabic Books",
-    "hidayaFrBooks": "Hidayah French Books",
-    "happymuslimEnBooks": "Happy Muslim English Books",
+    "wafiBooks": "Al Wafi",
+    "gardenBooks": "Garden",
+    "mufidBooks": "Al Mufid",
+    "shamilBooks": "Shamil",
+    "tarikmunirArBooks": "Tareeq Al-Muneer",
+    "hidayaFrBooks": "Hidayah French",
+    "happymuslimEnBooks": "Happy Muslim English",
     "welcome": "Welcome to our private book collection"
   },
   "nav": {
@@ -56,7 +56,9 @@
     "teachingTools": "Teaching Tools",
     "handwritingExercises": "Handwriting Exercises",
     "letterColoring": "Letter Coloring",
-    "academy": "Training Academy"
+    "academy": "Training Academy",
+    "download": "Download",
+    "close": "Close"
   },
   "common": {
     "signIn": "Sign In",
@@ -585,7 +587,7 @@
     "placeholderPhone": "Enter your phone number",
     "placeholderMessage": "How can we help you?",
     "officeTitle": "Our Office",
-    "officeAddress": "Ennasr City, Tunis",
+    "officeAddress": "Montreal, Canada",
     "emailTitle": "Email Support",
     "phoneTitle": "Direct Line"
   },
@@ -658,6 +660,7 @@
   "downloadBtn": "Download PDF",
   "close": "Close",
   "explore": "Explore Series",
+  "viewDetails": "View Details",
   "levels": {
     "growthTitle": "Discover the Levels",
     "kg": "Kindergarten",

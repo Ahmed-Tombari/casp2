@@ -16,9 +16,15 @@ type Tab =
 
 export default function PrivateBookClient() {
   const [activeTab, setActiveTab] = useState<Tab>("mufid");
-  const t = useTranslations("PrivateBook");
-  const tStore = useTranslations("store");
   const tLevels = useTranslations("store.levels");
+  
+  // Series translations
+  const tMufid = useTranslations("store.alMufid");
+  const tGarden = useTranslations("store.gardenOfArabic");
+  const tWafi = useTranslations("store.alWafi");
+  const tShamil = useTranslations("store.alShamil");
+  const tIslamic = useTranslations("islamicSeries");
+  const tHidayahFr = useTranslations("store.hidayahFr");
 
   // Mufid levels: 1 to 6 + P + R
   const mufidKeys = ["1", "2", "3", "4", "5", "6", "P", "R"];
@@ -60,8 +66,8 @@ export default function PrivateBookClient() {
     const section = isExercises ? "exercices" : "assas";
     return gardenKeys.map((key) => {
       const pdfUrl = isExercises
-        ? `${process.env.NEXT_PUBLIC_R2_BASE_URL}/book-office/garden/${section}/${key}.pdf`
-        : `${process.env.NEXT_PUBLIC_R2_BASE_URL}/book-office/garden/${section}/${key}.pdf`;
+        ? `/book-office/garden/${section}/${key}.pdf`
+        : `/book-office/garden/${section}/${key}.pdf`;
 
       return {
         id: getLevelId(key),
@@ -128,31 +134,31 @@ export default function PrivateBookClient() {
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-4 mb-12 px-4">
         {[
-          { id: "mufid", label: t("mufidBooks"), icon: "solar:star-fall-bold" },
+          { id: "mufid", label: tMufid("title"), icon: "solar:star-fall-bold" },
           {
             id: "garden",
-            label: t("gardenBooks"),
+            label: tGarden("title"),
             icon: "solar:leaf-bold",
           },
           {
             id: "wafi",
-            label: t("wafiBooks"),
+            label: tWafi("title"),
             icon: "solar:verified-check-bold",
           },
-          { id: "shamil", label: t("shamilBooks"), icon: "solar:library-bold" },
+          { id: "shamil", label: tShamil("title"), icon: "solar:library-bold" },
           {
             id: "tarikmunirAr",
-            label: t("tarikmunirArBooks"),
+            label: tIslamic("alTareeqAlMuneerArabicTitle"),
             icon: "solar:pen-bold",
           },
           {
             id: "hidayaFr",
-            label: t("hidayaFrBooks"),
+            label: tHidayahFr("title"),
             icon: "solar:moon-bold",
           },
           {
             id: "happymuslimEn",
-            label: t("happymuslimEnBooks"),
+            label: tIslamic("theHappyMuslimTitle"),
             icon: "solar:smile-circle-bold",
           },
         ].map((tab) => (
@@ -175,36 +181,36 @@ export default function PrivateBookClient() {
       <div className="w-full">
         {activeTab === "mufid" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="text-center mb-10 px-4">
+            <div className="text-center mb-2 px-4">
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                {t("mufidBooks")}
+                {tMufid("title")}
               </h2>
               <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
             </div>
-            <PdfBookGrid levels={mufidLevels} watermark={true} />
+            <PdfBookGrid levels={mufidLevels} watermark={true} usePopup={true} />
           </div>
         )}
 
         {activeTab === "garden" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-16">
             <div>
-              <div className="text-center mb-10 px-4">
+              <div className="text-center mb-2 px-4">
                 <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                  {t("gardenBooks")}
+                  {tGarden("title")}
                 </h2>
                 <div className="h-1 w-24 bg-emerald-500 mx-auto rounded-full"></div>
               </div>
-              <PdfBookGrid levels={gardenAssas} watermark={true} />
+              <PdfBookGrid levels={gardenAssas} watermark={true} usePopup={true} />
             </div>
 
             <div>
-              <div className="text-center mb-10 px-4">
+              <div className="text-center mb-2 px-4">
                 <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                  {t("exercicesBooks")}
+                  {tGarden("exercisesTitle")}
                 </h2>
                 <div className="h-1 w-24 bg-emerald-500 mx-auto rounded-full"></div>
               </div>
-              <PdfBookGrid levels={gardenExercices} watermark={true} />
+              <PdfBookGrid levels={gardenExercices} watermark={true} usePopup={true} />
             </div>
           </div>
         )}
@@ -212,72 +218,72 @@ export default function PrivateBookClient() {
         {activeTab === "wafi" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-16">
             <div>
-              <div className="text-center mb-10 px-4">
+              <div className="text-center mb-2 px-4">
                 <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                  {t("wafiBooks")}
+                  {tWafi("title")}
                 </h2>
                 <div className="h-1 w-24 bg-brand-sky mx-auto rounded-full"></div>
               </div>
-              <PdfBookGrid levels={wafiAssas} watermark={true} />
+              <PdfBookGrid levels={wafiAssas} watermark={true} usePopup={true} />
             </div>
 
             <div>
-              <div className="text-center mb-10 px-4">
+              <div className="text-center mb-2 px-4">
                 <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                  {t("exercicesBooks")}
+                  {tWafi("exercises")}
                 </h2>
                 <div className="h-1 w-24 bg-brand-sky mx-auto rounded-full"></div>
               </div>
-              <PdfBookGrid levels={wafiExercices} watermark={true} />
+              <PdfBookGrid levels={wafiExercices} watermark={true} usePopup={true} />
             </div>
           </div>
         )}
 
         {activeTab === "shamil" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="text-center mb-10 px-4">
+            <div className="text-center mb-2 px-4">
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                {t("shamilBooks")}
+                {tShamil("title")}
               </h2>
               <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
             </div>
-            <PdfBookGrid levels={shamilLevels} watermark={true} />
+            <PdfBookGrid levels={shamilLevels} watermark={true} usePopup={true} />
           </div>
         )}
 
         {activeTab === "tarikmunirAr" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="text-center mb-10 px-4">
+            <div className="text-center mb-2 px-4">
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                {t("tarikmunirArBooks")}
+                {tIslamic("alTareeqAlMuneerArabicTitle")}
               </h2>
               <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
             </div>
-            <PdfBookGrid levels={tarikmunirArLevels} watermark={true} />
+            <PdfBookGrid levels={tarikmunirArLevels} watermark={true} usePopup={true} />
           </div>
         )}
 
         {activeTab === "hidayaFr" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="text-center mb-10 px-4">
+            <div className="text-center mb-2 px-4">
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                {t("hidayaFrBooks")}
+                {tHidayahFr("title")}
               </h2>
               <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
             </div>
-            <PdfBookGrid levels={hidayaFrLevels} watermark={true} />
+            <PdfBookGrid levels={hidayaFrLevels} watermark={true} usePopup={true} />
           </div>
         )}
 
         {activeTab === "happymuslimEn" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="text-center mb-10 px-4">
+            <div className="text-center mb-2 px-4">
               <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
-                {t("happymuslimEnBooks")}
+                {tIslamic("theHappyMuslimTitle")}
               </h2>
               <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
             </div>
-            <PdfBookGrid levels={happymuslimEnLevels} watermark={true} />
+            <PdfBookGrid levels={happymuslimEnLevels} watermark={true} usePopup={true} />
           </div>
         )}
       </div>
