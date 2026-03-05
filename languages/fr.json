@@ -121,6 +121,37 @@
       "wafiTitle": "Plateforme Al-Wafi",
       "wafiDesc": "L'environnement éducatif intégré pour la gestion de l'apprentissage.",
       "visitPlatform": "Visiter la plateforme"
+    },
+    "mentors": {
+      "item1": {
+        "name": "Dr. Ahmad Ibrahim",
+        "role": "Auteur et Éducateur"
+      },
+      "item2": {
+        "name": "Prof. Fatima Zehra",
+        "role": "Experte en langue arabe"
+      },
+      "item3": {
+        "name": "M. Khalid Mansour",
+        "role": "Concepteur de programmes"
+      }
+    },
+    "testimonials": {
+      "item1": {
+        "name": "Sara Khan",
+        "role": "Parent",
+        "comment": "La série Al-Wafi a transformé la façon dont mes enfants apprennent l'arabe. C'est engageant et très bien structuré !"
+      },
+      "item2": {
+        "name": "Mohammad Al-Farsi",
+        "role": "Professeur d'arabe",
+        "comment": "En tant qu'enseignant, je trouve que les outils pédagogiques et les CD de Casp Éducation sont indispensables dans ma classe."
+      },
+      "item3": {
+        "name": "Laila Hassan",
+        "role": "Consultante en éducation",
+        "comment": "Des ressources hautement professionnelles qui suivent les normes pédagogiques modernes tout en préservant la beauté de la langue."
+      }
     }
   },
   "publications": {

@@ -48,7 +48,6 @@ const VideoSection = () => {
                 src={`/pdfbooks/video/caspvideo.mp4`}
                 controls
                 autoPlay
-                muted
                 loop
                 playsInline
                 className="w-full h-full object-cover"

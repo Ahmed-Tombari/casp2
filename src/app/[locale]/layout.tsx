@@ -30,18 +30,19 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Casp Education',
-    default: 'Casp Education | Comprehensive Arabic Learning Platform',
+    template: '%s | CaspEducation',
+    default: 'CaspEducation | Number 1 Arabic Learning Center & Online Platform',
   },
-  description: 'Casp Education is a leading online learning platform offering high-quality Arabic education, professional courses, and tailored curriculums. Join caspeducation and start your journey today.',
+  description: 'CaspEducation is the leading Arabic learning center and educational platform. Discover high-quality courses, books, and resources tailored for success at caspeducation. Join us today!',
   keywords: ['caspeducation', 'casp education', 'centerarabic', 'casp', 'casp arabic center', 'Arabic', 'Education', 'Learning', 'Books', 'E-books', 'Curriculum', 'Online Courses'],
   metadataBase: new URL('https://centerarabic.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://centerarabic.com',
     languages: {
-      'ar': '/ar',
-      'en': '/en',
-      'fr': '/fr',
+      'ar': 'https://centerarabic.com/ar',
+      'en': 'https://centerarabic.com/en',
+      'fr': 'https://centerarabic.com/fr',
+      'x-default': 'https://centerarabic.com/ar',
     },
   },
   openGraph: {

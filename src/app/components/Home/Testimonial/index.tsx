@@ -98,7 +98,7 @@ const Testimonial = () => {
                       {/* Testimonial Text */}
                       <div className='mt-6 md:mt-8 flex-1'>
                         <p className='text-base md:text-lg lg:text-xl font-medium leading-relaxed text-brand-navy/80 dark:text-white/80 italic mb-6 md:mb-8 text-balance'>
-                          &quot;{items.detail}&quot;
+                          &quot;{t(`testimonials.item${i + 1}.comment`)}&quot;
                         </p>
                       </div>
 
@@ -108,15 +108,15 @@ const Testimonial = () => {
                           <div className='relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden ring-3 ring-white dark:ring-white/10 shadow-soft shrink-0'>
                             <Image
                               src={items.imgSrc}
-                              alt={`${items.name}, ${items.profession}`}
+                              alt={`${t(`testimonials.item${i + 1}.name`)}, ${t(`testimonials.item${i + 1}.role`)}`}
                               fill
                               className='object-cover'
                               sizes="(max-width: 768px) 48px, 56px"
                             />
                           </div>
                           <div>
-                            <h4 className='text-sm md:text-base font-bold text-brand-navy dark:text-white leading-tight'>{items.name}</h4>
-                            <p className='text-brand-orange text-xs md:text-sm font-semibold uppercase tracking-wider mt-1'>{items.profession}</p>
+                            <h4 className='text-sm md:text-base font-bold text-brand-navy dark:text-white leading-tight'>{t(`testimonials.item${i + 1}.name`)}</h4>
+                            <p className='text-brand-orange text-xs md:text-sm font-semibold uppercase tracking-wider mt-1'>{t(`testimonials.item${i + 1}.role`)}</p>
                           </div>
                         </div>
                         

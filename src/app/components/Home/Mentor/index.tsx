@@ -61,10 +61,10 @@ const Mentor = () => {
                     className='relative -mt-16 bg-white/90 dark:bg-brand-navy-dark/95 backdrop-blur-md px-8 py-7 rounded-3xl shadow-soft w-[85%] text-center border border-white/50 dark:border-white/10 group-hover:-translate-y-3 transition-all duration-500'
                   >
                     <h3 className='text-2xl font-bold text-brand-navy dark:text-white mb-1 group-hover:text-brand-orange transition-colors'>
-                      {item.color}
+                      {t(`mentors.item${index + 1}.name`)}
                     </h3>
                     <p className='text-brand-orange font-bold text-sm uppercase tracking-widest'>
-                      {item.name}
+                      {t(`mentors.item${index + 1}.role`)}
                     </p>
                     <div className='mt-4 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
                        <div className='w-8 h-8 rounded-full bg-brand-orange/10 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors cursor-pointer'>

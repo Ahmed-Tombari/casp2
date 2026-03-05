@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/routing';
+import { usePathname, Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
 import { type Locale } from '@/i18n/config';
@@ -22,7 +22,6 @@ const languages: LanguageOption[] = [
 
 export default function LanguageSwitcher() {
   const locale = useLocale() as Locale;
-  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +29,8 @@ export default function LanguageSwitcher() {
   // Validate current locale or fallback
   const currentLang = languages.find(l => l.code === locale) || languages[2]; // Default to AR if not found
 
-  const switchLocale = (newLocale: Locale) => {
-    const currentParams = searchParams.toString();
-    const pathWithParams = currentParams ? `${pathname}?${currentParams}` : pathname;
-    router.replace(pathWithParams, { locale: newLocale });
-    setIsOpen(false);
-  };
+  const currentParams = searchParams.toString();
+  const pathWithParams = currentParams ? `${pathname}?${currentParams}` : pathname;
 
   return (
     <div
@@ -68,9 +63,11 @@ export default function LanguageSwitcher() {
         >
           <div className="bg-white dark:bg-brand-navy-dark rounded-2xl shadow-xl overflow-hidden p-1.5 flex flex-col gap-1">
              {languages.map((lang) => (
-                <button
+                <Link
                     key={lang.code}
-                    onClick={() => switchLocale(lang.code)}
+                    href={pathWithParams}
+                    locale={lang.code}
+                    onClick={() => setIsOpen(false)}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors w-full group ${
                         locale === lang.code
                             ? 'bg-brand-gold/10 text-brand-gold'
@@ -86,7 +83,7 @@ export default function LanguageSwitcher() {
                      <span className={`text-sm ${locale === lang.code ? 'font-bold' : 'font-medium'}`}>
                         {lang.name}
                      </span>
-                </button>
+                </Link>
              ))}
           </div>
         </div>
