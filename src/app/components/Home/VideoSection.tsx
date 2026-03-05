@@ -1,12 +1,17 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import GlassCard from '@/app/components/UI/GlassCard'
 
 const VideoSection = () => {
   const t = useTranslations('home')
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   return (
     <section className="py-24 bg-transparent relative overflow-hidden">
@@ -44,16 +49,21 @@ const VideoSection = () => {
         >
           <GlassCard className="p-2 sm:p-4 rounded-4xl overflow-hidden border-white/20 dark:border-white/10 shadow-2xl">
             <div className="relative aspect-video rounded-3xl overflow-hidden bg-black group">
+              {isMounted && (
                <video
                 src={`/pdfbooks/video/caspvideo.mp4`}
                 controls
                 autoPlay
+                muted
                 loop
                 playsInline
+                preload="metadata"
+                poster="/logo.png"
                 className="w-full h-full object-cover"
               >
                 Your browser does not support the video tag.
               </video>
+              )}
               
               {/* Overlay for better look when not playing */}
               <div className="absolute inset-0 bg-brand-navy/5 pointer-events-none group-hover:bg-transparent transition-colors duration-500" />

@@ -23,7 +23,6 @@ const Banner = () => {
             src="/images/logo/bgn.png"
             alt=""
             fill
-            priority
             quality={60}
             sizes="100vw"
             className="object-contain object-top scale-110"
@@ -64,6 +63,7 @@ const Banner = () => {
               </div> */}
 
               <h1 className="text-4xl sm:text-5xl lg:text-[70px] font-extrabold leading-tight sm:leading-tight lg:leading-[1.1] text-[#2c75a4] dark:text-white text-center font-cairo">
+                <span className="sr-only">CaspEducation - </span>
                 {t('heroTitle')}
               </h1>
               
