@@ -45,8 +45,8 @@ export default async function TareeqAlMuneerArPage({
   // --- The Milestones (Levels) ---
   const levelKeys = ["R", "P", "1", "2", "3", "4", "5", "6"];
   const levels = levelKeys.map((key) => {
-    const id = key;
-    const assetKey = key === "P" ? "p" : key;
+  const id = key;
+  const assetKey = key === "P" ? "p" : key;
 
     return {
       bookId: `tareeq-ar-${key}`,
@@ -57,12 +57,13 @@ export default async function TareeqAlMuneerArPage({
       bookCover: `/pdfbooks/store-book/tarikmunirAr-book/tarikmunirAr-${key}/1-${assetKey}.jpg`,
       pdfUrl: `/api/books/store-book/tarikmunirAr-book/tarikmunirAr-${key}/1-${assetKey}.pdf`,
     };
+
   });
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* ================= HERO SECTION (Illuminated) ================= */}
-      <section className="relative overflow-hidden bg-amber-600 pt-24 pb-0 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-brand-gold-light pt-24 pb-0 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         {/* Background Light Effects & Icons */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           {/* Central Glow */}
@@ -88,7 +89,7 @@ export default async function TareeqAlMuneerArPage({
             {t("title")}
           </h1>
 
-          <p className="text-xl text-amber-100/90 max-w-2xl mx-auto leading-relaxed mb-2 font-medium">
+          <p className="text-xl text-brand-gold-dark/90 max-w-2xl mx-auto leading-relaxed mb-2 font-medium">
             {t('description')}
           </p>
           

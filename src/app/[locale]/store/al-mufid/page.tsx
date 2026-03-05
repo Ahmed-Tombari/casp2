@@ -23,14 +23,15 @@ export default async function AlMufidPage({ params }: { params: Promise<{ locale
   // --- Al Mufid Levels ---
   const levelKeys = ['1', '2', '3', '4', '5', '6'];
   const levels = levelKeys.map(key => {
+  const id = key;
     return {
       bookId: `mufid-${key}`,
-      id: key,
+      id,
       title: tLevels(key),
       bookCover: `/pdfbooks/store-book/mufid-book/mufid-${key}/${key}-1.png`,
       pdfUrl: `/api/books/store-book/mufid-book/mufid-${key}/${key}-1.pdf`,
-      color: "bg-orange-50 text-orange-500",
-      border: "border-orange-300"
+      color: "bg-amber-50 text-amber-500",
+      border: "border-amber-300",
     };
   });
 
@@ -38,7 +39,7 @@ export default async function AlMufidPage({ params }: { params: Promise<{ locale
     <main className="min-h-screen bg-background text-foreground">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden bg-orange-600 pt-24 pb-0 text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="relative overflow-hidden bg-amber-600 pt-24 pb-0 text-center rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Background Patterns & Icons */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">

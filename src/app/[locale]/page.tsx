@@ -32,11 +32,11 @@ export async function generateMetadata({
     description: t('subtitle'),
     alternates: {
       canonical: `/${locale}`,
-      // languages: {
-      //   'ar': '/ar',
-      //   'fr': '/fr',
-      //   'en': '/en',
-      // },
+      languages: {
+        'ar': '/ar',
+        'en': '/en',
+        'fr': '/fr',
+      },
     },
   };
 }

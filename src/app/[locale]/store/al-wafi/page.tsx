@@ -36,7 +36,6 @@ export default async function AlWafiPage({
   const generateLevels = (isExercises = false) => {
     return levelKeys.map(key => {
       const id = key;
-
       const section = isExercises ? 'exercices' : 'assas';
       const idPrefix = isExercises ? 'ex' : 'assas';
 
@@ -47,8 +46,9 @@ export default async function AlWafiPage({
         bookCover: `/pdfbooks/store-book/wafi-book/wafi-${key}/${section}/cover/${key}-1.png`,
         pdfUrl: `/api/books/store-book/wafi-book/wafi-${key}/${section}/${key}-1.pdf`,
         color: "bg-brand-gold-dark text-brand-gold-dark",
-        border: "border-brand-gold-dark"
+        border: "border-brand-gold-dark",
       };
+
     });
   };
 

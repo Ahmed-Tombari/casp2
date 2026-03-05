@@ -47,10 +47,10 @@ export default function StoreBookCardLink({
   // Safelist for Tailwind JIT
   // hover:shadow-emerald-300 hover:shadow-teal-300 hover:shadow-indigo-300 hover:shadow-orange-300 hover:shadow-brand-gold-dark hover:shadow-amber-300 hover:shadow-red-300 hover:shadow-brand-gold hover:shadow-brand-navy hover:shadow-blue-300 hover:shadow-lime-300
   // dark:hover:shadow-emerald-800 dark:hover:shadow-teal-800 dark:hover:shadow-indigo-800 dark:hover:shadow-orange-800 dark:hover:shadow-brand-gold-dark dark:hover:shadow-amber-800 dark:hover:shadow-red-800 dark:hover:shadow-brand-gold dark:hover:shadow-brand-navy dark:hover:shadow-blue-800 dark:hover:shadow-lime-800
-  const shadowClasses = borderColor.split(' ').map(c => c.replace('border-', 'hover:shadow-')).join(' ');
+  const shadowClasses = borderColor.split(' ').map(c => c.replace('border-', 'shadow-')).join(' ') + ' ' + borderColor.split(' ').map(c => c.replace('border-', 'hover:shadow-')).join(' ');
 
   return (
-    <div className={`group relative bg-white dark:bg-brand-navy-dark p-8 md:p-10 rounded-4xl shadow-soft border-2 ${borderColor} hover:-translate-y-2 hover:shadow-2xl ${shadowClasses} transition-all duration-300 flex flex-col items-center text-center h-full`}>
+    <div className={`group relative bg-white dark:bg-brand-navy-dark p-8 md:p-10 rounded-4xl shadow-xl ${shadowClasses} border-2 ${borderColor} hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center h-full`}>
       {/* Background Decoration */}
       <div className="absolute top-8 left-8 rtl:right-auto rtl:left-8 ltr:left-auto ltr:right-8 opacity-5 pointer-events-none">
         <Icon icon="solar:book-2-bold" className="text-6xl dark:text-white" />

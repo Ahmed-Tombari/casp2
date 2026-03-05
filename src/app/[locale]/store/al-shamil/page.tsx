@@ -23,7 +23,7 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
   // --- The Levels (Modules) ---
   const levelKeys = ['1', '2', '3', '4'];
   const levels = levelKeys.map(key => {
-    const id = key;
+  const id = key;
 
     return {
       bookId: `shamil-${key}`,
@@ -32,8 +32,9 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
       color: "bg-indigo-50 text-indigo-500",
       border: "border-indigo-300",
       bookCover: `/pdfbooks/store-book/shamil-book/shamil-${key}/${key}.jpg`,
-      pdfUrl: `/api/books/store-book/shamil-book/shamil-${key}/${key}.pdf`
+      pdfUrl: `/api/books/store-book/shamil-book/shamil-${key}/${key}.pdf`,
     };
+
   });
 
   return (
@@ -46,7 +47,7 @@ export default async function AlShamilPage({ params }: { params: Promise<{ local
         <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white rounded-full blur-[120px] mix-blend-overlay translate-x-1/3 -translate-y-1/3"></div>
             <Icon icon="solar:book-2-bold" className="absolute top-10 right-10 text-9xl text-white animate-pulse-slow" />
-            <Icon icon="solar:atom-bold" className="absolute bottom-10 left-10 text-8xl text-white animate-bounce-slow" />
+            <Icon icon="solar:book-2-bold" className="absolute bottom-10 left-10 text-8xl text-white animate-bounce-slow" />
         </div>
 
         <div className="container mx-auto max-w-7xl px-4 relative z-10">

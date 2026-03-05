@@ -18,6 +18,7 @@ interface BookDescriptionClientProps {
   isbn?: string;
   size?: string;
   levelText?: string;
+  buyUrl: string;
 }
 
 interface TranslationType {
@@ -74,7 +75,8 @@ export default function BookDescriptionClient({
   lessons = 0,
   isbn = "N/A",
   size = "N/A",
-  levelText = "N/A"
+  levelText = "N/A",
+  buyUrl
 }: BookDescriptionClientProps) {
 
   const t = translations[locale] || translations.en;
@@ -155,11 +157,12 @@ export default function BookDescriptionClient({
 
             <div className="flex flex-col justify-center md:flex-row items-center gap-6 w-full md:w-auto">
               <button className="w-full md:w-auto px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold text-lg shadow-[0_10px_20px_-10px_rgba(249,115,22,0.5)] hover:shadow-[0_10px_30px_-10px_rgba(249,115,22,0.8)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer"
-                      onClick={() => window.location.href = "https://qalamnet.com/dashboard"}>
+                      onClick={() => window.location.href = buyUrl}>
                 <Icon icon="solar:cart-large-4-bold" className="text-2xl" />
                 <span>{t.buy}</span>
               </button>
             </div>
+
           </div>
         </div>
       </div>

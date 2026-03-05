@@ -840,5 +840,62 @@ export const storeBooksDetails: Record<string, StoreBookDetails> = {
     lessons: 28,
     priceUSD: 20.00,
     isbn: "978-2-923633-77-0"
+  },
+
+  // Qawaed Mobasta
+  "qawaed-4": {
+    id: "qawaed-4",
+    titleAr: "القواعد المبسطة - المستوى 4",
+    titleEn: "Simplified Grammar - Level 4",
+    titleFr: "Grammaire Simplifiée - Niveau 4",
+    size: "21* 29,7",
+    pages: 45,
+    lessons: 28,
+    priceUSD: 7.00,
+    isbn: "978-2-923633-09-1"
+  },
+  "qawaed-5": {
+    id: "qawaed-5",
+    titleAr: "القواعد المبسطة - المستوى 5",
+    titleEn: "Simplified Grammar - Level 5",
+    titleFr: "Grammaire Simplifiée - Niveau 5",
+    size: "21* 29,7",
+    pages: 41,
+    lessons: 28,
+    priceUSD: 7.00,
+    isbn: "978-2-923633-12-1"
+  },
+  "qawaed-6": {
+    id: "qawaed-6",
+    titleAr: "القواعد المبسطة - المستوى 6",
+    titleEn: "Simplified Grammar - Level 6",
+    titleFr: "Grammaire Simplifiée - Niveau 6",
+    size: "21* 29,7",
+    pages: 25,
+    lessons: 28,
+    priceUSD: 7.00,
+    isbn: "978-2-923633-15-2"
+  },
+  "qawaed-7": {
+    id: "qawaed-7",
+    titleAr: "القواعد المبسطة - المستوى 7",
+    titleEn: "Simplified Grammar - Level 7",
+    titleFr: "Grammaire Simplifiée - Niveau 7",
+    size: "21* 29,7",
+    pages: 26,
+    lessons: 28,
+    priceUSD: 7.00,
+    isbn: "978-2-923633-31-2"
+  },
+  "qawaed-8": {
+    id: "qawaed-8",
+    titleAr: "القواعد المبسطة - المستوى 8",
+    titleEn: "Simplified Grammar - Level 8",
+    titleFr: "Grammaire Simplifiée - Niveau 8",
+    size: "21* 29,7",
+    pages: 26,
+    lessons: 28,
+    priceUSD: 7.00,
+    isbn: "978-2-923633-43-5"
   }
 };

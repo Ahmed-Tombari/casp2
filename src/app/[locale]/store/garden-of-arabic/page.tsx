@@ -42,7 +42,6 @@ export default async function GardenOfArabicPage({
   const generateLevels = (isExercises = false) => {
     return levelKeys.map(key => {
       const id = key;
-
       const section = isExercises ? 'exercices' : 'assas';
       
      
@@ -56,8 +55,9 @@ export default async function GardenOfArabicPage({
         bookCover: `/pdfbooks/store-book/garden-book/garden-${key}/${section}/cover/${key}.jpg`,
         pdfUrl: isExercises 
           ? `/store-book/garden-book/garden-${key}/${section}/${key}.pdf`
-          : `/store-book/garden-book/garden-${key}/${section}/gardenAsses${key}.pdf`
+          : `/store-book/garden-book/garden-${key}/${section}/gardenAsses${key}.pdf`,
       };
+
     });
   };
 
@@ -90,9 +90,7 @@ export default async function GardenOfArabicPage({
       </section>
 
       {/* ================= THE GARDEN PATH (Main Levels) ================= */}
-      
       <PdfBookGrid levels={levels} watermark={true} />
-
       {/* ================= EXERCISES PATH ================= */}
       <div className="text-center px-4 py-0 border-t border-gray-100 dark:border-gray-800/20">
         <h2 className="text-3xl md:text-5xl font-bold text-brand-navy dark:text-white mb-4">
@@ -102,10 +100,7 @@ export default async function GardenOfArabicPage({
           {t('exercisesDesc')}
         </p>
       </div>
-
       <PdfBookGrid levels={exercisesLevels} watermark={true} />
-
-
     </main>
   );
 }

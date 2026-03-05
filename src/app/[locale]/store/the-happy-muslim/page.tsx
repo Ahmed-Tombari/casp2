@@ -35,22 +35,20 @@ export default async function TheHappyMuslimPage({
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store.theHappyMuslim' });
   const tLevels = await getTranslations({ locale, namespace: 'store.levels' });
-
-  // --- Core Pillars (Values) ---
-
-
   // --- The Little Muslim Bookshelf ---
   const levelKeys = ['R', 'P', '1', '2', '3', '4', '5', '6'];
   const levels = levelKeys.map(key => {
+  const id = key;
     return {
       bookId: `happymuslim-en-${key}`,
-      id: key,
+      id,
       title: tLevels(key),
       color: "bg-blue-50 text-blue-500",
       border: "border-blue-300",
       bookCover: `/pdfbooks/store-book/happymuslimEn-book/happymuslimEn-${key}/cover/${key}-1.png`,
-      pdfUrl: `/api/books/store-book/happymuslimEn-book/happymuslimEn-${key}/${key}-1.pdf`
+      pdfUrl: `/api/books/store-book/happymuslimEn-book/happymuslimEn-${key}/${key}-1.pdf`,
     };
+
   });
 
   return (

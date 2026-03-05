@@ -3,10 +3,12 @@ export function getStoreBookData(bookId: string) {
 
   let pdfUrl = "";
   let cover = "";
-  let icon = "solar:book-bookmark-bold-duotone";
-  let color = "bg-emerald-100 text-emerald-600";
-  let borderColor = "border-emerald-200";
+  let icon = "";
+  let color = "";
+  let borderColor = "";
+  let buyUrl = "https://sindbadglobal.com";
 
+  
   // Garden of Arabic
   if (bookId.startsWith("garden-")) {
     const parts = bookId.split("-"); // ['garden', 'R', 'assas']
@@ -17,19 +19,20 @@ export function getStoreBookData(bookId: string) {
     pdfUrl = isExercises
       ? `/store-book/garden-book/garden-${key}/${section}/${key}.pdf`
       : `/store-book/garden-book/garden-${key}/${section}/gardenAsses${key}.pdf`;
+    icon = 'solar:leaf-bold-duotone';
+    color = 'bg-emerald-50 text-emerald-500';
+    borderColor = 'border-emerald-300';
 
-    const colorMap: Record<string, { icon: string; color: string; border: string }> = {
-      R: { icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' },
-      P: { icon: 'mdi-sprout', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' },
-      '1': { icon: 'mdi:tree', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' },
-      '2': { icon: 'mdi:apple', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' },
-      '3': { icon: 'solar:leaf-bold-duotone', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' },
-      '4': { icon: 'mdi-sprout', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' },
-    };
-    const config = colorMap[key] || { icon: 'mdi:tree', color: 'bg-emerald-50 text-emerald-500', border: 'border-emerald-300' };
-    icon = config.icon;
-    color = config.color;
-    borderColor = config.border;
+    // Buy URL for Garden
+    if (key === 'R') {
+      buyUrl = isExercises ? "https://sindbadglobal.com/products/garden-kg1-exs" : "https://sindbadglobal.com/products/garden-kg1-txt";
+    } else if (key === 'P') {
+      buyUrl = isExercises ? "https://sindbadglobal.com/products/garden-kg2-exs" : "https://sindbadglobal.com/products/garden-kg2-txt";
+    } else if (key === '4' || key === '5' || key === '6' || key === '7' || key === '8') {
+      buyUrl = isExercises ? `https://sindbadglobal.com/products/garden-l${key}-grm` : `https://sindbadglobal.com/products/garden-l${key}-txt`;
+    } else {
+      buyUrl = isExercises ? `https://sindbadglobal.com/products/garden-l${key}-exs` : `https://sindbadglobal.com/products/garden-l${key}-txt`;
+    }
   } 
   
   // Tareeq Al Muneer (Arabic)
@@ -39,33 +42,13 @@ export function getStoreBookData(bookId: string) {
     cover = `/pdfbooks/store-book/tarikmunirAr-book/tarikmunirAr-${key}/1-${assetKey}.jpg`;
     pdfUrl = `/api/books/store-book/tarikmunirAr-book/tarikmunirAr-${key}/1-${assetKey}.pdf`;
     
-    icon = key === '2' ? 'solar:soundwave-bold-duotone' : key === '3' ? 'solar:widget-add-bold-duotone' : ['4', '5', '6'].includes(key) ? 'solar:book-2-bold-duotone' : 'solar:letter-bold-duotone';
+    icon = 'solar:map-point-bold-duotone';
     color = "bg-amber-50 text-amber-500";
     borderColor = "border-amber-300";
-  }
 
-  // Tareeq Al Muneer (English)
-  else if (bookId.startsWith("tareeq-en-")) {
-    const key = bookId.replace("tareeq-en-", "");
-    const assetKey = key === 'P' ? 'p' : key;
-    cover = `/pdfbooks/store-book/tarikmunirEn-book/tarikmunirEn-${key}/1-${assetKey}.jpg`;
-    pdfUrl = `/store-book/tarikmunirEn-book/tarikmunirEn-${key}/1-${assetKey}.pdf`;
-    
-    icon = ['R', 'P', '1'].includes(key) ? 'solar:letter-bold-duotone' : key === '2' ? 'solar:pen-new-square-bold-duotone' : 'solar:headphones-round-sound-bold-duotone';
-    color = "bg-brand-gold text-brand-gold";
-    borderColor = "border-brand-gold";
-  }
-
-  // Tareeq Al Muneer (French)
-  else if (bookId.startsWith("tareeq-fr-")) {
-    const key = bookId.replace("tareeq-fr-", "");
-    const assetKey = key === 'P' ? 'p' : key;
-    cover = `/pdfbooks/store-book/tarikmunirFr-book/tarikmunirFr-${key}/1-${assetKey}.jpg`;
-    pdfUrl = `/store-book/tarikmunirFr-book/tarikmunirFr-${key}/1-${assetKey}.pdf`;
-    
-    icon = ['R', 'P', '1'].includes(key) ? 'solar:letter-bold-duotone' : key === '2' ? 'solar:pen-new-square-bold-duotone' : 'solar:headphones-round-sound-bold-duotone';
-    color = "bg-blue-50 text-blue-500";
-    borderColor = "border-blue-300";
+    if (key === 'R') buyUrl = "https://sindbadglobal.com/collections/bright-path/products/munir-kg1";
+    else if (key === 'P') buyUrl = "https://sindbadglobal.com/collections/bright-path/products/munir-kg2";
+    else buyUrl = `https://sindbadglobal.com/collections/bright-path/products/munir-l${key}`;
   }
 
   // The Happy Muslim (English)
@@ -74,23 +57,25 @@ export function getStoreBookData(bookId: string) {
     cover = `/pdfbooks/store-book/happymuslimEn-book/happymuslimEn-${key}/cover/${key}-1.png`;
     pdfUrl = `/api/books/store-book/happymuslimEn-book/happymuslimEn-${key}/${key}-1.pdf`;
     
-    icon = ['R', 'P', '1'].includes(key) ? 'solar:sun-2-bold-duotone' : key === '2' ? 'solar:hand-shake-bold-duotone' : key === '3' ? 'solar:book-minimalistic-bold-duotone' : 'solar:globus-bold-duotone';
+    icon = 'solar:smile-circle-bold-duotone';
     color = "bg-blue-50 text-blue-500";
     borderColor = "border-blue-300";
+
+    if (key === 'R') buyUrl = "https://sindbadglobal.com/collections/the-happy-muslim/products/happy-kg1";
+    else if (key === 'P') buyUrl = "https://sindbadglobal.com/collections/the-happy-muslim/products/happy-kg2";
+    else buyUrl = `https://sindbadglobal.com/collections/the-happy-muslim/products/happy-l${key}`;
   }
 
   // Al Mufid
   else if (bookId.startsWith("mufid-")) {
     const key = bookId.replace("mufid-", "");
-    // Mapping IDs to folders: R->1, P->2, 1->3, 2->4, 3->5, 4->6
-    const folderMap: Record<string, string> = {
-      'R': '1', 'P': '2', '1': '3', '2': '4', '3': '5', '4': '6'
-    };
-    const folderKey = folderMap[key] || key;
+    const folderKey = key;
     cover = `/pdfbooks/store-book/mufid-book/mufid-${folderKey}/${folderKey}-1.png`;
     pdfUrl = `/api/books/store-book/mufid-book/mufid-${folderKey}/${folderKey}-1.pdf`;
-    color = "bg-orange-50 text-orange-500";
-    borderColor = "border-orange-300";
+    color = "bg-amber-50 text-amber-500";
+    icon = 'solar:notebook-bold-duotone';
+    borderColor = "border-amber-300";
+    buyUrl = `https://sindbadglobal.com/collections/al-mofeed-in-learning-arabic/products/mufid-l${key}`;
   }
 
   // Al Shamil
@@ -99,7 +84,9 @@ export function getStoreBookData(bookId: string) {
     cover = `/pdfbooks/store-book/shamil-book/shamil-${key}/${key}.jpg`;
     pdfUrl = `/api/books/store-book/shamil-book/shamil-${key}/${key}.pdf`;
     color = "bg-indigo-50 text-indigo-500";
+    icon = 'solar:book-2-bold-duotone';
     borderColor = "border-indigo-300";
+    buyUrl = `https://sindbadglobal.com/collections/al-shamil-in-learning-arabic/products/shamil-l${key}`;
   }
 
   // Al Wafi
@@ -111,39 +98,26 @@ export function getStoreBookData(bookId: string) {
     
     cover = `/pdfbooks/store-book/wafi-book/wafi-${key}/${sectionFolder}/cover/${key}-1.png`;
     pdfUrl = `/api/books/store-book/wafi-book/wafi-${key}/${sectionFolder}/${key}-1.pdf`;
-    color = "bg-brand-gold-dark text-brand-gold-dark";
+    color = "bg-brand-gold-dark text-brand-gold/90";
+    icon = 'solar:book-bookmark-bold-duotone';
     borderColor = "border-brand-gold-dark";
+
+    if (sectionPrefix === 'ex') {
+      buyUrl = `https://sindbadglobal.com`;
+    } else {
+      buyUrl = `https://sindbadglobal.com`;
+    }
   }
 
   // Qawaed Mobasta
   else if (bookId.startsWith("qawaed-")) {
     const key = bookId.replace("qawaed-", "");
-    cover = `/pdfbooks/store-book/qawaid-book/cover/${key}.jpg`;
-    pdfUrl = `/api/books/store-book/qawaid-book/${key}.pdf`;
+    cover = `/pdfbooks/store-book/garden-book/garden-${key}/exercices/cover/${key}.jpg`;
+    pdfUrl = `/api/books/store-book/garden-book/garden-${key}/exercices/${key}.pdf`;
+    icon = 'solar:ruler-pen-bold-duotone';
     color = "bg-lime-50 text-lime-500";
     borderColor = "border-lime-300";
-  }
-
-  // Hidayah (Arabic)
-  else if (bookId.startsWith("hidayah-ar-")) {
-    const key = bookId.replace("hidayah-ar-", "");
-    cover = "/images/ourbooks/Arabic Garden Series.png"; // Placeholder
-    pdfUrl = "#";
-    
-    icon = ['R', 'P', '1'].includes(key) ? 'solar:leaf-bold-duotone' : key === '2' ? 'solar:heart-shine-bold-duotone' : key === '3' ? 'mdi:road' : 'solar:users-group-rounded-bold-duotone';
-    color = "bg-teal-50 text-teal-500";
-    borderColor = "border-teal-300";
-  }
-  
-  // Hidayah (English)
-  else if (bookId.startsWith("hidayah-en-")) {
-    const key = bookId.replace("hidayah-en-", "");
-    cover = "/images/ourbooks/Arabic Garden Series.png"; // Placeholder
-    pdfUrl = "#";
-    
-    icon = ['R', 'P', '1'].includes(key) ? 'solar:leaf-bold-duotone' : key === '2' ? 'solar:heart-shine-bold-duotone' : key === '3' ? 'mdi:road' : 'solar:users-group-rounded-bold-duotone';
-    color = "bg-brand-navy text-brand-navy";
-    borderColor = "border-brand-navy";
+    buyUrl = `https://sindbadglobal.com/products/garden-l${key}-grm`;
   }
 
   // Hidayah (French)
@@ -152,9 +126,10 @@ export function getStoreBookData(bookId: string) {
     cover = `/pdfbooks/store-book/hidayaFr-book/hidayaFr-${key}/${key}-1.png`;
     pdfUrl = `/api/books/store-book/hidayaFr-book/hidayaFr-${key}/${key}-1.pdf`;
     
-    icon = 'solar:leaf-bold-duotone';
-    color = "bg-red-50 text-red-500";
-    borderColor = "border-red-300";
+    icon = 'solar:moon-stars-bold-duotone';
+    color = "bg-blue-50 text-blue-500";
+    borderColor = "border-blue-300";
+    buyUrl = "https://sindbadglobal.com";
   }
 
   return {
@@ -162,6 +137,8 @@ export function getStoreBookData(bookId: string) {
     cover,
     icon,
     color,
-    borderColor
+    borderColor,
+    buyUrl
   };
 }
+

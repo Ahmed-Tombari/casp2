@@ -26,6 +26,7 @@ export default async function BookDescriptionPage({
   const icon = storeHelperData?.icon || "solar:book-bookmark-bold-duotone";
   const color = storeHelperData?.color || "bg-emerald-100 text-emerald-600";
   const borderColor = storeHelperData?.borderColor || "border-emerald-200";
+  const buyUrl = storeHelperData?.buyUrl || "https://sindbadglobal.com";
   
   const watermark = watermarkParam === "false" ? false : true; 
   const isRTL = locale === "ar";
@@ -58,8 +59,10 @@ export default async function BookDescriptionPage({
           isbn={bookData?.isbn}
           size={bookData?.size}
           levelText={levelText}
+          buyUrl={buyUrl}
         />
       </div>
     </main>
   );
+
 }

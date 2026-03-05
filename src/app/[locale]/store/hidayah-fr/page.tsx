@@ -22,22 +22,24 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
   // --- The Levels ---
   const levelKeys = ['R', 'P', '1', '2', '3', '4'];
   const levels = levelKeys.map(key => {
+  const id = key;
     return {
       bookId: `hidayah-fr-${key}`,
-      id: key,
+      id,
       title: tLevels(key),
-      color: "bg-red-50 text-red-500",
-      border: "border-red-300",
+      color: "bg-blue-50 text-blue-500",
+      border: "border-blue-300",
       bookCover: `/pdfbooks/store-book/hidayaFr-book/hidayaFr-${key}/${key}-1.png`,
-      pdfUrl: `/api/books/store-book/hidayaFr-book/hidayaFr-${key}/${key}-1.pdf`
+      pdfUrl: `/api/books/store-book/hidayaFr-book/hidayaFr-${key}/${key}-1.pdf`,
     };
+
   });
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="bg-red-400 pt-24 pb-0 text-center relative overflow-hidden rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="bg-blue-600 pt-24 pb-0 text-center relative overflow-hidden rounded-b-[4rem] shadow-soft-lg z-10">
         
         {/* Background: Icons & Connections */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -55,7 +57,7 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
             {t('title')}
           </h1> 
 
-          <p className="text-xl text-red-100/90 max-w-2xl mx-auto leading-relaxed mb-2 font-medium">
+          <p className="text-xl text-blue-100/90 max-w-2xl mx-auto leading-relaxed mb-2 font-medium">
             {t('description')}
           </p>
         </div>
@@ -63,11 +65,7 @@ export default async function HidayahFrenchPage({ params }: { params: Promise<{ 
 
       {/* ================= LEVELS GRID ================= */}
 
-      <PdfBookGrid 
-        levels={levels.map(l => ({
-          ...l,
-        }))} 
-      />
+      <PdfBookGrid levels={levels} />
 
     </main>
   );
