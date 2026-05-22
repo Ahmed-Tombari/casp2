@@ -9,20 +9,20 @@ const navKeys = {
     home: 'الرئيسية',
 
     teacherGuide: 'دليل المعلم',
-      gardenGuide: 'دليل في حديقة اللغة العربية',
-      wafiGuide: 'دليل الوافي',
-      mufidGuide: 'دليل المفيد',
-      happyMuslimGuide: 'دليل المسلم السعيد',
-      hidayahGuide: 'دليل هداية',
+    gardenGuide: 'دليل في حديقة اللغة العربية',
+    wafiGuide: 'دليل الوافي',
+    mufidGuide: 'دليل المفيد',
+    happyMuslimGuide: 'دليل المسلم السعيد',
+    hidayahGuide: 'دليل هداية',
 
     // quizzes
     quizzes: 'الاختبارات',
     placementTest: 'اختبار تحديد المستوى',
     educationalCDs: 'السيديات التعليمية',
     lessonsTests: 'دروس واختبارات',
-      handwritingExercises: 'تمارين الخط',
-      letterColoring: 'أوراق تلوين الحروف',
-    
+    handwritingExercises: 'تمارين الخط',
+    letterColoring: 'أوراق تلوين الحروف',
+
     // channel
     channel: 'القناة',
     youtubeChannel: 'قناتنا على اليوتيوب',
@@ -38,7 +38,8 @@ const navKeys = {
     services: 'الخدمات',
     contact: 'اتصل بنا',
     accessBook: 'الوصول  إلى المناهج',
-    
+    levelTest: 'اختبار تحديد المستوى',
+
     // store
     store: 'المتجر',
     alMufid: 'المفيد',
@@ -58,19 +59,19 @@ const navKeys = {
     home: 'Home',
 
     teacherGuide: 'Teacher Guide',
-      gardenGuide: 'Garden of Arabic Guide',
-      wafiGuide: 'Wafi Guide',
-      mufidGuide: 'Mufid Guide',
-      happyMuslimGuide: 'Happy Muslim Guide',
-      hidayahGuide: 'Hidayah Guide',
+    gardenGuide: 'Garden of Arabic Guide',
+    wafiGuide: 'Wafi Guide',
+    mufidGuide: 'Mufid Guide',
+    happyMuslimGuide: 'Happy Muslim Guide',
+    hidayahGuide: 'Hidayah Guide',
 
     // quizzes
     quizzes: 'Quizzes',
     placementTest: 'Placement Test',
     educationalCDs: 'Educational CDs',
     lessonsTests: 'Lessons & Tests',
-      handwritingExercises: 'Handwriting Exercises',
-      letterColoring: 'Letter Coloring',
+    handwritingExercises: 'Handwriting Exercises',
+    letterColoring: 'Letter Coloring',
 
     // channel
     channel: 'Channel',
@@ -78,15 +79,16 @@ const navKeys = {
     facebookChannel: 'Facebook Channel',
 
     // platforms 
-    platforms: 'Platforms', 
-    qalamNetPlatform: 'Qalam-Net Platform', 
-    wafiPlatform: 'Al-Wafi Platform', 
+    platforms: 'Platforms',
+    qalamNetPlatform: 'Qalam-Net Platform',
+    wafiPlatform: 'Al-Wafi Platform',
     myBookPlatform: 'Kittaby Platform',
 
     // services 
     services: 'Services',
     contact: 'Contact',
     accessBook: 'Book Access',
+    levelTest: 'Level Tests',
 
     // store
     store: 'Store',
@@ -107,20 +109,20 @@ const navKeys = {
     home: 'Accueil',
 
     teacherGuide: 'Guide Prof',
-      gardenGuide: 'Guide du jardin',
-      wafiGuide: 'Guide du wafi',
-      mufidGuide: 'Guide du mufid',
-      happyMuslimGuide: 'Guide du happy muslim',
-      hidayahGuide: 'Guide du hidayah',
-    
+    gardenGuide: 'Guide du jardin',
+    wafiGuide: 'Guide du wafi',
+    mufidGuide: 'Guide du mufid',
+    happyMuslimGuide: 'Guide du happy muslim',
+    hidayahGuide: 'Guide du hidayah',
+
     // quizzes
     quizzes: 'Tests',
     placementTest: 'Test de niveau',
     educationalCDs: 'CDs éducatifs',
     lessonsTests: 'Leçons et tests',
-      handwritingExercises: 'Exercices d’écriture',
-      letterColoring: 'Coloriage des lettres',
-    
+    handwritingExercises: 'Exercices d’écriture',
+    letterColoring: 'Coloriage des lettres',
+
     // channel
     channel: 'Chaîne',
     youtubeChannel: 'Chaîne YouTube',
@@ -136,6 +138,7 @@ const navKeys = {
     services: 'Services',
     contact: 'Contact',
     accessBook: 'Accès au livres',
+    levelTest: 'Tests de niveaux',
 
     // store
     store: 'Boutique',
@@ -180,7 +183,7 @@ export function getNavigationData(locale: Locale): HeaderItem[] {
         { label: t.qawedMobasta, href: '/store/qawaed-mobasta' },
         { label: t.alTareeqAlMuneerArabic, href: '/store/tareeq-al-muneer' },
         { label: t.theHappyMuslim, href: '/store/the-happy-muslim' },
-        
+
       ],
     },
     {
@@ -188,31 +191,32 @@ export function getNavigationData(locale: Locale): HeaderItem[] {
       href: '#',
       submenu: [
         { label: t.accessBook, href: '/services/book-access' },
+        { label: t.levelTest, href: '/services/level-test' },
       ],
     },
     {
-          label: t.teacherGuide,
-          href: '/teacher-guide',
-          submenu: [
-            {
-              label: t.gardenGuide,
-              href: '/teacher-guide/garden-guide',
-            },
-            {
-              label: t.wafiGuide,
-              href: '/teacher-guide/wafi-guide',
-            },
-            {
-              label: t.mufidGuide,
-              href: '/teacher-guide/mufid-guide',
-            },
-            {
-              label: t.happyMuslimGuide,
-              href: '/teacher-guide/happyMuslim-guide',
-            },
-          ],
+      label: t.teacherGuide,
+      href: '/teacher-guide',
+      submenu: [
+        {
+          label: t.gardenGuide,
+          href: '/teacher-guide/garden-guide',
         },
         {
+          label: t.wafiGuide,
+          href: '/teacher-guide/wafi-guide',
+        },
+        {
+          label: t.mufidGuide,
+          href: '/teacher-guide/mufid-guide',
+        },
+        {
+          label: t.happyMuslimGuide,
+          href: '/teacher-guide/happyMuslim-guide',
+        },
+      ],
+    },
+    {
       label: t.platforms,
       href: '#',
       submenu: [
@@ -224,7 +228,7 @@ export function getNavigationData(locale: Locale): HeaderItem[] {
     {
       label: t.channel,
       href: '#',
-     submenu: [
+      submenu: [
         { label: t.youtubeChannel, href: 'https://www.youtube.com/@%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D9%84%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D8%A7%D9%84%D8%AA%D8%B1%D8%A8%D9%88%D9%8A%D8%A9-%D9%83%D9%86' },
         { label: t.facebookChannel, href: 'https://www.facebook.com/caspeducation?rdid=gMP9FoFjFiCWfr4W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HDVhzFqx4%2F#' },
       ],
