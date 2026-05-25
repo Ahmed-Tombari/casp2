@@ -25,18 +25,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/clock.mp3">
+    <audio id="audio8">
+        <source src="audio/audio8.mp3">
     </audio>
-
     <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثانية</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
@@ -48,13 +46,13 @@
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أُكْمِلُ بِالْحَرْفِ الْمُنَاسِبِ:</div>
+            <div class="questArab" id="questArab1">أَخْتَارُ الْبَدِيلَ الصَّحِيحَ لِمَا يَأْتِي:</div>
             <div class="questTrad">
-                <div id="initial"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="French"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="English"> I listen then I complete with the following letter:</div>
-                <div id="Turkish"> Dinliyorum, ardından aşağıdaki harfi tamamlıyorum:</div>
-                <div id="German"> Ich höre zu und ergänze mit folgendem Brief:</div>
+                <div id="initial">Je choisie la meilleure alternative:</div>
+                <div id="French">Je choisie la meilleure alternative:</div>
+                <div id="English">I choose the best alternative:</div>
+                <div id="Turkish">En iyi alternatifi seçiyorum:</div>
+                <div id="German">Ich wähle die beste Alternative:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,19 +63,29 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="ligne1">
-                <div class="num">8</div>
-                <div class="part">
-                    <div class="alphabet" id="alph1">س</div>
-                    <div class="alphabet" id="alph2">ش</div>
+            <div id="s2"></div>
+            <div class="container" id="container1">
+                <div class="questA" id="questA1">8- الصّديق الوفيّ هو الّذي:</div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">يُساعدني عند الحاجة.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">يتخلّى عنّي عند الطّلب.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">يرفض تقديم المشورة.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="ligne2">
-                <div class="audio" id="audio1"></div>
-                <div class="mot"><span class="ltt">...</span>ـاعَةٌ</div>
-            </div>
-            <div class="ligne3">
-                <div class="image8"></div>
             </div>
         </div>
     </main>
@@ -87,5 +95,4 @@
     <script src="script7.js"></script>
     <script src="compteur.js"></script>
 </body>
-
 </html>

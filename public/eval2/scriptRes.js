@@ -14,14 +14,17 @@ $("#name").text(nom);
 else*/
 if (correctAnswers <= 25) {
     $("#correctAns").text(correctAnswers);
-    $("#level").text("Kg2");
-
+    $("#level").text("3");
+}
+else if (correctAnswers <= 50) {
+    $("#correctAns").text(correctAnswers);
+    $("#level").text("4");
 }
 else if (correctAnswers <= 70) {
     $("#correctAns").text(correctAnswers);
-    $("#level").text("1");
+    $("#level").text("5");
 }
 else {
     $("#correctAns").text(correctAnswers);
-    $("#level").text("2");
+    $("#level").text("6");
 }

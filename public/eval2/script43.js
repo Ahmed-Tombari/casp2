@@ -1,91 +1,90 @@
+//sweet alert
+$('.alertText').click(function () {
+  swal({
+    text: "أَرَادَ عَادِلُ الَّذِي يَعِيشُ فِي السُّعُودِيَّةِ أَنْ يَزُورَ كَنَدَا فِي الشِّتَاءِ، فَسَأَلَ صَدِيقَهُ فَرِيدٌ الَّذِي يَعِيشُ فِي مَدِينَةِ تُورُنْتُو الْكَنَدِيَّةِ عَنِ الطَّقْسِ فِي كَنَدَا، كَيْ يَسْتَمْتِعَ بِرُؤْيَةِ الشَّلَّالَاتِ وَتَسَاقُطِ الثُّلُوجِ، فَأَخْبَرَهُ بِأَنَّ الطَّقْسَ فِي الشِّتَاءِ بَارِدٌ جِدًّا، حَيْثُ تَتَسَاقَطُ الثُّلُوجُ بِكَثْرَةٍ، وَالْحَرَارَةُ تَتَفَاوَتُ بَيْنَ الْارْتِفَاعِ وَالرُّطُوبَةِ، أَمَّا مَسَاحَتُهَا فَهْيَ كَبِيرَةٌ جِدًّا.",
+    button: 'حسنا',
+  });
+});
+
+//var
+let tabrep = [];
+let corrAns = ["rep2"];
+let pageCompt=0;
 
 //traduction
 let traduction = $('.questTrad div');
 function traduire(id) {
   $(traduction[0])[0].innerHTML = $('#' + id)[0].innerHTML;
 }
-
 // var compteur
-
 let correctAnswers = sessionStorage.getItem('CA');
-let wrongAnswers = sessionStorage.getItem('WA');
-let CA = correctAnswers;
-let WA = wrongAnswers;
+let wrongAnswers=sessionStorage.getItem('WA');
 let currentScreen = 44;
+console.log("currentScreen :", currentScreen);
+console.log("Correct :", correctAnswers);
+console.log("Wrong :", wrongAnswers);
 
-console.log('screen:',currentScreen);
-console.log( 'correct:',CA);
-console.log('Wrong:',WA);
 
-//son
-let s1 = document.getElementById("s1");
-let audio1 = document.getElementById("audio1");
+//cliquer
+function cliquer(id) {
+  document.getElementById(id).style.background = '#4fb946';
+  document.getElementById(id).style.borderRadius = '6px';
+  if (tabrep.indexOf(id) === -1) {
+    tabrep.push(id);
+    console.log(tabrep);
+  }
+  else {
+    document.getElementById(id).style.background = '';
+    document.getElementById(id).style.borderRadius = '';
+    deleteElement(id);
+    console.log(tabrep);
+  }
+}
 
-audio1.addEventListener('click', function () {
-  s1.play();
+const deleteElement = (index) => {
+  let arr = []
+  tabrep.forEach((el) => {
+    if (el !== tabrep[index]) {
+      arr.push(el);
+    }
+  });
+  tabrep = arr;
+}
 
+/*émettre un son*/
+let s2 = document.getElementById("s2");
+let audio44 = document.getElementById("audio44");
+
+
+/*fonction son*/
+s2.addEventListener('click', function () {
+    audio44.play();
 });
 
-let tabrep = [];
-let vraireps = ["a11","a28","a3"];
-let box = $('.lettre');
-let compt = 0;
-let s = 0
-let vraiEx = 0;
-let pageCompt = 0;
-let iEx = 0;
-
-
-
-/*fonction cliquer*/
-
-function cliquer(id)
- {
-    console.log(compt);
-    if (compt < 3) {
-        //document.getElementById(id).style.color = "rgb(55,255,139)";
-        tabrep.push(id);
-        $($('.lettre')[compt]).text($('#' + id).text());
-        compt++;
-    }
-    console.log(tabrep);
-}
-/*supprimer la lettre ajoutée à la case*/
-function remove() {
-    $(box[compt - 1]).text('');
-    $('#' + tabrep[tabrep.length - 1]).css('color', 'black');
-    tabrep.pop();
-    if (compt > 0){
-        compt--;
-    console.log(tabrep);
-}
-}
+//verification
 function showCorrection() {
- for (let j = 0; j <= vraireps.length; j++) {
-     if (tabrep.includes(vraireps[j]) && tabrep.indexOf(vraireps[j]) === vraireps.indexOf(vraireps[j])) {
-         s++;
-         console.log(s);
-     }
- }
- if (s == 3 && tabrep.length == 3) {
-     vraiEx++;
-     console.log('bravo');
-     CA++;
-     sessionStorage.setItem('CA',CA);
- }
- else {
-     console.log('faux');
-     WA++;
-     sessionStorage.setItem('WA',WA);   
+  let correct = false;
+  tabrep.forEach((element) => {
+    if (corrAns.includes(element)) {
+      correct = true
+    }
 
- }
+  });
 
+  if (tabrep.length === 1 && correct) {
+    console.log('bravo')
+    correctAnswers++;
+    sessionStorage.setItem('CA', correctAnswers);
+  }
+  else {
+    console.log('faux')
+    wrongAnswers++;
+    sessionStorage.setItem('WA', wrongAnswers);
+  }
 }
 
 function verification() {
-  if (pageCompt % 2 == 0) {
     showCorrection();
-}
     props = {
       hour: hour,
       minute: minute,
@@ -94,15 +93,14 @@ function verification() {
       cron: cron,
     }
     sessionStorage.setItem("timer-props", JSON.stringify(props));
-
     window.location.href = "index44.html";
     window.parent.checkResults({
       currentScreen: currentScreen,
       correctAnswers: correctAnswers,
       wrongAnswers: wrongAnswers,
     });
-
   console.log("currentScreen :", currentScreen);
   console.log("Correct :", correctAnswers);
   console.log("Wrong :", wrongAnswers);
+  pageCompt++;
 }

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -25,18 +25,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/bougiee.mp3">
-    </audio>
-
-    <header>
+  <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثالثة</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
@@ -48,13 +43,13 @@
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أَجْمَعُ الْمَقَاطِعَ لِأُكَوِّنَ كَلِمَةً:</div>
+            <div class="questArab" id="questArab3">أَخْتَارُ الْجَوَابَ الصَّحِيحَ:</div>
             <div class="questTrad">
-                <div id="initial"> J'écoute, puis j'ajoute les syllabes pour former un mot :</div>
-                <div id="French"> J'écoute, puis j'ajoute les syllabes pour former un mot :</div>
-                <div id="English"> I listen then add the syllables to make a word:</div>
-                <div id="Turkish"> Dinliyorum, sonra bir kelime oluşturmak için heceleri ekliyorum:</div>
-                <div id="German"> Ich höre zu und füge dann die Silben zu einem Wort hinzu:</div>
+                <div id="initial">Je choisis la reponse correcte:</div>
+                <div id="French">Je choisis la reponse correcte:</div>
+                <div id="English">I choose the correct answer:</div>
+                <div id="Turkish">Doğru yanıtı seçiyorum:</div>
+                <div id="German">Ich wähle die richtige Antwort:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,17 +60,28 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="num">86</div>
-            <div class="ligne1">
-                <div class="audio" id="audio1"></div>
-                <div class="lettre" id="l1" onclick="cliqueLettre(id)">ـعة</div>
-                <div class="lettre" id="l2" onclick="cliqueLettre(id)">شمـ</div>
-                <div class="lettre" id="l3" onclick="cliqueLettre(id)">عة</div>
-                <div class="lettre" id="l4" onclick="cliqueLettre(id)">ـشمـ</div>
-            </div>
-            <div class="case" id="mot"><span class="m1">......</span><span class="m1">......</span></div>
-            <div class="ligne2">
-                <div class="image2"></div>
+           <div class="container"  id="container9">
+                <div class="questA"  id="questA9">86. الأسلوب الآتي: (ما أروع الأمومة !) هذا أسلوب هو:</div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">استفهام</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">نداء</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">تعجّب</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -85,5 +91,4 @@
     <script src="script85.js"></script>
     <script src="compteur.js"></script>
 </body>
-
 </html>

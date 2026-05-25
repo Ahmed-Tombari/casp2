@@ -25,18 +25,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/apple.mp3">
+    <audio id="audio2">
+        <source src="audio/audio2.mp3">
     </audio>
 
     <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثانية</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
@@ -48,13 +47,13 @@
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أُكْمِلُ بِالْحَرْفِ الْمُنَاسِبِ:</div>
+            <div class="questArab" id="questArab1">أَضْغَطُ أَمَامَ الْجَوَابِ الْمُنَاسِبِ:</div>
             <div class="questTrad">
-                <div id="initial"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="French"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="English"> I listen then I complete with the following letter:</div>
-                <div id="Turkish"> Dinliyorum, ardından aşağıdaki harfi tamamlıyorum:</div>
-                <div id="German"> Ich höre zu und ergänze mit folgendem Brief:</div>
+                <div id="initial">Je clique devant la reponse correcte:</div>
+                <div id="French">Je clique devant la reponse correcte:</div>
+                <div id="English">I click in front of the correct answer:</div>
+                <div id="Turkish">Doğru yanıtın önüne tıklarım:</div>
+                <div id="German">Ich klicke vor der richtigen Antwort:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,28 +64,37 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="ligne1">
-                <div class="num">2</div>
-                <div class="part">
-                    <div class="alphabet" id="alph1">ب</div>
-                    <div class="alphabet" id="alph2">ت</div>
-                    <div class="alphabet" id="alph3">ث</div>
+            <div id="s2"></div>
+            <div class="container" id="container1">
+                <div class="questA" id="questA1">2- الشّتاء في كندا...</div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">معتدل الحرارة.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">بارد جدًّا.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">حار جدًّا.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="ligne2">
-                <div class="audio" id="audio1"></div>
-                <div class="mot"><span class="ltt">...</span>ـفَّاحٌ</div>
-            </div>
-            <div class="ligne3">
-                <div class="image2"></div>
             </div>
         </div>
     </main>
     <footer>
+        <div class="alertText"></div>
         <div id="suivant" onclick='verification()'></div>
     </footer>
     <script src="script1.js"></script>
     <script src="compteur.js"></script>
 </body>
-
 </html>

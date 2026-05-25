@@ -25,18 +25,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/pin.mp3">
-    </audio>
-
     <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثالثة</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
@@ -48,13 +43,13 @@
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أُكْمِلُ بِالْحَرْفِ الْمُنَاسِبِ:</div>
+            <div class="questArab" id="questArab3">أَضْغَطُ أَمَامَ ما يدلّ على وَجْه الشَّبهِ في هَذِه الْجُمَلَةُ:</div>
             <div class="questTrad">
-                <div id="initial"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="French"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="English"> I listen then I complete with the following letter:</div>
-                <div id="Turkish"> Dinliyorum, ardından aşağıdaki harfi tamamlıyorum:</div>
-                <div id="German"> Ich höre zu und ergänze mit folgendem Brief:</div>
+                <div id="initial">Je clique devant la reponse qui indique Le point commun dans cette phrase:</div>
+                <div id="French">Je clique devant la reponse qui indique Le point commun dans cette phrase:</div>
+                <div id="English">I click in front of the answer which indicates the common point in this sentence:</div>
+                <div id="Turkish">Bu cümledeki ortak noktayı gösteren yanıtın önüne tıkladım:</div>
+                <div id="German">IIch klicke vor die Antwort, die den gemeinsamen Punkt in diesem Satz anzeigt:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,19 +60,28 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="ligne1">
-                <div class="num">31</div>
-                <div class="part">
-                <div class="alphabet" id="alph1" onclick="cliquer('alph1')">ق</div>
-                <div class="alphabet" id="alph2" onclick="cliquer('alph2')">ك</div>
-            </div>
-            </div>
-            <div class="ligne2">
-                <div class="audio" id="audio1"></div>
-                <div class="mot"><span class="ltt">...</span>ـلَمٌ</div>
-            </div>
-            <div class="ligne3">
-                <div class="image31"></div>
+           <div class="container" id="container3">
+                <div class="questA" id="questA3">31. الصّديق مرآة صديقه في القول والعمل. </div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">في القول والعمل</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">الصديق</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">مرآة</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -87,5 +91,4 @@
     <script src="script30.js"></script>
     <script src="compteur.js"></script>
 </body>
-
 </html>

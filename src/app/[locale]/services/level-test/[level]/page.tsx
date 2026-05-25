@@ -5,13 +5,14 @@ import { useRouter } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
 import { useLocale } from 'next-intl';
 
+const validLevels = ['eval1', 'eval2', 'eval3'];
+
 export default function LevelTestRunner({ params }: { params: Promise<{ level: string, locale: string }> }) {
   const resolvedParams = use(params);
   const router = useRouter();
   const locale = useLocale();
   const isRTL = locale === 'ar';
   
-  const validLevels = ['eval1', 'eval2', 'eval3'];
   const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {

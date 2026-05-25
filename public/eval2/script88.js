@@ -1,4 +1,9 @@
 
+//var
+let tabrep = [];
+let corrAns = ["rep2"];
+let pageCompt=0;
+
 //traduction
 let traduction = $('.questTrad div');
 function traduire(id) {
@@ -6,102 +11,90 @@ function traduire(id) {
 }
 
 // var compteur
-
 let correctAnswers = sessionStorage.getItem('CA');
-let wrongAnswers = sessionStorage.getItem('WA');
-let CA = correctAnswers;
-let WA = wrongAnswers;
-let currentScreen = 88;
-
-console.log('screen:', currentScreen);
-console.log('correct:', CA);
-console.log('Wrong:', WA);
-
-//son
-let s1 = document.getElementById("s1");
-let audio1 = document.getElementById("audio1");
-
-audio1.addEventListener('click', function () {
-  s1.play();
-
-});
-let tabrep = [];
-let vraireps = ["num3"];
-let box = $('.numero');
-let compt = 0;
-let s = 0
-let vraiEx = 0;
-let pageCompt = 0;
-let iEx = 0;
+let wrongAnswers=sessionStorage.getItem('WA');
+let currentScreen = 89;
+console.log("currentScreen :", currentScreen);
+console.log("Correct :", correctAnswers);
+console.log("Wrong :", wrongAnswers);
 
 
 
-//fonction on click 
+//cliquer
 function cliquer(id) {
-  document.getElementById(id).style.border = 'red 2px solid';
+  document.getElementById(id).style.background = '#4fb946';
+  document.getElementById(id).style.borderRadius = '6px';
   if (tabrep.indexOf(id) === -1) {
     tabrep.push(id);
     console.log(tabrep);
   }
   else {
-    document.getElementById(id).style.border = '';
+    document.getElementById(id).style.background = '';
+    document.getElementById(id).style.borderRadius = '';
     deleteElement(id);
     console.log(tabrep);
   }
-
 }
-const deleteElement = (id) => {
+
+const deleteElement = (index) => {
   let arr = []
   tabrep.forEach((el) => {
-    if (el !== id) {
+    if (el !== tabrep[index]) {
       arr.push(el);
     }
   });
-
   tabrep = arr;
 }
+
+/*émettre un son*/
+let s2 = document.getElementById("s2");
+let audio89 = document.getElementById("audio89");
+
+
+/*fonction son*/
+s2.addEventListener('click', function () {
+    audio89.play();
+});
+//verification
 function showCorrection() {
-  for (let j = 0; j <= vraireps.length; j++) {
-    if (tabrep.includes(vraireps[j]) && tabrep.indexOf(vraireps[j]) === vraireps.indexOf(vraireps[j])) {
-      s++;
-      console.log(s);
+  let correct = false;
+  tabrep.forEach((element) => {
+    if (corrAns.includes(element)) {
+      correct = true
     }
-  }
-  if (s == 1 && tabrep.length == 1) {
-    vraiEx++;
-    console.log('bravo');
-    CA++;
-    sessionStorage.setItem('CA', CA);
-  }
-  else {
-    console.log('faux');
-    WA++;
-    sessionStorage.setItem('WA', WA);
 
-  }
-
-}
-function verification() {
-  if (pageCompt % 2 == 0) {
-    showCorrection();
-  }
-  props = {
-    hour: hour,
-    minute: minute,
-    second: second,
-    millisecond: millisecond,
-    cron: cron,
-  }
-  sessionStorage.setItem("timer-props", JSON.stringify(props));
-
-  window.location.href = "index89.html";
-  window.parent.checkResults({
-    currentScreen: currentScreen,
-    correctAnswers: correctAnswers,
-    wrongAnswers: wrongAnswers,
   });
 
+  if (tabrep.length === 1 && correct) {
+    console.log('bravo')
+    correctAnswers++;
+    sessionStorage.setItem('CA', correctAnswers);
+  }
+  else {
+    console.log('faux')
+    wrongAnswers++;
+    sessionStorage.setItem('WA', wrongAnswers);
+  }
+}
+
+function verification() {
+    showCorrection();
+    props = {
+      hour: hour,
+      minute: minute,
+      second: second,
+      millisecond: millisecond,
+      cron: cron,
+    }
+    sessionStorage.setItem("timer-props", JSON.stringify(props));
+    window.location.href = "index89.html";
+    window.parent.checkResults({
+      currentScreen: currentScreen,
+      correctAnswers: correctAnswers,
+      wrongAnswers: wrongAnswers,
+    });
   console.log("currentScreen :", currentScreen);
   console.log("Correct :", correctAnswers);
   console.log("Wrong :", wrongAnswers);
+  pageCompt++;
 }

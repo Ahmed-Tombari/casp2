@@ -29,14 +29,10 @@
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/bread.mp3">
-    </audio>
-
     <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثالثة</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
@@ -48,13 +44,13 @@
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أُكْمِلُ بِالْحَرْفِ الْمُنَاسِبِ:</div>
+            <div class="questArab" id="questArab1">أَخْتَارُ الإِجَابَةَ الصّحِيحَةَ:</div>
             <div class="questTrad">
-                <div id="initial"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="French"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="English"> I listen then I complete with the following letter:</div>
-                <div id="Turkish"> Dinliyorum, ardından aşağıdaki harfi tamamlıyorum:</div>
-                <div id="German"> Ich höre zu und ergänze mit folgendem Brief:</div>
+                <div id="initial">Je choisis la bonne réponse:</div>
+                <div id="French">Je choisis la bonne réponse:</div>
+                <div id="English">I choose the correct answer:</div>
+                <div id="Turkish">Doğru yanıtı seçiyorum:</div>
+                <div id="German">Ich wähle die richtige Antwort:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,24 +61,33 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="ligne1">
-                <div class="num">7</div>
-                <div class="part">
-                    <div class="alphabet" id="alph1">ج</div>
-                    <div class="alphabet" id="alph2">ح</div>
-                    <div class="alphabet" id="alph3">خ</div>
+            <div class="container" id="container1">
+                <div class="questA" id="questA1">7. الصّديق مرآة صديقه، دلالتها:</div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">أ. أخلاق الأصدقاء لا تتوافق.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">ب. الصّديق يؤثر في صديقه إيجابًا أو سلبًا.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">ج. الصّديق لا يتأثّر بصديقه باستمرار.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="ligne2">
-                <div class="audio" id="audio1"></div>
-                <div class="mot"><span class="ltt">...</span>ـبْزٌ</div>
-            </div>
-            <div class="ligne3">
-                <div class="image7"></div>
             </div>
         </div>
     </main>
     <footer>
+        <div class="alertText"></div>
         <div id="suivant" onclick='verification()'></div>
     </footer>
     <script src="script6.js"></script>

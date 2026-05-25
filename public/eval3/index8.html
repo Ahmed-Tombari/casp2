@@ -29,32 +29,28 @@
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/bride.mp3">
-    </audio>
-
     <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثالثة</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
-                <div class="trd" id="Tr"')">Tr</div>
-                <div class="trd" id="Al")">Al</div>
-                <div class="trd" id="Fr")">Fr</div>
-                <div class="trd" id="En"')">En</div>
+                <div class="trd" id="Tr" onclick="traduire('Turkish')">Tr</div>
+                <div class="trd" id="Al" onclick="traduire('German')">Al</div>
+                <div class="trd" id="Fr" onclick="traduire('French')">Fr</div>
+                <div class="trd" id="En" onclick="traduire('English')">En</div>
             </div>
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أُكْمِلُ بِالْحَرْفِ الْمُنَاسِبِ:</div>
+            <div class="questArab" id="questArab1">أَخْتَارُ الإِجَابَةَ الصّحِيحَةَ:</div>
             <div class="questTrad">
-                <div id="initial"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="French"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="English"> I listen then I complete with the following letter:</div>
-                <div id="Turkish"> Dinliyorum, ardından aşağıdaki harfi tamamlıyorum:</div>
-                <div id="German"> Ich höre zu und ergänze mit folgendem Brief:</div>
+                <div id="initial">Je choisis la bonne réponse:</div>
+                <div id="French">Je choisis la bonne réponse:</div>
+                <div id="English">I choose the correct answer:</div>
+                <div id="Turkish">Doğru yanıtı seçiyorum:</div>
+                <div id="German">Ich wähle die richtige Antwort:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,19 +61,28 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="ligne1">
-                <div class="num">9</div>
-                <div class="part">
-                <div class="alphabet" id="alph5">ع</div>
-                <div class="alphabet" id="alph6">غ</div>
-            </div>
-            </div>
-            <div class="ligne2">
-                <div class="audio" id="audio1"></div>
-                <div class="mot"><span class="ltt">...</span>ـصْفُورٌ</div>
-            </div>
-            <div class="ligne3">
-                <div class="image9"></div>
+            <div class="container" id="container1">
+                <div class="questA" id="questA1">9. مرادف الكلمة: الألفة</div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">الفرقة</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">المحبة</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">التنافر</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

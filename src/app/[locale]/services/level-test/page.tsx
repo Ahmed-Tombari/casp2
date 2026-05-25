@@ -22,8 +22,9 @@ export default async function LevelTestPage({ params }: { params: Promise<{ loca
       desc: locale === 'ar' ? 'اختبار تحديد المستوى الأول' : locale === 'fr' ? 'Test de niveau 1' : 'Level 1 Placement Test',
       href: '/services/level-test/eval1',
       icon: 'solar:star-fall-bold-duotone',
-      color: 'bg-indigo-700',
-      textColor: 'text-indigo-700',
+      color: 'bg-brand-orange',
+      blobColor: 'bg-brand-orange',
+      textColor: 'text-brand-orange',
     },
     {
       id: 'eval2',
@@ -31,7 +32,8 @@ export default async function LevelTestPage({ params }: { params: Promise<{ loca
       desc: locale === 'ar' ? 'اختبار تحديد المستوى الثاني' : locale === 'fr' ? 'Test de niveau 2' : 'Level 2 Placement Test',
       href: '/services/level-test/eval2',
       icon: 'solar:star-circle-bold-duotone',
-      color: 'bg-brand-gold-dark',
+      color: 'bg-brand-gold',
+      blobColor: 'bg-brand-gold',
       textColor: 'text-brand-gold-dark',
     },
     {
@@ -40,8 +42,9 @@ export default async function LevelTestPage({ params }: { params: Promise<{ loca
       desc: locale === 'ar' ? 'اختبار تحديد المستوى الثالث' : locale === 'fr' ? 'Test de niveau 3' : 'Level 3 Placement Test',
       href: '/services/level-test/eval3',
       icon: 'solar:stars-bold-duotone',
-      color: 'bg-emerald-700',
-      textColor: 'text-emerald-700',
+      color: 'bg-brand-sky',
+      blobColor: 'bg-brand-sky',
+      textColor: 'text-brand-sky-dark',
     }
   ];
 
@@ -53,7 +56,7 @@ export default async function LevelTestPage({ params }: { params: Promise<{ loca
     <main className="min-h-screen bg-gray-50 dark:bg-[#09121E] text-foreground transition-colors duration-300">
       
       {/* Hero Section */}
-      <section className="bg-brand-gold pt-24 pb-0 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
+      <section className="bg-brand-navy pt-24 pb-0 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
           {/* Abstract Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
@@ -74,7 +77,7 @@ export default async function LevelTestPage({ params }: { params: Promise<{ loca
             {pageTitle}
           </h1>
 
-          <p className="text-xl text-brand-gold-dark max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
+          <p className="text-xl text-brand-sky-light max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
             {pageDesc}
           </p>
         </div>
@@ -94,7 +97,7 @@ export default async function LevelTestPage({ params }: { params: Promise<{ loca
                 {/* DECORATIVE BLOB */}
                 <div 
                   className={`
-                    absolute w-40 h-40 rounded-full opacity-10 ${level.color} 
+                    absolute w-40 h-40 rounded-full opacity-10 ${level.blobColor} 
                     group-hover:scale-150 transition-transform duration-500
                     -bottom-10 
                     ${isRTL ? '-left-10' : '-right-10'}

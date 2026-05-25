@@ -8,20 +8,20 @@ console.log("Correct :", correctAnswers);
 console.log("Wrong :", wrongAnswers);
 $("#name").text(nom);
 
-/*if (correctAnswers = 'Null') {
-    alert("لم تَقُم بالإختبار.");
-}
-else*/
 if (correctAnswers <= 25) {
     $("#correctAns").text(correctAnswers);
-    $("#level").text("Kg2");
-
+    $("#level").text("7");
+    
+}
+else if (correctAnswers <= 45) {
+    $("#correctAns").text(correctAnswers);
+    $("#level").text("8");
 }
 else if (correctAnswers <= 70) {
     $("#correctAns").text(correctAnswers);
-    $("#level").text("1");
+    $("#level").text("9");
 }
 else {
     $("#correctAns").text(correctAnswers);
-    $("#level").text("2");
+    $("#level").text("10");
 }

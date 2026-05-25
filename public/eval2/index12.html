@@ -25,18 +25,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <audio id="s1">
-        <source src="audio/book.mp3">
+    <audio id="audio13">
+        <source src="audio/audio13.mp3">
     </audio>
 
     <header>
         <div class="headline">
             <div class="titlepart">
-                <div id="titre">تحديد مستوى: المرحلة الأولى</div>
+                <div id="titre">تحديد المستوى: المرحلة الثانية</div>
             </div>
             <div id="logo"></div>
             <div class="traduction">
@@ -48,13 +47,13 @@
     </header>
     <main>
         <div class="question">
-            <div class="questArab" id="questArab1">أَسْتَمِعُ، ثُمَّ أُكْمِلُ بِالْحَرْفِ الْمُنَاسِبِ:</div>
+            <div class="questArab" id="questArab2">أَضْغَطُ أَمَامَ الْجَوَابِ الْمُنَاسِبِ:</div>
             <div class="questTrad">
-                <div id="initial"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="French"> J'ecoute، puis je complete par la lettre suivant:</div>
-                <div id="English"> I listen then I complete with the following letter:</div>
-                <div id="Turkish"> Dinliyorum, ardından aşağıdaki harfi tamamlıyorum:</div>
-                <div id="German"> Ich höre zu und ergänze mit folgendem Brief:</div>
+                <div id="initial">Je clique devant la reponse correcte:</div>
+                <div id="French">Je clique devant la reponse correcte:</div>
+                <div id="English">I click in front of the correct answer:</div>
+                <div id="Turkish">Doğru yanıtın önüne tıklarım:</div>
+                <div id="German">Ich klicke vor der richtigen Antwort:</div>
             </div>
         </div>
         <div class="compteur" style="display: none;">
@@ -65,20 +64,29 @@
             </div>
         </div>
         <div class="exercice">
-            <div class="ligne1">
-                <div class="num">13</div>
-                <div class="part">
-                <div class="alphabet" id="alph7">أ</div>
-                <div class="alphabet" id="alph8">ل</div>
-                <div class="alphabet" id="alph9">ك</div>
-            </div>
-            </div>
-            <div class="ligne2">
-                <div class="audio" id="audio1"></div>
-                <div class="mot"><span class="ltt">...</span>ـتَابٌ</div>
-            </div>
-            <div class="ligne3">
-                <div class="image13"></div>
+            <div id="s2"></div>
+            <div class="container" id="container2">
+                <div class="questA" id="questA2">13- يتميّز الشّتاء في كندا........ </div>
+                <div class="content">
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep1" onclick="cliquer('rep1')"></div>
+                            <div class="phrs">بالعواصف الرّعديّة.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep2" onclick="cliquer('rep2')"></div>
+                            <div class="phrs">بالعواصف الثّلجيّة.</div>
+                        </div>
+                    </div>
+                    <div class="ligne">
+                        <div class="phrspart">
+                            <div class="num" id="rep3" onclick="cliquer('rep3')"></div>
+                            <div class="phrs">بالعواصف الرّمليّة.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
