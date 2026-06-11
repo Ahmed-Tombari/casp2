@@ -121,8 +121,13 @@ export default function BookViewer({
 
   // Asset protection: Fetch PDF only when the modal is opened
   useEffect(() => {
-    if (isOpen && initialPdfUrl && !blobPdfUrl) {
-      fetchAsset(initialPdfUrl, setBlobPdfUrl, pdfBlobRef);
+    if (isOpen && initialPdfUrl) {
+      if (initialPdfUrl.toLowerCase().endsWith(".html")) {
+        // Handle HTML flipbooks (no blob fetching required)
+        setIsLoading(false);
+      } else if (!blobPdfUrl) {
+        fetchAsset(initialPdfUrl, setBlobPdfUrl, pdfBlobRef);
+      }
     }
   }, [isOpen, initialPdfUrl, blobPdfUrl, fetchAsset]);
 
@@ -224,6 +229,8 @@ export default function BookViewer({
   // dark:hover:shadow-emerald-800 dark:hover:shadow-teal-800 dark:hover:shadow-indigo-800 dark:hover:shadow-orange-800 dark:hover:shadow-brand-gold-dark dark:hover:shadow-amber-800 dark:hover:shadow-red-800 dark:hover:shadow-brand-gold dark:hover:shadow-brand-navy dark:hover:shadow-blue-800 dark:hover:shadow-lime-800
   const shadowClasses = borderColor.split(' ').map((c: string) => c.replace('border-', 'shadow-')).join(' ') + ' ' + borderColor.split(' ').map((c: string) => c.replace('border-', 'hover:shadow-')).join(' ');
 
+  const isHtmlMode = initialPdfUrl && initialPdfUrl.toLowerCase().endsWith(".html");
+
   return (
     <>
       {/* Card Design */}
@@ -293,43 +300,54 @@ export default function BookViewer({
         createPortal(
           <div
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
+            className={`fixed inset-0 z-100 flex items-center justify-center bg-black/80 backdrop-blur-md animate-in fade-in duration-300 ${isHtmlMode ? 'p-0' : 'p-4'}`}
           >
             <div
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
-              className="w-full max-w-6xl h-[95vh] bg-gray-100 dark:bg-[#0f172a] rounded-4xl shadow-2xl flex flex-col overflow-hidden relative animate-in zoom-in-95 duration-300 ring-1 ring-white/10 cursor-default"
+              className={isHtmlMode ? "w-full h-full flex flex-col relative animate-in zoom-in-95 duration-300 cursor-default bg-black" : "w-full max-w-6xl h-[95vh] bg-gray-100 dark:bg-[#0f172a] rounded-4xl shadow-2xl flex flex-col overflow-hidden relative animate-in zoom-in-95 duration-300 ring-1 ring-white/10 cursor-default"}
             >
-              {/* Header */}
-              <div className="flex items-center justify-between p-4 bg-white dark:bg-[#1e293b] border-b border-gray-200 dark:border-white/5 z-20 shadow-sm shrink-0">
-                <div className="flex items-center gap-4 overflow-hidden">
-                  <div
-                    className={`w-10 h-10 rounded-xl ${color} flex items-center justify-center shrink-0 shadow-sm`}
-                  >
-                    <Icon icon={icon} className="text-xl" />
+              
+              {/* HTML Mode Close Button */}
+              {isHtmlMode && (
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute top-4 left-4 z-50 flex items-center justify-center w-12 h-12 bg-red-600 text-white rounded-full shadow-lg hover:bg-red-700 hover:scale-110 transition-all cursor-pointer border-2 border-white"
+                >
+                  <Icon icon="solar:close-circle-bold" className="text-3xl" />
+                </button>
+              )}
+
+              {/* Header for Standard Modal */}
+              {!isHtmlMode && (
+                <div className="flex items-center justify-between p-4 bg-white dark:bg-[#1e293b] border-b border-gray-200 dark:border-white/5 z-20 shadow-sm shrink-0">
+                  <div className="flex items-center gap-4 overflow-hidden">
+                    <div
+                      className={`w-10 h-10 rounded-xl ${color} flex items-center justify-center shrink-0 shadow-sm`}
+                    >
+                      <Icon icon={icon} className="text-xl" />
+                    </div>
+                    <h3 className="font-bold text-lg text-brand-navy dark:text-white truncate">
+                      {title}
+                    </h3>
                   </div>
-                  <h3 className="font-bold text-lg text-brand-navy dark:text-white truncate">
-                    {title}
-                  </h3>
+
+                  <div className="flex items-center gap-3 shrink-0">
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl bg-orange-100 text-orange-600 hover:bg-orange-200 dark:bg-orange-500/20 dark:text-orange-400 transition-colors"
+                    >
+                      <Icon icon="solar:close-circle-bold" className="text-xl" />
+                      <span className="hidden sm:inline font-bold text-sm">
+                        {closeLabel}
+                      </span>
+                    </button>
+                  </div>
                 </div>
-
-                <div className="flex items-center gap-3 shrink-0">
-
-
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-orange-100 text-orange-600 hover:bg-orange-200 dark:bg-orange-500/20 dark:text-orange-400 transition-colors"
-                  >
-                    <Icon icon="solar:close-circle-bold" className="text-xl" />
-                    <span className="hidden sm:inline font-bold text-sm">
-                      {closeLabel}
-                    </span>
-                  </button>
-                </div>
-              </div>
+              )}
 
               {/* Vertical Zoom Toolbar */}
-              {!hasError && (
+              {!hasError && !isHtmlMode && (
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 z-30 hidden sm:flex flex-col items-center bg-white/90 dark:bg-brand-navy-dark/90 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 dark:border-white/10 overflow-hidden min-w-14 animate-in slide-in-from-right-10 duration-500">
                   <button
                     onClick={() => setZoom((prev) => Math.min(prev + 0.1, 2.0))}
@@ -377,80 +395,90 @@ export default function BookViewer({
               )}
 
               {/* Content Area - Scrollable */}
-              <div
-                ref={containerRef}
-                onContextMenu={handleContextMenu}
-                className="flex-1 overflow-y-auto overflow-x-hidden bg-gray-200/50 dark:bg-[#020617] relative p-4 md:p-8 flex flex-col items-center select-none custom-scrollbar"
-              >
-                {/* Watermark Background */}
-                <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center opacity-[0.03] dark:opacity-[0.05]">
-                  <Image
-                    src="/images/logo/casp-logo.png"
-                    alt=""
-                    width={500}
-                    height={500}
-                    className="object-contain"
-                  />
-                </div>
-
-                {/* Loader */}
-                {isLoading && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-white/50 dark:bg-black/50 backdrop-blur-sm">
-                    <div className="w-12 h-12 border-4 border-brand-sky/30 border-t-brand-sky rounded-full animate-spin mb-4"></div>
-                    <p className="text-brand-navy dark:text-gray-200 font-medium">
-                      Loading...
-                    </p>
+              {isHtmlMode ? (
+                   <iframe 
+                      src={initialPdfUrl} 
+                      className="w-full h-full border-none"
+                      title={title}
+                      allowFullScreen
+                   />
+              ) : (
+                <div
+                  ref={containerRef}
+                  onContextMenu={handleContextMenu}
+                  className="flex-1 overflow-y-auto overflow-x-hidden bg-gray-200/50 dark:bg-[#020617] relative p-4 md:p-8 flex flex-col items-center select-none custom-scrollbar"
+                >
+                  {/* Watermark Background */}
+                  <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-center opacity-[0.03] dark:opacity-[0.05]">
+                    <Image
+                      src="/images/logo/casp-logo.png"
+                      alt=""
+                      width={500}
+                      height={500}
+                      className="object-contain"
+                    />
                   </div>
-                )}
 
-                {/* Error State */}
-                {hasError && (
-                  <div className="flex flex-col items-center justify-center h-full text-center p-8">
-                    <div className="w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-500/20 flex items-center justify-center mb-6">
-                      <Icon
-                        icon="solar:shield-warning-bold-duotone"
-                        className="text-5xl text-orange-500"
-                      />
+                  {/* Loader */}
+                  {isLoading && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-white/50 dark:bg-black/50 backdrop-blur-sm">
+                      <div className="w-12 h-12 border-4 border-brand-sky/30 border-t-brand-sky rounded-full animate-spin mb-4"></div>
+                      <p className="text-brand-navy dark:text-gray-200 font-medium">
+                        Loading...
+                      </p>
                     </div>
-                    <h4 className="text-2xl font-bold text-brand-navy dark:text-white mb-2">
-                      Coming Soon!
-                    </h4>
-                    <p className="text-gray-500 dark:text-gray-400 max-w-md">
-                      This book is currently being prepared and will be
-                      available shortly. Thank you for your patience.
-                    </p>
-                  </div>
-                )}
+                  )}
 
-                {!hasError && blobPdfUrl && (
-                  <Document
-                    file={blobPdfUrl}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    onLoadError={onDocumentLoadError}
-                    loading={
-                      <div className="h-96 flex items-center justify-center text-gray-500">
-                        Loading Book...
-                      </div>
-                    }
-                    className="flex flex-col gap-6 md:gap-8 items-center w-full"
-                  >
-                    {/* Render all pages with lazy loading */}
-                    {numPages &&
-                      Array.from(new Array(numPages), (el, index) => (
-                        <LazyPage
-                          key={`page_${index + 1}`}
-                          pageNumber={index + 1}
-                          width={pageWidth * zoom}
-                          loading={
-                            <div className="flex items-center justify-center text-gray-400">
-                              Loading Page {index + 1}...
-                            </div>
-                          }
+                  {/* Error State */}
+                  {hasError && (
+                    <div className="flex flex-col items-center justify-center h-full text-center p-8">
+                      <div className="w-20 h-20 rounded-full bg-orange-100 dark:bg-orange-500/20 flex items-center justify-center mb-6">
+                        <Icon
+                          icon="solar:shield-warning-bold-duotone"
+                          className="text-5xl text-orange-500"
                         />
-                      ))}
-                  </Document>
-                )}
-              </div>
+                      </div>
+                      <h4 className="text-2xl font-bold text-brand-navy dark:text-white mb-2">
+                        Coming Soon!
+                      </h4>
+                      <p className="text-gray-500 dark:text-gray-400 max-w-md">
+                        This book is currently being prepared and will be
+                        available shortly. Thank you for your patience.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Content Render PDF */}
+                  {!hasError && blobPdfUrl && (
+                    <Document
+                      file={blobPdfUrl}
+                      onLoadSuccess={onDocumentLoadSuccess}
+                      onLoadError={onDocumentLoadError}
+                      loading={
+                        <div className="h-96 flex items-center justify-center text-gray-500">
+                          Loading Book...
+                        </div>
+                      }
+                      className="flex flex-col gap-6 md:gap-8 items-center w-full"
+                    >
+                      {/* Render all pages with lazy loading */}
+                      {numPages &&
+                        Array.from(new Array(numPages), (el, index) => (
+                          <LazyPage
+                            key={`page_${index + 1}`}
+                            pageNumber={index + 1}
+                            width={pageWidth * zoom}
+                            loading={
+                              <div className="flex items-center justify-center text-gray-400">
+                                Loading Page {index + 1}...
+                              </div>
+                            }
+                          />
+                        ))}
+                    </Document>
+                  )}
+                </div>
+              )}
             </div>
           </div>,
           document.body,

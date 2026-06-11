@@ -18,6 +18,11 @@ const menuItems = [
     label: "Access Codes",
     href: "/admin/codes",
   },
+  {
+    icon: "solar:book-bookmark-bold-duotone",
+    label: "Riyada Codes",
+    href: "/admin/riyada-codes",
+  },
 ];
 
 export default function AdminSidebar() {
@@ -101,6 +106,7 @@ export default function AdminSidebar() {
                   {item.label === "Dashboard" && t("dashboard")}
                   {item.label === "Users" && t("users")}
                   {item.label === "Access Codes" && t("accessCodes")}
+                  {item.label === "Riyada Codes" && "Riyada Codes"}
                 </span>
               )}
 
@@ -118,6 +124,7 @@ export default function AdminSidebar() {
                   {item.label === "Dashboard" && t("dashboard")}
                   {item.label === "Users" && t("users")}
                   {item.label === "Access Codes" && t("accessCodes")}
+                  {item.label === "Riyada Codes" && "Riyada Codes"}
                 </div>
               )}
             </Link>

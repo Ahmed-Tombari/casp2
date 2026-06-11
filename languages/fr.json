@@ -34,6 +34,24 @@
     "happymuslimEnBooks": "Happy Muslim Anglais",
     "welcome": "Bienvenue dans notre collection de livres privés"
   },
+  "RiyadaBook": {
+    "title": "Série Riyada",
+    "description": "Entrez votre code d'accès secret pour consulter la collection interactive Riyada.",
+    "codeLabel": "Code d'accès secret",
+    "codePlaceholder": "Entrez votre code ici",
+    "verify": "Accéder aux livres Riyada",
+    "sending": "Vérification en cours...",
+    "expiryNote": "Validité limitée",
+    "noDownloads": "Pas de téléchargement",
+    "errorGeneric": "Quelque chose s'est mal passé.",
+    "errorNetwork": "Erreur réseau. Veuillez réessayer.",
+    "expired": "Ce code a expiré.",
+    "invalid": "Code invalide ou expiré.",
+    "accessDenied": "Accès refusé",
+    "accessDeniedDesc": "Vous avez besoin d'un code d'accès valide pour consulter la collection Riyada. Veuillez retourner à la boutique et entrer votre code.",
+    "returnToStore": "Retourner à la boutique",
+    "welcome": "Bienvenue ! Profitez de la série Riyada."
+  },
   "nav": {
     "home": "Accueil",
     "curricula": "Programmes",
@@ -532,7 +550,21 @@
     "previous": "Précédent",
     "next": "Suivant",
     "itemsPerPage": "Éléments par page",
-    "total": "Total"
+    "total": "Total",
+    "riyadaCodesTitle": "Codes d'Accès Riyada",
+    "specialAccess": "Accès Spécial",
+    "riyadaCodesDesc": "Gérez les codes d'accès universels distribués spécifiquement pour la collection Riyada.",
+    "noRiyadaCodes": "Aucun code Riyada n'a encore été généré.",
+    "riyadaGeneratorTitle": "Générateur de Code d'Accès Riyada",
+    "special": "Spécial",
+    "riyadaGeneratorDesc": "Générez des codes d'accès spécifiquement pour toute la série Riyada.",
+    "duration1Day": "1 Jour",
+    "duration2Days": "2 Jours",
+    "duration1Week": "1 Semaine",
+    "duration10Days": "10 Jours",
+    "duration30Days": "30 Jours",
+    "duration1Year": "1 An",
+    "riyadaCodeDistributeDesc": "Distribuez ce code pour permettre l'accès à la série Riyada sans inscription par e-mail."
   },
   "academy": {
     "title": "Académie de Formation",

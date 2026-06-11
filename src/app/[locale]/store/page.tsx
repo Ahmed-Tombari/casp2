@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Icon } from '@iconify/react';
+import { cookies } from 'next/headers';
+import { verifyPdfAccessToken } from '@/lib/token';
+import RiyadaCategoryClient from './RiyadaCategoryClient';
 
 export const revalidate = 86400; // 24 hours
 
@@ -15,6 +18,18 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   const t = await getTranslations({ locale: locale, namespace: 'store' });
   const isRTL = locale === 'ar';
+
+  let hasSession = false;
+  const cookieStore = await cookies();
+  const sessionToken = cookieStore.get('book_session')?.value;
+  if (sessionToken) {
+    try {
+      verifyPdfAccessToken(sessionToken);
+      hasSession = true;
+    } catch {
+      hasSession = false;
+    }
+  }
 
   const categories = [
     {
@@ -86,6 +101,15 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
       color: 'bg-blue-400',
       textColor: 'text-blue-400',
     },
+    {
+      id: 'riyada',
+      title: locale === 'ar' ? 'سلسلة ريادة' : locale === 'fr' ? 'Série Riyada' : 'Riyada Series',
+      desc: locale === 'ar' ? 'تصفح كتب ريادة التفاعلية' : locale === 'fr' ? 'Parcourez la série Riyada interactive' : 'Browse the interactive Riyada series',
+      href: '/store/riyadabook',
+      icon: 'solar:folder-with-files-bold-duotone',
+      color: 'bg-emerald-500',
+      textColor: 'text-emerald-500',
+    },
   ];
 
   return (
@@ -123,7 +147,21 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
       <section className="py-20 -mt-12 relative z-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {categories.map((cat, idx) => (
+            {categories.map((cat, idx) => {
+              if (cat.id === 'riyada') {
+                return (
+                  <RiyadaCategoryClient
+                    key={idx}
+                    cat={cat}
+                    locale={locale}
+                    isRTL={isRTL}
+                    tShopNow={t('shopNow')}
+                    hasSession={hasSession}
+                  />
+                );
+              }
+
+              return (
               <Link
                 key={idx}
                 href={cat.href}
@@ -158,7 +196,8 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
                    </div>
                 </div>
               </Link>
-            ))}
+             );
+            })}
           </div>
         </div>
       </section>

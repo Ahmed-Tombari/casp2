@@ -17,7 +17,7 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
   const [code, setCode] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const t = useTranslations('PrivateBook'); 
+  const t = useTranslations('PrivateBook');
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,33 +92,33 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
               leaveTo="opacity-0 scale-95 translate-y-4"
             >
               <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-[2.5rem] bg-white/90 dark:bg-brand-navy/95 backdrop-blur-xl p-0 text-left align-middle shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all border border-white/20 dark:border-white/10 ring-1 ring-black/5">
-                
+
                 {/* Decorative Header Background */}
                 <div className="relative h-40 bg-gradient-to-br from-brand-navy to-brand-navy-light overflow-hidden">
-                    <div className="absolute inset-0 bg-brand-gold/5"></div>
-                    <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-gold/20 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute top-10 left-10 w-24 h-24 bg-brand-sky/20 rounded-full blur-2xl"></div>
-                    
-                    {/* Noise Texture */}
-                    <div className="absolute inset-0 opacity-[0.03] bg-noise pointer-events-none mix-blend-overlay"></div>
-                    
-                    <button
-                        onClick={closeModal}
-                        className="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all backdrop-blur-md border border-white/20 rtl:right-auto rtl:left-6 group"
-                    >
-                        <Icon icon="solar:close-circle-bold" className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                    </button>
+                  <div className="absolute inset-0 bg-brand-gold/5"></div>
+                  <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-gold/20 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute top-10 left-10 w-24 h-24 bg-brand-sky/20 rounded-full blur-2xl"></div>
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-brand-gold/40 rounded-3xl blur-xl animate-pulse"></div>
-                            <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-tr from-brand-gold to-brand-gold-light p-0.5 flex items-center justify-center shadow-2xl">
-                                <div className="w-full h-full rounded-[1.4rem] bg-brand-navy flex items-center justify-center text-brand-gold">
-                                    <Icon icon="solar:shield-keyhole-bold-duotone" className="text-4xl" />
-                                </div>
-                            </div>
+                  {/* Noise Texture */}
+                  <div className="absolute inset-0 opacity-[0.03] bg-noise pointer-events-none mix-blend-overlay"></div>
+
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all backdrop-blur-md border border-white/20 rtl:right-auto rtl:left-6 group"
+                  >
+                    <Icon icon="solar:close-circle-bold" className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                  </button>
+
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-brand-gold/40 rounded-3xl blur-xl animate-pulse"></div>
+                      <div className="relative w-20 h-20 rounded-3xl bg-gradient-to-tr from-brand-gold to-brand-gold-light p-0.5 flex items-center justify-center shadow-2xl">
+                        <div className="w-full h-full rounded-[1.4rem] bg-brand-navy flex items-center justify-center text-brand-gold">
+                          <Icon icon="solar:shield-keyhole-bold-duotone" className="text-4xl" />
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
 
                 <div className="px-10 pb-10 pt-6">
@@ -150,7 +150,7 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
                         </label>
                         <div className="relative group">
                           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none rtl:left-auto rtl:right-0 rtl:pr-4 rtl:pl-0 text-gray-400 group-focus-within:text-brand-gold transition-colors">
-                              <Icon icon="solar:letter-bold-duotone" className="w-5 h-5" />
+                            <Icon icon="solar:letter-bold-duotone" className="w-5 h-5" />
                           </div>
                           <input
                             type="email"
@@ -174,7 +174,7 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
                         </label>
                         <div className="relative group">
                           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none rtl:left-auto rtl:right-0 rtl:pr-4 rtl:pl-0 text-gray-400 group-focus-within:text-brand-gold transition-colors">
-                              <Icon icon="solar:key-bold-duotone" className="w-5 h-5" />
+                            <Icon icon="solar:key-bold-duotone" className="w-5 h-5" />
                           </div>
                           <input
                             type="text"
@@ -200,16 +200,16 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
                       >
                         {/* Glow effect on hover */}
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                        
+
                         <span className="relative z-10 flex items-center justify-center gap-2">
-                           {loading ? (
+                          {loading ? (
                             <>
                               <Icon icon="eos-icons:loading" className="w-6 h-6 animate-spin" />
                               {t('sending')}
                             </>
                           ) : (
                             <>
-                              {t('verify')} 
+                              {t('verify')}
                               <Icon icon="solar:round-alt-arrow-right-bold" className="w-6 h-6 rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                             </>
                           )}
@@ -219,14 +219,14 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
 
                     {/* Info Badges */}
                     <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                        <div className="flex items-center gap-1.5 bg-gray-100 dark:bg-white/5 px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 border border-gray-200/50 dark:border-white/5">
-                            <Icon icon="solar:clock-circle-bold" className="text-brand-gold w-4 h-4" />
-                            <span>{t('expiryNote')}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 bg-gray-100 dark:bg-white/5 px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 border border-gray-200/50 dark:border-white/5">
-                            <Icon icon="solar:forbidden-circle-bold" className="text-red-400 w-4 h-4" />
-                            <span>{t('noDownloads')}</span>
-                        </div>
+                      <div className="flex items-center gap-1.5 bg-gray-100 dark:bg-white/5 px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 border border-gray-200/50 dark:border-white/5">
+                        <Icon icon="solar:clock-circle-bold" className="text-brand-gold w-4 h-4" />
+                        <span>{t('expiryNote')}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 bg-gray-100 dark:bg-white/5 px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 border border-gray-200/50 dark:border-white/5">
+                        <Icon icon="solar:forbidden-circle-bold" className="text-red-400 w-4 h-4" />
+                        <span>{t('noDownloads')}</span>
+                      </div>
                     </div>
                   </form>
                 </div>

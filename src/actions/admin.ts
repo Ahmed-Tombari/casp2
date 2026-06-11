@@ -283,3 +283,87 @@ export async function assignCode(codeId: string, userId: string) {
     code: updatedCode.code ? decrypt(updatedCode.code) : null
   }
 }
+
+export async function getRiyadaAccessCodes(limit: number = 5, cursor?: string, direction: 'next' | 'prev' = 'next') {
+  const whereClause = {
+    email: '@riyada',
+  }
+
+  const takeCount = direction === 'next' ? limit + 1 : -(limit + 1)
+
+  const [total, codesRaw] = await Promise.all([
+    prisma.accessCode.count({ where: whereClause }),
+    prisma.accessCode.findMany({
+      where: whereClause,
+      take: takeCount,
+      skip: cursor ? 1 : 0,
+      cursor: cursor ? { id: cursor } : undefined,
+      orderBy: [
+        { createdAt: 'desc' },
+        { id: 'desc' }
+      ]
+    })
+  ])
+
+  let hasNextPage = false
+  let hasPrevPage = false
+  let codesToReturn = codesRaw
+
+  if (direction === 'next') {
+    if (codesRaw.length > limit) {
+      hasNextPage = true
+      codesToReturn = codesRaw.slice(0, limit)
+    }
+    hasPrevPage = !!cursor
+  } else {
+    if (codesRaw.length > limit) {
+      hasPrevPage = true
+      codesToReturn = codesRaw.slice(1)
+    }
+    hasNextPage = true
+  }
+
+  const nextCursor = codesToReturn.length > 0 ? codesToReturn[codesToReturn.length - 1].id : undefined
+  const prevCursor = codesToReturn.length > 0 ? codesToReturn[0].id : undefined
+
+  return {
+    codes: codesToReturn.map(code => ({
+      ...code,
+      code: code.code ? decrypt(code.code) : null
+    })),
+    total,
+    nextCursor: hasNextPage ? nextCursor : undefined,
+    prevCursor: hasPrevPage ? prevCursor : undefined,
+  }
+}
+
+export async function generateRiyadaAccessCode(data: {
+  validityDays: number
+}) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*'
+  const generateComplexCode = customAlphabet(alphabet, 6)
+  const rawCode = generateComplexCode()
+  const codeHash = crypto.createHash('sha256').update(rawCode).digest('hex')
+  
+  const expiresAt = new Date()
+  expiresAt.setDate(expiresAt.getDate() + data.validityDays)
+
+  await prisma.accessCode.create({
+    data: {
+      code: encrypt(rawCode),
+      codeHash,
+      validityDays: data.validityDays,
+      expiresAt: expiresAt,
+      email: '@riyada',
+    },
+  })
+
+  revalidatePath('/admin/riyada-codes')
+  return { rawCode }
+}
+
+export async function deleteRiyadaAccessCode(id: string) {
+  await prisma.accessCode.delete({ where: { id } })
+  revalidatePath('/admin/riyada-codes')
+}
+

@@ -34,6 +34,24 @@
     "happymuslimEnBooks": "Happy Muslim English",
     "welcome": "Welcome to our private book collection"
   },
+  "RiyadaBook": {
+    "title": "Riyada Book Series",
+    "description": "Enter your secret access code to browse the interactive Riyada collection.",
+    "codeLabel": "Secret Access Code",
+    "codePlaceholder": "Enter your code here",
+    "verify": "Access Riyada Books",
+    "sending": "Verifying...",
+    "expiryNote": "Limited Validity",
+    "noDownloads": "No Downloads",
+    "errorGeneric": "Something went wrong.",
+    "errorNetwork": "Network error. Please try again.",
+    "expired": "This code has expired.",
+    "invalid": "Invalid or expired code.",
+    "accessDenied": "Access Denied",
+    "accessDeniedDesc": "You need a valid access code to view the Riyada Collection. Please return to the store and enter your code.",
+    "returnToStore": "Return to Store",
+    "welcome": "Welcome! Enjoy browsing the Riyada series."
+  },
   "nav": {
     "home": "Home",
     "curricula": "Curricula",
@@ -532,7 +550,21 @@
     "previous": "Previous",
     "next": "Next",
     "itemsPerPage": "Items per page",
-    "total": "Total"
+    "total": "Total",
+    "riyadaCodesTitle": "Riyada Access Codes",
+    "specialAccess": "Special Access",
+    "riyadaCodesDesc": "Manage universal access codes specifically distributed for the Riyada book collection.",
+    "noRiyadaCodes": "No Riyada codes have been generated yet.",
+    "riyadaGeneratorTitle": "Riyada Access Code Generator",
+    "special": "Special",
+    "riyadaGeneratorDesc": "Generate access codes specifically for the entire Riyada book series.",
+    "duration1Day": "1 Day",
+    "duration2Days": "2 Days",
+    "duration1Week": "1 Week",
+    "duration10Days": "10 Days",
+    "duration30Days": "30 Days",
+    "duration1Year": "1 Year",
+    "riyadaCodeDistributeDesc": "Distribute this code to allow access to Riyada series without an email registration."
   },
   "academy": {
     "title": "Training Academy",

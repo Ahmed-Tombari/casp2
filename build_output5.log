@@ -1,0 +1,150 @@
+
+> sieducational_project@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.9
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 12.6s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/91) ...
+   Generating static pages (22/91) 
+   Generating static pages (45/91) 
+   Generating static pages (68/91) 
+ ✓ Generating static pages (91/91)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                       Size  First Load JS
+┌ ○ /_not-found                                  176 B         103 kB
+├ ● /[locale]                                  33.9 kB         206 kB
+├   ├ /ar
+├   ├ /fr
+├   └ /en
+├ ● /[locale]/academy                          2.15 kB         175 kB
+├   ├ /ar/academy
+├   ├ /fr/academy
+├   └ /en/academy
+├ ● /[locale]/admin                            1.36 kB         216 kB
+├   ├ /ar/admin
+├   ├ /fr/admin
+├   └ /en/admin
+├ ● /[locale]/admin/codes                      6.18 kB         133 kB
+├   ├ /ar/admin/codes
+├   ├ /fr/admin/codes
+├   └ /en/admin/codes
+├ ● /[locale]/admin/riyada-codes                4.8 kB         131 kB
+├   ├ /ar/admin/riyada-codes
+├   ├ /fr/admin/riyada-codes
+├   └ /en/admin/riyada-codes
+├ ● /[locale]/admin/users                      4.91 kB         220 kB
+├   ├ /ar/admin/users
+├   ├ /fr/admin/users
+├   └ /en/admin/users
+├ ● /[locale]/contact                          3.58 kB         130 kB
+├   ├ /ar/contact
+├   ├ /fr/contact
+├   └ /en/contact
+├ ● /[locale]/PrivateBook                      3.29 kB         138 kB
+├   ├ /ar/PrivateBook
+├   ├ /fr/PrivateBook
+├   └ /en/PrivateBook
+├ ● /[locale]/services/level-test              1.96 kB         128 kB
+├   ├ /ar/services/level-test
+├   ├ /fr/services/level-test
+├   └ /en/services/level-test
+├ ƒ /[locale]/services/level-test/[level]      3.48 kB         130 kB
+├ ● /[locale]/store                            4.74 kB         155 kB
+├   ├ /ar/store
+├   ├ /fr/store
+├   └ /en/store
+├ ● /[locale]/store/al-mufid                      2 kB         137 kB
+├   ├ /ar/store/al-mufid
+├   ├ /fr/store/al-mufid
+├   └ /en/store/al-mufid
+├ ● /[locale]/store/al-shamil                     2 kB         137 kB
+├   ├ /ar/store/al-shamil
+├   ├ /fr/store/al-shamil
+├   └ /en/store/al-shamil
+├ ● /[locale]/store/al-wafi                       2 kB         137 kB
+├   ├ /ar/store/al-wafi
+├   ├ /fr/store/al-wafi
+├   └ /en/store/al-wafi
+├ ● /[locale]/store/book                       2.79 kB         112 kB
+├   ├ /ar/store/book
+├   ├ /fr/store/book
+├   └ /en/store/book
+├ ● /[locale]/store/garden-of-arabic              2 kB         137 kB
+├   ├ /ar/store/garden-of-arabic
+├   ├ /fr/store/garden-of-arabic
+├   └ /en/store/garden-of-arabic
+├ ● /[locale]/store/hidayah-fr                    2 kB         137 kB
+├   ├ /ar/store/hidayah-fr
+├   ├ /fr/store/hidayah-fr
+├   └ /en/store/hidayah-fr
+├ ● /[locale]/store/qawaed-mobasta                2 kB         137 kB
+├   ├ /ar/store/qawaed-mobasta
+├   ├ /fr/store/qawaed-mobasta
+├   └ /en/store/qawaed-mobasta
+├ ● /[locale]/store/riyadabook                   181 B         135 kB
+├   ├ /ar/store/riyadabook
+├   ├ /fr/store/riyadabook
+├   └ /en/store/riyadabook
+├ ● /[locale]/store/tareeq-al-muneer              2 kB         137 kB
+├   ├ /ar/store/tareeq-al-muneer
+├   ├ /fr/store/tareeq-al-muneer
+├   └ /en/store/tareeq-al-muneer
+├ ● /[locale]/store/the-happy-muslim              2 kB         137 kB
+├   ├ /ar/store/the-happy-muslim
+├   ├ /fr/store/the-happy-muslim
+├   └ /en/store/the-happy-muslim
+├ ● /[locale]/teacher-guide                    1.96 kB         128 kB
+├   ├ /ar/teacher-guide
+├   ├ /fr/teacher-guide
+├   └ /en/teacher-guide
+├ ● /[locale]/teacher-guide/garden-guide       3.02 kB         129 kB
+├   ├ /ar/teacher-guide/garden-guide
+├   ├ /fr/teacher-guide/garden-guide
+├   └ /en/teacher-guide/garden-guide
+├ ● /[locale]/teacher-guide/happyMuslim-guide  3.02 kB         129 kB
+├   ├ /ar/teacher-guide/happyMuslim-guide
+├   ├ /fr/teacher-guide/happyMuslim-guide
+├   └ /en/teacher-guide/happyMuslim-guide
+├ ● /[locale]/teacher-guide/mufid-guide        3.02 kB         129 kB
+├   ├ /ar/teacher-guide/mufid-guide
+├   ├ /fr/teacher-guide/mufid-guide
+├   └ /en/teacher-guide/mufid-guide
+├ ● /[locale]/teacher-guide/wafi-guide         3.02 kB         129 kB
+├   ├ /ar/teacher-guide/wafi-guide
+├   ├ /fr/teacher-guide/wafi-guide
+├   └ /en/teacher-guide/wafi-guide
+├ ƒ /[locale]/view/[token]                       164 B         109 kB
+├ ƒ /api/assets                                  176 B         103 kB
+├ ƒ /api/auth/[...nextauth]                      176 B         103 kB
+├ ƒ /api/book-auth                               176 B         103 kB
+├ ƒ /api/books/[...path]                         176 B         103 kB
+├ ƒ /api/cart                                    176 B         103 kB
+├ ƒ /api/data                                    176 B         103 kB
+├ ƒ /api/pdf                                     176 B         103 kB
+├ ƒ /api/pdf/[token]                             176 B         103 kB
+├ ƒ /api/reviews                                 176 B         103 kB
+├ ƒ /api/share                                   176 B         103 kB
+├ ƒ /api/verify-code                             176 B         103 kB
+├ ƒ /api/verify-riyada-code                      176 B         103 kB
+├ ○ /manifest.webmanifest                        176 B         103 kB
+├ ○ /robots.txt                                  176 B         103 kB
+└ ○ /sitemap.xml                                 176 B         103 kB
++ First Load JS shared by all                   102 kB
+  ├ chunks/1255-458d22f003f06936.js            45.5 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js        54.2 kB
+  └ other shared chunks (total)                2.63 kB
+
+
+ƒ Middleware                                   97.4 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

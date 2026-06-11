@@ -34,6 +34,24 @@
     "happymuslimEnBooks": " المسلم السعيد",
     "welcome": "مرحباً بك في مجموعة كتبنا الخاصة"
   },
+  "RiyadaBook": {
+    "title": "سلسلة كتب ريادة",
+    "description": "أدخل رمز الوصول السري للاطلاع على مجموعة ريادة التفاعلية.",
+    "codeLabel": "رمز الوصول السري",
+    "codePlaceholder": "أدخل الرمز هنا",
+    "verify": "الدخول إلى كتب ريادة",
+    "sending": "جاري التحقق...",
+    "expiryNote": "صلاحية محدودة",
+    "noDownloads": "لا يمكن التنزيل",
+    "errorGeneric": "حدث خطأ ما.",
+    "errorNetwork": "خطأ في الشبكة. حاول مرة أخرى.",
+    "expired": "لقد انتهت صلاحية هذا الرمز.",
+    "invalid": "رمز غير صالح أو منتهي الصلاحية.",
+    "accessDenied": "لا يمكن الوصول",
+    "accessDeniedDesc": "تحتاج إلى رمز وصول صالح لعرض مجموعة ريادة. يرجى العودة إلى المتجر وإدخال الرمز.",
+    "returnToStore": "العودة إلى المتجر",
+    "welcome": "مرحباً! استمتع بتصفح سلسلة ريادة."
+  },
   "nav": {
     "home": "الرئيسية",
     "curricula": "المناهج",
@@ -554,7 +572,21 @@
     "next": "التالي",
     "itemsPerPage": "عناصر لكل صفحة",
     "total": "المجموع",
-    "close": "إغلاق"
+    "close": "إغلاق",
+    "riyadaCodesTitle": "رموز وصول ريادة",
+    "specialAccess": "وصول خاص",
+    "riyadaCodesDesc": "إدارة رموز الوصول الشاملة الموزعة خصيصًا لمجموعة كتب ريادة.",
+    "noRiyadaCodes": "لم يتم إنشاء أي رموز لريادة بعد.",
+    "riyadaGeneratorTitle": "مولد رموز وصول ريادة",
+    "special": "خاص",
+    "riyadaGeneratorDesc": "توليد رموز وصول خاصة بسلسلة كتب ريادة بأكملها.",
+    "duration1Day": "يوم واحد",
+    "duration2Days": "يومان",
+    "duration1Week": "أسبوع واحد",
+    "duration10Days": "10 أيام",
+    "duration30Days": "30 يومًا",
+    "duration1Year": "سنة واحدة",
+    "riyadaCodeDistributeDesc": "قم بتوزيع هذا الرمز للسماح بالوصول إلى سلسلة ريادة دون الحاجة لتسجيل بريد إلكتروني."
   },
   "academy": {
     "title": "أكاديمية التدريب",
