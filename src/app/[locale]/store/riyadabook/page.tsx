@@ -54,18 +54,43 @@ export default async function RiyadabookPage({ params }: { params: Promise<{ loc
   }
 
   // --- Riyada Levels ---
-  const levelKeys = ['2', '3', '4', '5', '6', '7', '8', '9'];
-  const levels = levelKeys.map(key => {
-    return {
-      bookId: `riyada-${key}`,
-      id: key,
-      title: locale === 'ar' ? `ريادة ${key}` : `Riyada ${key}`,
-      bookCover: `/api/books/book-office/Riyada/Riyada${key}/thumb/1.jpg`, // Cloudflare URL
-      pdfUrl: `/Riyadabook/Riyada${key}/index.html`, // Map to the public static directory
-      color: "bg-emerald-50 text-emerald-500",
-      border: "border-emerald-300",
-    };
-  });
+  const bookDefs = [
+    {
+      folderName: 'RiyadaKg2',
+      bookId: 'riyada-kg2',
+      titleAr: 'ريادة KG2',
+      titleOther: 'Riyada KG2',
+    },
+    {
+      folderName: 'Riyada1',
+      bookId: 'riyada-1',
+      titleAr: 'ريادة 1',
+      titleOther: 'Riyada 1',
+    },
+    {
+      folderName: 'Riyada2',
+      bookId: 'riyada-2',
+      titleAr: 'ريادة 2',
+      titleOther: 'Riyada 2',
+    },
+    { folderName: 'Riyada3', bookId: 'riyada-3', titleAr: 'ريادة 3', titleOther: 'Riyada 3' },
+    { folderName: 'Riyada4', bookId: 'riyada-4', titleAr: 'ريادة 4', titleOther: 'Riyada 4' },
+    { folderName: 'Riyada5', bookId: 'riyada-5', titleAr: 'ريادة 5', titleOther: 'Riyada 5' },
+    { folderName: 'Riyada6', bookId: 'riyada-6', titleAr: 'ريادة 6', titleOther: 'Riyada 6' },
+    { folderName: 'Riyada7', bookId: 'riyada-7', titleAr: 'ريادة 7', titleOther: 'Riyada 7' },
+    { folderName: 'Riyada8', bookId: 'riyada-8', titleAr: 'ريادة 8', titleOther: 'Riyada 8' },
+    { folderName: 'Riyada9', bookId: 'riyada-9', titleAr: 'ريادة 9', titleOther: 'Riyada 9' },
+  ];
+
+  const levels = bookDefs.map(def => ({
+    bookId: def.bookId,
+    id: def.folderName,
+    title: locale === 'ar' ? def.titleAr : def.titleOther,
+    bookCover: `/api/books/book-office/Riyada/${def.folderName}/thumb/1.jpg`,
+    pdfUrl: `/Riyadabook/${def.folderName}/index.html`,
+    color: "bg-emerald-50 text-emerald-500",
+    border: "border-emerald-300",
+  }));
 
   return (
     <main className="min-h-screen bg-background text-foreground">

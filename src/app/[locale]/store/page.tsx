@@ -33,6 +33,15 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
 
   const categories = [
     {
+      id: 'riyada',
+      title: locale === 'ar' ? 'سلسلة ريادة' : locale === 'fr' ? 'Série Riyada' : 'Riyada Series',
+      desc: locale === 'ar' ? 'تصفح كتب ريادة التفاعلية' : locale === 'fr' ? 'Parcourez la série Riyada interactive' : 'Browse the interactive Riyada series',
+      href: '/store/riyadabook',
+      icon: 'solar:folder-with-files-bold-duotone',
+      color: 'bg-emerald-500',
+      textColor: 'text-emerald-500',
+    },
+    {
       id: 'al-shamil',
       title: t('alShamil.title'),
       desc: t('alShamil.description'),
@@ -101,24 +110,15 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
       color: 'bg-blue-400',
       textColor: 'text-blue-400',
     },
-    {
-      id: 'riyada',
-      title: locale === 'ar' ? 'سلسلة ريادة' : locale === 'fr' ? 'Série Riyada' : 'Riyada Series',
-      desc: locale === 'ar' ? 'تصفح كتب ريادة التفاعلية' : locale === 'fr' ? 'Parcourez la série Riyada interactive' : 'Browse the interactive Riyada series',
-      href: '/store/riyadabook',
-      icon: 'solar:folder-with-files-bold-duotone',
-      color: 'bg-emerald-500',
-      textColor: 'text-emerald-500',
-    },
   ];
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#09121E] text-foreground transition-colors duration-300">
-      
+
       {/* Hero Section */}
       <section className="bg-brand-gold pt-24 pb-0 relative overflow-hidden text-center rounded-b-[4rem] shadow-soft-lg z-10">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          {/* Abstract Background */}
+        {/* Abstract Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
           <Icon
             icon="solar:shop-bold"
@@ -162,41 +162,41 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
               }
 
               return (
-              <Link
-                key={idx}
-                href={cat.href}
-                locale={locale}
-                className="group relative flex items-center p-8 bg-white dark:bg-[#112240] rounded-[2.5rem] shadow-soft hover:-translate-y-2 hover:shadow-soft-lg transition-all duration-300 overflow-hidden border border-transparent hover:border-brand-sky/20"
-              >
-                {/* 
+                <Link
+                  key={idx}
+                  href={cat.href}
+                  locale={locale}
+                  className="group relative flex items-center p-8 bg-white dark:bg-[#112240] rounded-[2.5rem] shadow-soft hover:-translate-y-2 hover:shadow-soft-lg transition-all duration-300 overflow-hidden border border-transparent hover:border-brand-sky/20"
+                >
+                  {/* 
                    DECORATIVE BLOB LOGIC:
                    - isRTL (Arabic): Icon is Right -> Blob is '-right-10'
                    - !isRTL (English/French): Icon is Left -> Blob is '-left-10'
                 */}
-                <div 
-                  className={`
+                  <div
+                    className={`
                     absolute w-40 h-40 rounded-full opacity-10 ${cat.color} 
                     group-hover:scale-150 transition-transform duration-500
                     -bottom-10 
                     ${isRTL ? '-right-10' : '-left-10'}
                   `}
-                ></div>
+                  ></div>
 
-                <div className={`w-20 h-20 rounded-3xl ${cat.color} flex items-center justify-center shrink-0 shadow-lg relative z-10`}>
-                   <Icon icon={cat.icon} className="text-4xl text-white" />
-                </div>
+                  <div className={`w-20 h-20 rounded-3xl ${cat.color} flex items-center justify-center shrink-0 shadow-lg relative z-10`}>
+                    <Icon icon={cat.icon} className="text-4xl text-white" />
+                  </div>
 
-                <div className="px-6 relative z-10">
-                   <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-2">{cat.title}</h3>
-                   <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">{cat.desc}</p>
-                   
-                   <div className={`flex items-center gap-2 font-bold text-sm uppercase tracking-wider ${cat.textColor} group-hover:gap-3 transition-all`}>
+                  <div className="px-6 relative z-10">
+                    <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-2">{cat.title}</h3>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">{cat.desc}</p>
+
+                    <div className={`flex items-center gap-2 font-bold text-sm uppercase tracking-wider ${cat.textColor} group-hover:gap-3 transition-all`}>
                       <span>{t('shopNow')}</span>
                       <Icon icon="solar:arrow-right-linear" className={isRTL ? "rotate-180" : ""} />
-                   </div>
-                </div>
-              </Link>
-             );
+                    </div>
+                  </div>
+                </Link>
+              );
             })}
           </div>
         </div>
@@ -204,19 +204,19 @@ export default async function StorePage({ params }: { params: Promise<{ locale: 
 
       {/* Featured / Sale Banner */}
       <section className="pb-32 px-4">
-         <div className="container mx-auto max-w-6xl">
-            <div className="bg-brand-gold rounded-[3rem] p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-soft-lg">
-               <div className="absolute inset-0 bg-black/5 pattern-dots"></div>
-               <div className="relative z-10 text-brand-navy-dark text-center md:text-start rtl:md:text-right">
-                  <h2 className="text-3xl md:text-5xl font-black mb-4">{t('bundleOffer')}</h2>
-                  <p className="text-lg font-medium opacity-80 max-w-md">{t('bundleDesc')}</p>
-               </div>
-               <button className="relative z-10 mt-8 md:mt-0 px-8 py-4 bg-white text-brand-navy font-bold rounded-2xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
-                  <Icon icon="solar:bag-check-bold" className="text-xl" />
-                  {t('viewBundles')}
-               </button>
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-brand-gold rounded-[3rem] p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-soft-lg">
+            <div className="absolute inset-0 bg-black/5 pattern-dots"></div>
+            <div className="relative z-10 text-brand-navy-dark text-center md:text-start rtl:md:text-right">
+              <h2 className="text-3xl md:text-5xl font-black mb-4">{t('bundleOffer')}</h2>
+              <p className="text-lg font-medium opacity-80 max-w-md">{t('bundleDesc')}</p>
             </div>
-         </div>
+            <button className="relative z-10 mt-8 md:mt-0 px-8 py-4 bg-white text-brand-navy font-bold rounded-2xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
+              <Icon icon="solar:bag-check-bold" className="text-xl" />
+              {t('viewBundles')}
+            </button>
+          </div>
+        </div>
       </section>
 
     </main>

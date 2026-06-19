@@ -124,14 +124,22 @@ export async function updateUserRole(id: string, role: 'USER' | 'ADMIN') {
 // --- Access Code Management ---
 
 export async function getAccessCodes(limit: number = 5, search?: string, cursor?: string, direction: 'next' | 'prev' = 'next') {
+  // Exclude Riyada-specific codes (tagged with email '@riyada') from the regular codes view
+  const riyadaExclude = { NOT: { email: '@riyada' } }
+
   const whereClause = search ? {
-    OR: [
-      { email: { contains: search, mode: 'insensitive' as const } },
-      { user: { firstName: { contains: search, mode: 'insensitive' as const } } },
-      { user: { lastName: { contains: search, mode: 'insensitive' as const } } },
-      { user: { email: { contains: search, mode: 'insensitive' as const } } },
+    AND: [
+      riyadaExclude,
+      {
+        OR: [
+          { email: { contains: search, mode: 'insensitive' as const } },
+          { user: { firstName: { contains: search, mode: 'insensitive' as const } } },
+          { user: { lastName: { contains: search, mode: 'insensitive' as const } } },
+          { user: { email: { contains: search, mode: 'insensitive' as const } } },
+        ]
+      }
     ]
-  } : {}
+  } : riyadaExclude
 
   const takeCount = direction === 'next' ? limit + 1 : -(limit + 1)
 
@@ -184,7 +192,6 @@ export async function getAccessCodes(limit: number = 5, search?: string, cursor?
   }
 }
 
-
 export async function generateAccessCode(data: {
   validityDays: number
   userId?: string
@@ -224,6 +231,7 @@ export async function getUnassignedCodes() {
       userId: null,
       used: false,
       expiresAt: { gt: new Date() },
+      NOT: { email: '@riyada' },
     },
     orderBy: { createdAt: 'desc' },
   })
@@ -283,6 +291,8 @@ export async function assignCode(codeId: string, userId: string) {
     code: updatedCode.code ? decrypt(updatedCode.code) : null
   }
 }
+
+// --- Riyada Access Code Management ---
 
 export async function getRiyadaAccessCodes(limit: number = 5, cursor?: string, direction: 'next' | 'prev' = 'next') {
   const whereClause = {
@@ -366,4 +376,3 @@ export async function deleteRiyadaAccessCode(id: string) {
   await prisma.accessCode.delete({ where: { id } })
   revalidatePath('/admin/riyada-codes')
 }
-

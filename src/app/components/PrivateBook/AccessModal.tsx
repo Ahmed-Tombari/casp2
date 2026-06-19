@@ -180,7 +180,7 @@ export default function AccessModal({ isOpen, closeModal }: AccessModalProps) {
                             type="text"
                             id="code"
                             required
-                            className="block w-full pl-12 pr-4 py-4 border border-gray-200 dark:border-white/10 rounded-2xl bg-gray-50/50 dark:bg-white/5 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold transition-all outline-none dark:text-white rtl:pl-4 rtl:pr-12 text-base font-mono tracking-[0.2em] font-bold uppercase placeholder:tracking-normal placeholder:font-sans placeholder:text-gray-400 dark:placeholder:text-white/20"
+                            className="block w-full pl-12 pr-4 py-4 border border-gray-200 dark:border-white/10 rounded-2xl bg-gray-50/50 dark:bg-white/5 focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold transition-all outline-none dark:text-white rtl:pl-4 rtl:pr-12 text-base font-medium placeholder:text-gray-400 dark:placeholder:text-white/20"
                             placeholder={t('codePlaceholder')}
                             value={code}
                             onChange={(e) => {
