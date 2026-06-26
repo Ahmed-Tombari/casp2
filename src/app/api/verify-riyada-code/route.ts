@@ -20,7 +20,6 @@ export async function POST(request: NextRequest) {
     const validCode = await prisma.accessCode.findFirst({
       where: {
         codeHash: codeHash,
-        email: '@riyada',
         used: false,
         expiresAt: {
           gt: new Date(),
@@ -36,7 +35,7 @@ export async function POST(request: NextRequest) {
     }
 
     const token = generatePdfAccessToken({ 
-      email: 'riyada_user', 
+      email: validCode.email || 'riyada_user', 
       blobPath: 'private/all',
       watermark: false
     });
